@@ -20,7 +20,7 @@ $txt: #183b56;
     top: 0;
     z-index: 100;
     border-bottom: 1px solid rgba(100,100,100,0.15);
-    background: white;
+    background: rgba(255,255,255,0.2);
     &.sticky{
         background: white;
         transition: .2s;
@@ -131,6 +131,7 @@ $txt: #183b56;
     .nav-action{
         button{
             border: 1px solid #003392;
+            border: none;
             outline: none;
             background: $primBtn;
             color: white;
