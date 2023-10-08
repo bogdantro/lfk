@@ -38,7 +38,7 @@
   transform: translateY(1px);
 }
 #mobileNav .logo img {
-  width: 60px;
+  width: 40px;
   height: auto;
   transition: 0.3s;
   position: absolute;
@@ -120,7 +120,7 @@
 #mobileNav .nav-action button {
   border: 1px solid #003392;
   outline: none;
-  background: #002366;
+  background: #191D3A;
   color: white;
   font-weight: 400;
   width: 110px;
