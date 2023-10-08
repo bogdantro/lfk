@@ -14,15 +14,22 @@
   top: 0;
   z-index: 100;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+  background: rgba(175, 175, 175, 0.1);
 }
 #mobileNav.sticky {
   background: white;
   transition: 0.2s;
 }
+#mobileNav.sticky .hamburger span {
+  background: #1F1F1F;
+}
 #mobileNav.menu {
   transition: 0.2s;
   background: white;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+}
+#mobileNav.menu .hamburger span {
+  background: #1F1F1F;
 }
 #mobileNav .left {
   display: flex;
@@ -56,7 +63,7 @@
 #mobileNav .hamburger span {
   height: 3px;
   width: 26px;
-  background: white !important;
+  background: white;
   border-radius: 12px;
   display: block;
   transition: 0.2s;
@@ -67,6 +74,9 @@
 #mobileNav .hamburger .center-span {
   width: 22px;
   margin-inline: auto;
+}
+#mobileNav .hamburger.click span {
+  background: #1F1F1F;
 }
 #mobileNav .hamburger.click .upper-span {
   transform: rotate(45deg);
@@ -101,7 +111,7 @@
   position: relative;
 }
 #mobileNav .sidebar a:hover {
-  background: rgba(255, 226, 97, 0.0941176471);
+  background: rgba(27, 36, 104, 0.2117647059);
 }
 #mobileNav .sidebar a i {
   float: right;
@@ -117,13 +127,12 @@
   left: 0;
 }
 #mobileNav .nav-action button {
-  border: 1px solid #003392;
-  border: none;
+  border: 2px solid #191D3A;
   outline: none;
-  background: #191D3A;
+  background: #1c2141;
   color: white;
   font-weight: 400;
-  width: 110px;
-  height: 40px;
+  width: 120px;
+  height: 38px;
   border-radius: 4px;
 }/*# sourceMappingURL=nav.css.map */

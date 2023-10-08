@@ -20,15 +20,25 @@ $txt: #183b56;
     top: 0;
     z-index: 100;
     border-bottom: 1px solid rgba(100,100,100,0.15);
-    // background: rgba(255,255,255,0.2);
+    background: rgba(175, 175, 175, 0.1);
     &.sticky{
         background: white;
         transition: .2s;
+        .hamburger{
+            span{
+                background: $black;
+            }
+        }
     }
     &.menu{
         transition: .2s;
         background: white;
         border-bottom: 1px solid rgba(100,100,100,0.15);
+        .hamburger{
+            span{
+                background: $black;
+            }
+        }
     }
     .left{
         display: flex;
@@ -61,7 +71,7 @@ $txt: #183b56;
         span{
             height: 3px;
             width: 26px;
-            background: white !important;
+            background: white;
             border-radius: 12px;
             display: block;
             transition: .2s;
@@ -78,6 +88,9 @@ $txt: #183b56;
         .lower-span{
         }
         &.click{
+            span{
+                background: $black;
+            }
             .upper-span{
                 transform: rotate(45deg);
             }
@@ -111,7 +124,7 @@ $txt: #183b56;
             text-decoration: none;
             position: relative;
             &:hover{
-                background: #ffe26118;
+                background: #1b246836;
             }
             i{
                 float: right;
@@ -130,14 +143,13 @@ $txt: #183b56;
     } 
     .nav-action{
         button{
-            border: 1px solid #003392;
-            border: none;
+            border: 2px solid $primBtn;
             outline: none;
-            background: $primBtn;
+            background: #1c2141;
             color: white;
             font-weight: 400;
-            width: 110px;
-            height: 40px;
+            width: 120px;
+            height: 38px;
             border-radius: 4px;
         }
     }

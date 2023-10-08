@@ -5,11 +5,11 @@
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 5px;
-  height: 520px;
+  height: 405px;
 }
 .cover .cover-image {
   width: auto;
-  height: 520px;
+  height: auto;
   filter: brightness(60%);
   position: absolute;
   left: 0;
@@ -45,4 +45,33 @@
   height: 2px;
   background: white;
   border-radius: 10px;
+}
+
+.sponsor-slider {
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  padding-inline: 20px;
+}
+.sponsor-slider .slide-container {
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
+.sponsor-slider .slide-container .sponsor-slide {
+  width: 50%;
+  padding: 0 10px;
+  margin-inline: 15px;
+}
+.sponsor-slider .slide-container .sponsor-slide img {
+  width: 160px;
+  height: auto;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }/*# sourceMappingURL=base.css.map */

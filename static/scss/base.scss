@@ -9,10 +9,10 @@ $txt: #183b56;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 5px;
-    height: 520px;
+    height: 405px;
     .cover-image{
         width: auto;
-        height: 520px;
+        height: auto;
         filter: brightness(60%);
         position: absolute;
         left: 0;
@@ -47,5 +47,36 @@ $txt: #183b56;
                 }
             }
         }
+    }
+}
+
+
+.sponsor-slider {
+    overflow: hidden;
+    width: 100%; 
+    max-width: 800px;
+    padding-inline: 20px;
+    .slide-container {
+        display: flex;
+        animation: scroll 10s linear infinite; 
+        .sponsor-slide {
+            width: 50%;
+            padding: 0 10px;
+            margin-inline: 15px;
+            img {
+                width: 160px;
+                height: auto;
+            }
+        }
+}
+
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 }
