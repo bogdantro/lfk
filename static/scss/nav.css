@@ -56,7 +56,7 @@
 #mobileNav .hamburger span {
   height: 3px;
   width: 26px;
-  background: #1F1F1F;
+  background: white;
   border-radius: 12px;
   display: block;
   transition: 0.2s;
