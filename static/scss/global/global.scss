@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+$black: #1F1F1F;
+$white: rgb(246,246,246);
+$primBtn: #002366;
+$txt: #183b56;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+  }
+  html, body {
+    position: relative;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    margin: auto;
+    background:  rgb(248,248,248);
+  }
+
+  .page{
+    min-height: 80vh;
+  }
+
+  button{
+    transition: .2s;
+    &:hover{
+      filter: brightness(89%);
+      transform: scale(1.01);
+    }
+    &:focus{
+      filter: brightness(89%);
+      transform: scale(0.95);
+    }
+  }
+
+
+  .page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999; /* Ensure it's on top of other elements */
+    transition: opacity 0.5s ease; /* You can adjust the transition duration */
+    &.hide{
+      background: none;
+      pointer-events: none;
+      opacity: 0;
+    }
+}
+
+
+

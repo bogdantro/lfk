@@ -4,6 +4,7 @@
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script rel="stylesheet" src="{% static '/js/nav.js' %}" type="text/javascript"></script>
 <link rel="stylesheet" href="{% static '/scss/nav.css' %}" type="text/css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
@@ -15,7 +16,29 @@
 
 <!-- Mobile nav -->
 <div id="mobileNav">
-LFK
+    <div class="left">
+        <div class="hamburger" id="hamburger" onclick="menu()">
+            <span class="upper-span"></span>
+            <span class="center-span"></span>
+            <span class="lower-span"></span>
+        </div>
+        <div class="logo" onclick="window.location.href='/'">
+            <img src="{% static 'images/logo/logo-2.jpg' %}" alt="" class="logo-image">
+        </div>
+    </div>
+    <div class="sidebar" id="sidebar">
+        <a>Nyheter</a>
+        <a>Lag</a>
+        <a>FotballXtra</a>
+        <a>Sport</a>
+        <a>Om Lillehammer FK</a>
+        <a>Live Camera</a>
+        <a>Stolthet</a>
+        <a>Arrangement</a>
+    </div>
+    <div class="nav-action">
+        <button>Bli medlem</button>
+    </div>
 </div>
 
 <!-- Desktop nav -->

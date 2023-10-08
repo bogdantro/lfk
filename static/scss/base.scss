@@ -1,0 +1,51 @@
+$black: #1F1F1F;
+$white: rgb(246,246,246);
+$primBtn: #002366;
+$txt: #183b56;
+
+.cover{
+    width: 100%;
+    min-height: max-content;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 5px;
+    height: 520px;
+    .cover-image{
+        width: auto;
+        height: 520px;
+        filter: brightness(60%);
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .content{
+        padding-inline: 20px;
+        padding-top: 56px;
+        padding-bottom: 40px;
+        height: max-content;
+        position: relative;
+        padding-top: 110px;
+        .text{
+            text-align: center;
+            h1{
+                color: white;
+                font-size: 32px;
+                font-weight: 600;
+            }
+            p{
+                font-weight: 500;
+                font-size: 18px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                span{
+                    width: 45px;
+                    height: 2px;
+                    background: white;
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+}

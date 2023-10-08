@@ -1,0 +1,143 @@
+$black: #1F1F1F;
+$white: rgb(246,246,246);
+$primBtn: #002366;
+$txt: #183b56;
+
+#desNav{
+    display: none;
+}
+
+#mobileNav{
+    // NAVBAR CSS
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    padding-bottom: 3px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(100,100,100,0.15);
+    background: white;
+    &.sticky{
+        background: white;
+        transition: .2s;
+    }
+    &.menu{
+        transition: .2s;
+        background: white;
+        border-bottom: 1px solid rgba(100,100,100,0.15);
+    }
+    .left{
+        display: flex;
+    }
+    .logo{
+        transition: .8s;
+        cursor: pointer;
+        width: auto;
+        height: auto;
+        z-index: 1000;
+        margin-left: 22px;
+        transform: translateY(1px);
+        img{
+        width: 60px;
+        height: auto;
+        transition: .3s;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        }
+    }
+    .hamburger{
+        padding: 5px;
+        margin: -5px;
+        width: auto;
+        height: auto;
+        z-index: 1000;
+        text-align: center;
+        border-radius: 50%;
+        span{
+            height: 3px;
+            width: 28px;
+            background: $black;
+            border-radius: 12px;
+            display: block;
+            transition: .2s;
+            margin-block: 6px;
+            text-align: center;
+            transform-origin: 25%; 
+        }
+        .upper-span{
+        }
+        .center-span{
+            width: 22px;
+            margin-inline: auto;
+        }
+        .lower-span{
+        }
+        &.click{
+            .upper-span{
+                transform: rotate(45deg);
+            }
+            .center-span{
+                display: none;
+            }
+            .lower-span{
+                transform: rotate(-45deg);
+            }
+        }
+    }
+    .sidebar{
+        background: white;
+        position: absolute;
+        top: 75px;
+        left: -100px;
+        width: 100%;
+        height: calc(100vh - 65px);
+        z-index: 120;
+        opacity: 0;
+        pointer-events: none;
+        display: block;
+        transition: .2s;
+        a{
+            padding: 15px 20px;
+            color: $txt;
+            font-size: 18px;
+            font-weight: 500;
+            display: block;
+            width: 100%;
+            text-decoration: none;
+            position: relative;
+            &:hover{
+                background: #ffe26118;
+            }
+            i{
+                float: right;
+                padding-right: 3px;
+                color: $txt;
+                font-size: 17px;
+                transform: translateY(1px);
+            }
+        }
+        &.active{
+            opacity: 1;
+            pointer-events: visible;
+            transition: .4s;
+            left: 0;
+        }
+    } 
+    .nav-action{
+        button{
+            border: 1px solid #003392;
+            outline: none;
+            background: $primBtn;
+            color: white;
+            font-weight: 400;
+            width: 110px;
+            height: 38px;
+            border-radius: 4px;
+        }
+    }
+}

@@ -1,0 +1,129 @@
+#desNav {
+  display: none;
+}
+
+#mobileNav {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  padding-bottom: 3px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+  background: white;
+}
+#mobileNav.sticky {
+  background: white;
+  transition: 0.2s;
+}
+#mobileNav.menu {
+  transition: 0.2s;
+  background: white;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+}
+#mobileNav .left {
+  display: flex;
+}
+#mobileNav .logo {
+  transition: 0.8s;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  margin-left: 22px;
+  transform: translateY(1px);
+}
+#mobileNav .logo img {
+  width: 60px;
+  height: auto;
+  transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#mobileNav .hamburger {
+  padding: 5px;
+  margin: -5px;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  text-align: center;
+  border-radius: 50%;
+}
+#mobileNav .hamburger span {
+  height: 3px;
+  width: 28px;
+  background: #1F1F1F;
+  border-radius: 12px;
+  display: block;
+  transition: 0.2s;
+  margin-block: 6px;
+  text-align: center;
+  transform-origin: 25%;
+}
+#mobileNav .hamburger .center-span {
+  width: 22px;
+  margin-inline: auto;
+}
+#mobileNav .hamburger.click .upper-span {
+  transform: rotate(45deg);
+}
+#mobileNav .hamburger.click .center-span {
+  display: none;
+}
+#mobileNav .hamburger.click .lower-span {
+  transform: rotate(-45deg);
+}
+#mobileNav .sidebar {
+  background: white;
+  position: absolute;
+  top: 75px;
+  left: -100px;
+  width: 100%;
+  height: calc(100vh - 65px);
+  z-index: 120;
+  opacity: 0;
+  pointer-events: none;
+  display: block;
+  transition: 0.2s;
+}
+#mobileNav .sidebar a {
+  padding: 15px 20px;
+  color: #183b56;
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: relative;
+}
+#mobileNav .sidebar a:hover {
+  background: rgba(255, 226, 97, 0.0941176471);
+}
+#mobileNav .sidebar a i {
+  float: right;
+  padding-right: 3px;
+  color: #183b56;
+  font-size: 17px;
+  transform: translateY(1px);
+}
+#mobileNav .sidebar.active {
+  opacity: 1;
+  pointer-events: visible;
+  transition: 0.4s;
+  left: 0;
+}
+#mobileNav .nav-action button {
+  border: 1px solid #003392;
+  outline: none;
+  background: #002366;
+  color: white;
+  font-weight: 400;
+  width: 110px;
+  height: 38px;
+  border-radius: 4px;
+}/*# sourceMappingURL=nav.css.map */

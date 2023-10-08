@@ -1,0 +1,48 @@
+.cover {
+  width: 100%;
+  min-height: -moz-max-content;
+  min-height: max-content;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 5px;
+  height: 520px;
+}
+.cover .cover-image {
+  width: auto;
+  height: 520px;
+  filter: brightness(60%);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.cover .content {
+  padding-inline: 20px;
+  padding-top: 56px;
+  padding-bottom: 40px;
+  height: -moz-max-content;
+  height: max-content;
+  position: relative;
+  padding-top: 110px;
+}
+.cover .content .text {
+  text-align: center;
+}
+.cover .content .text h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: 600;
+}
+.cover .content .text p {
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.cover .content .text p span {
+  width: 45px;
+  height: 2px;
+  background: white;
+  border-radius: 10px;
+}/*# sourceMappingURL=base.css.map */
