@@ -2,7 +2,7 @@
 
 $black: #1F1F1F;
 $white: rgb(246,246,246);
-$primBtn: #002366;
+$primBtn: #191D3A;
 $txt: #183b56;
 
 *{
@@ -16,7 +16,7 @@ $txt: #183b56;
     overflow-x: hidden;
     scroll-behavior: smooth;
     margin: auto;
-    background:  rgb(248,248,248);
+    background:  $primBtn;
   }
 
   .page{
