@@ -94,6 +94,7 @@
   height: auto;
   position: relative;
   padding-block: 60px;
+  padding-top: 40px;
 }
 .blog .content {
   position: relative;
@@ -102,6 +103,53 @@
 .blog .content .text h1 {
   color: #1F1F1F;
   font-size: 27px;
+  font-weight: 500;
+}
+.blog .content .posts {
+  height: auto;
+  position: relative;
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 25px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.blog .content .posts::-webkit-scrollbar {
+  display: none;
+}
+.blog .content .posts .post {
+  min-width: 80%;
+  margin-inline: 15px;
+  height: 380px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.blog .content .posts .post:first-child {
+  margin-left: 0;
+}
+.blog .content .posts .post img {
+  border-radius: 4px;
+  height: 220px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.blog .content .posts .post .text {
+  padding-inline: 25px;
+  text-align: left;
+  margin-top: 15px;
+}
+.blog .content .posts .post .text p {
+  font-size: 14px;
+  color: #1F1F1F;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.blog .content .posts .post .text h1 {
+  color: #1F1F1F;
+  font-size: 20px;
   font-weight: 500;
 }
 
