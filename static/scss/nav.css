@@ -20,6 +20,10 @@
   background: white;
   transition: 0.2s;
 }
+#mobileNav.sticky .nav-action button {
+  background: linear-gradient(to bottom right, #191D3A, #2a2f58);
+  color: white;
+}
 #mobileNav.sticky .hamburger span {
   background: #1F1F1F;
 }
@@ -27,6 +31,10 @@
   transition: 0.2s;
   background: white;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+}
+#mobileNav.menu .nav-action button {
+  background: linear-gradient(to bottom right, #191D3A, #2a2f58);
+  color: white;
 }
 #mobileNav.menu .hamburger span {
   background: #1F1F1F;
@@ -127,12 +135,13 @@
   left: 0;
 }
 #mobileNav .nav-action button {
-  border: 2px solid #191D3A;
+  border: 2px solid transparent;
   outline: none;
-  background: linear-gradient(to bottom right, #191D3A, #2b3157);
-  color: white;
+  background: white;
+  color: #191D3A;
   font-weight: 400;
   width: 120px;
   height: 38px;
   border-radius: 4px;
+  transition: 0.2s;
 }/*# sourceMappingURL=nav.css.map */

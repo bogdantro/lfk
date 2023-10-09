@@ -24,6 +24,12 @@ $txt: #183b56;
     &.sticky{
         background: white;
         transition: .2s;
+        .nav-action{
+            button{
+                background: linear-gradient(to bottom right, $primBtn, #2a2f58);
+                color: white;
+            }
+        }
         .hamburger{
             span{
                 background: $black;
@@ -34,6 +40,12 @@ $txt: #183b56;
         transition: .2s;
         background: white;
         border-bottom: 1px solid rgba(100,100,100,0.15);
+        .nav-action{
+            button{
+                background: linear-gradient(to bottom right, $primBtn, #2a2f58);
+                color: white;
+            }
+        }
         .hamburger{
             span{
                 background: $black;
@@ -143,14 +155,15 @@ $txt: #183b56;
     } 
     .nav-action{
         button{
-            border: 2px solid $primBtn;
+            border: 2px solid transparent;
             outline: none;
-            background: linear-gradient(to bottom right, $primBtn, #2b3157);
-            color: white;
+            background: white;
+            color: $primBtn;
             font-weight: 400;
             width: 120px;
             height: 38px;
             border-radius: 4px;
+            transition: .2s;
         }
     }
 }
