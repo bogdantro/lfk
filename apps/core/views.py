@@ -21,6 +21,8 @@ def home(request):
     return render(request, 'core/home.html')
     
 
+def bli_med(request):
+    return render(request, 'medlem/velg.html')
 
 
 

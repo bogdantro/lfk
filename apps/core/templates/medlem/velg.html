@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/medlem/velg.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+
+
+<div class="page">
+    <!-- Cover -->
+    <div class="cover">
+        <img src="{%  static 'images/covers/cover-6.png' %}" alt="" class="cover-image">
+        <!-- Content -->
+        <div class="content">
+        <div class="text">
+            <h1>Bli medlem</h1>
+        </div>
+        </div>
+    </div>
+
+    <div class="cards">
+
+        <div class="card" onclick="window.location.href='/tjenester/avtale/'">
+          <h1>Lag spiller<i class="fa-solid fa-angle-right"></i></h1>
+        </div>
+
+        <div class="card" onclick="window.location.href='/tjenester/garanti/'">
+          <h1>Støttemedlem<i class="fa-solid fa-angle-right"></i></h1>
+        </div>
+
+        <div class="card" onclick="window.location.href='/tjenester/finansiering/'">
+          <h1>Årskort<i class="fa-solid fa-angle-right"></i></h1>
+        </div>
+
+        <div class="card" onclick="window.location.href='/tjenester/forsikring/'">
+          <h1>Samarbeidspartner<i class="fa-solid fa-angle-right"></i></h1>
+        </div>
+
+        <div class="card" onclick="window.location.href='/tjenester/verksted/'">
+          <h1>Frivillig<i class="fa-solid fa-angle-right"></i></h1>
+        </div>
+
+        <div class="card" onclick="window.location.href='/tjenester/transport/'">
+          <h1>Ultra-supporter<i class="fa-solid fa-angle-right"></i></h1>
+        </div>
+
+        <div class="card" onclick="window.location.href='/tjenester/transport/'">
+          <h1>Tirsdagskaffe<i class="fa-solid fa-angle-right"></i></h1>
+        </div>
+
+        <div class="card" onclick="window.location.href='/tjenester/transport/'">
+          <h1>Sosiale medier<i class="fa-solid fa-angle-right"></i></h1>
+        </div>
+  
+      </div>
+</div>
+
+{% endblock %}

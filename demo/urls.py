@@ -14,5 +14,7 @@ from django.contrib.auth import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
+
+    path('bli-med/', bli_med, name='bli_med'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
