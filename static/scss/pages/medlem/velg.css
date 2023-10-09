@@ -66,14 +66,14 @@
   text-align: center;
   padding: 17px;
   border-radius: 14px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 5px rgba(255, 255, 255, 0.05);
   border: none;
   margin-bottom: 25px;
   display: flex;
   align-items: center;
   flex-direction: row;
-  height: 90px;
-  background: #475d83;
+  height: 110px;
+  background: #072057;
 }
 .cards .card i {
   color: white;
