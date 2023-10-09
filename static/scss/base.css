@@ -5,11 +5,11 @@
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 5px;
-  height: 475px;
+  height: 455px;
 }
 .cover .cover-image {
   width: auto;
-  height: 475px;
+  height: 455px;
   filter: brightness(55%);
   position: absolute;
   left: 0;
@@ -66,7 +66,6 @@
   padding: 5px 0;
   white-space: nowrap;
   position: relative;
-  transform: translateY(-60px);
 }
 .logos .logos:before,
 .logos .logos:after {
