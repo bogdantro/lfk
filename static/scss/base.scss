@@ -9,11 +9,11 @@ $txt: #183b56;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 5px;
-    height: 405px;
+    height: 455px;
     .cover-image{
         width: auto;
-        height: auto;
-        filter: brightness(60%);
+        height: 455px;
+        filter: brightness(55%);
         position: absolute;
         left: 0;
         top: 0;
@@ -46,37 +46,109 @@ $txt: #183b56;
                     border-radius: 10px;
                 }
             }
-        }
-    }
-}
-
-
-.sponsor-slider {
-    overflow: hidden;
-    width: 100%; 
-    max-width: 800px;
-    padding-inline: 20px;
-    .slide-container {
-        display: flex;
-        animation: scroll 10s linear infinite; 
-        .sponsor-slide {
-            width: 50%;
-            padding: 0 10px;
-            margin-inline: 15px;
-            img {
-                width: 160px;
+            .cover-image-2{
+                width: 125px;
                 height: auto;
+                background: rgba(255, 255, 255, 0.041);
+                border-radius: 25px;
             }
         }
-}
-
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
     }
-    100% {
-        transform: translateX(-100%);
+}
+
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .logos {
+    overflow: hidden;
+    padding: 5px 0;
+    white-space: nowrap;
+    position: relative;
+    .logos:before,
+    .logos:after {
+      position: absolute;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+    
+    .logos:hover .logos-slide {
+      animation-play-state: paused;
+    }
+    
+    .logos-slide {
+      display: inline-block;
+      animation: 30s slide infinite linear;
+    }
+    
+    .logos-slide img {
+      width: 160px;
+      height: auto;
+      margin: 0 25px;
+    }
+  }
+  
+
+
+.blog{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-block: 60px;
+    .content{
+        position: relative;
+        padding-inline: 20px;
+        .text{
+            h1{
+                color: $black;
+                font-size: 27px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.about-us{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-block: 60px;
+    .content{
+        position: relative;
+        padding-inline: 20px;
+        .text{
+            h1{
+                color: $black;
+                font-size: 27px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.events{
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding-block: 60px;
+    .content{
+        position: relative;
+        padding-inline: 20px;
+        .text{
+            h1{
+                color: $black;
+                font-size: 27px;
+                font-weight: 500;
+            }
+        }
     }
 }

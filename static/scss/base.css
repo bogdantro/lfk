@@ -5,12 +5,12 @@
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 5px;
-  height: 405px;
+  height: 455px;
 }
 .cover .cover-image {
   width: auto;
-  height: auto;
-  filter: brightness(60%);
+  height: 455px;
+  filter: brightness(55%);
   position: absolute;
   left: 0;
   top: 0;
@@ -46,32 +46,93 @@
   background: white;
   border-radius: 10px;
 }
-
-.sponsor-slider {
-  overflow: hidden;
-  width: 100%;
-  max-width: 800px;
-  padding-inline: 20px;
-}
-.sponsor-slider .slide-container {
-  display: flex;
-  animation: scroll 10s linear infinite;
-}
-.sponsor-slider .slide-container .sponsor-slide {
-  width: 50%;
-  padding: 0 10px;
-  margin-inline: 15px;
-}
-.sponsor-slider .slide-container .sponsor-slide img {
-  width: 160px;
+.cover .content .text .cover-image-2 {
+  width: 125px;
   height: auto;
+  background: rgba(255, 255, 255, 0.041);
+  border-radius: 25px;
 }
 
-@keyframes scroll {
-  0% {
+@keyframes slide {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-100%);
   }
+}
+.logos {
+  overflow: hidden;
+  padding: 5px 0;
+  white-space: nowrap;
+  position: relative;
+}
+.logos .logos:before,
+.logos .logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+.logos .logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+.logos .logos-slide {
+  display: inline-block;
+  animation: 30s slide infinite linear;
+}
+.logos .logos-slide img {
+  width: 160px;
+  height: auto;
+  margin: 0 25px;
+}
+
+.blog {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-block: 60px;
+}
+.blog .content {
+  position: relative;
+  padding-inline: 20px;
+}
+.blog .content .text h1 {
+  color: #1F1F1F;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.about-us {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-block: 60px;
+}
+.about-us .content {
+  position: relative;
+  padding-inline: 20px;
+}
+.about-us .content .text h1 {
+  color: #1F1F1F;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.events {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding-block: 60px;
+}
+.events .content {
+  position: relative;
+  padding-inline: 20px;
+}
+.events .content .text h1 {
+  color: #1F1F1F;
+  font-size: 27px;
+  font-weight: 500;
 }/*# sourceMappingURL=base.css.map */
