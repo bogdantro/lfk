@@ -93,7 +93,6 @@
   width: 100%;
   height: auto;
   position: relative;
-  padding-block: 60px;
   padding-top: 40px;
 }
 .blog .content {
@@ -157,7 +156,7 @@
   width: 100%;
   height: auto;
   position: relative;
-  padding-block: 60px;
+  padding-top: 40px;
 }
 .about-us .content {
   position: relative;
@@ -173,7 +172,7 @@
   width: 100%;
   height: auto;
   position: relative;
-  padding-block: 60px;
+  padding-top: 40px;
 }
 .events .content {
   position: relative;
