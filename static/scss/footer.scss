@@ -10,42 +10,18 @@ $txt: #183b56;
     padding-top: 25px;
     padding-bottom: 18px;
     position: relative;
-    background: rgb(253,253,253);
-    border-top: 1px solid rgba(0,0,0,0.1);
-    padding-inline: 20px;
-    margin-top: 50px;
-    .hours{
-        background: rgb(242, 242, 242);
-        width: 100%;
-        padding: 13px 8px;
-        .info-heading{
-            color: $black;
-            font-size: 19px;
-            margin-bottom: 3px;
-            font-weight: 500;
-        }
-        a{
-            display: block;
-            color: $black;
-            font-size: 17px;
-            width: max-content;
-            padding-right: 5px;
-            margin-block: 8px;
-            &:first-child{
-                margin-top: 0;
-            }
-        }
-    }
+    background: #252a4b;
+    padding-inline: 20px;  
     .contact-info{
         .info-heading{
-            color: $black;
+            color: white;
             font-size: 19px;
             margin-bottom: 3px;
             font-weight: 500;
         }
         a{
             display: block;
-            color: $black;
+            color: white;
             font-size: 17px;
             width: max-content;
             padding-right: 5px;
@@ -58,16 +34,16 @@ $txt: #183b56;
     .links{
         p{
             margin-bottom: 0;
-            color: $black;
+            color: white;
         }
         .business-heading{
-            color: $black;
+            color: white;
             font-size: 19px;
             margin-bottom: 3px;
             font-weight: 500;
         }
         .info-heading{
-            color: $black;
+            color: white;
             font-size: 19px;
             margin-bottom: 3px;
             font-weight: 500;
@@ -86,7 +62,7 @@ $txt: #183b56;
         }
         a{
             display: block;
-            color: $black;
+            color: white;
             font-size: 17px;
             width: max-content;
             padding-right: 5px;
@@ -103,12 +79,12 @@ $txt: #183b56;
         justify-content: space-between;
         opacity: 0.85;
         .copyright{
-            color: $black;
+            color: white;
             font-size: 13px;
         }
         .social-icons{
             i{
-                color: $black;
+                color: white;
                 font-size: 20px;
                 margin-inline: 2px;
                 padding: 8px;

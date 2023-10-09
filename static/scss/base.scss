@@ -9,14 +9,15 @@ $txt: #183b56;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 5px;
-    height: 455px;
+    height: 485px;
     .cover-image{
         width: 100%;
-        height: 455px;
-        filter: brightness(55%);
+        height: 485px;
+        filter: brightness(65%);
         position: absolute;
         left: 0;
         top: 0;
+        object-fit: cover;
     }
     .content{
         padding-inline: 20px;
@@ -51,6 +52,7 @@ $txt: #183b56;
                 height: auto;
                 background: rgba(255, 255, 255, 0.041);
                 border-radius: 25px;
+                transform: translateY(40px);
             }
         }
     }
@@ -67,10 +69,13 @@ $txt: #183b56;
   }
   
   .logos {
+    margin-top: 40px;
     overflow: hidden;
-    padding: 5px 0;
+    padding: 15px 0;
     white-space: nowrap;
     position: relative;
+    background: white;
+    padding-bottom: 30px;
     .logos:before,
     .logos:after {
       position: absolute;
@@ -109,7 +114,7 @@ $txt: #183b56;
         padding-inline: 20px;
         .text{
             h1{
-                color: $black;
+                color: white;
                 font-size: 27px;
                 font-weight: 500;
             }
@@ -128,13 +133,18 @@ $txt: #183b56;
                 display: none;
             }
             .post{
+                background: #323861;
                 min-width: 80%;
                 margin-inline: 15px;
                 height: 380px;
                 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
                 border-radius: 4px;
+                transition: .2s;
                 &:first-child{
                     margin-left: 0;
+                }
+                &:hover{
+                    transform: scale(1.05);
                 }
                 img{
                     border-radius: 4px;
@@ -148,12 +158,12 @@ $txt: #183b56;
                     margin-top: 15px;
                     p{
                         font-size: 14px;
-                        color: $black;
+                        color: white;
                         font-weight: 500;
                         margin-bottom: 5px;
                     }
                     h1{
-                        color: $black;
+                        color: white;
                         font-size: 20px;
                         font-weight: 500;
                     }
@@ -173,7 +183,7 @@ $txt: #183b56;
         padding-inline: 20px;
         .text{
             h1{
-                color: $black;
+                color: white;
                 font-size: 27px;
                 font-weight: 500;
             }
@@ -191,7 +201,7 @@ $txt: #183b56;
         padding-inline: 20px;
         .text{
             h1{
-                color: $black;
+                color: white;
                 font-size: 27px;
                 font-weight: 500;
             }

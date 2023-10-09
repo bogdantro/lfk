@@ -22,19 +22,9 @@ $txt: #183b56;
     border-bottom: 1px solid rgba(100,100,100,0.15);
     background: rgba(0, 0, 0, 0.05);
     &.sticky{
-        background: white;
+        background: #222535;
         transition: .2s;
-        .nav-action{
-            button{
-                background: linear-gradient(to bottom right, $primBtn, #2a2f58);
-                color: white;
-            }
-        }
-        .hamburger{
-            span{
-                background: $black;
-            }
-        }
+       
     }
     &.menu{
         transition: .2s;
@@ -157,11 +147,11 @@ $txt: #183b56;
         button{
             border: 2px solid transparent;
             outline: none;
-            background: white;
-            color: $primBtn;
+            background: linear-gradient(to bottom right, $primBtn, #2a305b);
+            color: white;
             font-weight: 400;
             width: 120px;
-            height: 38px;
+            height: 40px;
             border-radius: 4px;
             transition: .2s;
         }
