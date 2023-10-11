@@ -59,8 +59,7 @@
 .cards {
   width: 100%;
   position: relative;
-  margin-top: 10px;
-  padding-inline: 20px;
+  padding-inline: 25px;
   background: url("/static/images/covers/cover-5.png");
   height: 100%;
   background-position: center;
