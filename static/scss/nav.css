@@ -22,15 +22,8 @@
 }
 #mobileNav.menu {
   transition: 0.2s;
-  background: white;
+  background: #00061a;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
-}
-#mobileNav.menu .nav-action button {
-  background: linear-gradient(to bottom right, #191D3A, #2a2f58);
-  color: white;
-}
-#mobileNav.menu .hamburger span {
-  background: #1F1F1F;
 }
 #mobileNav .left {
   display: flex;
@@ -76,9 +69,6 @@
   width: 22px;
   margin-inline: auto;
 }
-#mobileNav .hamburger.click span {
-  background: #1F1F1F;
-}
 #mobileNav .hamburger.click .upper-span {
   transform: rotate(45deg);
 }
@@ -89,7 +79,7 @@
   transform: rotate(-45deg);
 }
 #mobileNav .sidebar {
-  background: white;
+  background: #00061a;
   position: absolute;
   top: 75px;
   left: -100px;
@@ -103,7 +93,7 @@
 }
 #mobileNav .sidebar a {
   padding: 15px 20px;
-  color: #183b56;
+  color: white;
   font-size: 18px;
   font-weight: 500;
   display: block;

@@ -28,19 +28,8 @@ $txt: #183b56;
     }
     &.menu{
         transition: .2s;
-        background: white;
+        background: #00061a;
         border-bottom: 1px solid rgba(100,100,100,0.15);
-        .nav-action{
-            button{
-                background: linear-gradient(to bottom right, $primBtn, #2a2f58);
-                color: white;
-            }
-        }
-        .hamburger{
-            span{
-                background: $black;
-            }
-        }
     }
     .left{
         display: flex;
@@ -90,9 +79,6 @@ $txt: #183b56;
         .lower-span{
         }
         &.click{
-            span{
-                background: $black;
-            }
             .upper-span{
                 transform: rotate(45deg);
             }
@@ -105,7 +91,7 @@ $txt: #183b56;
         }
     }
     .sidebar{
-        background: white;
+        background: #00061a;
         position: absolute;
         top: 75px;
         left: -100px;
@@ -118,7 +104,7 @@ $txt: #183b56;
         transition: .2s;
         a{
             padding: 15px 20px;
-            color: $txt;
+            color: white;
             font-size: 18px;
             font-weight: 500;
             display: block;
