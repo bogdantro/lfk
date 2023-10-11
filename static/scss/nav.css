@@ -128,9 +128,9 @@
   left: 0;
 }
 #mobileNav .nav-action button {
-  border: 2px solid transparent;
+  border: none;
   outline: none;
-  background: linear-gradient(to bottom right, #191D3A, #2a305b);
+  background: linear-gradient(to bottom right, #00061A, #2a305b);
   color: white;
   font-weight: 400;
   width: 120px;
