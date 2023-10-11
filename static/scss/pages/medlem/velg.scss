@@ -64,6 +64,13 @@ $txt: #183b56;
     position: relative;
     margin-top: 10px;
     padding-inline: 20px;
+    background: url("/static/images/covers/cover-5.png");
+
+         height: 100%;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         padding-block: 20px;
     .card{
         text-align: center;
         padding: 17px;
@@ -76,9 +83,13 @@ $txt: #183b56;
         justify-content: center;
         margin-inline: auto;
         flex-direction: row;
-        height: 80px;
+        height: 70px;
         width: 95%;
         background: #323861;
+        transition: .2s;
+        &:hover{
+            transform: scale(1.06);
+        }
         i{
             color: white;
             font-size: 32px;

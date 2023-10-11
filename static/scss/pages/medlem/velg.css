@@ -61,6 +61,12 @@
   position: relative;
   margin-top: 10px;
   padding-inline: 20px;
+  background: url("/static/images/covers/cover-5.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-block: 20px;
 }
 .cards .card {
   text-align: center;
@@ -74,9 +80,13 @@
   justify-content: center;
   margin-inline: auto;
   flex-direction: row;
-  height: 80px;
+  height: 70px;
   width: 95%;
   background: #323861;
+  transition: 0.2s;
+}
+.cards .card:hover {
+  transform: scale(1.06);
 }
 .cards .card i {
   color: white;
