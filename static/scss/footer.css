@@ -26,6 +26,12 @@
 #footerMob .contact-info a:first-child {
   margin-top: 0;
 }
+#footerMob .links .shield {
+  position: absolute;
+  right: 30px;
+  width: 95px;
+  height: auto;
+}
 #footerMob .links p {
   margin-bottom: 0;
   color: white;
