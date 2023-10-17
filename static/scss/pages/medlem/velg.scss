@@ -10,15 +10,22 @@ $txt: #183b56;
     position: relative;
     padding-bottom: 5px;
     height: 220px;
-    .cover-image{
-        width: 100%;
-        height: 220px;
-        filter: brightness(55%);
-        position: absolute;
-        left: 0;
-        top: 0;
-        object-fit: cover;
-    }
+    background: url("/static/images/covers/cover-5.png");
+
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    // .cover-image{
+    //     width: 100%;
+    //     height: 220px;
+    //     filter: brightness(55%);
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    //     object-fit: cover;
+    // }
     .content{
         padding-inline: 20px;
         padding-top: 56px;
@@ -63,12 +70,6 @@ $txt: #183b56;
     width: 100%;
     position: relative;
     padding-inline: 25px;
-    background: url("/static/images/covers/cover-5.png");
-
-         height: 100%;
-         background-position: center;
-         background-repeat: no-repeat;
-         background-size: cover;
          padding-block: 20px;
     .card{
         text-align: center;
@@ -84,7 +85,7 @@ $txt: #183b56;
         flex-direction: row;
         height: 70px;
         width: 95%;
-        background: #323861;
+        background: linear-gradient(to bottom right, #323861, #505577);
         transition: .2s;
         &:hover{
             transform: scale(1.06);
