@@ -26,7 +26,7 @@
   .cover.active img {
     transform: scale(1);
   }
-  .cover img {
+  .cover #heroImage {
     position: absolute;
     top: 0;
     left: 0;
@@ -60,6 +60,22 @@
   .cover .content .text {
     position: relative;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .cover .content .text .cover-partner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transform: translateY(60px);
+  }
+  .cover .content .text .cover-partner img {
+    width: 280px;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .cover .content .text h1 {
     text-transform: uppercase;
@@ -69,49 +85,6 @@
     font-size: 9vw;
     transform: translateY(-10px);
     font-family: "Stampa", "Roboto", sans-serif;
-  }
-  @keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
-  .logos {
-    margin-top: 0;
-    overflow: hidden;
-    padding: 15px 0;
-    white-space: nowrap;
-    position: relative;
-    padding-bottom: 30px;
-    margin-inline: auto;
-    width: 100%;
-    background: transparent;
-    mix-blend-mode: multiply !important;
-  }
-  .logos .logos:before,
-  .logos .logos:after {
-    position: absolute;
-    top: 0;
-    width: 250px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-  }
-  .logos .logos:hover .logos-slide {
-    animation-play-state: paused;
-  }
-  .logos .logos-slide {
-    display: inline-block;
-    animation: 30s slide infinite linear;
-    mix-blend-mode: multiply !important;
-  }
-  .logos .logos-slide img {
-    width: 160px;
-    height: auto;
-    margin: 0 25px;
-    mix-blend-mode: multiply !important;
   }
   .blog {
     width: 100%;

@@ -34,7 +34,7 @@ $txt: #1b2c65;
             transform: scale(1);
           }
         }
-        img{
+        #heroImage{
             position: absolute;
             top: 0;
             left: 0;
@@ -64,9 +64,25 @@ $txt: #1b2c65;
             display: flex;
             justify-content: center;
             align-items: end;
+     
             .text {
                 position: relative;
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+              .cover-partner{
+                    width: 100%;
+                    height: auto;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    transform: translateY(60px);
+                    img{
+                      width: 280px;
+                      height: auto;
+                      object-fit: cover;
+                    }
+                  }
                 h1 {
                     text-transform: uppercase;
                     max-width: 100%;
@@ -82,57 +98,6 @@ $txt: #1b2c65;
             
         }
     }
-
-
-    @keyframes slide {
-        from {
-          transform: translateX(0);
-        }
-        to {
-          transform: translateX(-100%);
-        }
-      }
-      
-      .logos {
-        margin-top: 0;
-        overflow: hidden;
-        padding: 15px 0;
-        white-space: nowrap;
-        position: relative;
-        padding-bottom: 30px;
-        margin-inline: auto;
-        width: 100%;
-        background: transparent;
-        mix-blend-mode: multiply !important;
-
-        .logos:before,
-        .logos:after {
-          position: absolute;
-          top: 0;
-          width: 250px;
-          height: 100%;
-          content: "";
-          z-index: 2;
-        }
-        
-        .logos:hover .logos-slide {
-          animation-play-state: paused;
-        }
-        
-        .logos-slide {
-          display: inline-block;
-          animation: 30s slide infinite linear;
-          mix-blend-mode: multiply !important;
-
-        }
-        
-        .logos-slide img {
-          width: 160px;
-          height: auto;
-          margin: 0 25px;
-          mix-blend-mode: multiply !important;
-        }
-      }
 
 
       .blog{
