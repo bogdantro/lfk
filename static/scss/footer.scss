@@ -1,240 +1,90 @@
 $black: #1F1F1F;
-$white: rgb(246,246,246);
+$white: rgb(247,247,247);
 $primBtn: #191D3A;
 $txt: #183b56;
+$lfkgold: #B6A265;
 
-#footerMob{
-    margin-top: 0;
+
+
+
+@media only screen and (min-device-width: 1140px) {
+ .footer{
+    // background: linear-gradient(to bottom right, #191D3A, #191D3A, #B6A265);
     width: 100%;
-    height: 100%;
-    padding-top: 25px;
-    padding-bottom: 18px;
-    position: relative;
-    background: #00061A;
-    padding-inline: 20px;  
-    .contact-info{
-        .info-heading{
-            color: white;
-            font-size: 19px;
-            margin-bottom: 3px;
-            font-weight: 500;
-        }
-        a{
-            display: block;
-            color: white;
-            font-size: 17px;
-            width: max-content;
-            padding-right: 5px;
-            margin-block: 8px;
-            &:first-child{
-                margin-top: 0;
-            }
-        }
-    }
-    .links{
-        .shield{
-            position: absolute;
-            right: 30px;
-            width: 95px;
-            height: auto;
-        }
+    height: max-content;
+    padding: 70px 50px;
+    padding-bottom: 50px;
+    background: #12152c;
+    .rights{
+        text-align: right;
+        margin-top: 25px;
         p{
-            margin-bottom: 0;
+            text-decoration: none;
             color: white;
-        }
-        .business-heading{
-            color: white;
-            font-size: 19px;
-            margin-bottom: 3px;
-            font-weight: 500;
-        }
-        .info-heading{
-            color: white;
-            font-size: 19px;
-            margin-bottom: 3px;
-            font-weight: 500;
-        }
-        button{
-            background: $primBtn;
-            border: 1px solid transparent;
-            width: auto;
-            height: auto;
-            padding: 7px 26px;
-            margin-top: 14px;
-            outline: none;
-            border-radius: 3px;
-            color: white;
-            font-size: 15px;
-        }
-        a{
-            display: block;
-            color: white;
-            font-size: 17px;
-            width: max-content;
-            padding-right: 5px;
-            margin-block: 8px;
-            &:first-child{
-                margin-top: 0;
-            }
+            font-size: 14px;
+            opacity: 0.8;
         }
     }
     .bottom{
         display: flex;
-        width: 100%;
-        align-items: center;
         justify-content: space-between;
-        opacity: 0.85;
-        .copyright{
-            color: white;
-            font-size: 13px;
-        }
+        gap: 50px;
+        max-width: max-content;
+        margin-top: 45px;
+        position: relative;
         .social-icons{
+            width: 250px;
+            position: absolute;
+            right: -120%;
+            top: 50%;
+            transform: translateY(-45%);
+            display: flex;
+            flex-wrap: wrap;
             i{
+                flex: 0 0 50%; 
                 color: white;
-                font-size: 20px;
-                margin-inline: 2px;
-                padding: 8px;
-                transition: .2s;
+                width: 50%;
+                font-size: 28px;
+                max-width: 100px;
+                background: rgba(255, 255, 255, 0.16);
+                border-radius: 6px;
+                margin: 10px;
+                padding: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: .3s;
                 &:hover{
-                    color: $primBtn;
+                    transform: scale(1.05);
                 }
             }
         }
-    }
-}
-
-
-@media only screen and (min-device-width: 1140px) {
-    #footerMob{
-        padding-inline: 35px;
-        .hours{
-            background: rgb(242, 242, 242);
-            width: 380px;
-            padding: 13px 8px;
-            height: max-content;
-            .info-heading{
-                color: $black;
+        .links{
+            strong{
+                color: $white;
+                font-family: 'Stampa', "Roboto", sans-serif;
                 font-size: 19px;
-                margin-bottom: 3px;
+                margin-bottom: 15px;
                 font-weight: 500;
+
             }
             a{
+                color: $white;
+                font-size: 16px;
+                font-weight: 500;
+                margin: 2px;
+                margin-block: 6px;
+                width: 100%;
                 display: block;
-                color: $black;
-                font-size: 17px;
-                width: max-content;
-                padding-right: 5px;
-                margin-block: 8px;
-                &:first-child{
-                    margin-top: 0;
-                }
-            }
-        }
-        .flex{
-            display: flex;
-            hr{
-                display: none !important;
-            }
-            .links{
-                transform: translateX(80px);
-            }
-            .contact-info{
-                transform: translateX(40px);
-            }
-        }
-        .bottom{
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: space-between;
-            opacity: 0.85;
-            .copyright{
-                color: $black;
-                font-size: 14px;
-            }
-            .social-icons{
-                i{
-                    color: $black;
-                    font-size: 24px;
-                    margin-inline: 2px;
-                    padding: 8px;
-                    transition: .2s;
-                    cursor: pointer;
-                    &:hover{
-                        color: $primBtn;
-                    }
+                font-family: 'Stampa', "Roboto", sans-serif;
+                opacity: 0.8;
+                &.sub-item{
+                    margin-left: 10px;
                 }
             }
         }
     }
+ }
 }
 
-@media only screen and (min-device-width: 1290px) {
-    #footerMob{
-        padding-inline: 35px;
-        padding-top: 30px;
-        .content{
-            max-width: 1290px;
-            margin-inline: auto;
-        }
-        .hours{
-            background: rgb(242, 242, 242);
-            width: 380px;
-            padding: 13px 8px;
-            height: max-content;
-            .info-heading{
-                color: $black;
-                font-size: 19px;
-                margin-bottom: 3px;
-                font-weight: 500;
-            }
-            a{
-                display: block;
-                color: $black;
-                font-size: 17px;
-                width: max-content;
-                padding-right: 5px;
-                margin-block: 8px;
-                &:first-child{
-                    margin-top: 0;
-                }
-            }
-        }
-        .flex{
-            display: flex;
-            hr{
-                display: none !important;
-            }
-            .links{
-                transform: translateX(80px);
-            }
-            .contact-info{
-                transform: translateX(40px);
-            }
-        }
-        .bottom{
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: space-between;
-            opacity: 0.85;
-            .copyright{
-                color: $black;
-                font-size: 14px;
-            }
-            .social-icons{
-                i{
-                    color: $black;
-                    font-size: 24px;
-                    margin-inline: 2px;
-                    padding: 8px;
-                    transition: .2s;
-                    cursor: pointer;
-                    &:hover{
-                        color: $primBtn;
-                    }
-                }
-            }
-        }
-    }
-}

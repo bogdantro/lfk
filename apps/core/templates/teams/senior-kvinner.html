@@ -1,0 +1,188 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/base.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+
+
+
+<!-- <div id="startOverlay"></div> -->
+<section class="cover" id="coverMain">
+ <img src="{% static 'images/other/senior-kvinner.jpeg' %}" alt="">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="text">
+      <h1>Senior kvinner</h1>
+    </div>
+  </div>
+</section>
+
+
+<section class="blog reveal" id="blogNew">
+  <div class="content">
+        <div class="right">
+   
+      <div class="text">
+        <h2>A-laget 2026</h2>
+        <p>
+          Lillehammer FK sitt senior kvinnelag spiller i 4. divisjon og er en viktig del av klubbens sportslige tilbud. Laget består av engasjerte spillere med ulik bakgrunn og erfaring, og har fokus på både utvikling, samhold og spilleglede.
+          <br>
+          <br>
+Senior kvinner er et tilbud for spillere som ønsker å kombinere ambisjoner med et godt og inkluderende treningsmiljø. Laget jobber målrettet gjennom sesongen med faste treninger, kamper og et støtteapparat som legger til rette for utvikling både individuelt og som lag.
+        </p>
+        <!-- <button>Les mer <i class="fa-solid fa-arrow-right"></i></button> -->
+      </div>
+    </div>
+    <div class="left">
+        <img src="{% static 'images/covers/kvinner.jpeg' %}" alt="">
+        <div class="imgoverlay"></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="blog reveal" id="laStampaShop">
+  <div class="content">
+     <div class="left">
+        <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
+        <!-- <div class="imgoverlay"></div> -->
+
+    </div>
+    <div class="right">
+        <div class="text">
+        <h2>navn på spiller</h2>
+        <p>
+            Posisjon:
+            <br>
+            Alder?
+            <br>
+            Biografi?
+        </p>
+      </div>
+    </div>
+   
+  </div>
+</section>
+<section class="blog reveal" id="laStampaShop">
+  <div class="content">
+     <div class="left">
+        <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
+        <!-- <div class="imgoverlay"></div> -->
+
+    </div>
+    <div class="right">
+        <div class="text">
+        <h2>navn på spiller</h2>
+        <p>
+            Posisjon:
+            <br>
+            Alder?
+            <br>
+            Biografi?
+        </p>
+      </div>
+    </div>
+   
+  </div>
+</section>
+<section class="blog reveal" id="laStampaShop">
+  <div class="content">
+     <div class="left">
+        <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
+        <!-- <div class="imgoverlay"></div> -->
+
+    </div>
+    <div class="right">
+        <div class="text">
+        <h2>navn på spiller</h2>
+        <p>
+            Posisjon:
+            <br>
+            Alder?
+            <br>
+            Biografi?
+        </p>
+      </div>
+    </div>
+   
+  </div>
+</section>
+<section class="blog reveal" id="laStampaShop">
+  <div class="content">
+     <div class="left">
+        <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
+        <!-- <div class="imgoverlay"></div> -->
+
+    </div>
+    <div class="right">
+        <div class="text">
+        <h2>navn på spiller</h2>
+        <p>
+            Posisjon:
+            <br>
+            Alder?
+            <br>
+            Biografi?
+        </p>
+      </div>
+    </div>
+   
+  </div>
+</section>
+<section class="blog reveal" id="laStampaShop">
+  <div class="content">
+     <div class="left">
+        <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
+        <!-- <div class="imgoverlay"></div> -->
+
+    </div>
+    <div class="right">
+        <div class="text">
+        <h2>navn på spiller</h2>
+        <p>
+            Posisjon:
+            <br>
+            Alder?
+            <br>
+            Biografi?
+        </p>
+      </div>
+    </div>
+   
+  </div>
+</section>
+
+
+
+<section class="bottom">
+  <div class="content">
+    <div class="left">
+      <img src="{% static 'images/covers/kamper-kvinner.jpeg' %}" alt="">
+      <div class="text">
+        <h2>Kamper</h2>
+        <p>Se kommende kamper</p>
+      </div>
+    </div>
+    <div class="right">
+      <img src="{% static 'images/covers/medlem-kvinner.jpeg' %}" alt="">
+      <div class="text">
+        <h2>Bli medlem</h2>
+        <p>Se hvordan du kan bli en del av historien</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<script>
+  var copy = document.querySelector(".logos-slide").cloneNode(true);
+  document.querySelector(".logos").appendChild(copy);
+</script>
+
+{% endblock %}
+ 

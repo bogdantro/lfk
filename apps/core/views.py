@@ -21,6 +21,15 @@ def home(request):
     return render(request, 'core/home.html')
     
 
+def senior(request):
+    return render(request, 'teams/senior.html')
+
+def senior_herrer(request):
+    return render(request, 'teams/senior-herrer.html')
+
+def senior_kvinner(request):
+    return render(request, 'teams/senior-kvinner.html')
+
 def bli_med(request):
     return render(request, 'medlem/velg.html')
 

@@ -1,0 +1,108 @@
+@media only screen and (min-device-width: 1140px) {
+  #startOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(246, 246, 246);
+    width: 100%;
+    height: 100vh;
+    z-index: 100000000;
+    opacity: 1;
+    pointer-events: none;
+    transition: 1.2s;
+    overflow: hidden;
+  }
+  #startOverlay.active {
+    top: -1000px;
+    opacity: 1;
+  }
+  .cover {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+  }
+  .cover .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(182, 162, 101, 0.3882352941), rgba(20, 32, 72, 0.4588235294));
+    z-index: 1100;
+    pointer-events: none;
+  }
+  .cover .content {
+    position: relative;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .cover .left,
+  .cover .right {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .cover .left .text,
+  .cover .right .text {
+    position: relative;
+    text-align: center;
+    z-index: 10000000 !important;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .cover .left .text h1,
+  .cover .right .text h1 {
+    text-transform: uppercase;
+    max-width: 100%;
+    font-weight: 600;
+    color: white;
+    font-size: 9vw;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .cover .left img,
+  .cover .right img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: opacity 0.55s ease, transform 1.1s ease, filter 1.1s ease;
+    transform: scale(1.02);
+    filter: brightness(88%);
+    will-change: opacity, transform, filter;
+  }
+  .cover .left img.no-hover,
+  .cover .right img.no-hover {
+    opacity: 1;
+    z-index: 2;
+  }
+  .cover .left img.hover,
+  .cover .right img.hover {
+    opacity: 0;
+    z-index: 3;
+  }
+  .cover .left {
+    border-right: 1px solid white;
+  }
+  .cover .right {
+    border-left: 1px solid white;
+  }
+  .cover .left:hover img.no-hover,
+  .cover .right:hover img.no-hover {
+    opacity: 0;
+    transform: scale(1);
+  }
+  .cover .left:hover img.hover,
+  .cover .right:hover img.hover {
+    opacity: 1;
+    transform: scale(1.06);
+    filter: brightness(92%);
+  }
+}/*# sourceMappingURL=senior.css.map */

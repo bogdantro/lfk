@@ -6,68 +6,158 @@
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
 <script src="{% static '/js/home.js' %}"></script>
 
-<!-- Cover -->
-<div class="cover">
-  <img src="{%  static 'images/covers/cover-2.jpg' %}" alt="" class="cover-image">
-  <!-- Content -->
+
+
+<!-- <div id="startOverlay"></div> -->
+<section class="cover" id="coverMain">
+  <img id="heroImage" src=    "{% static 'images/covers/hero4.jpeg' %}" alt="">
+  <div class="overlay"></div>
   <div class="content">
     <div class="text">
-      <h1>Lillehammer FK</h1>
-      <p><span style="margin-right: 10px;"></span> Etablert 1911 <span style="margin-left: 10px;"></span></p>
-      <img src="{% static 'images/logo/logo-8.png' %}" alt="" class="cover-image-2">
+      <h1>lillehammer fk 1911</h1>
     </div>
   </div>
-</div>
+</section>
+
+<!-- <script>
+  const images = [
+    "{% static 'images/covers/cover1.jpg' %}",
+    "{% static 'images/covers/cover2.jpg' %}",
+    "{% static 'images/covers/cover3.jpeg' %}",
+    "{% static 'images/covers/cover4.jpg' %}",
+    "{% static 'images/covers/cover5.jpg' %}",
+    "{% static 'images/covers/cover6.jpg' %}",
+  ];
+
+  const img = document.getElementById("heroImage");
+  img.src = images[Math.floor(Math.random() * images.length)];
+</script> -->
 
 
-
-<div class="blog">
-  <div class="content">
-    <div class="text">
-      <h1>Nyheter</h1>
-    </div>
-    <div class="posts">
-      <div class="post">
-        <img src="{%  static 'images/covers/cover-2.jpg' %}" alt="">
-        <div class="text">
-          <p>3. oktober 2023</p>
-          <h1>FotballXtraCamp erstattes av treningssamling for G12 i høstferien</h1>
-        </div>
-      </div>
-      <div class="post">
-        <img src="{%  static 'images/covers/cover-2.jpg' %}" alt="">
-        <div class="text">
-          <p>3. oktober 2023</p>
-          <h1>Full klaff i første forsøk!</h1>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="about-us">
-  <div class="content">
-    <div class="text">
-      <h1>Om Lillehammer FK</h1>
-    </div>
-  </div>
-</div>
-
-<div class="events">
-  <div class="content">
-    <div class="text">
-      <h1>Arrangementer</h1>
-    </div>
-  </div>
-</div>
-
-<div class="logos">
+<!-- <div class="logos">
   <div class="logos-slide">
     <img src="{% static 'images/other/sponsor-1.png' %}" />
     <img src="{% static 'images/other/sponsor-3.png' %}" />
     <img style="width: 120px;" src="{% static 'images/other/sponsor-4.png' %}" />
+    <img src="{% static 'images/other/101.jpg' %}" />
+    <img src="{% static 'images/other/102.jpg' %}" />
+    <img src="{% static 'images/other/103.jpg' %}" />
+    <img src="{% static 'images/other/104.jpg' %}" />
+    <img src="{% static 'images/other/105.jpg' %}" />
+    <img src="{% static 'images/other/106.jpg' %}" />
+    <img src="{% static 'images/other/107.webp' %}" />
+    <img src="{% static 'images/other/108.webp' %}" />
+    <img style="width: 120px;" src="{% static 'images/other/sponsor-4.png' %}" />
+    <img src="{% static 'images/other/109.webp' %}" />
+    <img src="{% static 'images/other/110.jpg' %}" />
+
   </div>
-</div>
+</div>  -->
+
+
+<section class="blog reveal" id="blogNew">
+  <div class="content">
+        <div class="right">
+   
+      <div class="text">
+        <p class="headinp" >Vi er Lillehammer Fotball Klubb</p>
+        <h2>#sterkere sammen</h2>
+        <p>Lillehammer Fotballklubb (LFK) har sitt utspring i klubbene Fremad og Mesna. Fremad er stiftet 23.08.1911 og Sportsklubben Mesna er stiftet 21.08.1921. Begge klubber avholdt Årsmøter 30.11.1968 hvor sammenslåingen til Lillehammer Fotballklubb ble vedtatt. 20.12.1968 ble det avholdt konstituerende Årsmøte hvor Lillehammer Fotballklubb formelt ble en realitet. Man valgte å benytte Fremad sin stiftelsesdato, da denne klubben var eldst. Formålet til LFK var ved samarbeid og kameratskap å fremme idrett og friluftsliv i sunne former.</p>
+        <!-- <button>Les mer <i class="fa-solid fa-arrow-right"></i></button> -->
+      </div>
+    </div>
+    <div class="left">
+        <img src="{% static 'images/covers/about.avif' %}" alt="">
+        <div class="imgoverlay"></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="blog reveal" id="laStampaShop">
+  <div class="content">
+     <div class="left">
+        <img src="{% static 'images/covers/blog.avif' %}" alt="">
+        <div class="imgoverlay"></div>
+
+    </div>
+    <div class="right">
+        <div class="text">
+        <p class="headinp normal" >Siste nytt</p>
+        <h2>Tusen takk til alle frivillige</h2>
+        <p>Årets Thallaug Cup Lillehammer er vel i havn, og vi takker alle som bidro i gjennomføringen.
+
+Thallaug Cup Lillehammer er vårt største arrangement, og turneringen gir et betydelig bidrag til klubbens omsetning og resultat. Turneringen bidrar dermed til at treningsavgifter kan holdes på et konkurransedyktig nivå. De siste årene har vi redusert antallet dugnader i klubben. Det skyldes at vi har større tro på få og store tiltak, fremfor mange repeterende mindre aktiviteter...</p>
+        <button>Les mer <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+   
+  </div>
+</section>
+
+
+
+<section class="bottom">
+  <div class="content">
+    <div class="left">
+      <img src="{% static 'images/covers/sponsor.jpeg' %}" alt="">
+      <div class="text">
+        <h2>Våre partnere</h2>
+        <p>Se liste</p>
+      </div>
+    </div>
+    <div class="right">
+      <img src="{% static 'images/covers/bottom.jpeg' %}" alt="">
+      <div class="text">
+        <h2>Bli medlem</h2>
+        <p>Se hvordan du kan bli en del av historien</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="blog reveal" id="test">
+  <div class="content">
+        <div class="right">
+   
+      <div class="text">
+        <!-- <p class="headinp" >For våre supportere</p> -->
+        <h2>La stampa shop</h2>
+        <p>I La Stampa Shop finner du offisielle supporterartikler og klubbkolleksjon fra Lillehammer Fotballklubb. Her kan du kle deg i LFK-fargene – enten du står på tribunen, er på trening eller vil vise klubbtilhørighet i hverdagen.
+          <br>
+          <br>
+          Utvalget består av kvalitetsprodukter med klubbens logo og uttrykk, og passer for spillere, supportere, foreldre og venner av klubben. Når du handler i La Stampa Shop, støtter du samtidig Lillehammer Fotballklubb og bidrar til videre utvikling av tilbudet for barn, unge og seniorer.
+        </p>
+        <button>Besøk nettbutikken <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </div>
+    <div class="left">
+        <img src="{% static 'images/covers/shop.jpeg' %}" alt="">
+        <div class="imgoverlay"></div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="images">
+  <div class="content">
+    <div class="image" onclick="window.location.href='/lag/senior/herrer/'">
+      <a >senior herrer</a>
+      <img src="{% static 'images/other/senior-herrer.jpeg' %}" alt="">
+    </div>
+    <div class="image"  onclick="window.location.href='/lag/senior/kvinner/'">
+      <a >senior kvinner</a>
+        <img src="{% static 'images/other/senior-kvinner.jpeg' %}" alt="">
+    </div>
+  </div>
+</section>
+
+
+
+
 
 
 <script>

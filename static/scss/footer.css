@@ -1,229 +1,78 @@
-#footerMob {
-  margin-top: 0;
-  width: 100%;
-  height: 100%;
-  padding-top: 25px;
-  padding-bottom: 18px;
-  position: relative;
-  background: #00061A;
-  padding-inline: 20px;
-}
-#footerMob .contact-info .info-heading {
-  color: white;
-  font-size: 19px;
-  margin-bottom: 3px;
-  font-weight: 500;
-}
-#footerMob .contact-info a {
-  display: block;
-  color: white;
-  font-size: 17px;
-  width: -moz-max-content;
-  width: max-content;
-  padding-right: 5px;
-  margin-block: 8px;
-}
-#footerMob .contact-info a:first-child {
-  margin-top: 0;
-}
-#footerMob .links .shield {
-  position: absolute;
-  right: 30px;
-  width: 95px;
-  height: auto;
-}
-#footerMob .links p {
-  margin-bottom: 0;
-  color: white;
-}
-#footerMob .links .business-heading {
-  color: white;
-  font-size: 19px;
-  margin-bottom: 3px;
-  font-weight: 500;
-}
-#footerMob .links .info-heading {
-  color: white;
-  font-size: 19px;
-  margin-bottom: 3px;
-  font-weight: 500;
-}
-#footerMob .links button {
-  background: #191D3A;
-  border: 1px solid transparent;
-  width: auto;
-  height: auto;
-  padding: 7px 26px;
-  margin-top: 14px;
-  outline: none;
-  border-radius: 3px;
-  color: white;
-  font-size: 15px;
-}
-#footerMob .links a {
-  display: block;
-  color: white;
-  font-size: 17px;
-  width: -moz-max-content;
-  width: max-content;
-  padding-right: 5px;
-  margin-block: 8px;
-}
-#footerMob .links a:first-child {
-  margin-top: 0;
-}
-#footerMob .bottom {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  opacity: 0.85;
-}
-#footerMob .bottom .copyright {
-  color: white;
-  font-size: 13px;
-}
-#footerMob .bottom .social-icons i {
-  color: white;
-  font-size: 20px;
-  margin-inline: 2px;
-  padding: 8px;
-  transition: 0.2s;
-}
-#footerMob .bottom .social-icons i:hover {
-  color: #191D3A;
-}
-
 @media only screen and (min-device-width: 1140px) {
-  #footerMob {
-    padding-inline: 35px;
-  }
-  #footerMob .hours {
-    background: rgb(242, 242, 242);
-    width: 380px;
-    padding: 13px 8px;
+  .footer {
+    width: 100%;
     height: -moz-max-content;
     height: max-content;
+    padding: 70px 50px;
+    padding-bottom: 50px;
+    background: #12152c;
   }
-  #footerMob .hours .info-heading {
-    color: #1F1F1F;
+  .footer .rights {
+    text-align: right;
+    margin-top: 25px;
+  }
+  .footer .rights p {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  .footer .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin-top: 45px;
+    position: relative;
+  }
+  .footer .bottom .social-icons {
+    width: 250px;
+    position: absolute;
+    right: -120%;
+    top: 50%;
+    transform: translateY(-45%);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .footer .bottom .social-icons i {
+    flex: 0 0 50%;
+    color: white;
+    width: 50%;
+    font-size: 28px;
+    max-width: 100px;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 6px;
+    margin: 10px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .footer .bottom .social-icons i:hover {
+    transform: scale(1.05);
+  }
+  .footer .bottom .links strong {
+    color: rgb(247, 247, 247);
+    font-family: "Stampa", "Roboto", sans-serif;
     font-size: 19px;
-    margin-bottom: 3px;
+    margin-bottom: 15px;
     font-weight: 500;
   }
-  #footerMob .hours a {
-    display: block;
-    color: #1F1F1F;
-    font-size: 17px;
-    width: -moz-max-content;
-    width: max-content;
-    padding-right: 5px;
-    margin-block: 8px;
-  }
-  #footerMob .hours a:first-child {
-    margin-top: 0;
-  }
-  #footerMob .flex {
-    display: flex;
-  }
-  #footerMob .flex hr {
-    display: none !important;
-  }
-  #footerMob .flex .links {
-    transform: translateX(80px);
-  }
-  #footerMob .flex .contact-info {
-    transform: translateX(40px);
-  }
-  #footerMob .bottom {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    opacity: 0.85;
-  }
-  #footerMob .bottom .copyright {
-    color: #1F1F1F;
-    font-size: 14px;
-  }
-  #footerMob .bottom .social-icons i {
-    color: #1F1F1F;
-    font-size: 24px;
-    margin-inline: 2px;
-    padding: 8px;
-    transition: 0.2s;
-    cursor: pointer;
-  }
-  #footerMob .bottom .social-icons i:hover {
-    color: #191D3A;
-  }
-}
-@media only screen and (min-device-width: 1290px) {
-  #footerMob {
-    padding-inline: 35px;
-    padding-top: 30px;
-  }
-  #footerMob .content {
-    max-width: 1290px;
-    margin-inline: auto;
-  }
-  #footerMob .hours {
-    background: rgb(242, 242, 242);
-    width: 380px;
-    padding: 13px 8px;
-    height: -moz-max-content;
-    height: max-content;
-  }
-  #footerMob .hours .info-heading {
-    color: #1F1F1F;
-    font-size: 19px;
-    margin-bottom: 3px;
+  .footer .bottom .links a {
+    color: rgb(247, 247, 247);
+    font-size: 16px;
     font-weight: 500;
-  }
-  #footerMob .hours a {
-    display: block;
-    color: #1F1F1F;
-    font-size: 17px;
-    width: -moz-max-content;
-    width: max-content;
-    padding-right: 5px;
-    margin-block: 8px;
-  }
-  #footerMob .hours a:first-child {
-    margin-top: 0;
-  }
-  #footerMob .flex {
-    display: flex;
-  }
-  #footerMob .flex hr {
-    display: none !important;
-  }
-  #footerMob .flex .links {
-    transform: translateX(80px);
-  }
-  #footerMob .flex .contact-info {
-    transform: translateX(40px);
-  }
-  #footerMob .bottom {
-    display: flex;
+    margin: 2px;
+    margin-block: 6px;
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    opacity: 0.85;
+    display: block;
+    font-family: "Stampa", "Roboto", sans-serif;
+    opacity: 0.8;
   }
-  #footerMob .bottom .copyright {
-    color: #1F1F1F;
-    font-size: 14px;
-  }
-  #footerMob .bottom .social-icons i {
-    color: #1F1F1F;
-    font-size: 24px;
-    margin-inline: 2px;
-    padding: 8px;
-    transition: 0.2s;
-    cursor: pointer;
-  }
-  #footerMob .bottom .social-icons i:hover {
-    color: #191D3A;
+  .footer .bottom .links a.sub-item {
+    margin-left: 10px;
   }
 }/*# sourceMappingURL=footer.css.map */

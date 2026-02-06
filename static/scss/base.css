@@ -1,196 +1,311 @@
-.cover {
-  width: 100%;
-  min-height: -moz-max-content;
-  min-height: max-content;
-  margin-bottom: 20px;
-  position: relative;
-  padding-bottom: 5px;
-  height: 485px;
-}
-.cover .cover-image {
-  width: 100%;
-  height: 485px;
-  filter: brightness(65%);
-  position: absolute;
-  left: 0;
-  top: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.cover .content {
-  padding-inline: 20px;
-  padding-top: 56px;
-  padding-bottom: 40px;
-  height: -moz-max-content;
-  height: max-content;
-  position: relative;
-  padding-top: 110px;
-}
-.cover .content .text {
-  text-align: center;
-}
-.cover .content .text h1 {
-  color: white;
-  font-size: 32px;
-  font-weight: 600;
-}
-.cover .content .text p {
-  font-weight: 500;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-.cover .content .text p span {
-  width: 45px;
-  height: 2px;
-  background: white;
-  border-radius: 10px;
-}
-.cover .content .text .cover-image-2 {
-  width: 125px;
-  height: auto;
-  background: rgba(255, 255, 255, 0.041);
-  border-radius: 25px;
-  transform: translateY(40px);
-}
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
+@media only screen and (min-device-width: 1140px) {
+  #startOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(246, 246, 246);
+    width: 100%;
+    height: 100vh;
+    z-index: 100000000;
+    opacity: 1;
+    pointer-events: none;
+    transition: 1.2s;
+    overflow: hidden;
   }
-  to {
-    transform: translateX(-100%);
+  #startOverlay.active {
+    top: -1000px;
+    opacity: 1;
   }
-}
-.logos {
-  margin-top: 40px;
-  overflow: hidden;
-  padding: 15px 0;
-  white-space: nowrap;
-  position: relative;
-  background: white;
-  padding-bottom: 30px;
-}
-.logos .logos:before,
-.logos .logos:after {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-}
-.logos .logos:hover .logos-slide {
-  animation-play-state: paused;
-}
-.logos .logos-slide {
-  display: inline-block;
-  animation: 30s slide infinite linear;
-}
-.logos .logos-slide img {
-  width: 160px;
-  height: auto;
-  margin: 0 25px;
-}
-
-.blog {
-  width: 100%;
-  height: auto;
-  position: relative;
-  padding-top: 40px;
-}
-.blog .content {
-  position: relative;
-  padding-inline: 20px;
-}
-.blog .content .text h1 {
-  color: white;
-  font-size: 27px;
-  font-weight: 500;
-}
-.blog .content .posts {
-  height: auto;
-  position: relative;
-  margin-top: 25px;
-  width: 100%;
-  display: flex;
-  overflow-x: scroll;
-  padding-bottom: 25px;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.blog .content .posts::-webkit-scrollbar {
-  display: none;
-}
-.blog .content .posts .post {
-  background: #323861;
-  min-width: 80%;
-  margin-inline: 15px;
-  height: 380px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  transition: 0.2s;
-}
-.blog .content .posts .post:first-child {
-  margin-left: 0;
-}
-.blog .content .posts .post:hover {
-  transform: scale(1.05);
-}
-.blog .content .posts .post img {
-  border-radius: 4px;
-  height: 220px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.blog .content .posts .post .text {
-  padding-inline: 25px;
-  text-align: left;
-  margin-top: 15px;
-}
-.blog .content .posts .post .text p {
-  font-size: 14px;
-  color: white;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-.blog .content .posts .post .text h1 {
-  color: white;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.about-us {
-  width: 100%;
-  height: auto;
-  position: relative;
-  padding-top: 40px;
-}
-.about-us .content {
-  position: relative;
-  padding-inline: 20px;
-}
-.about-us .content .text h1 {
-  color: white;
-  font-size: 27px;
-  font-weight: 500;
-}
-
-.events {
-  width: 100%;
-  height: auto;
-  position: relative;
-  padding-top: 40px;
-}
-.events .content {
-  position: relative;
-  padding-inline: 20px;
-}
-.events .content .text h1 {
-  color: white;
-  font-size: 27px;
-  font-weight: 500;
+  .cover {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+  }
+  .cover.active img {
+    transform: scale(1);
+  }
+  .cover img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: 10;
+    transition: 1.4s;
+    transform: scale(1.1);
+    filter: brightness(88%);
+  }
+  .cover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(182, 162, 101, 0.3882352941), rgba(20, 32, 72, 0.7725490196));
+    z-index: 11;
+  }
+  .cover .content {
+    position: relative;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+  .cover .content .text {
+    position: relative;
+    text-align: center;
+  }
+  .cover .content .text h1 {
+    text-transform: uppercase;
+    max-width: 100%;
+    font-weight: 600;
+    color: white;
+    font-size: 9vw;
+    transform: translateY(-10px);
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  .logos {
+    margin-top: 0;
+    overflow: hidden;
+    padding: 15px 0;
+    white-space: nowrap;
+    position: relative;
+    padding-bottom: 30px;
+    margin-inline: auto;
+    width: 100%;
+    background: transparent;
+    mix-blend-mode: multiply !important;
+  }
+  .logos .logos:before,
+  .logos .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  .logos .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+  .logos .logos-slide {
+    display: inline-block;
+    animation: 30s slide infinite linear;
+    mix-blend-mode: multiply !important;
+  }
+  .logos .logos-slide img {
+    width: 160px;
+    height: auto;
+    margin: 0 25px;
+    mix-blend-mode: multiply !important;
+  }
+  .blog {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 0;
+  }
+  .blog.active .content .left img {
+    transform: scale(1);
+  }
+  .blog.active .content .left .imgoverlay {
+    top: -100%;
+    opacity: 1;
+  }
+  .blog .content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-inline: 0;
+  }
+  .blog .content .left {
+    width: 50%;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+  }
+  .blog .content .left img {
+    width: 100%;
+    height: 100%;
+    max-height: 820px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.7s;
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  .blog .content .left .imgoverlay {
+    width: 100%;
+    min-height: 100%;
+    opacity: 1;
+    pointer-events: none;
+    transition: 0.5s;
+    background: #1b2c65;
+    z-index: 11;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .blog .content .right {
+    width: 50%;
+    position: relative;
+    height: auto;
+  }
+  .blog .content .right .text {
+    text-align: left;
+    padding-top: 80px;
+    padding-inline: 50px;
+  }
+  .blog .content .right .text h2 {
+    color: #1b2c65;
+    font-size: 75px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 75px;
+    cursor: pointer;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .blog .content .right .text p {
+    color: #1b2c65;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .blog .content .right .text .headinp {
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: "LingkawiSouth", "Roboto", sans-serif;
+    margin-bottom: 25px;
+  }
+  .blog .content .right .text .headinp.normal {
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .blog .content .right .text button {
+    margin-top: 45px;
+    background: none;
+    color: #1b2c65;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    width: auto;
+    cursor: pointer;
+  }
+  .blog .content .right .text button i {
+    color: #1b2c65;
+    transform: translateX(15px) translateY(1px);
+  }
+  .bottom {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  .bottom .content {
+    display: flex;
+  }
+  .bottom .content .left, .bottom .content .right {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .bottom .content .left:hover img, .bottom .content .right:hover img {
+    transform: scale(1.03);
+  }
+  .bottom .content .left img, .bottom .content .right img {
+    width: 50%;
+    height: 460px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.4s;
+    border-radius: 2px;
+  }
+  .bottom .content .left .text, .bottom .content .right .text {
+    width: 50%;
+    padding-block: 35px;
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .bottom .content .left .text h2, .bottom .content .right .text h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #1b2c65;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .bottom .content .left .text p, .bottom .content .right .text p {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #1b2c65;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .images {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .images .content {
+    display: flex;
+    flex-direction: row;
+  }
+  .images .content .image {
+    position: relative;
+    width: 50%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .images .content .image:hover img {
+    transform: scale(1.06);
+  }
+  .images .content .image:hover a {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1b2c65;
+  }
+  .images .content .image a {
+    position: absolute;
+    font-family: "Stampa", "Roboto", sans-serif;
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 100;
+    padding: 16px 22px;
+    border-radius: 4px;
+    transition: 1s;
+  }
+  .images .content .image img {
+    transition: 1.5s;
+    width: 100%;
+    height: 620px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: relative;
+    filter: brightness(92%);
+  }
 }/*# sourceMappingURL=base.css.map */

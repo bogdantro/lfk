@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #desNav {
   display: none;
 }
@@ -127,4 +128,171 @@
   height: 40px;
   border-radius: 4px;
   transition: 0.2s;
+}
+
+@media only screen and (min-device-width: 1140px) {
+  #mobileNav {
+    display: none;
+  }
+  #desNavTop {
+    height: 43px;
+    width: 100%;
+    background: #B6A265;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    z-index: 1000000;
+  }
+  #desNavTop .content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 43px;
+    width: 100%;
+    justify-content: flex-end;
+    padding-inline: 50px;
+  }
+  #desNavTop .content a {
+    color: white;
+    font-size: 16px;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  #desNav {
+    display: flex;
+    width: 100%;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 43px;
+    z-index: 1000000;
+    transition: 0.4s;
+  }
+  #desNav.sticky {
+    background: rgba(247, 247, 247, 0.97);
+  }
+  #desNav.sticky .content .menu a {
+    color: #183b56;
+  }
+  #desNav.sticky .content .menu a:hover {
+    border-color: #183b56;
+  }
+  #desNav .content {
+    width: 100%;
+    display: flex;
+    width: 100%;
+    max-width: auto;
+    height: 75px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 43px;
+    left: 50%;
+    padding-inline: 50px;
+    transform: translateX(-50%);
+    background: white;
+  }
+  #desNav .logo {
+    color: white;
+  }
+  #desNav .logo img {
+    cursor: pointer;
+    width: 48px;
+    height: auto;
+    transition: 0.2s;
+  }
+  #desNav .logo img:hover {
+    transform: scale(1.05);
+  }
+  #desNav .menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  #desNav .menu .nav-item {
+    position: relative;
+    padding-bottom: 12px;
+    margin-top: 12px;
+    /* dropdown */
+    /* ✅ ACTIVE STATE (hover OR keyboard focus) */
+  }
+  #desNav .menu .nav-item > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    color: #1F1F1F;
+    font-size: 17px;
+    text-decoration: none;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  #desNav .menu .nav-item > a i {
+    font-size: 14px;
+    transition: transform 0.25s ease;
+  }
+  #desNav .menu .nav-item .dropdowns-item {
+    position: relative;
+  }
+  #desNav .menu .nav-item .dropdowns-item.has-sub > a i {
+    transition: transform 0.25s ease;
+  }
+  #desNav .menu .nav-item .dropdowns-item .sub-dropdown {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 180px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    opacity: 0;
+    transform: translateX(8px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+  }
+  #desNav .menu .nav-item .dropdowns-item:hover .sub-dropdown {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  #desNav .menu .nav-item .dropdowns-item:hover > a i {
+    transform: rotate(90deg);
+  }
+  #desNav .menu .nav-item .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 999;
+  }
+  #desNav .menu .nav-item .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 15px;
+    color: #1F1F1F;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  #desNav .menu .nav-item .dropdown a:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  #desNav .menu .nav-item:hover > a i, #desNav .menu .nav-item:focus-within > a i {
+    transform: rotate(180deg);
+  }
+  #desNav .menu .nav-item:hover .dropdown, #desNav .menu .nav-item:focus-within .dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }/*# sourceMappingURL=nav.css.map */

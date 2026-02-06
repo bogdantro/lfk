@@ -28,20 +28,110 @@
     </div>
     <div class="sidebar" id="sidebar">
         <a>Nyheter</a>
-        <a>Lag</a>
-        <a>FotballXtra</a>
         <a>Sport</a>
-        <a>Om Lillehammer FK</a>
+        <a>FotballXtra / VGS</a>
+        <a>Marked</a>
+        <a>Arrangement</a>
+        <a>Om klubben</a>
         <a>Live Camera</a>
         <a>Stolthet</a>
-        <a>Arrangement</a>
     </div>
     <div class="nav-action">
         <button onclick="window.location.href='/bli-med/'">Bli med!</button>
     </div>
 </div>
 
-<!-- Desktop nav -->
-<div id="desNav">
 
+<!-- Desktop nav -->
+ <div id="desNavTop">
+    <div class="content">
+        <a href="/lag/senior/herrer/">Herrer</a>
+        <a href="/lag/senior/kvinner/">kvinner</a>
+        <a href="">FotballXtra/VGS</a>
+        <a href="">nyheter</a>
+    </div>
+ </div>
+
+<div id="desNav">
+  <div class="content">
+    <div class="logo" onclick="window.location.href='/'">
+      <img src="{% static 'images/logo/logo-8.png' %}" alt="" class="logo-image">
+    </div>
+
+    <nav class="menu">
+        <div class="nav-item">
+        <a>Sport <i class="fa-regular fa-angle-down"></i></a>
+
+        <div class="dropdown">
+            <div class="dropdowns-item has-sub">
+            <a >
+                lag
+                <i class="fa-regular fa-angle-right"></i>
+            </a>
+
+            <div class="sub-dropdown">
+                <a href="/lag/senior/">Senior</a>
+                <a href="#">Ungdom</a>
+                <a href="#">barn</a>
+                <a href="#">wednesday united</a>
+                <a href="#">terminliste alle lag</a>
+            </div>
+            </div>
+            <a href="#">uefa playmakers</a>
+
+
+            <a href="#">Sportsplan</a>
+            <a href="#">Utviklingstrapp</a>
+            <a href="#">Landslagsskolen</a>
+            <a href="#">Fair Play</a>
+        </div>
+        </div>
+
+
+      <div class="nav-item">
+        <a href="/contact-us/">Marked <i class="fa-regular fa-angle-down"></i></a>
+        <div class="dropdown">
+          <a href="#">Våre samarbeidspartnere</a>
+          <a href="#">Bærekraft</a>
+          <a href="#">Medlemsfordeler</a>
+          <a href="#">Grasrotandelen</a>
+          <a href="#">La Stampa Magasinet</a>
+          <a href="#">La Stampa Shop</a>
+          <a href="#">Stampapodden</a>
+          <a href="#">Partnerbrosjyre</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="/blog/">Arrangement <i class="fa-regular fa-angle-down"></i></a>
+        <div class="dropdown">
+            <a href="#">Kamper</a>
+            <hr style="margin-block: 10px;">
+          <a href="#">Tine Fotballskole</a>
+          <a href="#">Thallaug Cup Lillehammer</a>
+          <a href="#">Kiwi Cup</a>
+         
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="/contact-us/">Om klubben <i class="fa-regular fa-angle-down"></i></a>
+        <div class="dropdown">
+          <a href="#">Historie</a>
+          <a href="#">Klubbhåndbok</a>
+          <a href="#">Klubbkolleksjon</a>
+          <a href="#">Medlemskap</a>
+          <a href="#">Styret</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Varsling</a>
+          <a href="#">Forsikring</a>
+          <a href="#">Dommere</a>
+          <a href="#">Politiattest</a>
+          <a href="#">Minibuss</a>
+          <a href="#">Fotballfondet</a>
+          <a href="#">Frivilighetsbanken</a>
+        </div>
+      </div>
+    </nav>
+  </div>
 </div>
