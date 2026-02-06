@@ -34,7 +34,7 @@ $txt: #1b2c65;
             transform: scale(1);
           }
         }
-        #heroImage{
+        .cover-img{
             position: absolute;
             top: 0;
             left: 0;
@@ -70,6 +70,7 @@ $txt: #1b2c65;
                 text-align: center;
                 display: flex;
                 flex-direction: column;
+                z-index: 100;
               .cover-partner{
                     width: 100%;
                     height: auto;
