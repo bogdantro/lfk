@@ -30,6 +30,25 @@ def senior_herrer(request):
 def senior_kvinner(request):
     return render(request, 'teams/senior-kvinner.html')
 
+def wednesday_united(request):
+    return render(request, 'teams/wednesday-united.html')
+
+def ungdom(request):
+    return render(request, 'teams/ungdom.html')
+
+def barn(request):
+    return render(request, 'teams/barn.html')
+
+def uefa_playmakers(request):
+    return render(request, 'pages/uefa-playmakers.html')
+
+def landslagsskolen(request):
+    return render(request, 'pages/landslagsskolen.html')
+
+def fair_play(request):
+    return render(request, 'pages/fair-play.html')
+
+
 def bli_med(request):
     return render(request, 'medlem/velg.html')
 

@@ -1,0 +1,72 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/base.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+
+
+
+<!-- <div id="startOverlay"></div> -->
+<section class="cover" id="coverMain">
+ <img src="{% static 'images/other/wednesday-united.jpeg' %}" alt="" class="cover-img" style="object-position: center 60px;">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="text">
+      <h1>Wednesday United</h1>
+    </div>
+  </div>
+</section>
+
+
+<section class="blog reveal" id="blogNew">
+  <div class="content">
+        <div class="right">
+   
+      <div class="text">
+        <h2>Stjerneserien</h2>
+        <p>Wednesday United er et lag for tilrettelagt fotball, som spiller i Stjerneserien. Laget trener hver onsdag på Sportsplassen. Wednesday United deltar i NFF Indre Østlands Stjerneserie hvor det spilles 5er og 7er-fotball.
+
+Er du interessert i, eller ønsker å være med i Wednesday United kan du ta kontakt med treneren Mikael Björlin. 
+<br><br>
+Du treffer han på telefon: 995 03 323, eller mail: mikael.bjorlin@idrettsforbundet.no</p>
+        <!-- <button>Les mer <i class="fa-solid fa-arrow-right"></i></button> -->
+      </div>
+    </div>
+    <div class="left">
+        <img src="https://g.acdn.no/obscura/API/dynamic/r1/ece5/tr_1200_1200_s_f/0000/gudb/2019/9/6/14/TO-STAMPESLETTA.jpg?chk=2EDE7E" alt="">
+        <div class="imgoverlay"></div>
+    </div>
+
+  </div>
+</section>
+
+<section class="blog reveal" id="blogNew">
+  <div class="content">
+    <div class="left">
+        <img src="https://lillehammerfk.no/wp-content/uploads/2022/08/Side-22-WU-bilde-1-scaled.jpg" alt="">
+        <div class="imgoverlay"></div>
+    </div>
+        <div class="right">
+   
+      <div class="text">
+        <h2>Wednesday Juniors?</h2>
+        <p>
+          Er du mellom 9-13 år, gutt eller jente, og ønsker å være med på et lag for tilrettelagt fotball? Vi ønsker å komme i kontakt med deg, da vi har mål om å opprette et eget barnelag innen tilrettelagt fotball.
+          <br>
+          <br>
+          Er du interessert i, eller ønsker å være med i Wednesday Juniors kan du ta kontakt med treneren Mikael Björlin: 995 03 323, eller mail: mikael.bjorlin@idrettsforbundet.no
+        </p>
+        <!-- <button>Les mer <i class="fa-solid fa-arrow-right"></i></button> -->
+      </div>
+    </div>
+    
+
+  </div>
+</section>
+
+
+
+{% endblock %}
+ 

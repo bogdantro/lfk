@@ -6,93 +6,67 @@ $txt: #1b2c65;
 
 
 @media only screen and (min-device-width: 1140px){
-    #startOverlay{
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: $white;
-        width: 100%;
-        height: 100vh;
-        z-index: 100000000;
-        opacity: 1;
-        pointer-events: none;
-        transition: 1.2s;
-        overflow: hidden;
-        &.active{
-            top: -1000px;
-            opacity: 1;
-        }
-    }
+
     .cover{
-        height: 100vh;
+        height: 100%;
         width: 100%;
         position: relative;
         background: transparent;
         overflow: hidden;
+        display: flex;
+        flex-direction: row;
         &.active{
           img{
             transform: scale(1);
           }
         }
-        .cover-img{
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-            z-index: 10;
-            transition: 1.4s;
-            transform: scale(1.1);
-            filter: brightness(88%);
+        .image{
+            height: auto;
+            width: 50%;
+            position: relative;
+            order: 2;
+            .cover-img{
+                position: fixed;
+                height: 100%;
+                width: 50%;
+                object-fit: cover;
+                z-index: 10;
+                transition: 1.4s;
+                transform: scale(1);
+                filter: brightness(88%);
+            }
         }
-        .overlay{
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(to bottom, #b6a26563, #142048c5);
-            z-index: 11;
-
-        }
+       
         .content{
             position: relative;
-            z-index: 15;
-            width: 100%;
+            width: 50%;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: end;
-     
+            order: 1;
+            padding-top: 150px;
+            padding-bottom: 60px;
+            padding-inline: 50px;
+            padding-right: 100px;
             .text {
                 position: relative;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                z-index: 100;
-              .cover-partner{
-                    width: 100%;
-                    height: auto;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    transform: translateY(60px);
-                    img{
-                      width: 280px;
-                      height: auto;
-                      object-fit: cover;
-                    }
-                  }
+                text-align: left;
+                width: 100%;
+                height: 100%;
                 h1 {
-                    text-transform: uppercase;
-                    max-width: 100%;
-                    font-weight: 600;
-                    color: white ;
-                    font-size: clamp(5vw, 9vw, 13vw);                     
-                    transform: translateY(-10px);
-                      font-family: 'Stampa', "Roboto", sans-serif;
+                    font-size: 75px;
+                    color: $txt;
+                    font-family: 'Stampa', "Roboto", sans-serif;
+                    margin-bottom: 15px;
                       
+                }
+                p{
+                    font-size: 20px;
+                    color: $black;
+                    .subheading{
+                        color: $txt;
+                        font-weight: 600;
+                        font-family: 'Stampa', "Roboto", sans-serif;
+
+                    }
                 }
             }
             
