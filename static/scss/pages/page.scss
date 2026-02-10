@@ -12,7 +12,7 @@ $txt: #1b2c65;
         width: 100%;
         position: relative;
         background: transparent;
-        overflow: hidden;
+        overflow: visible;
         display: flex;
         flex-direction: row;
         &.active{
@@ -27,13 +27,23 @@ $txt: #1b2c65;
             order: 2;
             .cover-img{
                 position: fixed;
-                height: 100%;
+                height: 100vh;
+                top: 0;
+                left: 50%;
+                bottom: unset;
                 width: 50%;
                 object-fit: cover;
                 z-index: 10;
-                transition: 1.4s;
                 transform: scale(1);
                 filter: brightness(88%);
+                &.relative{
+                     position: absolute;
+  left: 0;          // absolute is inside .image, so reset left
+  top: auto;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+                }
             }
         }
        
@@ -342,6 +352,62 @@ $txt: #1b2c65;
               position: relative;
               filter: brightness(92%);
             }
+          }
+        }
+      }
+
+
+      .blog-posts{
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-inline: 50px;
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        padding-bottom: 30px;
+        .post{
+          min-width: calc(33% - 20px);
+          max-width: calc(33% - 20px);
+          position: relative;
+          img{
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+          .blog-text{
+            margin-top: 15px;
+            h2{
+              color: $txt;
+              font-size: 32px;
+            }
+            p{
+              font-size: 16px;
+              color: $txt;
+              display: -webkit-box;
+              -webkit-line-clamp: 3;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+             button{
+                      margin-top: 15px;
+                      background: none;
+                      color: $txt;
+                      border-radius: 4px;
+                      outline: none;
+                      border: none;
+                      font-weight: 500;
+                      font-size: 18px;
+                      width: auto;
+                      cursor: pointer;
+
+                      i{
+                        color: $txt;
+                        transform: translateX(15px) translateY(1px);
+                       
+                      }
+                    }
           }
         }
       }

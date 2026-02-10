@@ -1,0 +1,136 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static '/scss/userprofile/myaccount.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/blog/blog_form.css' %}" type="text/css">
+
+
+{{ form.media }}
+
+
+<section class="cover" id="accountCover">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="text">
+            <h1>Ny bloggpost</h1>
+            <p>Lag en nyhet som ser bra ut på nettsiden.</p>
+        </div>
+    </div>
+</section>
+
+<section class="acnt-info" id="blogCreate">
+    <div class="topbar">
+        <h2>Editor</h2>
+
+        <div class="actions">
+            <a href="{% url 'myaccount' %}" class="ghost">Tilbake</a>
+
+            <button form="blogForm" type="submit" class="primary">
+                Publiser
+            </button>
+        </div>
+    </div>
+
+    <div class="editor-wrap">
+
+        <!-- LEFT -->
+        <div class="editor-left">
+            <form method="post" enctype="multipart/form-data" id="blogForm" class="dash-form">
+                {% csrf_token %}
+
+                <div class="field">
+                    <p>Tittel</p>
+                    {{ form.title }}
+                </div>
+
+                <div class="field big">
+                    <p>Tekst</p>
+                    <div class="editor-box">
+                        {{ form.text }}
+                    </div>
+                </div>
+
+                <div class="field">
+                    <p>Bilde</p>
+                    <div class="file">
+                        {{ form.image }}
+                        <small>Tips: Bruk et stort bilde (bredt) for best resultat.</small>
+                    </div>
+                </div>
+
+                <div class="mobile-actions">
+                    <button type="submit" class="primary">Publiser</button>
+                    <a href="{% url 'myaccount' %}" class="ghost">Tilbake</a>
+                </div>
+            </form>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="editor-right">
+            <div class="preview-card">
+                <p class="tag">Preview</p>
+
+                <h3 id="previewTitle">Skriv tittel…</h3>
+
+                <div class="preview-img" id="previewImgWrap">
+                    <p id="previewImgText">Velg bilde for forhåndsvisning</p>
+                    <img id="previewImg" src="" alt="" />
+                </div>
+
+                <div class="help">
+                    <p><strong>Hurtigtips</strong></p>
+                    <ul>
+                        <li>Bruk overskrifter for å dele opp teksten</li>
+                        <li>Legg inn bilder i teksten via editoren om du vil</li>
+                        <li>Hold første avsnitt kort – det blir ofte “ingress”</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="preview-card small">
+                <p class="tag">Snarveier</p>
+                <a href="{% url 'blog' %}">Se nyheter live</a>
+                <a href="/admin/blog/blog/">Rediger i admin</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // Title preview
+    const titleInput = document.querySelector('#id_title');
+    const previewTitle = document.querySelector('#previewTitle');
+
+    if(titleInput){
+        const updateTitle = () => {
+            previewTitle.innerText = titleInput.value ? titleInput.value : "Skriv tittel…";
+        }
+        titleInput.addEventListener('input', updateTitle);
+        updateTitle();
+    }
+
+    // Image preview
+    const imgInput = document.querySelector('#id_image');
+    const img = document.querySelector('#previewImg');
+    const imgWrap = document.querySelector('#previewImgWrap');
+    const imgText = document.querySelector('#previewImgText');
+
+    if(imgInput){
+        imgInput.addEventListener('change', function(){
+            const file = this.files && this.files[0];
+            if(!file) return;
+
+            const url = URL.createObjectURL(file);
+            img.src = url;
+            img.style.display = "block";
+            imgText.style.display = "none";
+            imgWrap.classList.add("active");
+        });
+    }
+</script>
+
+{% endblock %}

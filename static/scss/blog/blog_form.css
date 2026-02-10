@@ -1,0 +1,208 @@
+@media only screen and (min-device-width: 1140px) {
+  #blogCreate {
+    padding-block: 55px;
+    padding-inline: 50px;
+  }
+  #blogCreate .topbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #blogCreate .topbar h2 {
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 55px;
+    text-transform: uppercase;
+    color: #1b2c65;
+    margin: 0;
+  }
+  #blogCreate .topbar .actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  #blogCreate .topbar .actions .ghost {
+    padding: 12px 18px;
+    border-radius: 4px;
+    border: 1px solid rgba(27, 44, 101, 0.25);
+    color: #1b2c65;
+    text-decoration: none;
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.2s;
+  }
+  #blogCreate .topbar .actions .ghost:hover {
+    border-color: rgba(27, 44, 101, 0.45);
+    transform: translateY(-1px);
+  }
+  #blogCreate .topbar .actions .primary {
+    padding: 12px 18px;
+    border-radius: 4px;
+    border: none;
+    background: #1b2c65;
+    color: white;
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  #blogCreate .topbar .actions .primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+  #blogCreate .editor-wrap {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+  }
+  #blogCreate .editor-left {
+    width: 68%;
+  }
+  #blogCreate .editor-right {
+    width: 32%;
+    position: sticky;
+    top: 120px;
+  }
+  #blogCreate .dash-form {
+    background: rgba(246, 246, 246, 0.55);
+    border: 1px solid rgba(27, 44, 101, 0.18);
+    border-radius: 8px;
+    padding: 24px;
+  }
+  #blogCreate .field {
+    margin-bottom: 18px;
+  }
+  #blogCreate .field p {
+    font-family: "LingkawiSouth", "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1b2c65;
+    margin-bottom: 10px;
+  }
+  #blogCreate .field input[type=text] {
+    width: 100%;
+    padding: 14px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(27, 44, 101, 0.25);
+    outline: none;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+  }
+  #blogCreate .field input[type=text]:focus {
+    border-color: rgba(27, 44, 101, 0.55);
+  }
+  #blogCreate .field.big .editor-box {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(27, 44, 101, 0.25);
+    background: white;
+  }
+  #blogCreate .field.big .editor-box .cke_chrome {
+    border: none !important;
+  }
+  #blogCreate .field.big .editor-box .cke_contents {
+    min-height: 520px !important;
+  }
+  #blogCreate .file {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #blogCreate .file small {
+    font-family: "Stampa", "Roboto", sans-serif;
+    color: rgba(27, 44, 101, 0.75);
+    font-size: 14px;
+  }
+  #blogCreate .mobile-actions {
+    display: none;
+  }
+  #blogCreate .preview-card {
+    background: rgba(246, 246, 246, 0.55);
+    border: 1px solid rgba(27, 44, 101, 0.18);
+    border-radius: 8px;
+    padding: 22px;
+    margin-bottom: 18px;
+  }
+  #blogCreate .preview-card .tag {
+    font-family: "LingkawiSouth", "Roboto", sans-serif;
+    color: #1b2c65;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  #blogCreate .preview-card h3 {
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1b2c65;
+    margin-bottom: 14px;
+  }
+  #blogCreate .preview-card .preview-img {
+    width: 100%;
+    height: 240px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(27, 44, 101, 0.18);
+    position: relative;
+    background: rgba(27, 44, 101, 0.05);
+  }
+  #blogCreate .preview-card .preview-img p {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: rgba(27, 44, 101, 0.75);
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-weight: 600;
+  }
+  #blogCreate .preview-card .preview-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: none;
+  }
+  #blogCreate .preview-card .preview-img.active p {
+    display: none;
+  }
+  #blogCreate .preview-card .preview-img.active img {
+    display: block;
+  }
+  #blogCreate .preview-card .help {
+    margin-top: 18px;
+  }
+  #blogCreate .preview-card .help p {
+    font-family: "Stampa", "Roboto", sans-serif;
+    color: #1b2c65;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  #blogCreate .preview-card .help ul {
+    padding-left: 18px;
+  }
+  #blogCreate .preview-card .help ul li {
+    font-family: "Stampa", "Roboto", sans-serif;
+    color: #1b2c65;
+    font-size: 16px;
+    margin-bottom: 8px;
+    opacity: 0.9;
+  }
+  #blogCreate .preview-card.small a {
+    display: block;
+    margin-top: 10px;
+    font-family: "Stampa", "Roboto", sans-serif;
+    color: #1b2c65;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(27, 44, 101, 0.25);
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  #blogCreate .preview-card.small a:hover {
+    border-bottom-color: rgba(27, 44, 101, 0.85);
+  }
+}/*# sourceMappingURL=blog_form.css.map */

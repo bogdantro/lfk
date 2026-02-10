@@ -1,18 +1,25 @@
-from django.urls import path
+from django.urls import path, include
 from apps.core.views import *
 from django.conf.urls.static import *
 from django.conf import *
 from django.contrib import admin
 from django.contrib.auth import views
-
+from apps.blog.views import *
 from apps.core.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views
 
+from apps.userprofile.urls import *
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("", include("apps.userprofile.urls")),
+    path('', include('apps.blog.urls')),
+
+
     path('', home, name='home'),
 
     path('lag/senior/', senior, name='senior'),
@@ -28,5 +35,8 @@ urlpatterns = [
     path('fair-play/', fair_play, name='fair_play'),
 
     path('bli-med/', bli_med, name='bli_med'),
+
+
+
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

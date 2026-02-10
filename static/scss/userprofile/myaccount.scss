@@ -1,0 +1,130 @@
+$black: #1F1F1F;
+$white: rgb(246,246,246);
+$primBtn: #1b2c65;
+$txt: #1b2c65;
+
+@media only screen and (min-device-width: 1140px){
+
+  #accountCover{
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 60px;
+    .overlay{
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to bottom, #b6a265, #142048);
+      z-index: 11;
+      pointer-events: none;
+    }
+
+    .content{
+      position: relative;
+      z-index: 15;
+
+      .text{
+        text-align: center;
+
+        h1{
+          color: white;
+          font-size: clamp(36px, 5vw, 90px);
+          text-transform: uppercase;
+          font-weight: 600;
+          font-family: 'Stampa', "Roboto", sans-serif;
+        }
+
+        .btns{
+          margin-top: 25px;
+          display: flex;
+          justify-content: center;
+          gap: 15px;
+
+          button, .btn{
+            background: rgba(255,255,255,0.92);
+            color: $primBtn;
+            border: none;
+            outline: none;
+            padding: 12px 18px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            font-family: 'Stampa', "Roboto", sans-serif;
+            transition: .2s;
+
+            &:hover{
+              transform: translateY(-1px);
+              background: rgba(255,255,255,1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  #dashboard{
+    padding-inline: 50px;
+    padding-block: 70px;
+    padding-top: 5px;
+    h2{
+        font-size: 60px;
+        color: $txt;
+        font-family: 'Stampa', "Roboto", sans-serif;
+        margin-bottom: 25px;
+        margin-top: 65px;
+    }
+    .dash-grid{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .dash-card{
+      background: rgba(246,246,246, 0.55);
+      border: 1px solid rgba(27, 44, 101, 0.18);
+      border-radius: 6px;
+      padding: 22px;
+      cursor: pointer;
+      transition: .25s;
+
+      &:hover{
+        transform: translateY(-2px);
+        border-color: rgba(27, 44, 101, 0.35);
+      }
+
+      .top{
+        .small{
+          font-family: 'LingkawiSouth', "Roboto", sans-serif;
+          font-weight: 700;
+          font-size: 18px;
+          color: $txt;
+          margin-bottom: 8px;
+        }
+
+        h3{
+          font-family: 'Stampa', "Roboto", sans-serif;
+          font-size: 34px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $txt;
+          margin: 0;
+        }
+      }
+
+      .desc{
+        margin-top: 12px;
+        font-family: 'Stampa', "Roboto", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        color: $txt;
+        opacity: .9;
+      }
+    }
+  }
+
+}

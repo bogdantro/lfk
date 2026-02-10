@@ -1,0 +1,107 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static '/scss/userprofile/myaccount.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/userprofile/dashboard.css' %}" type="text/css">
+
+
+<section class="cover" id="accountCover">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="text">
+            <h1>Hei, {{ request.user.first_name }}</h1>
+
+            <div class="btns">
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Logg ut</button>
+                </form>
+
+                {% if request.user.is_staff or request.user.is_superuser %}
+                    <a class="btn" href="{% url 'blog_create' %}">Ny blogg</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% if request.user.is_staff or request.user.is_superuser %}
+<section class="acnt-info" id="dashboard">
+    <h2>Artikler</h2>
+    <div class="dash-grid">
+
+        <div class="dash-card" onclick="window.location.href='{% url 'blog_create' %}'">
+            <div class="top">
+                <p class="small">Blog</p>
+                <h3>Lag ny post</h3>
+            </div>
+            <p class="desc">Publiser nyhet direkte fra nettsiden.</p>
+        </div>
+
+        <div class="dash-card" onclick="window.location.href='/admin/blog/blog/'">
+            <div class="top">
+                <p class="small">Blog</p>
+                <h3>Rediger poster</h3>
+            </div>
+            <p class="desc">Se, oppdater eller slett eksisterende poster.</p>
+        </div>
+
+        
+        <div class="dash-card" onclick="window.location.href='{% url 'blog' %}'">
+            <div class="top">
+                <p class="small">Nettside</p>
+                <h3>Se nyheter</h3>
+            </div>
+            <p class="desc">Sjekk hvordan posts ser ut live.</p>
+        </div>
+
+    </div>
+
+    <h2>Spillere</h2>
+    <div class="dash-grid">
+
+        
+        <div class="dash-card" onclick="window.location.href='/admin/'">
+            <div class="top">
+                <p class="small">Herrer</p>
+                <h3>Endre herrer</h3>
+            </div>
+            <p class="desc">Legg til, slett eller endre spillere på troppen.</p>
+        </div>
+
+        <div class="dash-card" onclick="window.location.href='/admin/'">
+            <div class="top">
+                <p class="small">Kvinner</p>
+                <h3>Endre kvinner</h3>
+            </div>
+            <p class="desc">Legg til, slett eller endre spillere på troppen.</p>
+        </div>
+
+    </div>
+
+    <h2>Admin</h2>
+    <div class="dash-grid">
+
+        
+        <div class="dash-card" onclick="window.location.href='/admin/'">
+            <div class="top">
+                <p class="small">Admin</p>
+                <h3>Gå til admin siden</h3>
+            </div>
+            <p class="desc">Full oversikt og tilgang.</p>
+        </div>
+
+    </div>
+
+
+</section>
+{% endif %}
+
+
+
+
+{% endblock %}

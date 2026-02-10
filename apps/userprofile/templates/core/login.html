@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/userprofile/login.css' %}" type="text/css">
+
+<section class="cover" id="loginCover">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="text">
+            <h1>Velkommen tilbake</h1>
+            <p>Dette området er kun for ansatte / admin.</p>
+        </div>
+    </div>
+</section>
+
+<section class="acnt-info" id="loginPage">
+    <h2>Logg inn</h2>
+
+    <div class="user">
+
+        <form method="post" id="logInForm">
+            {% csrf_token %}
+
+            {% if form.errors %}
+                <div class="form-errors">
+                    {{ form.errors }}
+                </div>
+            {% endif %}
+
+            <div class="field">
+                <p>E-post / brukernavn</p>
+                <input type="text" name="username" id="username" required>
+            </div>
+
+            <div class="field">
+                <p>Passord</p>
+                <input type="password" name="password" id="password" required>
+            </div>
+
+            <button type="submit" class="primary">Logg inn</button>
+
+            <div class="help-links">
+                <a href="/">Tilbake til forsiden</a>
+            </div>
+        </form>
+
+    </div>
+</section>
+
+{% endblock %}

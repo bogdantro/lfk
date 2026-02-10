@@ -1,0 +1,97 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block head %}
+<title>{{ post_info.title }} - Webiser</title>
+<meta name="author" content="Webiser">
+<meta name="description" content="Les om {{ post_info.title }} skrevet av {{ post_info.author }}">
+
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://webiser.no{{ request.path }}">
+
+<!-- Open Graph (Facebook) -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://webiser.no{{ request.get_full_path }}">
+<meta property="og:title" content="{{ post_info.title }} - Webiser">
+<meta property="og:description" content="Les om {{ post_info.title }} skrevet av {{ post_info.author }}">
+<meta property="og:image" content="{{ post_info.image.url }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_video">
+<meta name="twitter:title" content="{{ post_info.title }} - Webiser">
+<meta name="twitter:description" content="Les om {{ post_info.title }} skrevet av {{ post_info.author }}">
+<meta name="twitter:image" content="{{ post_info.image.url }}">
+
+
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<script src="{% static '/js/page.js' %}"></script>
+
+
+
+<section class="cover" >
+    <div class="image">
+        <img  src="{{ post_info.image.url }}" alt="" class="cover-img">
+    </div>
+  <div class="content">
+    <div class="text">
+      <h1>{{ post_info.title }}</h1>
+      <p class="project-text">
+                     {% autoescape off %}
+                        {{ post_info.text}}
+                     {% endautoescape %}
+                  </p>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+{% endblock %}
+
+   <div class="cover">
+      <div class="content">
+         <img src="{{ post_info.image.url }}" alt="webiser blog post">
+
+
+        <div class="flexy">
+          <div class="cards">
+            <div class="card" style="height: max-content;">
+              <div class="contentt">
+          
+                <div class="wrapper">
+                  <h2>Skrevet av</h2>
+                  <div class="tags">
+                     {{ post_info.author }}
+                  </div>
+                </div>
+          
+
+          
+              </div>
+          
+            </div>
+          
+          </div>
+          
+              
+              <div class="text">
+                  <h1 class="cover-h1">{{ post_info.title }}
+                  </h1>
+                  <p class="cover-p" style="max-width: max-content; margin-top: 10px;">{{ post_info.created_at | date:"d F Y" }}</p>
+                  <p class="project-text">
+                     {% autoescape off %}
+                        {{ post_info.text}}
+                     {% endautoescape %}
+                  </p>
+                 </div>  
+        </div>
+      </div>

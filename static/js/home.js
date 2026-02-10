@@ -30,3 +30,5 @@ $(document).ready(function () {
   $(window).on('scroll resize', updateReveal);
   updateReveal(); // run once on load
 });
+
+

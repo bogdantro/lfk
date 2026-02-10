@@ -1,0 +1,154 @@
+@media only screen and (min-device-width: 1140px) {
+  #loginCover {
+    position: relative;
+    padding-top: 200px;
+    padding-bottom: 60px;
+  }
+  #loginCover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #b6a265, #142048);
+    z-index: 11;
+    pointer-events: none;
+  }
+  #loginCover .content {
+    position: relative;
+    z-index: 15;
+  }
+  #loginCover .content .text {
+    text-align: center;
+  }
+  #loginCover .content .text h1 {
+    color: white;
+    font-size: clamp(36px, 5vw, 90px);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  #loginCover .content .text p {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  #loginCover .content .text .btns {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  #loginCover .content .text .btns button, #loginCover .content .text .btns .btn {
+    background: rgba(255, 255, 255, 0.92);
+    color: #1b2c65;
+    border: none;
+    outline: none;
+    padding: 12px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Stampa", "Roboto", sans-serif;
+    transition: 0.2s;
+  }
+  #loginCover .content .text .btns button:hover, #loginCover .content .text .btns .btn:hover {
+    transform: translateY(-1px);
+    background: rgb(255, 255, 255);
+  }
+  #loginPage {
+    padding-block: 60px;
+    padding-inline: 20px;
+    max-width: 680px;
+    margin-inline: auto;
+  }
+  #loginPage h2 {
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 55px;
+    text-transform: uppercase;
+    color: #1b2c65;
+    margin-bottom: 22px;
+  }
+  #loginPage .user {
+    background: rgba(246, 246, 246, 0.55);
+    border: 1px solid rgba(27, 44, 101, 0.18);
+    border-radius: 8px;
+    padding: 28px;
+  }
+  #loginPage #logInForm {
+    width: 100%;
+  }
+  #loginPage .form-errors {
+    background: rgba(27, 44, 101, 0.08);
+    border: 1px solid rgba(27, 44, 101, 0.18);
+    color: #1b2c65;
+    padding: 14px;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  #loginPage .form-errors ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+  #loginPage .field {
+    margin-bottom: 18px;
+  }
+  #loginPage .field p {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1b2c65;
+    margin-bottom: 10px;
+  }
+  #loginPage .field input {
+    width: 100%;
+    padding: 14px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(27, 44, 101, 0.25);
+    outline: none;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+  }
+  #loginPage .field input:focus {
+    border-color: rgba(27, 44, 101, 0.55);
+  }
+  #loginPage .primary {
+    margin-top: 8px;
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 6px;
+    border: none;
+    background: #1b2c65;
+    color: white;
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  #loginPage .primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+  #loginPage .help-links {
+    margin-top: 16px;
+    text-align: center;
+  }
+  #loginPage .help-links a {
+    font-family: "Stampa", "Roboto", sans-serif;
+    color: #1b2c65;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(27, 44, 101, 0.25);
+  }
+  #loginPage .help-links a:hover {
+    border-bottom-color: rgba(27, 44, 101, 0.85);
+  }
+  #loginPage .help-links .sep {
+    margin: 0 10px;
+    color: rgba(27, 44, 101, 0.6);
+    font-weight: 700;
+  }
+}/*# sourceMappingURL=login.css.map */
