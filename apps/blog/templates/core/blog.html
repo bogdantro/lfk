@@ -43,6 +43,7 @@
          </div>
          <div class="blog-text">
             <h2>{{ post.title }}</h2>
+            <p>Skrevet {{ post_info.published_at|date:"d F Y" }} </p>
             <p>{{ post.text|striptags|safe   }}</p>
             <button>Les mer <i class="fa-solid fa-arrow-right"></i></button>
          </div>
