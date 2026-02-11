@@ -33,7 +33,13 @@
    {% for post in post %}
    <div class="post" onclick="window.location.href='{% url 'blog_post' post.slug post.id %}'">
          <div class="blog-image">
-            <img src="{{ post.image.url }}" alt="webiser blog post">
+            {% if post.image %}
+  <img src="{{ post.image.url }}" loading="lazy">
+{% else %}
+  <!-- optional placeholder -->
+  <img src="{% static 'images/placeholder.jpg' %}" >
+{% endif %}
+
          </div>
          <div class="blog-text">
             <h2>{{ post.title }}</h2>

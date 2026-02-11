@@ -15,7 +15,7 @@ from apps.userprofile.urls import *
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('lfk/admin/login/', admin.site.urls),
     path("", include("apps.userprofile.urls")),
     path('', include('apps.blog.urls')),
 
