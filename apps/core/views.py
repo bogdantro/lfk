@@ -18,7 +18,7 @@ from apps.blog.models import *
 
 # Home
 def home(request):
-    latest_blog = Blog.objects.order_by('-created_at').first()
+    latest_blog = Blog.objects.order_by('id').first()
 
     return render(request, 'core/home.html', {
         'latest_blog': latest_blog
