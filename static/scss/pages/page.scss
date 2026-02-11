@@ -7,6 +7,10 @@ $txt: #1b2c65;
 
 @media only screen and (min-device-width: 1140px){
 
+
+
+
+
     .cover{
         height: 100%;
         width: 100%;
@@ -61,6 +65,14 @@ $txt: #1b2c65;
                 text-align: left;
                 width: 100%;
                 height: 100%;
+                    .headinp{
+      font-size: 22px;
+      font-weight: 800;
+      font-family: 'LingkawiSouth', "Roboto", sans-serif;
+      color: $txt;
+      margin-bottom: 12px;
+    }
+
                 h1 {
                     font-size: 75px;
                     color: $txt;
@@ -68,9 +80,21 @@ $txt: #1b2c65;
                     margin-bottom: 15px;
                       
                 }
+                img{
+                  width: 200px;
+                  height: auto;
+                  object-fit: cover;
+                  margin-bottom: 25px;
+                }
                 p{
-                    font-size: 20px;
-                    color: $black;
+                  font-size: 20px;
+                  color: $black;
+                  img{
+                    width: 200px;
+                    height: auto;
+                    object-fit: cover;
+                    margin-bottom: 25px;
+                  }
                     .subheading{
                         color: $txt;
                         font-weight: 600;
@@ -78,7 +102,139 @@ $txt: #1b2c65;
 
                     }
                 }
+                a{
+                  color: $txt;
+                  text-decoration: underline;
+                }
             }
+                              #memberBenefits{
+  width: 100%;
+  position: relative;
+  .content{
+    width: 100%;
+    padding: 0;
+  }
+
+  .headerheader{
+    display: none;
+  }
+
+  .header{
+    width: 100%;
+    margin-bottom: 35px;
+
+
+
+    h2{
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 75px;
+      line-height: 75px;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $txt;
+      margin-bottom: 10px;
+    }
+
+    .desc{
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: rgba(27,44,101,0.82);
+      max-width: 860px;
+    }
+  }
+
+  .benefits-grid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    row-gap: 65px;
+    margin-top: 15px;
+  }
+
+  .benefit-card{
+    position: relative;
+    background: rgba(246,246,246,0.60);
+    border: 1px solid rgba(27,44,101,0.16);
+    border-radius: 8px;
+    padding: 26px;
+    padding-top: 80px;
+    overflow: visible;
+    transition: .25s;
+    margin-top: 80px;
+
+
+    .logo{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 26px;
+      background: rgba(246,246,246,0.95);
+      border: 3px solid rgba(246,246,246,0.95);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 5;
+      transition: .25s;
+
+      img{
+        width: 75%;
+        height: 75%;
+        object-fit: contain;
+      }
+    }
+
+    h3{
+      margin-top: 0;
+      text-align: center;
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: $txt;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    p{
+      text-align: center;
+      font-size: 16px;
+      color: $txt;
+      margin-bottom: 18px;
+    }
+
+    .links{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: auto;
+
+      .icon{
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        background: $primBtn;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: .2s;
+        font-size: 14px;
+
+        &:hover{
+          transform: translateY(-2px);
+          filter: brightness(1.05);
+        }
+      }
+    }
+  }
+}
             
             
         }
@@ -364,8 +520,10 @@ $txt: #1b2c65;
         padding-inline: 50px;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: 25px;
-        padding-bottom: 30px;
+        row-gap: 55px;
+        padding-bottom: 60px;
         .post{
           min-width: calc(33% - 20px);
           max-width: calc(33% - 20px);

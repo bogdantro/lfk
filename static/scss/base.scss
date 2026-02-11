@@ -138,6 +138,9 @@ $txt: #1b2c65;
                     transition: .7s;
                     transform: scale(1.1);
                     z-index: 10;
+                    &.laStampaShop{
+                      max-height: 770px;
+                    }
                
                 }
                 .imgoverlay{
@@ -236,6 +239,12 @@ $txt: #1b2c65;
                         cursor: pointer;
                           font-family: 'Stampa', "Roboto", sans-serif;
 
+                    }
+                    .clamp-3{
+                      display: -webkit-box;
+                      -webkit-line-clamp: 3;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
                     }
                     .headinp{
                       font-size: 22px;

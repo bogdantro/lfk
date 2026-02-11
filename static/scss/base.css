@@ -122,6 +122,9 @@
     transform: scale(1.1);
     z-index: 10;
   }
+  .blog .content .left img.laStampaShop {
+    max-height: 770px;
+  }
   .blog .content .left .imgoverlay {
     width: 100%;
     min-height: 100%;
@@ -208,6 +211,12 @@
     font-weight: 500;
     cursor: pointer;
     font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .blog .content .right .text .clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .blog .content .right .text .headinp {
     font-size: 22px;

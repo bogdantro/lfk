@@ -80,24 +80,45 @@
 
 <section class="blog reveal" id="laStampaShop">
   <div class="content">
-     <div class="left">
+
+    <div class="left">
+
+      {% if latest_blog and latest_blog.image %}
+        <img src="{{ latest_blog.image.url }}" alt="" style="max-height: 800px;">
+      {% else %}
         <img src="{% static 'images/covers/blog.avif' %}" alt="" style="max-height: 800px;">
-        <div class="imgoverlay"></div>
+      {% endif %}
 
+      <div class="imgoverlay"></div>
     </div>
-    <div class="right">
-        <div class="text">
-        <p class="headinp normal" >Siste nytt</p>
-        <h2>Tusen takk til alle frivillige</h2>
-        <p>Årets Thallaug Cup Lillehammer er vel i havn, og vi takker alle som bidro i gjennomføringen.
 
-Thallaug Cup Lillehammer er vårt største arrangement, og turneringen gir et betydelig bidrag til klubbens omsetning og resultat. Turneringen bidrar dermed til at treningsavgifter kan holdes på et konkurransedyktig nivå. De siste årene har vi redusert antallet dugnader i klubben. Det skyldes at vi har større tro på få og store tiltak, fremfor mange repeterende mindre aktiviteter...</p>
-        <button>Les mer <i class="fa-solid fa-arrow-right"></i></button>
+    <div class="right">
+      <div class="text">
+
+        <p class="headinp normal">Siste nytt</p>
+
+        {% if latest_blog %}
+          <h2>{{ latest_blog.title }}</h2>
+
+          <p class="clamp-3">
+            {{ latest_blog.text|striptags|safe }}
+          </p>
+
+          <button onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
+            Les mer <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+        {% else %}
+          <h2>Ingen nyheter enda</h2>
+          <p>Kom tilbake snart.</p>
+        {% endif %}
+
       </div>
     </div>
-   
+
   </div>
 </section>
+
 
 
 
@@ -139,7 +160,7 @@ Thallaug Cup Lillehammer er vårt største arrangement, og turneringen gir et be
       </div>
     </div>
     <div class="left">
-        <img src="{% static 'images/covers/shop.jpeg' %}" alt="">
+        <img src="{% static 'images/covers/shop.jpeg' %}" alt="" class="laStampaShop">
         <div class="imgoverlay"></div>
     </div>
 

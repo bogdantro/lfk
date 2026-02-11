@@ -1,0 +1,77 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+
+
+<section class="cover" >
+    <div class="image">
+        <img  src="{% static 'images/other/magasinet.jpeg' %}" alt="" class="cover-img">
+    </div>
+  <div class="content">
+    <div class="text">
+      <h1>La Stampa Magasinet</h1>
+
+        <p><span class="subheading">Magasinet</span><br><br>
+
+Hvert år gir vi ut vårt fotballmagasin. Dette utkommer i løpet av våren/forsommeren. Fra og med 2023 distribueres magasinet digitalt, i tråd med vår satsing på bærekraft.<br><br>
+
+Her kan du lese tidligere utgaver i digital versjon:<br><br>
+
+
+<a href="{% static 'pdfs/Magasinet-2020-web.pdf' %}" target="_blank" rel="noopener">
+Magasinet 2020
+</a><br>
+
+<a href="{% static 'pdfs/LFK-Magasinet-2021.pdf' %}" target="_blank" rel="noopener">
+Magasinet 2021
+</a><br>
+
+<a href="{% static 'pdfs/LFK-Magasinet-2022.pdf' %}" target="_blank" rel="noopener">
+Magasinet 2022
+</a><br>
+
+<a href="{% static 'pdfs/LFK-Magasinet-2023-1.pdf' %}" target="_blank" rel="noopener">
+Magasinet 2023
+</a><br>
+
+<a href="{% static 'pdfs/240627-LFK-Magasinet-2024-2.pdf' %}" target="_blank" rel="noopener">
+Magasinet 2024
+</a><br>
+
+<a href="{% static 'pdfs/05099-LFK-Magasinet-2025.pdf' %}" target="_blank" rel="noopener">
+Magasinet 2025
+</a>
+</p>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}
+ 

@@ -117,6 +117,76 @@
     color: rgba(27, 44, 101, 0.75);
     font-size: 14px;
   }
+  #blogCreate .uploader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px dashed rgba(27, 44, 101, 0.35);
+    background: rgba(246, 246, 246, 0.4);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  #blogCreate .uploader:hover {
+    transform: translateY(-1px);
+    border-color: rgba(27, 44, 101, 0.55);
+  }
+  #blogCreate .uploader.drag {
+    border-color: rgba(27, 44, 101, 0.85);
+    background: rgba(27, 44, 101, 0.06);
+  }
+  #blogCreate .uploader .uploader-left .big {
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #1b2c65;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+  #blogCreate .uploader .uploader-left .small {
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgba(27, 44, 101, 0.75);
+    margin: 0;
+  }
+  #blogCreate .uploader .uploader-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    min-width: 220px;
+  }
+  #blogCreate .uploader .uploader-right .pick {
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: none;
+    background: #1b2c65;
+    color: white;
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  #blogCreate .uploader .uploader-right .pick:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+  #blogCreate .uploader .uploader-right .filename {
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(27, 44, 101, 0.75);
+    margin: 0;
+    max-width: 320px;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   #blogCreate .mobile-actions {
     display: none;
   }

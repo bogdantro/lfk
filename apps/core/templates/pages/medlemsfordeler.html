@@ -1,0 +1,181 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+
+
+<section class="cover" >
+    <div class="image">
+        <img  src="{% static 'images/other/medlemsfordeler.jpeg' %}" alt="" class="cover-img">
+    </div>
+    <div class="content">
+        <div class="text">
+        <p class="headinp">Medlemsfordeler</p>
+      <h1>Medlemsfordeler</h1>
+    </div>
+<div class="member-benefits" id="memberBenefits">
+  <div class="content">
+
+    <div class="header">
+      <p class="desc">Her finner du samarbeidspartnere som gir rabatter og fordeler til alle i tilknytning Lillehammer FK.</p>
+    </div>
+
+   <div class="benefits-grid">
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/imgi_13_Felgen-bilde-1.jpeg' %}" alt="">
+    </div>
+    <h3>Felgen Trafikkskole</h3>
+    <p>Få 10% rabatt på alle trafikale kurs og opplæring.</p>
+    <div class="links">
+      <a href="https://www.facebook.com/felgen.trafikkskole/?eid=ARAad-0-4jDDwxngGTWjges14PZ6Sv0ymhZPFwVh-pxe12-TgM12B2NEsfIvrXpBHnGI2Qv5kujKeVBk" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://felgen-trafikkskole.no/?fbclid=IwAR0ySECiQkc5HNvV4pEGFQBurEHBcW_AwQx9kDSxTvuptxVcsv9Nioba62w" class="icon"><i class="fa-solid fa-globe"></i></a>
+      <a href="mailto:post@felgen-trafikkskole.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/106.jpg' %}" alt="">
+    </div>
+    <h3>Rustadstuen Sport</h3>
+    <p>Vi samarbeider med Rustadstuen Sport og Sport 1 Strandtorget. Vår utstyrsleverandør er Puma. Våre medlemmer innrømmes 20 % rabatt på utstyr fra Puma.</p>
+    <div class="links">
+      <a href="https://www.facebook.com/RUSTADSTUEN-SPORT-198769036832429/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/108.webp' %}" alt="">
+    </div>
+    <h3>Sport 1 Strandtorget</h3>
+    <p>Vi samarbeider med Sport 1 Strandtorget og Rustadstuen Sport. Vår utstyrsleverandør er Puma. Våre medlemmer innrømmes 20 % rabatt på utstyr fra Puma.</p>
+    <div class="links">
+      <a href="https://sport1strandtorget.no/" class="icon"><i class="fa-solid fa-globe"></i></a>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/imgi_16_Egon-e1566896752118.jpeg' %}" alt="">
+    </div>
+    <h3>Egon</h3>
+    <p>Alle i tilknytning LFK kan bruke LFK-knappen når de bestiller mat og drikke på Egon Lillehammer. Da går 10% av summen tilbake til LFK.</p>
+    <div class="links">
+      <a href="https://www.facebook.com/EgonLillehammer/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.egon.no/restauranter/lillehammer?fbclid=IwAR2x3blRZhPBXoDBEJkg7rURzNaFGFT23vioQbFwwzPzUzWYWLmYG9vPmh4" class="icon"><i class="fa-solid fa-globe"></i></a>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/imgi_17_Olivera_Tannhelseteam.jpeg' %}" alt="">
+    </div>
+    <h3>Olivera Tannhelseteam</h3>
+    <p>Som LFK-medlem får du 20% rabatt på all ordinær tannbehandling (ikke oral kirurg). De har også eget velkomsttilbud! Husk å last ned medlemskort på Rubic LagetMitt!</p>
+    <div class="links">
+      <a href="https://www.facebook.com/Tannhelseteam-Olivera-2014058138894371/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.oliveratannhelseteam.no/" class="icon"><i class="fa-solid fa-globe"></i></a>
+      <a href="mailto:post@oliveratannhelseteam.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/imgi_18_aksjemøllen.jpeg' %}" alt="">
+    </div>
+    <h3>Aksjemøllen</h3>
+    <p>Aksjemøllen gir 12% rabatt på rom booket via bookingkode "fotball". Rabattert pris fås kun ved bestilling på hotellets hjemmeside.</p>
+    <div class="links">
+      <a href="https://www.facebook.com/mollahotell/" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="http://www.aksjemollen.no/" class="icon"><i class="fa-solid fa-globe"></i></a>
+      <a href="mailto:post@mollahotell.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/imgi_19_håkonshall.jpeg' %}" alt="">
+    </div>
+    <h3>Håkons Hall Sportssenter</h3>
+    <p>Treningsavtale: Som medlem i Lillehammer FK kan du trene for kun kr. 1 950,- per år i Håkons Hall Sportssenter. Meld deg inn på: www.håkonshall.no (velg abonnement for «idrett»).</p>
+    <div class="links">
+      <a href="https://www.facebook.com/hakonshall" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="http://www.håkonshall.no/" class="icon"><i class="fa-solid fa-globe"></i></a>
+      <a href="mailto:sportssenteret@olympiaparken.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/imgi_20_GK_logo_GREEN.jpeg' %}" alt="">
+    </div>
+    <h3>GK</h3>
+    <p>LFK-medlemmer (privatkunder) får 10% rabatt på gjeldende timepris og 20% rabatt på materiell ved kjøp av varer og tjenester hos GK på Lillehammer. Det gis også 20% rabatt på varer kjøpt i GK sitt servicesenter. Gjelder ikke for bestilling gjennom vakttelefon.<br><br>
+    Besøksadresse: Storgata 178, 2615 Lillehammer<br>
+    Tel: 61 22 50 90<br>
+    Vakttelefon: 9920 45 00</p>
+    <div class="links">
+      <a href="https://www.gk.no/" class="icon"><i class="fa-solid fa-globe"></i></a>
+    </div>
+  </div>
+
+  <div class="benefit-card">
+    <div class="line"></div>
+    <div class="logo">
+      <img src="{% static 'images/other/imgi_21_Enterprise-Rent-A-Car.jpeg' %}" alt="">
+    </div>
+    <h3>Enterprise</h3>
+    <p>Som medlem i Lillehammer FK får du 20% rabatt på veiledende priser ved leie av personbil, varebil og minibusser hos våre avdelinger på Innlandet. Ta kontakt med vår avdeling i Lillehammer og oppgi at du er medlem av LFK.<br><br>
+    Besøksadresse: Industrigata 24, 2619 Lillehammer – Tlf: 915 02 847</p>
+    <div class="links">
+      <a href="https://autofleks.no/vare-avdelinger/" class="icon"><i class="fa-solid fa-globe"></i></a>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+
+
+
+{% endblock %}
+ 

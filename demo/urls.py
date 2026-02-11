@@ -22,6 +22,7 @@ urlpatterns = [
 
     path('', home, name='home'),
 
+    # Sport
     path('lag/senior/', senior, name='senior'),
     path('lag/senior/herrer/', senior_herrer, name='senior_herrer'),
     path('lag/senior/kvinner/', senior_kvinner, name='senior_kvinner'),
@@ -34,8 +35,14 @@ urlpatterns = [
     path('landslagsskolen/', landslagsskolen, name='landslagsskolen'),
     path('fair-play/', fair_play, name='fair_play'),
 
-    path('bli-med/', bli_med, name='bli_med'),
 
+    # Marked
+    path('partnere/', vare_samarbeidspartnere, name='vare_samarbeidspartnere'),
+    path('baerekraft/', baerekraft, name='baerekraft'),
+    path('medlemsfordeler/', medlemsfordeler, name='medlemsfordeler'),
+    path('grasrotandelen/', grasrotandelen, name='grasrotandelen'),
+    path('la-stampa-magasin/', la_stampa_magasin, name='la_stampa_magasin'),
+    path('stampapodden/', stampapodden, name='stampapodden'),
 
 
     

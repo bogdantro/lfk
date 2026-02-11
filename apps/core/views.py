@@ -13,14 +13,20 @@ from django.db.models import *
 from django.contrib.auth.decorators import *
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
-
+from apps.blog.models import *
 
 
 # Home
-def home(request):      
-    return render(request, 'core/home.html')
+def home(request):
+    latest_blog = Blog.objects.order_by('-created_at').first()
+
+    return render(request, 'core/home.html', {
+        'latest_blog': latest_blog
+    })
     
 
+
+# Sport
 def senior(request):
     return render(request, 'teams/senior.html')
 
@@ -49,10 +55,27 @@ def fair_play(request):
     return render(request, 'pages/fair-play.html')
 
 
-def bli_med(request):
-    return render(request, 'medlem/velg.html')
 
+# Marked
+from django.shortcuts import render
 
+def vare_samarbeidspartnere(request):
+    return render(request, 'pages/vare-samarbeidspartnere.html')
+
+def baerekraft(request):
+    return render(request, 'pages/baerekraft.html')
+
+def medlemsfordeler(request):
+    return render(request, 'pages/medlemsfordeler.html')
+
+def grasrotandelen(request):
+    return render(request, 'pages/grasrotandelen.html')
+
+def la_stampa_magasin(request):
+    return render(request, 'pages/la-stampa-magasin.html')
+
+def stampapodden(request):
+    return render(request, 'pages/stampapodden.html')
 
 
 

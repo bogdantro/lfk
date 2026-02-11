@@ -54,20 +54,158 @@
     width: 100%;
     height: 100%;
   }
+  .cover .content .text .headinp {
+    font-size: 22px;
+    font-weight: 800;
+    font-family: "LingkawiSouth", "Roboto", sans-serif;
+    color: #1b2c65;
+    margin-bottom: 12px;
+  }
   .cover .content .text h1 {
     font-size: 75px;
     color: #1b2c65;
     font-family: "Stampa", "Roboto", sans-serif;
     margin-bottom: 15px;
   }
+  .cover .content .text img {
+    width: 200px;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 25px;
+  }
   .cover .content .text p {
     font-size: 20px;
     color: #1F1F1F;
+  }
+  .cover .content .text p img {
+    width: 200px;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-bottom: 25px;
   }
   .cover .content .text p .subheading {
     color: #1b2c65;
     font-weight: 600;
     font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .cover .content .text a {
+    color: #1b2c65;
+    text-decoration: underline;
+  }
+  .cover .content #memberBenefits {
+    width: 100%;
+    position: relative;
+  }
+  .cover .content #memberBenefits .content {
+    width: 100%;
+    padding: 0;
+  }
+  .cover .content #memberBenefits .headerheader {
+    display: none;
+  }
+  .cover .content #memberBenefits .header {
+    width: 100%;
+    margin-bottom: 35px;
+  }
+  .cover .content #memberBenefits .header h2 {
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 75px;
+    line-height: 75px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1b2c65;
+    margin-bottom: 10px;
+  }
+  .cover .content #memberBenefits .header .desc {
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgba(27, 44, 101, 0.82);
+    max-width: 860px;
+  }
+  .cover .content #memberBenefits .benefits-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    row-gap: 65px;
+    margin-top: 15px;
+  }
+  .cover .content #memberBenefits .benefit-card {
+    position: relative;
+    background: rgba(246, 246, 246, 0.6);
+    border: 1px solid rgba(27, 44, 101, 0.16);
+    border-radius: 8px;
+    padding: 26px;
+    padding-top: 80px;
+    overflow: visible;
+    transition: 0.25s;
+    margin-top: 80px;
+  }
+  .cover .content #memberBenefits .benefit-card .logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 26px;
+    background: rgba(246, 246, 246, 0.95);
+    border: 3px solid rgba(246, 246, 246, 0.95);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    transition: 0.25s;
+  }
+  .cover .content #memberBenefits .benefit-card .logo img {
+    width: 75%;
+    height: 75%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  .cover .content #memberBenefits .benefit-card h3 {
+    margin-top: 0;
+    text-align: center;
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1b2c65;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .cover .content #memberBenefits .benefit-card p {
+    text-align: center;
+    font-size: 16px;
+    color: #1b2c65;
+    margin-bottom: 18px;
+  }
+  .cover .content #memberBenefits .benefit-card .links {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: auto;
+  }
+  .cover .content #memberBenefits .benefit-card .links .icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background: #1b2c65;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.2s;
+    font-size: 14px;
+  }
+  .cover .content #memberBenefits .benefit-card .links .icon:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
   }
   .blog {
     width: 100%;
@@ -319,8 +457,10 @@
     padding-inline: 50px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 25px;
-    padding-bottom: 30px;
+    row-gap: 55px;
+    padding-bottom: 60px;
   }
   .blog-posts .post {
     min-width: calc(33% - 20px);

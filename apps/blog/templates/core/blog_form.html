@@ -16,7 +16,6 @@
     <div class="content">
         <div class="text">
             <h1>Ny bloggpost</h1>
-            <p>Lag en nyhet som ser bra ut på nettsiden.</p>
         </div>
     </div>
 </section>
@@ -53,13 +52,32 @@
                     </div>
                 </div>
 
-                <div class="field">
-                    <p>Bilde</p>
-                    <div class="file">
-                        {{ form.image }}
-                        <small>Tips: Bruk et stort bilde (bredt) for best resultat.</small>
-                    </div>
-                </div>
+              <div class="field">
+    <p>Bilde</p>
+
+    <div class="file">
+        <!-- hide the real input -->
+        <div style="display:none;">
+            {{ form.image }}
+        </div>
+
+        <!-- nice uploader -->
+        <div class="uploader" id="imageUploader">
+            <div class="uploader-left">
+                <p class="big">Dra bilde hit</p>
+                <p class="small">…eller klikk for å velge. Du kan også lime inn (CTRL + V).</p>
+            </div>
+
+            <div class="uploader-right">
+                <button type="button" class="pick" id="pickImageBtn">Velg bilde</button>
+                <p class="filename" id="fileName">Ingen fil valgt</p>
+            </div>
+        </div>
+
+        <small>Tips: Bruk et stort bilde (bredt) for best resultat.</small>
+    </div>
+</div>
+
 
                 <div class="mobile-actions">
                     <button type="submit" class="primary">Publiser</button>
@@ -113,24 +131,92 @@
         updateTitle();
     }
 
-    // Image preview
+    // Featured image: click + drag/drop + paste
     const imgInput = document.querySelector('#id_image');
+    const uploader = document.querySelector('#imageUploader');
+    const pickBtn = document.querySelector('#pickImageBtn');
+    const fileName = document.querySelector('#fileName');
+
     const img = document.querySelector('#previewImg');
     const imgWrap = document.querySelector('#previewImgWrap');
     const imgText = document.querySelector('#previewImgText');
 
-    if(imgInput){
+    function showPreview(file){
+        const url = URL.createObjectURL(file);
+        img.src = url;
+        imgWrap.classList.add("active");
+        img.style.display = "block";
+        imgText.style.display = "none";
+        fileName.innerText = file.name;
+    }
+
+    function setInputFile(file){
+        // Put the file into the real <input type="file">
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        imgInput.files = dt.files;
+        showPreview(file);
+    }
+
+    function isImage(file){
+        return file && file.type && file.type.startsWith("image/");
+    }
+
+    if(uploader && imgInput){
+        // click uploader opens file picker
+        uploader.addEventListener('click', () => imgInput.click());
+        if(pickBtn) pickBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            imgInput.click();
+        });
+
+        // normal file pick
         imgInput.addEventListener('change', function(){
             const file = this.files && this.files[0];
-            if(!file) return;
+            if(file && isImage(file)){
+                showPreview(file);
+            }
+        });
 
-            const url = URL.createObjectURL(file);
-            img.src = url;
-            img.style.display = "block";
-            imgText.style.display = "none";
-            imgWrap.classList.add("active");
+        // drag + drop
+        uploader.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploader.classList.add('drag');
+        });
+
+        uploader.addEventListener('dragleave', () => {
+            uploader.classList.remove('drag');
+        });
+
+        uploader.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploader.classList.remove('drag');
+
+            const file = e.dataTransfer.files && e.dataTransfer.files[0];
+            if(file && isImage(file)){
+                setInputFile(file);
+            }
+        });
+
+        // paste image (CTRL+V)
+        document.addEventListener('paste', (e) => {
+            if(!e.clipboardData) return;
+
+            const items = e.clipboardData.items;
+            if(!items) return;
+
+            for(let i = 0; i < items.length; i++){
+                const item = items[i];
+                if(item.type && item.type.startsWith("image/")){
+                    const file = item.getAsFile();
+                    if(file){
+                        setInputFile(file);
+                    }
+                }
+            }
         });
     }
 </script>
+
 
 {% endblock %}

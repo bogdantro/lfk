@@ -144,6 +144,88 @@ $txt: #1b2c65;
       }
     }
 
+    .uploader{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px dashed rgba(27,44,101,0.35);
+  background: rgba(246,246,246,0.40);
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover{
+    transform: translateY(-1px);
+    border-color: rgba(27,44,101,0.55);
+  }
+
+  &.drag{
+    border-color: rgba(27,44,101,0.85);
+    background: rgba(27,44,101,0.06);
+  }
+
+  .uploader-left{
+    .big{
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: $txt;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .small{
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(27,44,101,0.75);
+      margin: 0;
+    }
+  }
+
+  .uploader-right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    min-width: 220px;
+
+    .pick{
+      padding: 12px 16px;
+      border-radius: 6px;
+      border: none;
+      background: $primBtn;
+      color: white;
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: .2s;
+
+      &:hover{
+        transform: translateY(-1px);
+        filter: brightness(1.05);
+      }
+    }
+
+    .filename{
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(27,44,101,0.75);
+      margin: 0;
+      max-width: 320px;
+      text-align: right;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
     .mobile-actions{
       display: none;
     }
