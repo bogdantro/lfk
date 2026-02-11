@@ -39,7 +39,7 @@
     </div>
   <div class="content">
     <div class="text">
-      <h1>{{ post_info.title }}</h1>
+      <h1>{{ post_info.title|striptags|safe  }}</h1>
       <p>Skrevet {{ post_info.published_at|date:"d F Y" }} av {{ post_info.author }}</p>
       <p class="project-text">
                      {% autoescape off %}
