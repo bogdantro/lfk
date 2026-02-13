@@ -11,7 +11,7 @@ class Blog(models.Model):
     text = models.TextField()
     slug = models.SlugField(max_length=350)
     created_at = models.DateTimeField(auto_now_add=True)
-    published_at = models.DateTimeField(null=True, blank=True)
+    published_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     image = models.ImageField(upload_to="static/images/blog/", blank=True)
     author = models.CharField(max_length=70)
 
