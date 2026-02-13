@@ -204,7 +204,7 @@
     transform: translateX(-10px);
   }
   #desNav .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(0.95) translateX(-10px);
   }
   #desNav .menu {
     display: flex;

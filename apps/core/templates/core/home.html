@@ -59,27 +59,32 @@
 </div>  -->
 
 
-<section class="blog reveal" id="blogNew">
+
+
+<section class="blog reveal"   onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
   <div class="content">
-        <div class="right">
-   
+
+    <div class="right" >
       <div class="text">
-        <p class="headinp" >Vi er Lillehammer Fotball Klubb</p>
-        <h2>#sterkere sammen</h2>
-        <p>Lillehammer Fotballklubb (LFK) har sitt utspring i klubbene Fremad og Mesna. Fremad er stiftet 23.08.1911 og Sportsklubben Mesna er stiftet 21.08.1921. Begge klubber avholdt Årsmøter 30.11.1968 hvor sammenslåingen til Lillehammer Fotballklubb ble vedtatt. 20.12.1968 ble det avholdt konstituerende Årsmøte hvor Lillehammer Fotballklubb formelt ble en realitet. Man valgte å benytte Fremad sin stiftelsesdato, da denne klubben var eldst. Formålet til LFK var ved samarbeid og kameratskap å fremme idrett og friluftsliv i sunne former.</p>
-        <!-- <button>Les mer <i class="fa-solid fa-arrow-right"></i></button> -->
+
+        {% if latest_blog %}
+          <h2>{{ latest_blog.title }}</h2>
+
+          <p class="clamp-3">
+            {{ latest_blog.text|striptags|safe }}
+          </p>
+
+          <button onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
+            Les mer <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+        {% else %}
+          <h2>Ingen nyheter enda</h2>
+          <p>Kom tilbake snart.</p>
+        {% endif %}
+
       </div>
     </div>
-    <div class="left">
-        <img src="{% static 'images/covers/about.avif' %}" alt="">
-        <div class="imgoverlay"></div>
-    </div>
-
-  </div>
-</section>
-
-<section class="blog reveal" id="laStampaShop"  onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
-  <div class="content">
 
     <div class="left">
 
@@ -91,20 +96,34 @@
 
       <div class="imgoverlay"></div>
     </div>
+  </div>
+</section>
+
+<section class="blog reveal" id="laStampaShop"  onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
+  <div class="content">
+
+    <div class="left">
+
+      {% if second_latest_blog  and second_latest_blog.image %}
+        <img src="{{ second_latest_blog.image.url }}" alt="" style="max-height: 800px;">
+      {% else %}
+        <img src="{% static 'images/covers/blog.avif' %}" alt="" style="max-height: 800px;">
+      {% endif %}
+
+      <div class="imgoverlay"></div>
+    </div>
 
     <div class="right" >
       <div class="text">
 
-        <p class="headinp normal">Siste nytt</p>
-
-        {% if latest_blog %}
-          <h2>{{ latest_blog.title }}</h2>
+        {% if second_latest_blog  %}
+          <h2>{{ second_latest_blog.title }}</h2>
 
           <p class="clamp-3">
-            {{ latest_blog.text|striptags|safe }}
+            {{ second_latest_blog.text|striptags|safe }}
           </p>
 
-          <button onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
+          <button onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
             Les mer <i class="fa-solid fa-arrow-right"></i>
           </button>
 
@@ -193,3 +212,22 @@
 
 {% endblock %}
  
+
+<section class="blog reveal" >
+  <div class="content">
+        <div class="right">
+   
+      <div class="text">
+        <p class="headinp" >Vi er Lillehammer Fotball Klubb</p>
+        <h2>#sterkeresammen</h2>
+        <p>Lillehammer Fotballklubb (LFK) har sitt utspring i klubbene Fremad og Mesna. Fremad er stiftet 23.08.1911 og Sportsklubben Mesna er stiftet 21.08.1921. Begge klubber avholdt Årsmøter 30.11.1968 hvor sammenslåingen til Lillehammer Fotballklubb ble vedtatt. 20.12.1968 ble det avholdt konstituerende Årsmøte hvor Lillehammer Fotballklubb formelt ble en realitet. Man valgte å benytte Fremad sin stiftelsesdato, da denne klubben var eldst. Formålet til LFK var ved samarbeid og kameratskap å fremme idrett og friluftsliv i sunne former.</p>
+        <!-- <button>Les mer <i class="fa-solid fa-arrow-right"></i></button> -->
+      </div>
+    </div>
+    <div class="left">
+        <img src="{% static 'images/covers/about.avif' %}" alt="">
+        <div class="imgoverlay"></div>
+    </div>
+
+  </div>
+</section>

@@ -3,6 +3,9 @@ $white: rgb(246,246,246);
 $primBtn: #1b2c65;
 $txt: #1b2c65;
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 
 @media only screen and (min-device-width: 1140px){
@@ -29,6 +32,9 @@ $txt: #1b2c65;
             width: 50%;
             position: relative;
             order: 2;
+                        flex: 0 0 50%;
+    max-width: 50%;
+    box-sizing: border-box;
             .cover-img{
                 position: fixed;
                 height: 100vh;
@@ -40,13 +46,15 @@ $txt: #1b2c65;
                 z-index: 10;
                 transform: scale(1);
                 filter: brightness(88%);
+      width: 50vw;
+    left: 50vw;
                 &.relative{
                      position: absolute;
-  left: 0;          // absolute is inside .image, so reset left
-  top: auto;
-  bottom: 0;
-  width: 100%;
-  height: 100vh;
+                      left: 0;          // absolute is inside .image, so reset left
+                      top: auto;
+                      bottom: 0;
+                      width: 100%;
+                      height: 100vh;
                 }
             }
         }
@@ -59,7 +67,11 @@ $txt: #1b2c65;
             padding-top: 150px;
             padding-bottom: 60px;
             padding-inline: 50px;
-            padding-right: 100px;
+             padding-top: 150px;
+    padding-bottom: 60px;
+     flex: 0 0 50%;
+  max-width: 50%;
+  box-sizing: border-box;
             .text {
                 position: relative;
                 text-align: left;
@@ -74,7 +86,7 @@ $txt: #1b2c65;
     }
 
                 h1 {
-                    font-size: 75px;
+                    font-size: 55px;
                     color: $txt;
                     font-family: 'Stampa', "Roboto", sans-serif;
                     margin-bottom: 15px;
@@ -107,134 +119,135 @@ $txt: #1b2c65;
                   text-decoration: underline;
                 }
             }
-                              #memberBenefits{
-  width: 100%;
-  position: relative;
-  .content{
-    width: 100%;
-    padding: 0;
-  }
+          #memberBenefits{
+            width: 100%;
+            position: relative;
+            .benefits-content{
+              width: 100%;
+              padding: 0;
+            }
 
-  .headerheader{
-    display: none;
-  }
+            .headerheader{
+              display: none;
+            }
 
-  .header{
-    width: 100%;
-    margin-bottom: 35px;
-
-
-
-    h2{
-      font-family: 'Stampa', "Roboto", sans-serif;
-      font-size: 75px;
-      line-height: 75px;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: $txt;
-      margin-bottom: 10px;
-    }
-
-    .desc{
-      font-family: 'Stampa', "Roboto", sans-serif;
-      font-size: 20px;
-      font-weight: 500;
-      color: rgba(27,44,101,0.82);
-      max-width: 860px;
-    }
-  }
-
-  .benefits-grid{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    row-gap: 65px;
-    margin-top: 15px;
-  }
-
-  .benefit-card{
-    position: relative;
-    background: rgba(246,246,246,0.60);
-    border: 1px solid rgba(27,44,101,0.16);
-    border-radius: 8px;
-    padding: 26px;
-    padding-top: 80px;
-    overflow: visible;
-    transition: .25s;
-    margin-top: 80px;
+            .header{
+              width: 100%;
+              margin-bottom: 35px;
 
 
-    .logo{
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%) translateY(-50%);
-      width: 120px;
-      height: 120px;
-      border-radius: 26px;
-      background: rgba(246,246,246,0.95);
-      border: 3px solid rgba(246,246,246,0.95);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 5;
-      transition: .25s;
 
-      img{
-        width: 75%;
-        height: 75%;
-        object-fit: contain;
-      }
-    }
+              h2{
+                font-family: 'Stampa', "Roboto", sans-serif;
+                font-size: 75px;
+                line-height: 75px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $txt;
+                margin-bottom: 10px;
+              }
 
-    h3{
-      margin-top: 0;
-      text-align: center;
-      font-family: 'Stampa', "Roboto", sans-serif;
-      font-size: 26px;
-      font-weight: 700;
-      color: $txt;
-      text-transform: uppercase;
-      margin-bottom: 14px;
-    }
+              .desc{
+                font-family: "Inter", sans-serif;
+                font-size: 20px;
+                font-weight: 500;
+                color: rgba(27,44,101,0.82);
+                max-width: 860px;
+              }
+            }
 
-    p{
-      text-align: center;
-      font-size: 16px;
-      color: $txt;
-      margin-bottom: 18px;
-    }
+            .benefits-grid{
+              width: 100%;
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 
-    .links{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: auto;
+              gap: 28px;
+              row-gap: 65px;
+              margin-top: 15px;
+            }
 
-      .icon{
-        width: 32px;
-        height: 32px;
-        border-radius: 6px;
-        background: $primBtn;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        transition: .2s;
-        font-size: 14px;
+            .benefit-card{
+              position: relative;
+              background: rgba(246,246,246,0.60);
+              border: 1px solid rgba(27,44,101,0.16);
+              border-radius: 8px;
+              padding: 26px;
+              padding-top: 80px;
+              overflow: visible;
+              transition: .25s;
+              margin-top: 80px;
 
-        &:hover{
-          transform: translateY(-2px);
-          filter: brightness(1.05);
-        }
-      }
-    }
-  }
-}
+
+              .logo{
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                width: 120px;
+                height: 120px;
+                border-radius: 26px;
+                background: rgba(246,246,246,0.95);
+                border: 3px solid rgba(246,246,246,0.95);
+                box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 5;
+                transition: .25s;
+
+                img{
+                  width: 75%;
+                  height: 75%;
+                  object-fit: contain;
+                }
+              }
+
+              h3{
+                margin-top: 0;
+                text-align: center;
+                font-family: 'Stampa', "Roboto", sans-serif;
+                font-size: 26px;
+                font-weight: 700;
+                color: $txt;
+                text-transform: uppercase;
+                margin-bottom: 14px;
+              }
+
+              p{
+                text-align: center;
+                font-size: 16px;
+                color: $txt;
+                margin-bottom: 18px;
+              }
+
+              .links{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-top: auto;
+
+                .icon{
+                  width: 32px;
+                  height: 32px;
+                  border-radius: 6px;
+                  background: $primBtn;
+                  color: white;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  text-decoration: none;
+                  transition: .2s;
+                  font-size: 14px;
+
+                  &:hover{
+                    transform: translateY(-2px);
+                    filter: brightness(1.05);
+                  }
+                }
+              }
+            }
+          }
             
             
         }
@@ -360,7 +373,7 @@ $txt: #1b2c65;
 
                     h2{
                         color: $txt;
-                        font-size: 75px;
+                        font-size: 55px;
                         font-weight: 600;
                         text-transform: uppercase;
                         line-height: 75px;
@@ -574,3 +587,5 @@ $txt: #1b2c65;
 
 
 }
+
+

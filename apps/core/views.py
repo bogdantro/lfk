@@ -18,12 +18,16 @@ from apps.blog.models import *
 
 # Home
 def home(request):
-    latest_blog = Blog.objects.order_by('id').first()
+    blogs = Blog.objects.order_by('-id')[:2]
+
+    latest_blog = blogs[0] if len(blogs) > 0 else None
+    second_latest_blog = blogs[1] if len(blogs) > 1 else None
 
     return render(request, 'core/home.html', {
-        'latest_blog': latest_blog
+        'latest_blog': latest_blog,
+        'second_latest_blog': second_latest_blog
     })
-    
+
 
 
 # Sport

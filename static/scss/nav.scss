@@ -242,7 +242,7 @@ $lfkgold: #B6A265;
                 transition: .2s;
                 transform: translateX(-10px);
                 &:hover{
-                    transform: scale(1.05);
+                    transform: scale(0.95) translateX(-10px);
                 }
             }
         }
