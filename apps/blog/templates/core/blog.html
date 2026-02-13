@@ -43,7 +43,11 @@
          </div>
          <div class="blog-text">
             <h2>{{ post.title|striptags|safe  }}</h2>
+            {% if post.published_at %}
             <p>Skrevet {{ post.published_at|date:"d F Y" }} </p>
+            {% else %}
+            <p>Skrevet {{ post.created_at|date:"d F Y" }} </p>
+            {% endif %}
             <p>{{ post.text|striptags|safe   }}</p>
             <button>Les mer <i class="fa-solid fa-arrow-right"></i></button>
          </div>

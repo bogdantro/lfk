@@ -4,7 +4,7 @@ from django.utils.html import strip_tags
 from html import unescape
 
 def blog(request):
-    post = Blog.objects.all().order_by('created_at')
+    post = Blog.objects.all().order_by('-created_at')
 
     return render(request, 'core/blog.html', {'post': post})
 

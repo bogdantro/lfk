@@ -40,7 +40,11 @@
   <div class="content">
     <div class="text">
       <h1>{{ post_info.title|striptags|safe  }}</h1>
+      {% if post.published_at %}
       <p>Skrevet {{ post_info.published_at|date:"d F Y" }} av {{ post_info.author }}</p>
+            {% else %}
+      <p>Skrevet {{ post_info.created_at|date:"d F Y" }} av {{ post_info.author }}</p>
+            {% endif %}
       <p class="project-text">
                      {% autoescape off %}
                         {{ post_info.text}}
