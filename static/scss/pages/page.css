@@ -480,6 +480,7 @@
   .blog-posts .post .blog-text h2 {
     color: #1b2c65;
     font-size: 32px;
+    font-family: "Stampa", "Roboto", sans-serif;
   }
   .blog-posts .post .blog-text p {
     font-size: 16px;
