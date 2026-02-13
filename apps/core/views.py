@@ -29,6 +29,8 @@ def home(request):
         'second_latest_blog': posts[1] if len(posts) > 1 else None
     })
 
+def xtravgs(request):
+    return render(request, 'pages/xtravgs.html')
 
 # Sport
 def senior(request):

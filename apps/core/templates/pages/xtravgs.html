@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/teams/senior.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+
+
+
+<!-- <div id="startOverlay"></div> -->
+<section class="cover" >
+    <div class="content">
+        
+        <div class="left" onclick="window.location.href='/'">
+        <div class="overlay"></div>
+        <img src="{% static 'images/covers/fotballextra.jpeg' %}" alt="" class="no-hover">
+        <img src="{% static 'images/covers/fotballextra2.jpeg' %}" alt="" class="hover">
+        <div class="text"><h1>Fotball extra</h1></div>
+    </div>
+    
+<div class="right"
+     onclick="window.open('{% static 'pdfs/Brosjyre-Fotball-VGS-2026-2027.pdf' %}', '_blank', 'noopener')">
+            <div class="overlay"></div>
+            <img src="{% static 'images/covers/vgs.jpg' %}" alt="" class="no-hover">
+            <img src="{% static 'images/covers/cover5.jpg' %}" alt="" class="hover">
+            <div class="text"><h1>Fotball vgs</h1></div>
+    </div>
+ 
+  </div>
+</section>
+
+
+
+{% endblock %}
+ 

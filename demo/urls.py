@@ -22,6 +22,8 @@ urlpatterns = [
 
     path('', home, name='home'),
 
+    path('fotball-extra-vgs/', xtravgs, name='xtravgs'),
+
     # Sport
     path('lag/senior/', senior, name='senior'),
     path('lag/senior/herrer/', senior_herrer, name='senior_herrer'),
