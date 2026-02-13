@@ -4,9 +4,12 @@ from django.utils.html import strip_tags
 from html import unescape
 
 def blog(request):
-    post = Blog.objects.all().order_by('-created_at')
+    site_posts = Blog.objects.filter(wordpress_id__isnull=True).order_by('-created_at', '-id')
+    wp_posts   = Blog.objects.filter(wordpress_id__isnull=False).order_by('id')  # newest-imported first
 
-    return render(request, 'core/blog.html', {'post': post})
+    posts = list(site_posts) + list(wp_posts)
+
+    return render(request, 'core/blog.html', {'post': posts})
 
 def blog_post(request, id, slug):
     post_info = get_object_or_404(Blog, id=id, slug=slug) 
