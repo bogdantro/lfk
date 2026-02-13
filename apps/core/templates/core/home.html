@@ -61,13 +61,15 @@
 
 
 
-<section class="blog reveal"   onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
+{% if latest_blog %}
+<section class="blog reveal"
+onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
+
   <div class="content">
 
-    <div class="right" >
+    <div class="right">
       <div class="text">
 
-        {% if latest_blog %}
           <h2>{{ latest_blog.title }}</h2>
 
           <p class="clamp-3">
@@ -78,45 +80,43 @@
             Les mer <i class="fa-solid fa-arrow-right"></i>
           </button>
 
-        {% else %}
-          <h2>Ingen nyheter enda</h2>
-          <p>Kom tilbake snart.</p>
-        {% endif %}
-
       </div>
     </div>
 
     <div class="left">
-
-      {% if latest_blog and latest_blog.image %}
-        <img src="{{ latest_blog.image.url }}" alt="" style="max-height: 800px;">
+      {% if latest_blog.image %}
+        <img src="{{ latest_blog.image.url }}" style="max-height: 800px;">
       {% else %}
-        <img src="{% static 'images/covers/blog.avif' %}" alt="" style="max-height: 800px;">
+        <img src="{% static 'images/covers/blog.avif' %}" style="max-height: 800px;">
       {% endif %}
 
       <div class="imgoverlay"></div>
     </div>
-  </div>
-</section>
 
-<section class="blog reveal" id="laStampaShop"  onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
+  </div>
+
+</section>
+{% endif %}
+
+{% if second_latest_blog %}
+<section class="blog reveal" id="laStampaShop"
+onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
+
   <div class="content">
 
     <div class="left">
-
-      {% if second_latest_blog  and second_latest_blog.image %}
-        <img src="{{ second_latest_blog.image.url }}" alt="" style="max-height: 800px;">
+      {% if second_latest_blog.image %}
+        <img src="{{ second_latest_blog.image.url }}" style="max-height: 800px;">
       {% else %}
-        <img src="{% static 'images/covers/blog.avif' %}" alt="" style="max-height: 800px;">
+        <img src="{% static 'images/covers/blog.avif' %}" style="max-height: 800px;">
       {% endif %}
 
       <div class="imgoverlay"></div>
     </div>
 
-    <div class="right" >
+    <div class="right">
       <div class="text">
 
-        {% if second_latest_blog  %}
           <h2>{{ second_latest_blog.title }}</h2>
 
           <p class="clamp-3">
@@ -127,16 +127,14 @@
             Les mer <i class="fa-solid fa-arrow-right"></i>
           </button>
 
-        {% else %}
-          <h2>Ingen nyheter enda</h2>
-          <p>Kom tilbake snart.</p>
-        {% endif %}
-
       </div>
     </div>
 
   </div>
+
 </section>
+{% endif %}
+
 
 
 
