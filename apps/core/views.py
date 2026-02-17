@@ -84,6 +84,15 @@ def stampapodden(request):
     return render(request, 'pages/stampapodden.html')
 
 
+# Arrangement
+def tine_fotballskole(request):
+    return render(request, 'pages/tine-fotballskole.html')
+
+def thallaug_cup(request):
+    return render(request, 'pages/thallaug-cup.html')
+
+def kiwi_cup(request):
+    return render(request, 'pages/kiwi-cup.html')
 
 
 

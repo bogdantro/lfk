@@ -46,6 +46,11 @@ urlpatterns = [
     path('la-stampa-magasin/', la_stampa_magasin, name='la_stampa_magasin'),
     path('stampapodden/', stampapodden, name='stampapodden'),
 
+    # Arrangement
+    path('tine-fotballskole/', tine_fotballskole, name='tine_fotballskole'),
+    path('thallaug-cup/', thallaug_cup, name='thallaug_cup'),
+    path('kiwi-cup/', kiwi_cup, name='kiwi_cup'),
+
 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

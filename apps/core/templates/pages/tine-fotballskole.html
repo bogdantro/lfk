@@ -1,0 +1,168 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover">
+<div class="image">
+  <img id="coverImgA" class="cover-img tine is-active"
+       src="{% static 'images/other/tine1.jpeg' %}"
+       alt="Tine Fotballskoler">
+
+  <img id="coverImgB" class="cover-img tine"
+       src="{% static 'images/other/tine2.jpeg' %}"
+       alt="Tine Fotballskoler">
+</div>
+
+
+  <div class="content">
+    <div class="text">
+
+      <h1>Tine Fotballskoler</h1>
+
+      <p>
+        <span class="subheading">Uke 26</span><br>
+        <strong>22.–26. juni 2026</strong><br><br>
+
+        <span class="subheading">Uke 33</span><br>
+        <strong>10.–14. august 2026</strong>
+      </p>
+
+      <br>
+
+      <p>
+        <span class="subheading">Informasjon</span><br><br>
+        Tine Fotballskoler er for barn i alderen <strong>6–12 år</strong>.<br><br>
+
+        Idrettsglede, vennskap, lek, moro og mye fotball er det som kjennetegner fotballskolene, og vi er sikre på at alle
+        som melder seg på skal få en fantastisk uke sammen med oss på Stampesletta. I fjor var vi over <strong>400</strong>
+        ivrige barn i aktivitet.<br><br>
+
+        Vi har både jente- og gutteinstruktører fra begge klubber som står klare til å ta imot barna, og legge til rette for
+        læring, utvikling, lek og moro. Tine Fotballskole handler både om fotball, men like mye om inkludering, kosthold og
+        samhold.
+      </p>
+
+      <br>
+
+      <p>
+        <span class="subheading">Dette får du på Tine Fotballskoler</span><br><br>
+        • Fotballsekk<br>
+        • Fotballskoledrakt<br>
+        • Tine-produkter hver dag
+      </p>
+
+      <br>
+
+      <p>
+        <span class="subheading">Program</span><br><br>
+        Vi holder på mandag til fredag fra <strong>kl. 09–15</strong>.<br><br>
+        Alle må ha med ball hver dag, i tillegg til niste og drikkeflaske.
+        Unntaket er fredag da vi feirer litt ekstra, og i god tradisjon fyrer opp grillen.
+      </p>
+
+      <br>
+
+      <p>
+        <span class="subheading">Påmelding</span><br><br>
+        Påmelding gjøres direkte i Hoopit gjennom denne linken:<br>
+        <a href="https://app.hoopit.io/join/lillehammer-fotballklubb-195271/open/tine-fotballskole-193828" target="_blank" rel="noopener">PÅMELDING GJENNOM HOOPIT</a>
+      </p>
+
+      <br>
+
+      <p>
+        <span class="subheading">Pris 2026</span><br><br>
+        Uke 26: <strong>1 450,-</strong><br>
+        Uke 33: <strong>1 450,-</strong><br>
+        Begge uker: <strong>2 400,-</strong><br><br>
+
+        <strong>Velkommen til lek og moro med oss på Stampesletta!</strong>
+      </p>
+
+      <br>
+
+      <p>
+        <span class="subheading">Kontakt oss</span><br><br>
+        <strong>Lillehammer Fotballklubb</strong><br>
+        Postboks 11, 2601 Lillehammer<br>
+        Org.nr: 981623916
+      </p>
+
+      <br>
+
+      <p>
+        <span class="subheading">Besøk oss</span><br><br>
+        Klubbhuset,<br>
+        Stampesletta,<br>
+        Lillehammer
+      </p>
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const imgA = document.getElementById("coverImgA");
+  const imgB = document.getElementById("coverImgB");
+  if (!imgA || !imgB) return;
+
+  // Use absolute /static paths (works with Django static)
+  const images = [
+    "/static/images/other/tine1.jpeg",
+    "/static/images/other/tine2.jpeg",
+    "/static/images/other/tine3.jpeg",
+    "/static/images/other/tine4.jpeg",
+    "/static/images/other/tine5.jpeg",
+  ];
+
+  const intervalMs = 5000;   // time per image
+  const fadeMs = 1000;       // MUST match CSS opacity transition (1s)
+
+  let index = 0;
+  let showA = true;
+
+  // Start state
+  imgA.src = images[0];
+  imgA.classList.add("is-active", "is-animating");
+
+  // Preload to avoid flashing
+  images.forEach((src) => {
+    const i = new Image();
+    i.src = src;
+  });
+
+  function next() {
+    index = (index + 1) % images.length;
+
+    const incoming = showA ? imgB : imgA;
+    const outgoing = showA ? imgA : imgB;
+
+    // set next image on the hidden one
+    incoming.src = images[index];
+
+    // reset animation class so transform restarts smoothly
+    incoming.classList.remove("is-animating");
+    // force reflow so animation restarts
+    void incoming.offsetWidth;
+    incoming.classList.add("is-animating");
+
+    // crossfade
+    incoming.classList.add("is-active");
+    outgoing.classList.remove("is-active");
+
+    // swap for next time
+    showA = !showA;
+  }
+
+  setInterval(next, intervalMs);
+});
+
+</script>
+{% endblock %}

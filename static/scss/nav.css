@@ -142,7 +142,7 @@
     top: 0;
     left: 0;
     display: block;
-    z-index: 1000000;
+    z-index: 10000000000000000000000000000000000;
   }
   #desNavTop .content {
     display: flex;
@@ -166,8 +166,9 @@
     align-items: center;
     position: fixed;
     top: 37px;
-    z-index: 1000000;
+    z-index: 10000000000000000000000000000000000;
     transition: 0.4s;
+    border-bottom: 1px solid red;
   }
   #desNav.sticky {
     background: rgba(247, 247, 247, 0.97);
@@ -192,6 +193,7 @@
     padding-inline: 50px;
     transform: translateX(-50%);
     background: white;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.466);
   }
   #desNav .logo {
     color: white;
@@ -215,8 +217,6 @@
     position: relative;
     padding-bottom: 12px;
     margin-top: 12px;
-    /* dropdown */
-    /* ✅ ACTIVE STATE (hover OR keyboard focus) */
   }
   #desNav .menu .nav-item > a {
     display: flex;
@@ -260,6 +260,9 @@
   #desNav .menu .nav-item .dropdowns-item:hover > a i {
     transform: rotate(90deg);
   }
+  #desNav .menu .nav-item {
+    /* dropdown */
+  }
   #desNav .menu .nav-item .dropdown {
     position: absolute;
     top: 100%;
@@ -287,6 +290,9 @@
   }
   #desNav .menu .nav-item .dropdown a:hover {
     background: rgba(0, 0, 0, 0.05);
+  }
+  #desNav .menu .nav-item {
+    /* ✅ ACTIVE STATE (hover OR keyboard focus) */
   }
   #desNav .menu .nav-item:hover > a i, #desNav .menu .nav-item:focus-within > a i {
     transform: rotate(180deg);

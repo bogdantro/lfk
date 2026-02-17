@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover" >
+  <div class="image">
+    <img
+      src="{% static 'images/other/kiwi-cup.jpeg' %}"
+      alt="Kiwi Cup"
+      class="cover-img"
+    >
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      <h1>Kiwi Cup</h1>
+
+      <!-- <p>
+        <span class="subheading">Neste cup</span><br>
+        <strong>8. juni 2024</strong>
+      </p> -->
+
+      <br>
+
+      <p>
+        <span class="subheading">Informasjon</span><br><br>
+        Sammen med Faaberg Fotball arrangerer vi årlig Kiwi Cup. Dette er en bedriftsturnering i fotball for ansatte i barnehager,
+        grunnskoler og videregående skoler. Dette er en turnering med en tydelig sosial profil hvor det viktigste er å delta,
+        og man kan så absolutt være best uten ball!<br><br>
+
+        Du finner mer informasjon på turneringens hjemmeside:<br>
+        <a href="https://nmforansatte.cupmanager.net/" target="_blank" rel="noopener">Hjemmeside Kiwi Cup</a>
+      </p>
+
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}
