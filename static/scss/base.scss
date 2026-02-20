@@ -5,6 +5,122 @@ $txt: #1b2c65;
 $lfkgold: #b6a265;
 
 
+   .home-cover {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+      .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #f3f3f3;
+        width: 100%;
+        height: 200px;
+        z-index: 10000;
+      }
+      .overlay-right{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #f3f3f3;
+        width: 75px;
+        height: 100vh;
+        z-index: 1000;
+      }
+  .cover-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* This creates the white backgr,ound and cuts out the text */
+  .cover-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1);
+    z-index: 100000;
+
+    rect {
+      width: 100%;
+      height: 100%;
+          position: absolute;
+    }
+
+    // Removed the fixed 2000px min-width that was causing overflow issues
+    g {
+      width: 100%;
+      height: 100%;
+      transform: translate(-10px, -120px);
+    }
+  }
+
+  .content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 10000000;
+    .text {
+      width: 100%;
+      height: 170px;
+      text-align: center;
+      padding-bottom: 50px;
+       position: relative;
+       margin-bottom: auto;
+        border-bottom: 1px solid rgba(211, 211, 211, 0.466);
+                width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding-inline: 20px;
+         img {
+          width: 95px;
+          height: auto;
+          object-fit: contain;
+          margin-top: auto;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          &.right-img{
+            left: unset;
+            bottom: 0;
+            right: 20px;
+          }
+        }
+   
+
+      /* visually hidden h1 (keeps semantics/SEO) */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+    }
+  }
+  }
+
 @media only screen and (min-device-width: 1140px){
     #startOverlay{
         position: absolute;
@@ -79,12 +195,14 @@ $lfkgold: #b6a265;
     rect {
       width: 100%;
       height: 100%;
+          position: absolute;
     }
 
     // Removed the fixed 2000px min-width that was causing overflow issues
     g {
       width: 100%;
       height: 100%;
+      transform: translate(-10px, -120px);
     }
   }
 
@@ -100,46 +218,33 @@ $lfkgold: #b6a265;
     z-index: 10000000;
     .text {
       width: 100%;
-      height: 175px;
+      height: 170px;
       text-align: center;
       padding-bottom: 50px;
-       font-size: 140px;
-      z-index: 10000000000;
        position: relative;
        margin-bottom: auto;
         border-bottom: 1px solid rgba(211, 211, 211, 0.466);
-      .cover-partner {
-        width: 100%;
+                width: 100%;
         display: flex;
         justify-content: space-between;
-        transform: translateY(180px);
+        align-items: center;
         position: relative;
         padding-inline: 50px;
-
-        img {
-          width: 200px;
+         img {
+          width: 130px;
           height: auto;
           object-fit: contain;
+          margin-top: auto;
+          position: absolute;
+          bottom: 10px;
+          left: 50px;
+          &.right-img{
+            left: unset;
+            bottom: -10px;
+            right: 50px;
+          }
         }
-      }
-      h2{
-        position: absolute;
-        top: 120px;
-        color: $lfkgold;
-        left: 50px;
-        font-size: 20px;
-        z-index: 1000000000;
-        font-family: 'Stampa', "Roboto", sans-serif;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        width: 50%;
-        &.h2-right{
-          justify-content: flex-end;
-          left: unset;
-          right: 50px;
-        }
-      }
+   
 
       /* visually hidden h1 (keeps semantics/SEO) */
       .sr-only {

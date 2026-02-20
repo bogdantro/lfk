@@ -15,17 +15,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- Mobile nav -->
+
+<div id="mobileNavTop">
+   <a href="/lag/senior/herrer/">Senior Herrer</a>
+   <div class="border"></div>
+    <a href="/lag/senior/kvinner/">Senior kvinner</a>
+</div>
+
 <div id="mobileNav">
-    <div class="left">
+      <div class="logo" onclick="window.location.href='/'">
+          <img src="{% static 'images/logo/logo-8.png' %}" alt="" class="logo-image">
+      </div>
         <div class="hamburger" id="hamburger" onclick="menu()">
             <span class="upper-span"></span>
             <span class="center-span"></span>
             <span class="lower-span"></span>
         </div>
-        <div class="logo" onclick="window.location.href='/'">
-            <img src="{% static 'images/logo/logo-8.png' %}" alt="" class="logo-image">
-        </div>
-    </div>
     <div class="sidebar" id="sidebar">
         <a>Nyheter</a>
         <a>Sport</a>
@@ -35,9 +40,6 @@
         <a>Om klubben</a>
         <a>Live Camera</a>
         <a>Stolthet</a>
-    </div>
-    <div class="nav-action">
-        <button onclick="window.location.href='/bli-med/'">Bli med!</button>
     </div>
 </div>
 

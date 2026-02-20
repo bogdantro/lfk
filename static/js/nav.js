@@ -1,7 +1,7 @@
 
 window.addEventListener("scroll", function(){
     const navbar = document.getElementById('mobileNav');
-    navbar.classList.toggle("sticky", window.scrollY > 1)
+    navbar.classList.toggle("sticky", window.scrollY > 40)
   })
 
 

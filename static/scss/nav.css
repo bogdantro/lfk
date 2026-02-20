@@ -1,33 +1,58 @@
 @charset "UTF-8";
-#desNav {
+#desNav, #desNavTop {
   display: none;
+}
+
+#mobileNavTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  background: #B6A265;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  padding-inline: 20px;
+  z-index: 100000000000000;
+}
+#mobileNavTop a {
+  margin: 0;
+  height: -moz-max-content;
+  height: max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
+  padding: 0;
+  color: white;
+  font-size: 14px;
+  font-family: "Stampa", "Roboto", sans-serif;
 }
 
 #mobileNav {
   width: 100%;
-  height: 75px;
+  height: 65px;
   display: flex;
   justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   padding: 5px 20px;
   padding-bottom: 3px;
-  position: fixed;
-  top: 0;
-  z-index: 100;
+  position: absolute;
+  top: 40px;
+  z-index: 100000000000000;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
-  background: rgba(0, 0, 0, 0.05);
+  background: white;
 }
 #mobileNav.sticky {
-  background: #00061a;
-  transition: 0.2s;
+  top: 0;
+  position: fixed;
 }
 #mobileNav.menu {
   transition: 0.2s;
   background: #00061a;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
-}
-#mobileNav .left {
-  display: flex;
 }
 #mobileNav .logo {
   transition: 0.8s;
@@ -35,11 +60,10 @@
   width: auto;
   height: auto;
   z-index: 1000;
-  margin-left: 22px;
   transform: translateY(1px);
 }
 #mobileNav .logo img {
-  width: 46px;
+  width: 35px;
   height: auto;
   transition: 0.3s;
   position: absolute;
@@ -58,7 +82,7 @@
 #mobileNav .hamburger span {
   height: 3px;
   width: 26px;
-  background: white;
+  background: #183b56;
   border-radius: 12px;
   display: block;
   transition: 0.2s;
@@ -67,7 +91,7 @@
   transform-origin: 25%;
 }
 #mobileNav .hamburger .center-span {
-  width: 22px;
+  width: 26px;
   margin-inline: auto;
 }
 #mobileNav .hamburger.click .upper-span {
@@ -132,6 +156,9 @@
 
 @media only screen and (min-device-width: 1140px) {
   #mobileNav {
+    display: none;
+  }
+  #mobileNavTop {
     display: none;
   }
   #desNavTop {
