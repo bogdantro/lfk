@@ -2,6 +2,7 @@ $black: #1F1F1F;
 $white: rgb(246,246,246);
 $primBtn: #1b2c65;
 $txt: #1b2c65;
+$lfkgold: #b6a265;
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -9,7 +10,6 @@ $txt: #1b2c65;
 
 
 @media only screen and (min-device-width: 1140px){
-
 
 
 
@@ -23,6 +23,125 @@ $txt: #1b2c65;
         overflow: visible;
         display: flex;
         flex-direction: row;
+        &.yellow{
+          background: $lfkgold;
+            .content{
+    .text{
+      h1{
+        color: white;
+      }
+
+           .numbered-list {
+                    padding-left: 28px;  
+                    li{
+                      margin-bottom: 18px;
+                      font-size: 20px;
+                      color: white;
+                      a{
+                        opacity: 0.9;
+                      }
+                    }
+                  }
+      // Better paragraph spacing without using <br>
+      p{
+        color: white;
+        margin: 0 0 18px 0;
+        line-height: 1.65;
+      }
+      a{
+        color: white;
+      }
+
+      // Title sections inside the article
+      .section-title{
+        margin-top: 38px;
+        margin-bottom: 12px;
+        font-family: 'Stampa', "Roboto", sans-serif;
+        font-size: 34px;
+        font-weight: 700;
+        color: white;
+        text-transform: uppercase;
+      }
+
+      .subheading{
+        color: white;
+      }
+
+      // Quoted paragraph (draktkomité)
+      .quote{
+        padding-left: 18px;
+        border-left: 4px solid rgba(218, 218, 218, 0.35);
+        font-style: italic;
+        background: rgba(246,246,246,0.35);
+        border-radius: 6px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+
+      // Table wrapper for mobile scroll
+      .table-wrap{
+        margin-top: 18px;
+        width: 100%;
+        overflow-x: auto;
+        border-radius: 6px;
+      }
+
+      .leaders-table{
+        width: 100%;
+        border-collapse: collapse;
+        background: rgba(207, 207, 207, 0.178);
+
+        thead{
+          background: rgba(75, 75, 75, 0.1);
+        }
+
+        th, td{
+          text-align: left;
+          padding: 14px 14px;
+          border-bottom: 1px solid rgba(27, 44, 101, 0.18);
+          color: white;
+          font-size: 16px;
+          font-weight: 500;
+          font-family: 'Stampa', "Roboto", sans-serif;
+          vertical-align: top;
+          white-space: nowrap;
+        }
+
+        th{
+          font-weight: 700;
+        }
+
+        td:first-child{
+          font-weight: 700;
+          white-space: normal; // allow names to wrap if needed
+        }
+
+        tbody tr:last-child td{
+          border-bottom: none;
+        }
+      }
+
+      // Honor members list
+      .honor-list{
+        margin: 0;
+        padding-left: 20px;
+
+        li{
+          margin-bottom: 10px;
+          font-size: 20px;
+          color: white;
+          font-family: "Inter", sans-serif;
+          font-weight: 500;
+          line-height: 1.5;
+        }
+
+        li:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+        }
         &.active{
           img{
             transform: scale(1);
@@ -110,6 +229,17 @@ $txt: #1b2c65;
                   object-fit: cover;
                   margin-bottom: 25px;
                 }
+                iframe{
+                  border-radius: 6px;
+                }
+                .numbered-list {
+                    padding-left: 28px;  
+                    li{
+                      margin-bottom: 18px;
+                      font-size: 20px;
+                      color: $black;
+                    }
+                  }
                 p{
                   font-size: 20px;
                   color: $black;
@@ -117,7 +247,9 @@ $txt: #1b2c65;
                     width: 200px;
                     height: auto;
                     object-fit: cover;
+                    margin-top: 10px;
                     margin-bottom: 25px;
+                    border-radius: 6px;
                   }
                     .subheading{
                         color: $txt;

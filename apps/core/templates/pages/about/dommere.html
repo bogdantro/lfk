@@ -1,0 +1,86 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover">
+  <div class="image">
+    <img
+      src="{% static 'images/other/dommere.jpeg' %}"
+      alt="Forsikring"
+      class="cover-img">
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      <h1>Dommere i LFK</h1>
+
+      <p>
+        Lillehammer Fotballklubb ønsker nye og gamle dommere velkommen til oss. Vi tilbyr gratis deltakelse på rekrutteringsdommerkurs som arrangeres sammen med NFF.
+        <br>
+        <br>
+        <a href="https://www.fotball.no/dommer/" target="_blank" rel="noopener">Les mer her https://www.fotball.no/dommer/</a>
+        </p>    
+
+   
+        <br>
+        <br>
+
+      <p>   
+        <span class="subheading">Dommeransvarlig i Lillehammer Fotballklubb</span><br>
+        <img src="{% static 'images/other/Dommeransvarlig.jpg' %}" alt="">
+        <br>
+        Arnold Andersson (arnoand@gmail.com)
+      </p>
+
+   <br>
+      <br>
+      <p>
+        <span class="subheading">Praktisk informasjon og skjema</span><br>
+        <p>
+  Utfyllende informasjon for dommere finner dere på <a href="https://www.fotball.no/dommer/" target="_blank" rel="noopener">NFF sine sider.</a>
+</p>
+
+<br>
+<br>
+<p>
+  For barnefotballen har vi egne skjema. Fyll ut 
+  <a href="https://lillehammerfkno-my.sharepoint.com/:w:/g/personal/admin_lillehammerfk_no/EQKjGw-e6URBoO3cNGtDK7wBsJlOAHis0Y11cxchivrVPQ?e=z9j3jz" target="_blank">Dommerregning barnefotball</a> 
+  og signer i fellesskap med dommeren.
+</p>
+
+<p>
+  Fyll deretter ut 
+  <a href="https://lillehammerfkno-my.sharepoint.com/:x:/g/personal/admin_lillehammerfk_no/EfbZ_UxQWndKkArYt3RESNIB8KVPeCOJVrHsqUPOPXgj1Q?e=cFZWqg" target="_blank">utgiftsskjema oversikt over alle kampene</a> 
+  og send sammen med hvert enkelt bilag til 
+  <a href="mailto:dagligleder@lillehammerfk.no">dagligleder@lillehammerfk.no</a> 
+  etter endt sesong.
+</p>
+
+<br>
+<br>
+
+<p>
+    <span class="subheading">Dommerhonorar</span><br>
+  Lillehammer FK følger NFF Indre Østland sine veiledende satser for dommerhonorarer. De er som følger: <br> <br>
+  Barnefotball opp til 12 år: <strong>200,-</strong> <br>
+  Gutter/Jenter 12 år 9er: <strong>400,-</strong> <br>
+  Alle klasser 5er og 7er over 12 år: <strong>450,-</strong> <br>
+
+
+</p>
+
+
+      </p>
+
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

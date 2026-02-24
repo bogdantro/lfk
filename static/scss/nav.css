@@ -104,9 +104,9 @@
   transform: rotate(-45deg);
 }
 #mobileNav .sidebar {
-  background: #00061a;
+  background: #B6A265;
   position: absolute;
-  top: 75px;
+  top: 65px;
   left: -100px;
   width: 100%;
   height: calc(100vh - 65px);
@@ -195,16 +195,18 @@
     top: 37px;
     z-index: 10000000000000000000000000000000000;
     transition: 0.4s;
-    border-bottom: 1px solid red;
+  }
+  #desNav.yellow-nav .content {
+    background: #B6A265;
+  }
+  #desNav.yellow-nav .content .menu .nav-item a {
+    color: white;
+  }
+  #desNav.yellow-nav .content .menu .nav-item .dropdown a {
+    color: #1F1F1F;
   }
   #desNav.sticky {
     background: rgba(247, 247, 247, 0.97);
-  }
-  #desNav.sticky .content .menu a {
-    color: #183b56;
-  }
-  #desNav.sticky .content .menu a:hover {
-    border-color: #183b56;
   }
   #desNav .content {
     width: 100%;
@@ -220,7 +222,6 @@
     padding-inline: 50px;
     transform: translateX(-50%);
     background: white;
-    border-bottom: 1px solid rgba(211, 211, 211, 0.466);
   }
   #desNav .logo {
     color: white;

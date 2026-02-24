@@ -51,6 +51,21 @@ urlpatterns = [
     path('thallaug-cup/', thallaug_cup, name='thallaug_cup'),
     path('kiwi-cup/', kiwi_cup, name='kiwi_cup'),
 
+    # Om klubben
+    path('om-klubben/historie/', historie, name='historie'),
+    path('om-klubben/klubbhandbok/', klubbhandbok, name='klubbhandbok'),
+    path('om-klubben/klubbkolleksjon/', klubbkolleksjon, name='klubbkolleksjon'),
+    path('om-klubben/medlemskap/', medlemskap, name='medlemskap'),
+    path('om-klubben/styret/', styret, name='styret'),
+    path('om-klubben/kontakt/', kontakt, name='kontakt'),
+    path('om-klubben/varsling/', varsling, name='varsling'),
+    path('om-klubben/forsikring/', forsikring, name='forsikring'),
+    path('om-klubben/dommere/', dommere, name='dommere'),
+    path('om-klubben/politiattest/', politiattest, name='politiattest'),
+    path('om-klubben/minibuss/', minibuss, name='minibuss'),
+    path('om-klubben/fotballfondet/', fotballfondet, name='fotballfondet'),
+    path('om-klubben/frivillighetsbanken/', frivillighetsbanken, name='frivillighetsbanken'),
+
 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover">
+  <div class="image">
+    <img
+      src="{% static 'images/other/forsikring.jpeg' %}"
+      alt="Forsikring"
+      class="cover-img">
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      <h1>Forsikring</h1>
+
+      <p>
+        Lillehammer Fotballklubb er tilknyttet Norges Fotballforbund. Det innebærer at når du har meldt deg inn og betalt medlemskontingent så er du automatisk forsikret med lagforsikring. Fotballforsikringen er en kollektiv forsikring fremforhandlet av NFF på vegne av medlemmene. Den gjelder fra 1. mars til 28. februar året etter. All kommunikasjon vedrørende forsikringen skjer elektronisk.
+      </p>
+
+   
+      <p>
+        <span class="subheading">Les mer</span><br>
+        <a href="https://www.fotball.no/sok/?q=fotballforsikring" target="_blank" rel="noopener">Les mer om forsikringsordningen her.</a>
+      </p>
+
+   <br>
+      <br>
+      <p>
+        <span class="subheading">Er skaden skjedd?</span><br>
+        Kontakt Idrettens Skadetelefon tlf: <strong>98702033</strong>. Formålet til Skadetelefonen er å ivareta idrettsutøvere på alle nivåer gjennom behandlingsløpet.
+      </p>
+
+      <p>
+        Mer informasjon finner du her:
+        <a href="https://www.fotball.no/tema/idrettens-helsesenter/idrettens-skadetelefon/" target="_blank" rel="noopener">
+          https://www.fotball.no/tema/idrettens-helsesenter/idrettens-skadetelefon/
+        </a>
+      </p>
+
+      <br>
+      <br>
+      <p>
+        <span class="subheading">Kontakt oss</span>
+          <br>
+        Lillehammer Fotballklubb<br>
+        Postboks 11, 2601 Lillehammer<br>
+        Org.nr: 981623916
+      </p>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

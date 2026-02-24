@@ -1,0 +1,136 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover yellow">
+  <div class="image">
+    <img
+      src="{% static 'images/covers/bottom.jpeg' %}"
+      alt="Bli medlem"
+      class="cover-img">
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      <h1>Bli medlem i Lillehammer Fotballklubb</h1>
+
+      <p>
+        Så bra du vil bli medlem i Lillehammer FK. Vi har vårt medlemsregister hos en leverandør som heter Hoopit. <a href="https://app.hoopit.io/join/lillehammer-fotballklubb-195271" target="_blank" rel="noopener">Her kan du enkelt melde deg inn</a> med navn, adresse, fødselsdato, mobilnummer og epost. NB! På samme link kan du også melde deg inn som støttemedlem i klubben.
+        <br>
+        <br>
+       Som medlem får du tilgang til våre medlemsfordeler.
+<a href="/medlemsfordeler/">Les mer om medlemsfordelene her.</a>
+      </p>
+<br>
+<br>
+      <p>
+        <span class="subheading">Spørsmål?</span><br>
+        Kontakt Hoopit på chat nederst i høyre hjørne på denne linken:
+        <a href="https://support.hoopit.io/nb/" target="_blank" rel="noopener">https://support.hoopit.io/nb/</a>
+      </p>
+
+      <p>
+        <span class="subheading">Hoopit har følgende åpningstider:</span>
+        <br>
+        Hverdag: kl. 08:00 – 21:00<br>
+        Lørdag: chaten er åpen, og du får svar ila dagen<br>
+        Søndag: kl. 16:00 – 20:00
+      </p>
+
+      <br>
+      <br>
+      <br>
+
+      <h2 class="section-title">Hva koster det å bli medlem?</h2>
+
+      <p>
+        Vi er pålagt å skille mellom medlemskontingent og aktivitetsavgift. Medlemskontingenten er hva det koster å være medlem i Lillehammer FK. Aktivitetsavgiften er differensiert og reflekterer kostnaden ved å spille fotball i de ulike alderssegmentene.
+      </p>
+
+      <p>
+        Vi fakturerer ungdom- og seniorfotball i februar hvert år, og barnefotballen i begynnelsen av mai hvert år. Dette håper vi er med på å skape forutsigbarhet for våre medlemmer.
+      </p>
+
+      <p>
+        Satser for medlemskontingent og aktivitetsavgift for 2026 finnes i oversikten nedenfor.
+      </p>
+
+      <div class="table-wrap">
+        <table class="leaders-table membership-table">
+          <thead>
+            <tr>
+              <th>Aldersgruppe</th>
+              <th>Klasse</th>
+              <th>Kontingent</th>
+              <th>Aktivitetsavgift</th>
+              <th>Totalt</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>G06</td><td>Knøtt</td><td>0</td><td>0</td><td>0</td></tr>
+            <tr><td>J06</td><td>Knøtt</td><td>0</td><td>0</td><td>0</td></tr>
+
+            <tr><td>G07</td><td>Knøtt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>J07</td><td>Knøtt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>G08</td><td>Knøtt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>J08</td><td>Knøtt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+
+            <tr><td>G09</td><td>Mini</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>J09</td><td>Mini</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>G10</td><td>Mini</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>J10</td><td>Mini</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+
+            <tr><td>G11</td><td>Lilleputt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>J11</td><td>Lilleputt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>G12</td><td>Lilleputt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>J12</td><td>Lilleputt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+
+            <tr><td>G13</td><td>Smågutt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>J13</td><td>Småjente</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>G14</td><td>Smågutt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>J14</td><td>Jente</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+
+            <tr><td>G15</td><td>Gutt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>G16</td><td>Gutt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+
+            <tr><td>J17</td><td>Junior</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>G19</td><td>Junior</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+
+            <tr><td>SR A Herrer</td><td>Senior</td><td>350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>SR A Damer</td><td>Senior</td><td>350</td><td>TBA</td><td>TBA</td></tr>
+
+            <tr><td>SR B Herrer</td><td>Senior</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+            <tr><td>SR B Damer</td><td>Senior</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+
+            <tr><td>Wednesday United</td><td>Senior</td><td>350</td><td>0</td><td>350</td></tr>
+            <tr><td>Støtte</td><td></td><td>350</td><td>0</td><td>350</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">Kontakt oss</h2>
+
+      <p>
+        <span class="subheading">Lillehammer Fotballklubb</span><br>
+        Postboks 11, 2601 Lillehammer<br>
+        Org.nr: 981623916
+      </p>
+
+      <p>
+        <span class="subheading">Besøk oss</span><br>
+        Klubbhuset,<br>
+        Stampesletta,<br>
+        Lillehammer
+      </p>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

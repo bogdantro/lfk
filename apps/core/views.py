@@ -95,6 +95,47 @@ def kiwi_cup(request):
     return render(request, 'pages/kiwi-cup.html')
 
 
+# Om klubben
+
+def historie(request):
+    return render(request, 'pages/about/historie.html')
+
+def klubbhandbok(request):
+    return render(request, 'pages/about/klubbhandbok.html')
+
+def klubbkolleksjon(request):
+    return render(request, 'pages/about/klubbkolleksjon.html')
+
+def medlemskap(request):
+    return render(request, 'pages/about/medlemskap.html')
+
+def styret(request):
+    return render(request, 'pages/about/styret.html')
+
+def kontakt(request):
+    return render(request, 'pages/about/kontakt.html')
+
+def varsling(request):
+    return render(request, 'pages/about/varsling.html')
+
+def forsikring(request):
+    return render(request, 'pages/about/forsikring.html')
+
+def dommere(request):
+    return render(request, 'pages/about/dommere.html')
+
+def politiattest(request):
+    return render(request, 'pages/about/politiattest.html')
+
+def minibuss(request):
+    return render(request, 'pages/about/minibuss.html')
+
+def fotballfondet(request):
+    return render(request, 'pages/about/fotballfondet.html')
+
+def frivillighetsbanken(request):
+    return render(request, 'pages/about/frivillighetsbanken.html')
+
 
 # def contact(request):
 #     if request.method=='POST' and 'contact' in request.POST:

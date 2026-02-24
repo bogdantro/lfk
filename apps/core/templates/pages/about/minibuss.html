@@ -1,0 +1,72 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover">
+  <div class="image">
+    <img
+      src="{% static 'images/other/minibuss.jpeg' %}"
+      alt="Forsikring"
+      class="cover-img">
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      <h1>Leie av klubbens minibuss</h1>
+
+      <p>
+Lillehammer FK eier egen minibuss som leies ut både til egne lag og andre. Minibussen har 16 plasser + sjåfør.
+Bussen skal alltid stå parkert på NTG sin parkering på øvre plan langs skråningen bak garasjene.      </p>
+
+   
+      <p>
+        <span class="subheading">Les mer</span><br>
+        <a href="https://docs.google.com/document/d/1qtLnQeSy64Cd5rTg9p2UIhYG1-bmdZG37m2bAsEE8io/edit?tab=t.0" target="_blank" rel="noopener">Informasjon, Priser og Retningslinjer for bruk av Minibuss finner du her</a>
+      </p>
+
+   <br>
+      <br>
+      <p>
+        Kalender under viser tilgjengelighet. Du kan søke om leie i bestillingsskjema nederst på denne siden.
+<br>
+<br>
+<span class="subheading">Kontaktperson for minibussen er</span>
+<br>
+Kjetil Haslie, 981 77 331 (drift og vedlikehold).
+<br>
+Adminstrasjonkoordinator, <a href="mailto:admin@lillehammerfk.no">admin@lillehammerfk.no</a> - <a href="tel:941 42 842">941 42 842</a> (bestilling, utleie, fakturering).
+<br>
+
+      </p>
+
+    
+      <br>
+      <br>
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FOslo&bgcolor=%23ffffff&src=OTJjMzZhZjY5NmQ2MTAzN2I2NDIzNmZhYjljMGY5MTYwMDI1MTQ0MDczZDBkMzZjZDBlYTQ5Y2RlM2FlODVmM0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23A79B8E"
+        style="border:solid 1px #777"
+        width="800"
+        height="600"
+        frameborder="0"
+        scrolling="no"></iframe>
+
+        <br>
+        <br>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfG5FCQftEq4VyEMWIXScwUIKcEgTAL8ur9a5vtSk1gVMjIZQ/viewform?embedded=true"
+        width="640"
+        height="1905"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0">Loading…</iframe>
+
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

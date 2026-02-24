@@ -11,8 +11,18 @@ window.addEventListener("scroll", function(){
 })
 
 
+document.addEventListener("DOMContentLoaded", function () {
 
+  const hasYellowCover = document.querySelector(".cover.yellow");
+  if (!hasYellowCover) return;
 
+  const desktopNav = document.getElementById("desNav");
+  const mobileNav = document.getElementById("mobileNav");
+
+  if (desktopNav) desktopNav.classList.add("yellow-nav");
+  if (mobileNav) mobileNav.classList.add("yellow-nav");
+
+});
 
 
 

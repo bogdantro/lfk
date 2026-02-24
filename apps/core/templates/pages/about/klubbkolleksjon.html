@@ -1,0 +1,154 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover yellow">
+<div class="image">
+<img id="coverImgA" class="cover-img tine is-active"
+     src="{% static 'images/other/klubbkolleksjon (1).jpeg' %}"
+     alt="Klubbkolleksjon">
+
+<img id="coverImgB" class="cover-img tine"
+     src="{% static 'images/other/klubbkolleksjon (2).jpeg' %}"
+     alt="Klubbkolleksjon">
+</div>
+
+
+  <div class="content">
+    <div class="text">
+
+     <h1>Klubbkolleksjon</h1>
+
+<p>
+  Følgende artikler inngår i Lillehammer FK sin Klubbkolleksjon:
+</p>
+
+<h2 class="section-title">Trening</h2>
+
+<div class="table-wrap">
+  <table class="leaders-table">
+    <thead>
+      <tr>
+        <th>Artikkel</th>
+        <th>Farge</th>
+        <th>Kommentar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Half-zip</td><td>Marine</td><td>«Lillehammerbunaden»</td></tr>
+      <tr><td>Bukse</td><td>Marine</td><td>«Lillehammerbunaden»</td></tr>
+      <tr><td>Jersey</td><td>Marine</td><td>Treningstrøye, kort erm</td></tr>
+      <tr><td>Shorts</td><td>Marine</td><td>Til trening</td></tr>
+      <tr><td>Sokker</td><td>Marine</td><td>Til trening</td></tr>
+      <tr><td>Regnjakke</td><td>Marine</td><td>Til trening i regnvær</td></tr>
+      <tr><td>Neck varmer</td><td>Sort</td><td>Buff til kalde dager</td></tr>
+      <tr><td>Bench jacket</td><td>Sort</td><td>Tykkere jakke</td></tr>
+      <tr><td>Hoodie</td><td>Marine</td><td>Hettegenser utenom felt</td></tr>
+      <tr><td>Light jacket</td><td>Marine</td><td>Lettere jakke utenom felt</td></tr>
+      <tr><td>Bag</td><td>Marine/sort</td><td>Til trening og kamp</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>
+<br>
+
+<h2 class="section-title">Kamp</h2>
+
+<div class="table-wrap">
+  <table class="leaders-table">
+    <thead>
+      <tr>
+        <th>Artikkel</th>
+        <th>Farge</th>
+        <th>Kommentar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Shorts</td><td>Kongeblå</td><td>Til kamp</td></tr>
+      <tr><td>Sokker</td><td>Kongeblå</td><td>Til kamp</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<br>
+<br>
+
+<p>
+  Klubbkolleksjonen er tilgjengelig hos våre samarbeidende sportsforretninger.
+</p>
+
+<p>
+  Merk at det kan inntreffer kortere perioder hvor våre partnere kan være utsolgt. Dette avhenger av etterspørsel, samt tilgjengelighet hos vår leverandør, Puma.
+</p>
+
+    </div>
+  </div>
+</section>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const imgA = document.getElementById("coverImgA");
+  const imgB = document.getElementById("coverImgB");
+  if (!imgA || !imgB) return;
+
+  // Use absolute /static paths (works with Django static)
+const images = [
+  "/static/images/other/klubbkolleksjon%20(1).jpeg",
+  "/static/images/other/klubbkolleksjon%20(2).jpeg",
+  "/static/images/other/klubbkolleksjon%20(3).jpeg",
+  "/static/images/other/klubbkolleksjon%20(4).jpeg",
+  "/static/images/other/klubbkolleksjon%20(5).jpeg",
+];
+
+  const intervalMs = 5000;   // time per image
+  const fadeMs = 1000;       // MUST match CSS opacity transition (1s)
+
+  let index = 0;
+  let showA = true;
+
+  // Start state
+  imgA.src = images[0];
+  imgA.classList.add("is-active", "is-animating");
+
+  // Preload to avoid flashing
+  images.forEach((src) => {
+    const i = new Image();
+    i.src = src;
+  });
+
+  function next() {
+    index = (index + 1) % images.length;
+
+    const incoming = showA ? imgB : imgA;
+    const outgoing = showA ? imgA : imgB;
+
+    // set next image on the hidden one
+    incoming.src = images[index];
+
+    // reset animation class so transform restarts smoothly
+    incoming.classList.remove("is-animating");
+    // force reflow so animation restarts
+    void incoming.offsetWidth;
+    incoming.classList.add("is-animating");
+
+    // crossfade
+    incoming.classList.add("is-active");
+    outgoing.classList.remove("is-active");
+
+    // swap for next time
+    showA = !showA;
+  }
+
+  setInterval(next, intervalMs);
+});
+
+</script>
+{% endblock %}

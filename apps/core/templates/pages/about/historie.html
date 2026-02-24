@@ -1,0 +1,205 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover yellow">
+  <div class="image">
+    <img
+      src="{% static 'images/covers/about.avif' %}"
+      alt="Om klubben"
+      class="cover-img">
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      <h1>#sterkeresammen</h1>
+
+      <p>
+        Lillehammer Fotballklubb (LFK) har sitt utspring i klubbene Fremad og Mesna. Fremad er stiftet 23.08.1911 og Sportsklubben Mesna er stiftet 21.08.1921. Begge klubber avholdt Årsmøter 30.11.1968 hvor sammenslåingen til Lillehammer Fotballklubb ble vedtatt. 20.12.1968 ble det avholdt konstituerende Årsmøte hvor Lillehammer Fotballklubb formelt ble en realitet. Man valgte å benytte Fremad sin stiftelsesdato, da denne klubben var eldst. Formålet til LFK var ved samarbeid og kameratskap å fremme idrett og friluftsliv i sunne former.
+      </p>
+
+      <br>
+      <br>
+      <br>
+      <p>
+        <span class="subheading">Innstillingen fra Draktkomitéen var som følger:</span>
+      </p>
+
+      <p class="quote">
+        «Hvite trøyer med kornblå krave og kornblå kvaling, kornblå små tall. Kornblå bukse og hvite strømper».
+      </p>
+
+      <p>
+        Begrunnelsen for dette var at drakten var nøytral, stilig, lett å vaske og holder fargen. Den dag i dag spiller Lillehammer FK i blått og hvitt, men ofte i ulike kombinasjoner.
+      </p>
+
+      <p>
+        Høsten 1999 besluttet LFK og Faaberg Fotball (FF) å danne en overbygningsklubb for Senior- og Juniorfotballen i de to klubbene. 19.11.1999 ble Faaberg Fotball Lillehammer (FF Lillehammer) stiftet. Visjonen til klubben var «Toppfotball i vinterland». Lagene i Yngres Avdeling og Undsomsavdelingen (til og med gutt) ble igjen i de to respektive klubbene. A-laget til FF Lillehammer var svært nære å rykke opp til Adeccoligaen (nivå 2) både i 2000 og 2001. Dessverre tapte man på bortemålsregelen i kvalifiseringsspill i 2000 og på dårligere målforskjell i 2001. I årene som fulgte spilte A-laget i 2. og 3. Divisjon omtrent hvert annet år. Klubben er en av få som trolig har vunnet tre kvalifiseringer til 2. Divisjon på rad.
+      </p>
+
+      <p>
+        Etter 10 år valgte Faaberg Fotball (FF) frivillig å trekke seg ut av samarbeidet. Dette medførte at det igjen ble mulighet for Junior- og Seniorfotball i FF og på Jorekstad. LFK overtok da FF Lillehammer sin plass i seriesystemet. «Nye» LFK tok dermed FF Lillehammer sin stiftelsdato i bruk (19.11.1999) når Junior- og Seniorlag fra FF Lillehammer ble fusjonert inn i «gamle» LFK.
+      </p>
+
+      <p>
+        Likevel, det har vært spilt fotball i Lillehammer siden 1911, og «nye» LFK viderefører derfor historien hvor gamle «LFK» benyttet Fremad sin stiftelsesdato fra 1911. Dette årstallet er et viktig årstall for alle oss med hjertet i Lillehammerfotballen. Årstallet er derfor en del av vår klubblogo.
+      </p>
+
+      <p>
+        Fra 1. januar 2024 fusjonerte Lillehammer FK og Lillehammer Kvinnefotballklubb. Dermed er gutter, jenter, menn og kvinner igjen samlet i en felles klubb.
+      </p>
+
+      <p>
+        I dag organiserer Lillehammer FK fotball for alle årsklasser, fra seks år og opp til og med Seniornivå. Vi arrangerer to ganger årlig store fotballskoler under paraplyen til Tine. I januar arrangerer vi også norges største futsalturnering. Vi tilbyr også FotballXtra som er et frivillig og klubbnøytralt ekstra treningstilbud til dem som ikke føler det er nok med de obligatoriske lagtreningene. Lillehammer FK er også på vegne av NFF IØ ansvarlig for Landslagsskolen i distriktet Lillehammer og Gudbrandsdalen. Vi har også parautøvere som spiller på Wednesday United.
+      </p>
+
+      <p>
+        Klubben har tilholdssted på Stampsletta, i daglig tale kun forkortet til Stampa. Der finner du Klubbhuset hvor klubben har kontorer.
+      </p>
+
+      <p>
+        Lov for LFK kan du lese her:
+        <a href="{% static 'pdfs/Lov-for-Lillehammer-FK-per-2024-ref-lovnorm-01.01.2022.pdf' %}" target="_blank" rel="noopener"> Lov for Lillehammer FK per 2024 ref lovnorm 01.01.2022</a>
+      </p>
+
+      <h2 class="section-title">Ledere</h2>
+      <p>
+        <span class="subheading">Følgende personer har vært Ledere (Styreledere) i klubben:</span>
+      </p>
+
+      <div class="table-wrap">
+        <table class="leaders-table">
+          <thead>
+            <tr>
+              <th>Navn</th>
+              <th>Periode</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Johan Trondsen</td><td>1968-1970</td></tr>
+            <tr><td>Odd Tangen</td><td>1971</td></tr>
+            <tr><td>Terje Lisødegård</td><td>1972-1973</td></tr>
+            <tr><td>Odd Tangen</td><td>1974-1976</td></tr>
+            <tr><td>Paul Vorkinn</td><td>1977-1978</td></tr>
+            <tr><td>Gustav Bergseng</td><td>1979-1980</td></tr>
+            <tr><td>Thor Bergseng</td><td>1981</td></tr>
+            <tr><td>Per Nilseng</td><td>1982-1984</td></tr>
+            <tr><td>Cato Johrde</td><td>1985</td></tr>
+            <tr><td>Johs. Myhren</td><td>1986-1990</td></tr>
+            <tr><td>Ståle Meland</td><td>1991-1992</td></tr>
+            <tr><td>Jørn Skjærvik</td><td>1993</td></tr>
+            <tr><td>Johnny Holmbakken</td><td>1994-1995</td></tr>
+            <tr><td>Wolfgang Müller</td><td>1996-1997</td></tr>
+            <tr><td>Odd Egil Rønning</td><td>1998-1999</td></tr>
+            <tr><td>Gard Cato Engnæs</td><td>2000-2001</td></tr>
+            <tr><td>Trygve Elvsaas</td><td>2002</td></tr>
+            <tr><td>Magne Gudbrandsen</td><td>2002</td></tr>
+            <tr><td>Pål Maugesten</td><td>2003-2008</td></tr>
+            <tr><td>Per Kollstad</td><td>2009</td></tr>
+            <tr><td>Tore Orderløkken</td><td>2010-2011</td></tr>
+            <tr><td>Jan Tore Meren</td><td>2012</td></tr>
+            <tr><td>Ole Martin Hojem</td><td>2013-2015</td></tr>
+            <tr><td>Per Anders Bang</td><td>2016-2017</td></tr>
+            <tr><td>Per A. Mæhlum</td><td>2018-2021</td></tr>
+            <tr><td>Ole Martin Hojem</td><td>2022-2023</td></tr>
+            <tr><td>Sigurd Tremoen</td><td>2024-dd</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2 class="section-title">Æresmedlemmer</h2>
+      <p>
+        <span class="subheading">Klubben har hatt og har følgende Æresmedlemmer:</span>
+      </p>
+
+      <ul class="honor-list">
+        <li>Bjørn Bredesen</li>
+        <li>Anne Berit Vollan</li>
+        <li>Odd Simensen (død)</li>
+        <li>John Kr. Wahl (død)</li>
+      </ul>
+<br>
+<br>
+<br>
+
+      <h2 class="section-title divider-space">Filosofi</h2>
+
+<p>
+  Lillehammer FK ønsker å fremstå med en tydelig identitet som igjen gir et innhold til merkevaren. Vi ønsker å fremstå som en verdidrevet organisasjon basert på en klar filosofi. Dette skyldes at vi har en unik mulighet til å påvirke våre medlemmer, både på og utenfor banen, og vårt mål er å utvikle både fotballspillere og gode borgere.
+</p>
+
+<p class="quote">
+  «If people believe they share values with a company, they will stay loyal to the brand» (Howard Schultz, CEO of Starbucks)
+</p>
+
+<p>
+  Filosofien angir retning for arbeidet hvor visjonen er ledestjernen langt der i det fjerne. Misjonen forteller hvorfor vi er til, mens verdiene er banemerkingen som gjør at vi holder oss på matta!
+</p>
+
+<p>
+  <span class="subheading">Misjon:</span><br>
+  «Vi skal tilby alle barn og ungdommer i regionen et sted å være, et sted å lære og et sted å tilhøre»
+</p>
+
+<p>
+  <span class="subheading">Verdiene våre utdypes som følger:</span>
+</p>
+
+<p>
+  Som følge av fusjonen mellom LFK og LKFK, arbeides det med et nytt verdigrunnlag for den fusjonerte klubben. Dette vil bli gjort tilgjengelig så snart det foreligger.
+</p>
+
+<p>
+  I tillegg benytter vi to slogan i dagligspråket vårt. Et slogan er et kortfattet slagord som er et av klubbens fremste gjenkjennelsestegn. Nike sitt ”Just do it” er trolig ett av verdens fremste i så måte.
+</p>
+
+<p>
+  Våre slogan er beslektet med både visjon, misjon og verdigrunnen slik at en blå tråd opprettholdes.
+</p>
+
+<p>
+  <span class="subheading">Slogan i LFK er #deternøye og #sterkeresammen</span>
+</p>
+
+<p>
+  Hvor ofte har man ikke hørt følgende setning: «Det er ikke så nøye». Hva om vi bare stryker et par ord? Det er faktisk svært nøye det vi gjør, og det omhandler alt hva vi foretar oss, til en hver tid, både på og utenfor banen. Slogan i Lillehammer FK er derfor #deternøye
+</p>
+
+<p>
+  <span class="subheading">Følgende punkter understreker at #deternøye…</span>
+</p>
+
+<ul class="honor-list">
+  <li>hvor godt forberedt jeg er</li>
+  <li>at økta akkurat i dag blir bra</li>
+  <li>at spillerne er trygge</li>
+  <li>at hver spiller blir sett og veiledet</li>
+  <li>hvordan jeg snakker med spillerne</li>
+  <li>hvordan jeg kommuniserer med foreldrene</li>
+  <li>hvor godt jeg samarbeider med andre trenere</li>
+  <li>hvordan jeg snakker om klubben</li>
+  <li>hvordan det oppleves å komme på Brakka</li>
+  <li>hva slags rollemodell jeg er</li>
+  <li>hvilket forbilde jeg er</li>
+</ul>
+
+
+<br>
+<br>
+<p>
+  Filosofi og arbeid med denne internt og eksternt er kulturbygging i praksis, og kultur spiser strategi til frokost. Mennesker som til en hver tid er en del av klubben er viktige kulturbyggere, og alle har i så måte et ansvar for at vi sammen blir den beste utgaven av oss selv. #deternøye at vi blir #sterkeresammen
+</p>
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

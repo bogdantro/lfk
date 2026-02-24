@@ -1,0 +1,912 @@
+@charset "UTF-8";
+.home-cover {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+}
+.home-cover .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f3f3f3;
+  width: 100%;
+  height: 200px;
+  z-index: 10000;
+}
+.home-cover .overlay-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #f3f3f3;
+  width: 75px;
+  height: 100vh;
+  z-index: 1000;
+}
+.home-cover .cover-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.home-cover {
+  /* This creates the white backgr,ound and cuts out the text */
+}
+.home-cover .cover-mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  z-index: 100000;
+}
+.home-cover .cover-mask rect {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.home-cover .cover-mask g {
+  width: 100%;
+  height: 100%;
+  transform: translate(-10px, -120px);
+}
+.home-cover .content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 10000000;
+}
+.home-cover .content .text {
+  width: 100%;
+  height: 170px;
+  text-align: center;
+  padding-bottom: 50px;
+  position: relative;
+  margin-bottom: auto;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.466);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding-inline: 20px;
+}
+.home-cover .content .text img {
+  width: 95px;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-top: auto;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+.home-cover .content .text img.right-img {
+  left: unset;
+  bottom: 0;
+  right: 20px;
+}
+.home-cover .content .text {
+  /* visually hidden h1 (keeps semantics/SEO) */
+}
+.home-cover .content .text .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media only screen and (min-device-width: 1140px) {
+  #desNav {
+    display: flex;
+    width: 100%;
+    height: 55px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 37px;
+    z-index: 10000000000000000000000000000000000;
+    transition: 0.4s;
+  }
+  #desNav.sticky {
+    background: rgba(247, 247, 247, 0.97);
+  }
+  #desNav.sticky .content .menu a {
+    color: #1b2c65;
+  }
+  #desNav.sticky .content .menu a:hover {
+    border-color: #1b2c65;
+  }
+  #desNav .content {
+    width: 100%;
+    display: flex;
+    width: 101%;
+    max-width: auto;
+    height: 55px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 37px;
+    left: 50%;
+    padding-inline: 50px;
+    transform: translateX(-50%);
+    background: #b6a265;
+  }
+  #desNav .menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  #desNav .menu .nav-item {
+    position: relative;
+    padding-bottom: 12px;
+    margin-top: 12px;
+  }
+  #desNav .menu .nav-item > a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  #desNav .menu .nav-item > a i {
+    font-size: 14px;
+    transition: transform 0.25s ease;
+  }
+  #desNav .menu .nav-item .dropdowns-item {
+    position: relative;
+  }
+  #desNav .menu .nav-item .dropdowns-item.has-sub > a i {
+    transition: transform 0.25s ease;
+  }
+  #desNav .menu .nav-item .dropdowns-item .sub-dropdown {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 180px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    opacity: 0;
+    transform: translateX(8px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+  }
+  #desNav .menu .nav-item .dropdowns-item:hover .sub-dropdown {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+  #desNav .menu .nav-item .dropdowns-item:hover > a i {
+    transform: rotate(90deg);
+  }
+  #desNav .menu .nav-item {
+    /* dropdown */
+  }
+  #desNav .menu .nav-item .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    padding: 8px 0;
+    opacity: 0;
+    transform: translateY(8px);
+    pointer-events: none;
+    transition: all 0.25s ease;
+    z-index: 999;
+  }
+  #desNav .menu .nav-item .dropdown a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 15px;
+    color: #1F1F1F;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  #desNav .menu .nav-item .dropdown a:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  #desNav .menu .nav-item {
+    /* ✅ ACTIVE STATE (hover OR keyboard focus) */
+  }
+  #desNav .menu .nav-item:hover > a i, #desNav .menu .nav-item:focus-within > a i {
+    transform: rotate(180deg);
+  }
+  #desNav .menu .nav-item:hover .dropdown, #desNav .menu .nav-item:focus-within .dropdown {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  #startOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(246, 246, 246);
+    width: 100%;
+    height: 100vh;
+    z-index: 100000000;
+    opacity: 1;
+    pointer-events: none;
+    transition: 1.2s;
+    overflow: hidden;
+  }
+  #startOverlay.active {
+    top: -1000px;
+    opacity: 1;
+  }
+  .home-cover {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+  }
+  .home-cover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f3f3f3;
+    width: 100%;
+    height: 200px;
+    z-index: 10000;
+  }
+  .home-cover .overlay-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #f3f3f3;
+    width: 75px;
+    height: 100vh;
+    z-index: 1000;
+  }
+  .home-cover .cover-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home-cover {
+    /* This creates the white backgr,ound and cuts out the text */
+  }
+  .home-cover .cover-mask {
+    position: absolute;
+    bottom: -180px;
+    left: -75px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.05);
+    z-index: 100000;
+  }
+  .home-cover .cover-mask rect {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+  .home-cover .cover-mask g {
+    width: 100%;
+    height: 100%;
+    transform: translate(-10px, -120px);
+  }
+  .home-cover .content {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 10000000;
+  }
+  .home-cover .content .text {
+    width: 100%;
+    height: 170px;
+    text-align: center;
+    padding-bottom: 50px;
+    position: relative;
+    margin-bottom: auto;
+    border-bottom: 1px solid rgba(211, 211, 211, 0.466);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-inline: 50px;
+  }
+  .home-cover .content .text img {
+    width: 130px;
+    height: auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+    margin-top: auto;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+  }
+  .home-cover .content .text img.right-img {
+    left: unset;
+    bottom: -10px;
+    right: 50px;
+  }
+  .home-cover .content .text {
+    /* visually hidden h1 (keeps semantics/SEO) */
+  }
+  .home-cover .content .text .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .cover {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: transparent;
+    overflow: hidden;
+  }
+  .cover.active img {
+    transform: scale(1);
+  }
+  .cover .cover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    z-index: 10;
+    transition: 1.4s;
+    transform: scale(1.1);
+    filter: brightness(88%);
+  }
+  .cover .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(182, 162, 101, 0.3882352941), rgba(20, 32, 72, 0.7725490196));
+    z-index: 11;
+  }
+  .cover .content {
+    position: relative;
+    z-index: 15;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+  }
+  .cover .content .text {
+    position: relative;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+  .cover .content .text .cover-partner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transform: translateY(60px);
+  }
+  .cover .content .text .cover-partner img {
+    width: 280px;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .cover .content .text h1 {
+    text-transform: uppercase;
+    max-width: 100%;
+    font-weight: 600;
+    color: white;
+    font-size: 9vw;
+    transform: translateY(-10px);
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .coverv2 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 0;
+    padding-block: 65px;
+    padding-bottom: 0;
+    background: #b6a265;
+  }
+  .coverv2.active .content .left img {
+    transform: scale(1);
+  }
+  .coverv2.active .content .left .imgoverlay {
+    top: -100%;
+    opacity: 1;
+  }
+  .coverv2 .content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-inline: 0;
+  }
+  .coverv2 .content .left {
+    width: 50%;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+  }
+  .coverv2 .content .left img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.7s;
+    transform: scale(1);
+    z-index: 10;
+  }
+  .coverv2 .content .left img.laStampaShop {
+    max-height: 770px;
+  }
+  .coverv2 .content .left .imgoverlay {
+    width: 100%;
+    min-height: 100%;
+    opacity: 1;
+    pointer-events: none;
+    transition: 0.5s;
+    background: #1b2c65;
+    z-index: 11;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .coverv2 .content .right {
+    width: 50%;
+    position: relative;
+    height: auto;
+    padding-block: 80px;
+  }
+  .coverv2 .content .right .text {
+    text-align: left;
+    padding-inline: 50px;
+  }
+  .coverv2 .content .right .text .contact-table-wrap {
+    margin-top: 25px;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 6px;
+  }
+  .coverv2 .content .right .text .contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+    background: rgba(246, 246, 246, 0.35);
+  }
+  .coverv2 .content .right .text .contact-table thead {
+    background: rgba(27, 44, 101, 0.1);
+  }
+  .coverv2 .content .right .text .contact-table th, .coverv2 .content .right .text .contact-table td {
+    text-align: left;
+    padding: 14px 14px;
+    border-bottom: 1px solid rgba(27, 44, 101, 0.18);
+    color: #1b2c65;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Stampa", "Roboto", sans-serif;
+    vertical-align: top;
+  }
+  .coverv2 .content .right .text .contact-table th {
+    font-weight: 700;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .coverv2 .content .right .text .contact-table td:first-child {
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .coverv2 .content .right .text .contact-table a {
+    color: #1b2c65;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(27, 44, 101, 0.25);
+    transition: 0.2s;
+  }
+  .coverv2 .content .right .text .contact-table a:hover {
+    border-bottom-color: rgba(27, 44, 101, 0.85);
+  }
+  .coverv2 .content .right .text .contact-table .sep {
+    margin: 0 8px;
+    opacity: 0.7;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .coverv2 .content .right .text h2 {
+    color: white;
+    font-size: 55px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 75px;
+    cursor: pointer;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .coverv2 .content .right .text p {
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+  }
+  .coverv2 .content .right .text .clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .coverv2 .content .right .text .headinp {
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: "LingkawiSouth", "Roboto", sans-serif;
+    margin-bottom: 25px;
+  }
+  .coverv2 .content .right .text .headinp.normal {
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .coverv2 .content .right .text button {
+    margin-top: 45px;
+    background: none;
+    color: #1b2c65;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    width: auto;
+    cursor: pointer;
+  }
+  .coverv2 .content .right .text button i {
+    color: #1b2c65;
+    transform: translateX(15px) translateY(1px);
+  }
+  .coverv2 .content .about-body {
+    margin-top: 22px;
+  }
+  .coverv2 .content .about-body p {
+    margin: 0 0 18px 0;
+    line-height: 1.65;
+  }
+  .coverv2 .content .about-body p:last-child {
+    margin-bottom: 0;
+  }
+  .coverv2 .content .about-body .quote {
+    padding-left: 18px;
+    border-left: 3px solid rgba(255, 255, 255, 0.55);
+    font-style: italic;
+    opacity: 0.95;
+    margin-bottom: 18px;
+  }
+  .coverv2 .content .about-body a {
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .coverv2 .content .about-body .about-title {
+    margin-top: 34px;
+    margin-bottom: 10px;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .coverv2 .content .about-body .about-subtitle {
+    margin-bottom: 18px;
+    opacity: 0.95;
+  }
+  .coverv2 .content .about-body .about-list {
+    margin: 0;
+    padding-left: 18px;
+  }
+  .coverv2 .content .about-body .about-list li {
+    margin-bottom: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    line-height: 1.5;
+  }
+  .coverv2 .content .about-body .about-list li:last-child {
+    margin-bottom: 0;
+  }
+  .blog {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 0;
+  }
+  .blog.active .content .left img {
+    transform: scale(1);
+  }
+  .blog.active .content .left .imgoverlay {
+    top: -100%;
+    opacity: 1;
+  }
+  .blog .content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-inline: 0;
+  }
+  .blog .content .left {
+    width: 50%;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+  }
+  .blog .content .left img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.7s;
+    transform: scale(1.1);
+    z-index: 10;
+  }
+  .blog .content .left img.laStampaShop {
+    max-height: 770px;
+  }
+  .blog .content .left .imgoverlay {
+    width: 100%;
+    min-height: 100%;
+    opacity: 1;
+    pointer-events: none;
+    transition: 0.5s;
+    background: #1b2c65;
+    z-index: 11;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .blog .content .right {
+    width: 50%;
+    position: relative;
+    height: auto;
+    padding-block: 80px;
+  }
+  .blog .content .right .text {
+    text-align: left;
+    padding-inline: 50px;
+  }
+  .blog .content .right .text .contact-table-wrap {
+    margin-top: 25px;
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 6px;
+  }
+  .blog .content .right .text .contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 720px;
+    background: rgba(246, 246, 246, 0.35);
+  }
+  .blog .content .right .text .contact-table thead {
+    background: rgba(27, 44, 101, 0.1);
+  }
+  .blog .content .right .text .contact-table th, .blog .content .right .text .contact-table td {
+    text-align: left;
+    padding: 14px 14px;
+    border-bottom: 1px solid rgba(27, 44, 101, 0.18);
+    color: #1b2c65;
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Stampa", "Roboto", sans-serif;
+    vertical-align: top;
+  }
+  .blog .content .right .text .contact-table th {
+    font-weight: 700;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+  .blog .content .right .text .contact-table td:first-child {
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .blog .content .right .text .contact-table a {
+    color: #1b2c65;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(27, 44, 101, 0.25);
+    transition: 0.2s;
+  }
+  .blog .content .right .text .contact-table a:hover {
+    border-bottom-color: rgba(27, 44, 101, 0.85);
+  }
+  .blog .content .right .text .contact-table .sep {
+    margin: 0 8px;
+    opacity: 0.7;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .blog .content .right .text h2 {
+    color: #1b2c65;
+    font-size: 55px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 75px;
+    cursor: pointer;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .blog .content .right .text p {
+    color: #1b2c65;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+  }
+  .blog .content .right .text .clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .blog .content .right .text .headinp {
+    font-size: 22px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-family: "LingkawiSouth", "Roboto", sans-serif;
+    margin-bottom: 25px;
+  }
+  .blog .content .right .text .headinp.normal {
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .blog .content .right .text button {
+    margin-top: 45px;
+    background: none;
+    color: #1b2c65;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    font-size: 18px;
+    width: auto;
+    cursor: pointer;
+  }
+  .blog .content .right .text button i {
+    color: #1b2c65;
+    transform: translateX(15px) translateY(1px);
+  }
+  .bottom {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  .bottom .content {
+    display: flex;
+  }
+  .bottom .content .left, .bottom .content .right {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .bottom .content .left:hover img, .bottom .content .right:hover img {
+    transform: scale(1.03);
+  }
+  .bottom .content .left img, .bottom .content .right img {
+    width: 50%;
+    height: 460px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    transition: 0.4s;
+    border-radius: 2px;
+  }
+  .bottom .content .left .text, .bottom .content .right .text {
+    width: 50%;
+    padding-block: 35px;
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .bottom .content .left .text h2, .bottom .content .right .text h2 {
+    font-size: 32px;
+    text-transform: uppercase;
+    color: #1b2c65;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .bottom .content .left .text p, .bottom .content .right .text p {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #1b2c65;
+    font-family: "Stampa", "Roboto", sans-serif;
+  }
+  .images {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .images .content {
+    display: flex;
+    flex-direction: row;
+  }
+  .images .content .image {
+    position: relative;
+    width: 50%;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  .images .content .image:hover img {
+    transform: scale(1.06);
+  }
+  .images .content .image:hover a {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.8);
+    color: #1b2c65;
+  }
+  .images .content .image a {
+    position: absolute;
+    font-family: "Stampa", "Roboto", sans-serif;
+    color: white;
+    font-size: 22px;
+    text-transform: uppercase;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 100;
+    padding: 16px 22px;
+    border-radius: 4px;
+    transition: 1s;
+  }
+  .images .content .image img {
+    transition: 1.5s;
+    width: 100%;
+    height: 620px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: relative;
+    filter: brightness(92%);
+  }
+}/*# sourceMappingURL=about.css.map */

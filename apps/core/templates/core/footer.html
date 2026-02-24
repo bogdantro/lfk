@@ -17,58 +17,66 @@
     <!-- <div class="top">
         <h2>Lillehammer fotball klubb <br>	&#169; {% now "Y" %}</h2> 
     </div> -->
-   <div class="bottom">
+<div class="bottom">
 
+  <!-- SPORT -->
   <div class="links">
     <strong>Sport</strong>
-    <a href="#">Lag</a>
-    <a href="#" class="sub-item">– Senior</a>
-    <a href="#" class="sub-item">– Ungdom</a>
-    <a href="#" class="sub-item">– Barn</a>
-    <a href="#" class="sub-item">– Wednesday United</a>
-    <a href="#" class="sub-item">– Terminliste alle lag</a>
-    <a href="#">UEFA Playmakers</a>
-    <a href="#">Sportsplan</a>
-    <a href="#">Utviklingstrapp</a>
-    <a href="#">Landslagsskolen</a>
-    <a href="#">Fair Play</a>
+
+    <a href="{% url 'senior' %}">Lag</a>
+    <a href="{% url 'senior' %}" class="sub-item">– Senior</a>
+    <a href="{% url 'ungdom' %}" class="sub-item">– Ungdom</a>
+    <a href="{% url 'barn' %}" class="sub-item">– Barn</a>
+    <a href="{% url 'wednesday_united' %}" class="sub-item">– Wednesday United</a>
+
+    <a href="{% url 'uefa_playmakers' %}">UEFA Playmakers</a>
+    <a href="https://docs.google.com/spreadsheets/d/1it_kH0eqoNj_iWtIeUkTcDqjz8DXaOMXLRdcRhp6lSQ/edit?gid=64907490#gid=64907490" target="_blank">Sportsplan</a>
+    <a href="https://docs.google.com/spreadsheets/d/14bv8U2WLV1JvhFFnL3SdKF4rJtcw6gGUNppMXrGMcOI/edit?gid=387839643#gid=387839643" target="_blank">Utviklingstrapp</a>
+    <a href="{% url 'landslagsskolen' %}">Landslagsskolen</a>
+    <a href="{% url 'fair_play' %}">Fair Play</a>
   </div>
 
+  <!-- MARKED -->
   <div class="links">
     <strong>Marked</strong>
-    <a href="#">Våre samarbeidspartnere</a>
-    <a href="#">Bærekraft</a>
-    <a href="#">Medlemsfordeler</a>
-    <a href="#">Grasrotandelen</a>
-    <a href="#">La Stampa Magasinet</a>
+
+    <a href="{% url 'vare_samarbeidspartnere' %}">Våre samarbeidspartnere</a>
+    <a href="{% url 'baerekraft' %}">Bærekraft</a>
+    <a href="{% url 'medlemsfordeler' %}">Medlemsfordeler</a>
+    <a href="{% url 'grasrotandelen' %}">Grasrotandelen</a>
+    <a href="{% url 'la_stampa_magasin' %}">La Stampa Magasinet</a>
     <a href="#">La Stampa Shop</a>
-    <a href="#">Stampapodden</a>
-    <a href="#">Partnerbrosjyre</a>
+    <a href="{% url 'stampapodden' %}">Stampapodden</a>
+    <a href="https://readymag.website/u1483769256/4951792/" target="_blank">Partnerbrosjyre</a>
   </div>
 
+  <!-- ARRANGEMENT -->
   <div class="links">
     <strong>Arrangement</strong>
+
     <a href="#">Kamper</a>
-    <a href="#">Tine Fotballskole</a>
-    <a href="#">Thallaug Cup Lillehammer</a>
-    <a href="#">Kiwi Cup</a>
+    <a href="{% url 'tine_fotballskole' %}">Tine Fotballskole</a>
+    <a href="{% url 'thallaug_cup' %}">Thallaug Cup Lillehammer</a>
+    <a href="{% url 'kiwi_cup' %}">Kiwi Cup</a>
   </div>
 
+  <!-- OM KLUBBEN -->
   <div class="links">
     <strong>Om klubben</strong>
-    <a href="#">Historie</a>
-    <a href="#">Klubbhåndbok</a>
-    <a href="#">Klubbkolleksjon</a>
-    <a href="#">Medlemskap</a>
-    <a href="#">Styret</a>
-    <a href="#">Kontakt</a>
-    <a href="#">Varsling</a>
-    <a href="#">Forsikring</a>
-    <a href="#">Dommere</a>
-    <a href="#">Politiattest</a>
-    <a href="#">Minibuss</a>
-    <a href="#">Fotballfondet</a>
-    <a href="#">Frivilighetsbanken</a>
+
+    <a href="{% url 'historie' %}">Historie</a>
+    <a href="{% url 'klubbhandbok' %}">Klubbhåndbok</a>
+    <a href="{% url 'klubbkolleksjon' %}">Klubbkolleksjon</a>
+    <a href="{% url 'medlemskap' %}">Medlemskap</a>
+    <a href="{% url 'styret' %}">Styret</a>
+    <a href="{% url 'kontakt' %}">Kontakt</a>
+    <!-- <a href="{% url 'varsling' %}">Varsling</a> -->
+    <a href="{% url 'forsikring' %}">Forsikring</a>
+    <a href="{% url 'dommere' %}">Dommere</a>
+    <a href="{% url 'politiattest' %}">Politiattest</a>
+    <a href="{% url 'minibuss' %}">Minibuss</a>
+    <a href="{% url 'fotballfondet' %}">Fotballfondet</a>
+    <a href="https://frivillighetsbanken.no/" target="_blank" rel="noopener">Frivillighetsbanken</a>
   </div>
 
 </div>

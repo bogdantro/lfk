@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover yellow">
+  <div class="image">
+    <img
+      src="{% static 'images/other/klubbok.jfif' %}"
+      alt="Om klubben"
+      class="cover-img">
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      <h1>Klubbhåndbok</h1>
+
+      <p>
+       Her finner du vår Klubbhåndbok, og målet er at våre medlemmer skal finne svar på de fleste spørsmål i Klubbhåndboken.
+
+Den vil bli revidert årlig, før ny sesong.
+<br>
+<br>
+<a href="{% static 'pdfs/Klubbhandbok-revidert-04.04.2025.pdf' %}" target="_blank" rel="noopener">Link til Klubbhåndbok er her</a>
+      </p>
+
+      <p>
+        I tillegg til Klubbhåndboken har en av klubbens dyktige lagledere utarbeidet ytterligere informasjon/tips & triks rettet mot laglederrollen i Lillehammer FK:
+
+        <br>
+        <br>
+        Håndbok lagleder (ungdom) 2026 kommer snart.
+        <br>
+        Lagleders sesongoversikt 2026 kommer snart.
+        <br>
+        Lagleders draktoversikt 2026 kommer snart.
+      </p>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover yellow">
+  <div class="image">
+    <img
+      src="{% static 'images/other/politi.jpg' %}"
+      alt="Forsikring"
+      class="cover-img">
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      <h1>Politiattest</h1>
+
+      <p>
+Alle personer over 15 år som utfører oppgaver som innebærer et ansvars- eller tillitsforhold overfor mindreårige eller personer med utviklingshemming er pliktig å levere politiattest. Vennligst se mer informasjon nedenfor eller på Idrettforbundets sine sider.        <br>
+        </p>    
+
+   
+        <br>
+        <br>
+
+      <p>   
+        <span class="subheading">Her er hva du gjør steg for steg</span><br>
+       <ol class="numbered-list">
+  <li>
+    Last ned nødvendig 
+    <a href="{% static 'pdfs/Vedlegg-til-soknad.pdf' %}" target="_blank" rel="noopener">
+      Vedlegg til søknad om Politiattest
+    </a> 
+    som vi i LFK har fylt ut. Fyll ut dine personalia.
+  </li>
+
+  <li>
+    <a href="https://www.politiet.no/tjenester/politiattest/sok-om-politiattest-for-privatpersoner/" target="_blank" rel="noopener">
+      Logg deg inn
+    </a> 
+    og søk om politiattest.
+  </li>
+
+  <li>
+    Personer under 18 år kan ikke søke elektronisk, og må sende søknaden per post, enten på bokmål eller nynorsk.  
+    Søknaden sendes til: Politiets enhet for vandelskontroll og politiattester, Postboks 113, 9951 Vardø.
+  </li>
+
+  <li>
+    Når du har mottatt politiattesten må denne fremvises daglig leder i fotballklubben.
+  </li>
+    </ol>
+
+      </p>
+
+      <br>
+      <p>
+        Norges idrettsforbund jobber kontinuerlig for at idretten skal være et trygt og godt sted for alle medlemmer. Som en viktig del av dette arbeidet skal alle som utfører oppgaver i norsk idrett, som innebærer et ansvars- eller tillitsforhold overfor mindreårige eller personer med utviklingshemming, fremvise politiattest (barneomsorgsattest).
+      </p>
+
+        <br>
+      <br>
+      <p>
+        <span class="subheading">Hvorfor kreves det politiattest?</span><br>
+        Idretten krever fremvisning av politiattest uten anmerkninger fra alle personer over 15 år som utfører oppgaver som innebærer et ansvars- eller tillitsforhold overfor mindreårige eller personer med utviklingshemming. Det gjøres for å bidra til at slike oppgaver kun utføres av skikkede personer, gjennom at personer som kan utgjøre en risiko for overgrep eller skadelig innflytelse forhindres fra å påta seg slike oppdrag.
+        </p>
+        
+        <br>
+      <br>
+      <p>
+        <span class="subheading">Hvem omfattes av ordningen?</span><br>
+        Ordningen omfatter både ansatte og frivillige over 15 år, og gjelder uansett om personen får lønn for oppgavene som utføres eller ikke. Det avgjørende er i hvilken grad oppgavene vedkommende skal ha innebærer et ansvars- eller tillitsforhold overfor mindreårige eller personer med utviklingshemming.
+
+Trenere, instruktører, lagledere med direkte kontakt med mindreårige eller personer med utviklingshemming, vil alltid ha et ansvars- eller tillitsforhold og være omfattet av ordningen. For andre oppgaver må idrettslaget foreta en konkret vurdering av oppgavene som skal utføres. Er det tvil om det skal innhentes politiattest skal idrettskretsen kontaktes.
+        </p>
+
+
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

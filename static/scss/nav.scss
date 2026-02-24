@@ -116,9 +116,9 @@ $lfkgold: #B6A265;
         }
     }
     .sidebar{
-        background: #00061a;
+        background: $lfkgold;
         position: absolute;
-        top: 75px;
+        top: 65px;
         left: -100px;
         width: 100%;
         height: calc(100vh - 65px);
@@ -217,22 +217,28 @@ $lfkgold: #B6A265;
         top: 37px;
         z-index: 10000000000000000000000000000000000;
         transition: .4s;
-        border-bottom: 1px solid red;
         // background: rgba(247,247,247,0.85);
 
-      
-        &.sticky{
-            background: rgba(247,247,247,0.97);
+        &.yellow-nav{
             .content{
+                background: $lfkgold;
                 .menu{
-                    a{
-                        color: $txt;
-                        &:hover{
-                            border-color: $txt;
+                    .nav-item{
+                        a{
+                            color: white;
+                        }
+                        .dropdown{
+                            a{
+                                color: $black;
+                            }
                         }
                     }
                 }
             }
+        }
+      
+        &.sticky{
+            background: rgba(247,247,247,0.97);
         }
         // @keyframes gradient-animation {
         //   0% {
@@ -259,7 +265,7 @@ $lfkgold: #B6A265;
             padding-inline: 50px;
             transform: translateX(-50%);
             background: white ;
-            border-bottom: 1px solid rgba(211, 211, 211, 0.466);
+            // border-bottom: 1px solid rgba(211, 211, 211, 0.466);
 
         }
 
