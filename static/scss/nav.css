@@ -51,7 +51,6 @@
 }
 #mobileNav.menu {
   transition: 0.2s;
-  background: #00061a;
   border-bottom: 1px solid rgba(100, 100, 100, 0.15);
 }
 #mobileNav .logo {
@@ -107,7 +106,7 @@
   background: #B6A265;
   position: absolute;
   top: 65px;
-  left: -100px;
+  right: -100px;
   width: 100%;
   height: calc(100vh - 65px);
   z-index: 120;
@@ -115,6 +114,54 @@
   pointer-events: none;
   display: block;
   transition: 0.2s;
+  padding-bottom: 70px;
+}
+#mobileNav .sidebar .mob-dd-trigger {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 18px 20px;
+  color: white;
+  font-size: 19px;
+  font-weight: 500;
+  display: block;
+  cursor: pointer;
+  outline: none;
+}
+#mobileNav .sidebar .mob-dd-trigger i {
+  float: right;
+  padding-right: 3px;
+  color: white;
+  font-size: 17px;
+  transform: translateY(1px);
+  transition: transform 0.2s;
+}
+#mobileNav .sidebar .mob-dd-trigger:hover {
+  background: rgba(27, 36, 104, 0.2117647059);
+}
+#mobileNav .sidebar .mob-dd-trigger.open i {
+  transform: translateY(1px) rotate(180deg);
+}
+#mobileNav .sidebar .mob-dd-trigger.sub {
+  padding-left: 34px;
+  font-size: 17px;
+}
+#mobileNav .sidebar .mob-dd {
+  display: none;
+}
+#mobileNav .sidebar .mob-dd a {
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.95;
+}
+#mobileNav .sidebar .mob-dd.open {
+  display: block;
+}
+#mobileNav .sidebar .mob-dd.sub a {
+  padding-left: 50px;
+  font-size: 15px;
 }
 #mobileNav .sidebar a {
   padding: 18px 20px;
@@ -132,7 +179,7 @@
 #mobileNav .sidebar a i {
   float: right;
   padding-right: 3px;
-  color: #183b56;
+  color: white;
   font-size: 17px;
   transform: translateY(1px);
 }
@@ -140,7 +187,7 @@
   opacity: 1;
   pointer-events: visible;
   transition: 0.4s;
-  left: 0;
+  right: 0;
 }
 #mobileNav .nav-action button {
   border: none;

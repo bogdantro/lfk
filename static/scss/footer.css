@@ -1,3 +1,102 @@
+@charset "UTF-8";
+/* ✅ MOBILE / TABLET (default) */
+@media only screen and (min-width: 0px) and (max-width: 1139px) {
+  .footer {
+    width: 100%;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 50px 20px 35px;
+    background: #12152c;
+    z-index: 1000;
+    position: relative;
+    margin: 0;
+  }
+  .footer .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 25px;
+    max-width: 100%;
+  }
+  .footer .links {
+    width: 100%;
+  }
+  .footer .links strong {
+    color: rgb(247, 247, 247);
+    font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    display: block;
+  }
+  .footer .links a {
+    color: rgb(247, 247, 247);
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    margin-block: 8px;
+    width: 100%;
+    display: block;
+    font-family: "Stampa", "Roboto", sans-serif;
+    opacity: 0.85;
+  }
+  .footer .links a.sub-item {
+    margin-left: 14px;
+    opacity: 0.75;
+  }
+  .footer {
+    /* If you ever add .social-icons in footer HTML, keep it clean on mobile */
+  }
+  .footer .social-icons {
+    position: static;
+    transform: none;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+  .footer .social-icons i {
+    flex: 0 0 calc(50% - 10px);
+    width: auto;
+    max-width: none;
+    font-size: 22px;
+    padding: 18px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer .rights {
+    text-align: left;
+    margin-top: 25px;
+  }
+  .footer .rights p {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    opacity: 0.85;
+    margin: 6px 0;
+    line-height: 1.35;
+    word-break: break-word;
+  }
+}
+/* ✅ optional: 2-column links on medium screens (still below 1140px) */
+@media only screen and (min-width: 600px) and (max-width: 1139px) {
+  .footer {
+    padding: 60px 35px 40px;
+  }
+  .footer .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+  }
+  .footer .rights {
+    text-align: left;
+  }
+}
 @media only screen and (min-device-width: 1140px) {
   .footer {
     width: 100%;

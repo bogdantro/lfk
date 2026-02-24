@@ -6,6 +6,115 @@ $lfkgold: #B6A265;
 
 
 
+/* ✅ MOBILE / TABLET (default) */
+@media only screen and (min-width: 0px) and (max-width: 1139px){
+
+    .footer{
+    width: 100%;
+    height: max-content;
+    padding: 50px 20px 35px;
+    background: #12152c;
+    z-index: 1000;
+    position: relative;
+    margin: 0;
+
+    .bottom{
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        margin-top: 25px;
+        max-width: 100%;
+    }
+
+    .links{
+        width: 100%;
+
+        strong{
+        color: $white;
+        font-family: 'Stampa', "Roboto", sans-serif;
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        display: block;
+        }
+
+        a{
+        color: $white;
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0;
+        margin-block: 8px;
+        width: 100%;
+        display: block;
+        font-family: 'Stampa', "Roboto", sans-serif;
+        opacity: 0.85;
+
+        &.sub-item{
+            margin-left: 14px;
+            opacity: 0.75;
+        }
+        }
+    }
+
+    /* If you ever add .social-icons in footer HTML, keep it clean on mobile */
+    .social-icons{
+        position: static;
+        transform: none;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+
+        i{
+        flex: 0 0 calc(50% - 10px);
+        width: auto;
+        max-width: none;
+        font-size: 22px;
+        padding: 18px;
+        margin: 0;
+        background: rgba(255, 255, 255, 0.16);
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+    }
+
+    .rights{
+        text-align: left;
+        margin-top: 25px;
+
+        p{
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        opacity: 0.85;
+        margin: 6px 0;
+        line-height: 1.35;
+        word-break: break-word;
+        }
+    }
+    }
+
+}
+
+/* ✅ optional: 2-column links on medium screens (still below 1140px) */
+@media only screen and (min-width: 600px) and (max-width: 1139px){
+  .footer{
+    padding: 60px 35px 40px;
+
+    .bottom{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .rights{
+      text-align: left;
+    }
+  }
+}
 
 @media only screen and (min-device-width: 1140px) {
  .footer{

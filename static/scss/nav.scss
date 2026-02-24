@@ -56,7 +56,6 @@ $lfkgold: #B6A265;
     }
     &.menu{
         transition: .2s;
-        background: #00061a;
         border-bottom: 1px solid rgba(100,100,100,0.15);
     }
   
@@ -119,7 +118,7 @@ $lfkgold: #B6A265;
         background: $lfkgold;
         position: absolute;
         top: 65px;
-        left: -100px;
+        right: -100px;
         width: 100%;
         height: calc(100vh - 65px);
         z-index: 120;
@@ -127,6 +126,65 @@ $lfkgold: #B6A265;
         pointer-events: none;
         display: block;
         transition: .2s;
+        padding-bottom: 70px;
+            .mob-dd-trigger{
+      width: 100%;
+      text-align: left;
+      border: none;
+      background: transparent;
+      padding: 18px 20px;
+      color: white;
+      font-size: 19px;
+      font-weight: 500;
+      display: block;
+      cursor: pointer;
+      outline: none;
+
+      i{
+        float: right;
+        padding-right: 3px;
+        color: white;
+        font-size: 17px;
+        transform: translateY(1px);
+        transition: transform .2s;
+      }
+
+      &:hover{
+        background: #1b246836;
+      }
+
+      &.open i{
+        transform: translateY(1px) rotate(180deg);
+      }
+
+      &.sub{
+        padding-left: 34px;
+        font-size: 17px;
+      }
+    }
+
+    .mob-dd{
+      display: none;
+
+      a{
+        padding: 14px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        opacity: .95;
+      }
+
+      &.open{
+        display: block;
+      }
+
+      &.sub{
+        a{
+          padding-left: 50px;
+          font-size: 15px;
+        }
+      }
+    }
+
         a{
             padding: 18px 20px;
             color: white;
@@ -142,7 +200,7 @@ $lfkgold: #B6A265;
             i{
                 float: right;
                 padding-right: 3px;
-                color: $txt;
+                color: white;
                 font-size: 17px;
                 transform: translateY(1px);
             }
@@ -151,7 +209,7 @@ $lfkgold: #B6A265;
             opacity: 1;
             pointer-events: visible;
             transition: .4s;
-            left: 0;
+            right: 0;
         }
     } 
     .nav-action{
