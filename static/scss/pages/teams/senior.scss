@@ -102,11 +102,11 @@ $txt: #1b2c65;
     }
 
     .left {
-        border-right: 1px solid white;
+       border: none;
     }
-
+    
     .right {
-        border-left: 1px solid white;
+        border: none;
     }
 
     // hover swap (works even if only one of the images exists)
