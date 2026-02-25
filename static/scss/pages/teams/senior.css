@@ -18,6 +18,7 @@
 
 .cover {
   height: 100vh;
+  min-height: 870px;
   width: 100%;
   position: relative;
   background: transparent;
