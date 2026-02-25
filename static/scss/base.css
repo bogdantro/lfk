@@ -183,6 +183,10 @@
   color: white;
   font-size: 9dvw;
   transform: translateY(-20px);
+  white-space: nowrap;
+  line-height: 1;
+  max-width: 100%;
+  font-size: clamp(28px, 9vw, 110px);
   font-family: "Stampa", "Roboto", sans-serif;
 }
 

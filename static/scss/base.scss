@@ -190,6 +190,10 @@ $lfkgold: #b6a265;
                     color: white ;
                     font-size: clamp(5dvw, 9dvw, 13dvw);                     
                     transform: translateY(-20px);
+                     white-space: nowrap;
+        line-height: 1;
+        max-width: 100%;
+        font-size: clamp(28px, 9vw, 110px); // tweak min if needed
                       font-family: 'Stampa', "Roboto", sans-serif;
                     
                       
