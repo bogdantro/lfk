@@ -276,7 +276,7 @@
   color: #1b2c65;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Stampa", "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   vertical-align: top;
 }
 .blog .content .right .text .contact-table th {
@@ -359,6 +359,13 @@
   position: relative;
   padding: 0;
   margin: 0;
+}
+.bottom.team .content {
+  flex-direction: row;
+}
+.bottom.team .content .left, .bottom.team .content .right {
+  width: 50%;
+  gap: 0;
 }
 .bottom .content {
   display: flex;
@@ -694,7 +701,7 @@
     color: #1b2c65;
     font-size: 18px;
     font-weight: 500;
-    font-family: "Stampa", "Roboto", sans-serif;
+    font-family: "Inter", sans-serif;
     vertical-align: top;
   }
   .blog .content .right .text .contact-table th {

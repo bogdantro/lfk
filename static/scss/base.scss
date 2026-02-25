@@ -294,7 +294,7 @@ $lfkgold: #b6a265;
     color: $txt;
     font-size: 14px;
     font-weight: 500;
-    font-family: 'Stampa', "Roboto", sans-serif;
+      font-family: "Inter", sans-serif;
     vertical-align: top;
   }
 
@@ -394,6 +394,15 @@ $lfkgold: #b6a265;
         position: relative;
         padding: 0;
         margin: 0;
+        &.team{
+          .content{
+            flex-direction: row;
+            .left, .right{
+              width: 50%;
+              gap: 0;
+            }
+          }
+        }
         .content{
           display: flex;
           flex-direction: column;
@@ -752,7 +761,7 @@ $lfkgold: #b6a265;
     color: $txt;
     font-size: 18px;
     font-weight: 500;
-    font-family: 'Stampa', "Roboto", sans-serif;
+      font-family: "Inter", sans-serif;
     vertical-align: top;
   }
 

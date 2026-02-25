@@ -56,7 +56,22 @@ $lfkgold: #B6A265;
     }
     &.menu{
         transition: .2s;
-        border-bottom: 1px solid rgba(100,100,100,0.15);
+        border-bottom: 1px solid rgba(100,100,100,0.15) !important;
+        background: white !important;
+        .hamburger{
+            span{
+                background: $txt !important;
+            }
+        }
+    }
+    &.yellow-nav{
+        background: $lfkgold;
+        border-top: 1px solid rgba(255, 255, 255, 0.25);
+        .hamburger{
+            span{
+                background: white;
+            }
+        }
     }
   
     .logo{
@@ -117,7 +132,7 @@ $lfkgold: #B6A265;
     .sidebar{
         background: $lfkgold;
         position: absolute;
-        top: 65px;
+        top: 63px;
         right: -100px;
         width: 100%;
         height: calc(100vh - 65px);

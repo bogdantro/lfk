@@ -51,7 +51,18 @@
 }
 #mobileNav.menu {
   transition: 0.2s;
-  border-bottom: 1px solid rgba(100, 100, 100, 0.15);
+  border-bottom: 1px solid rgba(100, 100, 100, 0.15) !important;
+  background: white !important;
+}
+#mobileNav.menu .hamburger span {
+  background: #183b56 !important;
+}
+#mobileNav.yellow-nav {
+  background: #B6A265;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+#mobileNav.yellow-nav .hamburger span {
+  background: white;
 }
 #mobileNav .logo {
   transition: 0.8s;
@@ -105,7 +116,7 @@
 #mobileNav .sidebar {
   background: #B6A265;
   position: absolute;
-  top: 65px;
+  top: 63px;
   right: -100px;
   width: 100%;
   height: calc(100vh - 65px);
