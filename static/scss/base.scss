@@ -122,7 +122,7 @@ $lfkgold: #b6a265;
   }
 
      .cover{
-        height: 100vh;
+        height: 100dvh;
         width: 100%;
         position: relative;
         background: transparent;
@@ -188,7 +188,7 @@ $lfkgold: #b6a265;
                     max-width: 100%;
                     font-weight: 600;
                     color: white ;
-                    font-size: clamp(5vw, 9vw, 13vw);                     
+                    font-size: clamp(5dvw, 9dvw, 13dvw);                     
                     transform: translateY(-20px);
                       font-family: 'Stampa', "Roboto", sans-serif;
                     
