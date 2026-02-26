@@ -46,85 +46,29 @@ Senior kvinner er et tilbud for spillere som ønsker å kombinere ambisjoner med
 
 <section class="bottom team">
   <div class="content">
-    <div class="left">
-      <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
-      <div class="text">
-        <h2>navn på spiller</h2>
-        <p>
-          Posiosjon
-          Drakt nr
-          Alder
-        </p>
+
+    {% for player in players %}
+      <div class="left">
+        <img src="{{ player.image.url }}" alt="{{ player.first_name }}">
+        <div class="text">
+          <h2>{{ player.first_name }} {{ player.last_name }}</h2>
+          <p>
+            {{ player.get_position_display }}<br>
+            Drakt nr: {{ player.jersey_number }}<br>
+            Alder: {{ player.age }}
+          </p>
+
+          {% if player.sponsor %}
+            <div class="player-sponsor">
+              <img src="{{ player.sponsor.logo.url }}" alt="{{ player.sponsor.name }}">
+            </div>
+          {% endif %}
+        </div>
       </div>
-    </div>
-    <div class="right">
-      <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
-      <div class="text">
-          <h2>navn på spiller</h2>
-        <p>
-          Posiosjon
-          Drakt nr
-          Alder
-        </p>
-      </div>
-    </div>
+    {% endfor %}
+
   </div>
 </section>
-
-<section class="bottom team">
-  <div class="content">
-    <div class="left">
-      <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
-      <div class="text">
-        <h2>navn på spiller</h2>
-        <p>
-          Posiosjon
-          Drakt nr
-          Alder
-        </p>
-      </div>
-    </div>
-    <div class="right">
-      <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
-      <div class="text">
-          <h2>navn på spiller</h2>
-        <p>
-          Posiosjon
-          Drakt nr
-          Alder
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="bottom team">
-  <div class="content">
-    <div class="left">
-      <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
-      <div class="text">
-        <h2>navn på spiller</h2>
-        <p>
-          Posiosjon
-          Drakt nr
-          Alder
-        </p>
-      </div>
-    </div>
-    <div class="right">
-      <img src="https://profluence.com/wp-content/uploads/2022/07/messiheadshotcompressed.png" alt="">
-      <div class="text">
-          <h2>navn på spiller</h2>
-        <p>
-          Posiosjon
-          Drakt nr
-          Alder
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 
 <section class="bottom">
@@ -136,7 +80,7 @@ Senior kvinner er et tilbud for spillere som ønsker å kombinere ambisjoner med
         <p>Se kommende kamper</p>
       </div>
     </div>
-    <div class="right">
+    <div class="right" onclick="window.location.href='/om-klubben/medlemskap/'">
       <img src="{% static 'images/covers/medlem-kvinner.jpeg' %}" alt="">
       <div class="text">
         <h2>Bli medlem</h2>

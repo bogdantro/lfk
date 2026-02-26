@@ -1,0 +1,174 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/blog/blog_form.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/userprofile/myaccount.css' %}" type="text/css">
+
+
+
+<section class="cover" id="accountCover" >
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="text">
+            <h1>Ny spiller</h1>
+        </div>
+    </div>
+</section>
+
+<section id="blogCreate">
+  <div class="topbar">
+    <h2>Ny spiller</h2>
+
+    <div class="actions">
+      <a class="ghost" href="{% url 'myaccount' %}">Tilbake</a>
+      <button class="primary" form="playerForm" type="submit">Lagre spiller</button>
+    </div>
+  </div>
+
+  <div class="editor-wrap">
+    <div class="editor-left">
+      <form id="playerForm" method="post" enctype="multipart/form-data" class="dash-form">
+        {% csrf_token %}
+
+        <div class="field">
+          <p>Fornavn</p>
+          {{ form.first_name }}
+        </div>
+
+        <div class="field">
+          <p>Etternavn</p>
+          {{ form.last_name }}
+        </div>
+
+        <div class="field">
+          <p>Posisjon</p>
+          {{ form.position }}
+        </div>
+
+        <div class="field">
+          <p>Draktnummer</p>
+          {{ form.jersey_number }}
+        </div>
+
+        <div class="field">
+          <p>Fødselsdato</p>
+          {{ form.date_of_birth }}
+        </div>
+
+        <!-- <div class="field">
+          <p>Høyde (cm)</p>
+          {{ form.height }}
+        </div>
+
+        <div class="field">
+          <p>Vekt (kg)</p>
+          {{ form.weight }}
+        </div> -->
+
+        <div class="field">
+          <p>Sponsor (valgfritt)</p>
+          {{ form.sponsor }}
+        </div>
+
+        <div class="field big">
+          <p>Bio (valgfritt)</p>
+          <div class="editor-box">
+            {{ form.bio }}
+          </div>
+        </div>
+
+        <!-- Hide real file input -->
+        <div class="field file">
+          <p>Bilde</p>
+          <input id="id_image" name="image" type="file" accept="image/*" hidden>
+
+          <div class="uploader" id="playerUploader">
+            <div class="uploader-left">
+              <div class="big">Last opp spillerbilde</div>
+              <p class="small">PNG / JPG – trykk for å velge</p>
+            </div>
+
+            <div class="uploader-right">
+              <button class="pick" type="button">Velg fil</button>
+              <p class="filename" id="playerFilename">Ingen fil valgt</p>
+            </div>
+          </div>
+
+          <small>Spilleren blir automatisk lagt til laget: <strong>{{ team.name }}</strong></small>
+        </div>
+      </form>
+    </div>
+
+    <div class="editor-right">
+      <div class="preview-card">
+        <div class="tag">FORHÅNDSVISNING</div>
+        <h3 id="playerPreviewName">Spiller</h3>
+
+        <div class="preview-img" id="playerPreviewBox">
+          <p>Ingen bilde valgt</p>
+          <img id="playerPreviewImg" src="" alt="">
+        </div>
+
+        <div class="help">
+          <p>Tips</p>
+          <ul>
+            <li>Bruk portrettbilde med god lys.</li>
+            <li>Velg riktig posisjon og draktnummer.</li>
+            <li>Sponsor er valgfritt.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="preview-card small">
+        <div class="tag">ADMIN</div>
+        <a href="/lfk/admin/login/core/player/" target="_blank" rel="noopener">Åpne spillerlisten i admin</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // click uploader
+  const uploader = document.getElementById("playerUploader");
+  const fileInput = document.getElementById("id_image");
+  const filename = document.getElementById("playerFilename");
+  const previewBox = document.getElementById("playerPreviewBox");
+  const previewImg = document.getElementById("playerPreviewImg");
+
+  uploader.addEventListener("click", () => fileInput.click());
+  uploader.querySelector(".pick").addEventListener("click", (e) => {
+    e.stopPropagation();
+    fileInput.click();
+  });
+
+  fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    filename.textContent = file ? file.name : "Ingen fil valgt";
+
+    if (file) {
+      const url = URL.createObjectURL(file);
+      previewImg.src = url;
+      previewBox.classList.add("active");
+    } else {
+      previewImg.src = "";
+      previewBox.classList.remove("active");
+    }
+  });
+
+  // live name preview
+  const firstName = document.getElementById("id_first_name");
+  const lastName = document.getElementById("id_last_name");
+  const previewName = document.getElementById("playerPreviewName");
+
+  function updateName() {
+    const fn = firstName?.value || "";
+    const ln = lastName?.value || "";
+    previewName.textContent = (fn + " " + ln).trim() || "Spiller";
+  }
+  firstName?.addEventListener("input", updateName);
+  lastName?.addEventListener("input", updateName);
+</script>
+
+{% endblock %}

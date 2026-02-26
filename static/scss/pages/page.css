@@ -589,7 +589,7 @@
   position: relative;
   width: 100%;
   height: auto;
-  padding-inline: 50px;
+  padding-inline: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -598,8 +598,8 @@
   padding-bottom: 60px;
 }
 .blog-posts .post {
-  min-width: calc(33% - 20px);
-  max-width: calc(33% - 20px);
+  min-width: 100%;
+  max-width: 100%;
   position: relative;
 }
 .blog-posts .post img {
@@ -614,11 +614,11 @@
 }
 .blog-posts .post .blog-text h2 {
   color: #1b2c65;
-  font-size: 32px;
+  font-size: 22px;
   font-family: "Stampa", "Roboto", sans-serif;
 }
 .blog-posts .post .blog-text p {
-  font-size: 16px;
+  font-size: 15px;
   color: #1b2c65;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -633,7 +633,7 @@
   outline: none;
   border: none;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   width: auto;
   cursor: pointer;
 }
@@ -787,9 +787,11 @@
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 8s ease;
     will-change: opacity, transform;
+    position: fixed;
   }
   .cover .image .cover-img.is-active {
     opacity: 1;
+    position: fixed;
   }
   .cover .image .cover-img.relative {
     position: absolute;

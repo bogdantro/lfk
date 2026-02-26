@@ -14,6 +14,7 @@ from django.contrib.auth.decorators import *
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from apps.blog.models import *
+from .models import *
 
 
 # Home
@@ -32,15 +33,60 @@ def home(request):
 def xtravgs(request):
     return render(request, 'pages/xtravgs.html')
 
+def fotballextra(request):
+    return render(request, 'pages/fotball-extra.html')
+
 # Sport
 def senior(request):
     return render(request, 'teams/senior.html')
 
+
+####################################
+
 def senior_herrer(request):
-    return render(request, 'teams/senior-herrer.html')
+    players = Player.objects.filter(
+        team__name__iexact="Herrer",
+        is_active=True
+    )
+
+    return render(request, "teams/senior-herrer.html", {
+        "players": players
+    })
 
 def senior_kvinner(request):
-    return render(request, 'teams/senior-kvinner.html')
+    players = Player.objects.filter(
+        team__name__iexact="Kvinner",
+        is_active=True
+    )
+    return render(request, 'teams/senior-kvinner.html', {"players": players})
+
+
+from django.contrib.admin.views.decorators import staff_member_required
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Team
+from .forms import PlayerForm  # your ModelForm for Player
+
+@staff_member_required
+def player_create(request):
+    team_name = request.GET.get("team", "Herrer")  # default
+    team = get_object_or_404(Team, name__iexact=team_name)
+
+    if request.method == "POST":
+        form = PlayerForm(request.POST, request.FILES)
+        if form.is_valid():
+            player = form.save(commit=False)
+            player.team = team  # ✅ force correct team
+            player.save()
+            return redirect("myaccount")
+    else:
+        form = PlayerForm()
+
+    return render(request, "teams/player_create.html", {
+        "form": form,
+        "team": team,
+    })
+
+#####################################
 
 def wednesday_united(request):
     return render(request, 'teams/wednesday-united.html')

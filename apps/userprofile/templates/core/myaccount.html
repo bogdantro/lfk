@@ -22,7 +22,9 @@
 
                 {% if request.user.is_staff or request.user.is_superuser %}
                     <a class="btn" href="{% url 'blog_create' %}">Ny blogg</a>
+                    <a class="btn" href="{% url 'player_create' %}">Ny spiller</a>
                 {% endif %}
+                
             </div>
         </div>
     </div>
@@ -65,7 +67,7 @@
     <div class="dash-grid">
 
         
-        <div class="dash-card" onclick="window.location.href='/lfk/admin/login/'">
+        <div class="dash-card" onclick="window.location.href='{% url 'player_create' %}?team=Herrer'">
             <div class="top">
                 <p class="small">Herrer</p>
                 <h3>Endre herrer</h3>
@@ -73,7 +75,7 @@
             <p class="desc">Legg til, slett eller endre spillere på troppen.</p>
         </div>
 
-        <div class="dash-card" onclick="window.location.href='/admin/'">
+        <div class="dash-card" onclick="window.location.href='{% url 'player_create' %}?team=Kvinner'">
             <div class="top">
                 <p class="small">Kvinner</p>
                 <h3>Endre kvinner</h3>

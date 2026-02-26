@@ -74,3 +74,88 @@ $txt: #183b56;
 
 
 
+
+/* Back to top button */
+.back-to-top{
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Nice glassy look */
+  background: rgba(18, 21, 44, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: #fff;
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25),
+    0 0 0 1px rgba(182, 162, 101, .25) inset;
+
+  /* Hidden by default */
+  opacity: 0;
+  transform: translateY(14px) scale(.96);
+  pointer-events: none;
+
+  transition: opacity .22s ease, transform .22s ease, box-shadow .22s ease;
+}
+
+.back-to-top i{
+  font-size: 18px;
+  transform: translateY(-1px);
+}
+
+.back-to-top.is-visible{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.back-to-top:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.32),
+    0 0 0 1px rgba(182, 162, 101, .45) inset;
+}
+
+/* Focus styles for keyboard users */
+.back-to-top:focus{
+  outline: none;
+}
+.back-to-top:focus-visible{
+  box-shadow:
+    0 16px 40px rgba(0,0,0,.32),
+    0 0 0 3px rgba(182, 162, 101, .55),
+    0 0 0 1px rgba(182, 162, 101, .45) inset;
+}
+
+/* Slightly smaller on mobile */
+@media (max-width: 576px){
+  .back-to-top{
+    right: 14px;
+    bottom: 14px;
+    width: 46px;
+    height: 46px;
+  }
+  .back-to-top i{
+    font-size: 16px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .back-to-top{
+    transition: none;
+  }
+}

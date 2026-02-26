@@ -3,6 +3,27 @@ $white: rgb(246,246,246);
 $primBtn: #1b2c65;
 $txt: #1b2c65;
 
+#blogCreate {
+  input, select, textarea {
+    width: 100%;
+    padding: 14px 14px;
+    border-radius: 6px;
+    border: 1px solid rgba(27,44,101,0.25);
+    outline: none;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+
+    &:focus{
+      border-color: rgba(27,44,101,0.55);
+    }
+  }
+
+  input[type="checkbox"]{
+    width: auto;
+    padding: 0;
+  }
+}
+
 @media only screen and (min-device-width: 1140px){
 
   #blogCreate{
@@ -93,7 +114,8 @@ $txt: #1b2c65;
       margin-bottom: 18px;
 
       p{
-        font-family: 'LingkawiSouth', "Roboto", sans-serif;
+             font-family: "Inter", sans-serif;
+
         font-size: 18px;
         font-weight: 700;
         color: $txt;

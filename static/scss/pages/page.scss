@@ -670,7 +670,7 @@ $lfkgold: #b6a265;
         position: relative;
         width: 100%;
         height: auto;
-        padding-inline: 50px;
+        padding-inline: 20px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -678,8 +678,8 @@ $lfkgold: #b6a265;
         row-gap: 55px;
         padding-bottom: 60px;
         .post{
-          min-width: calc(33% - 20px);
-          max-width: calc(33% - 20px);
+          min-width: 100%;
+          max-width: 100%;
           position: relative;
           img{
             width: 100%;
@@ -691,11 +691,11 @@ $lfkgold: #b6a265;
             margin-top: 15px;
             h2{
               color: $txt;
-              font-size: 32px;
+              font-size: 22px;
               font-family: 'Stampa', "Roboto", sans-serif;
             }
             p{
-              font-size: 16px;
+              font-size: 15px;
               color: $txt;
               display: -webkit-box;
               -webkit-line-clamp: 3;
@@ -710,7 +710,7 @@ $lfkgold: #b6a265;
                       outline: none;
                       border: none;
                       font-weight: 500;
-                      font-size: 18px;
+                      font-size: 16px;
                       width: auto;
                       cursor: pointer;
 
@@ -896,10 +896,12 @@ $lfkgold: #b6a265;
       opacity: 0;
       transition: opacity 1s ease-in-out, transform 8s ease; // fade + subtle zoom
       will-change: opacity, transform;
+      position: fixed;
     }
 
       &.is-active {
         opacity: 1;
+        position: fixed;
       }
 
                 &.relative{

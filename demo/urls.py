@@ -16,11 +16,12 @@ from apps.userprofile.urls import *
 
 urlpatterns = [
     path('lfk/admin/login/', admin.site.urls),
+    path('', home, name='home'),
     path("", include("apps.userprofile.urls")),
     path('', include('apps.blog.urls')),
 
 
-    path('', home, name='home'),
+    path("dashboard/spiller/ny/", player_create, name="player_create"),
 
     path('fotball-extra-vgs/', xtravgs, name='xtravgs'),
 
@@ -36,6 +37,7 @@ urlpatterns = [
     path('uefa-playmakers/', uefa_playmakers, name='uefa_playmakers'),
     path('landslagsskolen/', landslagsskolen, name='landslagsskolen'),
     path('fair-play/', fair_play, name='fair_play'),
+    path('fotball-extra/', fotballextra, name='fotballextra'),
 
 
     # Marked

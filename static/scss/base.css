@@ -362,9 +362,11 @@
 }
 .bottom.team .content {
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .bottom.team .content .left, .bottom.team .content .right {
-  width: 50%;
+  min-width: 50%;
+  max-width: 50%;
   gap: 0;
 }
 .bottom .content {
@@ -782,6 +784,15 @@
     position: relative;
     padding: 0;
     margin: 0;
+  }
+  .bottom.team .content {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .bottom.team .content .left, .bottom.team .content .right {
+    min-width: 50%;
+    max-width: 50%;
+    gap: 0;
   }
   .bottom .content {
     display: flex;

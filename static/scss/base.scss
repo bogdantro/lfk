@@ -397,8 +397,10 @@ $lfkgold: #b6a265;
         &.team{
           .content{
             flex-direction: row;
+            flex-wrap: wrap;
             .left, .right{
-              width: 50%;
+              min-width: 50%;
+              max-width: 50%;
               gap: 0;
             }
           }
@@ -860,6 +862,17 @@ $lfkgold: #b6a265;
         position: relative;
         padding: 0;
         margin: 0;
+        &.team{
+          .content{
+            flex-direction: row;
+            flex-wrap: wrap;
+            .left, .right{
+              min-width: 50%;
+              max-width: 50%;
+              gap: 0;
+            }
+          }
+        }
         .content{
           display: flex;
           flex-direction: row;
