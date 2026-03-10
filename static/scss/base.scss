@@ -907,7 +907,8 @@ $lfkgold: #b6a265;
               }
             }
             img{
-              width: 50%;
+              min-width: 50%;
+              max-width: 50%;
               height: 460px;
               object-fit: cover;
               transition: .4s;

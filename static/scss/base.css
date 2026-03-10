@@ -829,7 +829,8 @@
     transform: scale(1.03);
   }
   .bottom .content .left img, .bottom .content .right img {
-    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
     height: 460px;
     -o-object-fit: cover;
        object-fit: cover;
