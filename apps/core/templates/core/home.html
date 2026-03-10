@@ -8,14 +8,14 @@
 
 
 
-<section class="cover" id="coverMain">
-  <!-- <img id="heroImage" src= "{% static 'images/covers/hero4.jpeg' %}" alt="" class="cover-img"> -->
+<section class="cover" id="coverMainMob">
+  <img id="heroImage" src= "{% static 'images/covers/hero4.jpeg' %}" alt="" class="cover-img">
   <video id="heroImage" src= "{% static 'images/covers/cover.mov' %}" alt="" class="cover-img" loop muted autoplay playsinline></video>
   <div class="overlay"></div>
   <div class="content">
     <div class="text">
       <div class="cover-partner">
-        <img src="{% static 'images/other/cover-sponsor1.png' %}" alt="">
+        <img src="{% static 'images/other/cover-sponsor1.png' %}" alt="" class="sparebank">
         <img src="{% static 'images/other/cover-sponsor2.png' %}" alt="">
       </div>
       <h1 class="home-h1">lillehammer fk&nbsp;1911</h1>
@@ -24,12 +24,12 @@
 </section>
 
 
-<!-- 
-<section class="home-cover" id="coverMain">
+
+<section class="home-cover" id="coverMainDes">
   <div class="content">
   <div class="text">
-     <img src="{% static 'images/other/cover-partner1.png' %}" alt="">
-      <img src="{% static 'images/other/cover-partner2.png' %}" alt="" class="right-img">
+     <img src="{% static 'images/other/cover-sponsor1_gold.png' %}" alt="">
+      <img src="{% static 'images/other/cover-sponsor2_gold.png' %}" alt="" class="right-img">
     <h1 class="sr-only">Lillehammer FK 1911</h1>
   </div>
 </div>
@@ -62,12 +62,12 @@
       </mask>
     </defs>
 
-    <rect x="0" y="0" width="100%" height="100%"  fill="#f3f3f3" mask="url(#knockoutMask)"></rect>
+    <rect x="0" y="0" width="100%" height="100%"  fill="#fff" mask="url(#knockoutMask)"></rect>
   </svg>
 
 <div class="overlay"></div>
   <div class="overlay-right"></div>
-</section> -->
+</section>
 
 
 
@@ -171,7 +171,7 @@ onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
 
 
 
-<section class="blog reveal" id="test" style="margin: 0;">
+<section class="blog reveal" id="stampaShopHome" style="margin: 0;">
   <div class="content">
         <div class="right">
    

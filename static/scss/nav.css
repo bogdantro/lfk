@@ -57,13 +57,6 @@
 #mobileNav.menu .hamburger span {
   background: #183b56 !important;
 }
-#mobileNav.yellow-nav {
-  background: #B6A265;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
-}
-#mobileNav.yellow-nav .hamburger span {
-  background: white;
-}
 #mobileNav .logo {
   transition: 0.8s;
   cursor: pointer;
@@ -253,15 +246,6 @@
     top: 37px;
     z-index: 10000000000000000000000000000000000;
     transition: 0.4s;
-  }
-  #desNav.yellow-nav .content {
-    background: #B6A265;
-  }
-  #desNav.yellow-nav .content .menu .nav-item a {
-    color: white;
-  }
-  #desNav.yellow-nav .content .menu .nav-item .dropdown a {
-    color: #1F1F1F;
   }
   #desNav.sticky {
     background: rgba(247, 247, 247, 0.97);

@@ -170,6 +170,9 @@ def forsikring(request):
 def dommere(request):
     return render(request, 'pages/about/dommere.html')
 
+def varsling(request):
+    return render(request, 'pages/about/varsling.html')
+
 def politiattest(request):
     return render(request, 'pages/about/politiattest.html')
 

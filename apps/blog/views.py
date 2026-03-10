@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Blog
+from .models import *
 from django.utils.html import strip_tags
 from html import unescape
 
@@ -12,11 +12,24 @@ def blog(request):
     return render(request, 'core/blog.html', {'post': posts})
 
 def blog_post(request, id, slug):
-    post_info = get_object_or_404(Blog, id=id, slug=slug) 
-
+    post_info = get_object_or_404(Blog, id=id, slug=slug)
     post_text = strip_tags(unescape(post_info.text))
 
-    return render(request, 'core/blog-post.html', {'post_info':post_info, 'post_text':post_text,})
+    images = list(post_info.images.all())
+
+    # fallback to main image
+    if not images and post_info.image:
+        images = [{"image": post_info.image}]
+
+    return render(
+        request,
+        "core/blog-post.html",
+        {
+            "post_info": post_info,
+            "post_text": post_text,
+            "images": images,
+        },
+    )
 
 
 
@@ -37,6 +50,15 @@ def blog_create(request):
             blog = form.save(commit=False)
             blog.author = request.user.get_full_name() or request.user.username
             blog.save()
+
+            images = request.FILES.getlist("extra_images")
+
+            for i, img in enumerate(images):
+                BlogImage.objects.create(
+                    blog=blog,
+                    image=img,
+                    order=i
+                )
 
             return redirect(blog.get_absolute_url())
     else:

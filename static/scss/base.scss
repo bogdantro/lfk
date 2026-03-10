@@ -4,6 +4,12 @@ $primBtn: #1b2c65;
 $txt: #1b2c65;
 $lfkgold: #b6a265;
 
+#coverMainMob{
+  display: block;
+}
+#coverMainDes{
+  display: none;
+}
 
    .home-cover {
   height: 100vh;
@@ -174,13 +180,17 @@ $lfkgold: #b6a265;
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    transform: translateY(0);
+                    transform: translateY(-41px);
             padding-inline: 20px;
 
                     img{
-                      width: 120px;
+                      width: 100px;
                       height: auto;
-                      object-fit: cover;
+                      object-fit: contain;
+                      &.sparebank{
+                        width: 130px;
+                        transform: translateX(-8pxw);
+                      }
                     }
                   }
                 h1 {
@@ -473,6 +483,13 @@ $lfkgold: #b6a265;
         }
     }
 
+    #coverMainMob{
+  display: none;
+}
+#coverMainDes{
+  display: block;
+}
+
 
     
 
@@ -487,7 +504,7 @@ $lfkgold: #b6a265;
         position: absolute;
         top: 0;
         left: 0;
-        background: #f3f3f3;
+        background: #fff;
         width: 100%;
         height: 200px;
         z-index: 10000;
@@ -496,7 +513,7 @@ $lfkgold: #b6a265;
         position: absolute;
         top: 0;
         right: 0;
-        background: #f3f3f3;
+        background: #fff;
         width: 75px;
         height: 100vh;
         z-index: 1000;
@@ -507,6 +524,7 @@ $lfkgold: #b6a265;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(40%);
   }
 
   /* This creates the white backgr,ound and cuts out the text */

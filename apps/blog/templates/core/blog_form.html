@@ -78,6 +78,34 @@
     </div>
 </div>
 
+<br>
+
+<div class="field">
+<p>Ekstra bilder</p>
+
+<div class="file">
+
+<div style="display:none;">
+<input type="file" id="extraImagesInput" name="extra_images" multiple accept="image/*">
+</div>
+
+<div class="uploader" id="extraUploader">
+<div class="uploader-left">
+<p class="big">Dra bilder hit</p>
+<p class="small">…eller klikk for å velge flere bilder.</p>
+</div>
+
+<div class="uploader-right">
+<button type="button" class="pick" id="pickExtraBtn">Velg bilder</button>
+<p class="filename" id="extraFileName">Ingen filer valgt</p>
+</div>
+</div>
+
+<small>Disse brukes i slideshowet på bloggposten.</small>
+
+</div>
+</div>
+
 
                 <div class="mobile-actions">
                     <button type="submit" class="primary">Publiser</button>
@@ -97,6 +125,7 @@
                     <p id="previewImgText">Velg bilde for forhåndsvisning</p>
                     <img id="previewImg" src="" alt="" />
                 </div>
+                <div class="preview-extra" id="previewExtraImages"></div>
 
                 <div class="help">
                     <p><strong>Hurtigtips</strong></p>
@@ -117,6 +146,22 @@
 
     </div>
 </section>
+
+<style>
+    .preview-extra{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:10px;
+}
+
+.preview-extra img{
+width:100%;
+height:120px;
+object-fit:cover;
+border-radius:6px;
+}
+</style>
 
 <script>
     // Title preview
@@ -218,5 +263,84 @@
     }
 </script>
 
+<script>
+    const extraInput = document.querySelector('#extraImagesInput');
+const extraUploader = document.querySelector('#extraUploader');
+const extraBtn = document.querySelector('#pickExtraBtn');
+const extraFileName = document.querySelector('#extraFileName');
+const extraPreview = document.querySelector('#previewExtraImages');
+
+function showExtraPreview(files){
+
+extraPreview.innerHTML = "";
+
+[...files].forEach(file => {
+
+if(!file.type.startsWith("image/")) return;
+
+const url = URL.createObjectURL(file);
+
+const img = document.createElement("img");
+img.src = url;
+
+extraPreview.appendChild(img);
+
+});
+
+}
+
+if(extraUploader){
+
+extraUploader.addEventListener("click",()=>extraInput.click());
+
+extraBtn.addEventListener("click",(e)=>{
+e.preventDefault();
+extraInput.click();
+});
+
+extraInput.addEventListener("change",function(){
+
+const files = this.files;
+
+if(files.length){
+extraFileName.innerText = files.length + " bilder valgt";
+showExtraPreview(files);
+}
+
+});
+
+extraUploader.addEventListener("dragover",(e)=>{
+e.preventDefault();
+extraUploader.classList.add("drag");
+});
+
+extraUploader.addEventListener("dragleave",()=>{
+extraUploader.classList.remove("drag");
+});
+
+extraUploader.addEventListener("drop",(e)=>{
+e.preventDefault();
+extraUploader.classList.remove("drag");
+
+const files = e.dataTransfer.files;
+
+const dt = new DataTransfer();
+
+for(let f of files){
+if(f.type.startsWith("image/")){
+dt.items.add(f);
+}
+}
+
+extraInput.files = dt.files;
+
+showExtraPreview(dt.files);
+
+extraFileName.innerText = dt.files.length + " bilder valgt";
+
+});
+
+}
+</script>
 
 {% endblock %}

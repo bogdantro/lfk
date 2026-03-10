@@ -25,33 +25,53 @@ $lfkgold: #b6a265;
             padding-inline: 20px;
           }
         }
+           &.blue{
+        background: $txt;
+        .content{
+          .text{
+            h1,p, .subheading, a{
+              color: white;
+            }
+             .subheading{
+                        color: white;
+                        font-weight: 600;
+                        font-family: 'Stampa', "Roboto", sans-serif;
+
+                    }
+          }
+        }
+      }
         &.yellow{
-          background: $lfkgold;
-            .content{
+  .content{
     .text{
+
       h1{
-        color: white;
+        color: $txt;
       }
 
-           .numbered-list {
-                    padding-left: 28px;  
-                    li{
-                      margin-bottom: 18px;
-                      font-size: 20px;
-                      color: white;
-                      a{
-                        opacity: 0.9;
-                      }
-                    }
-                  }
+      .numbered-list{
+        padding-left: 28px;
+
+        li{
+          margin-bottom: 18px;
+          font-size: 20px;
+          color: $black;
+
+          a{
+            opacity: 0.9;
+          }
+        }
+      }
+
       // Better paragraph spacing without using <br>
       p{
-        color: white;
+        color: $black;
         margin: 0 0 18px 0;
         line-height: 1.65;
       }
+
       a{
-        color: white;
+        color: $txt;
       }
 
       // Title sections inside the article
@@ -61,23 +81,24 @@ $lfkgold: #b6a265;
         font-family: 'Stampa', "Roboto", sans-serif;
         font-size: 22px;
         font-weight: 700;
-        color: white;
+        color: $txt;
         text-transform: uppercase;
       }
 
       .subheading{
-        color: white;
+        color: $txt;
       }
 
-      // Quoted paragraph (draktkomité)
+      // Quoted paragraph
       .quote{
         padding-left: 18px;
-        border-left: 4px solid rgba(218, 218, 218, 0.35);
+        border-left: 4px solid rgba(27, 44, 101, 0.25);
         font-style: italic;
-        background: rgba(246,246,246,0.35);
+        background: rgba(27, 44, 101, 0.05);
         border-radius: 6px;
         padding-top: 12px;
         padding-bottom: 12px;
+        color: $black;
       }
 
       // Table wrapper for mobile scroll
@@ -91,17 +112,18 @@ $lfkgold: #b6a265;
       .leaders-table{
         width: 100%;
         border-collapse: collapse;
-        background: rgba(207, 207, 207, 0.178);
+        background: rgba(27, 44, 101, 0.04);
 
         thead{
-          background: rgba(75, 75, 75, 0.1);
+          background: rgba(27, 44, 101, 0.08);
         }
 
-        th, td{
+        th,
+        td{
           text-align: left;
           padding: 14px 14px;
           border-bottom: 1px solid rgba(27, 44, 101, 0.18);
-          color: white;
+          color: $black;
           font-size: 14px;
           font-weight: 500;
           font-family: "Inter", sans-serif;
@@ -111,11 +133,12 @@ $lfkgold: #b6a265;
 
         th{
           font-weight: 700;
+          color: $txt;
         }
 
         td:first-child{
           font-weight: 700;
-          white-space: normal; // allow names to wrap if needed
+          white-space: normal;
         }
 
         tbody tr:last-child td{
@@ -131,7 +154,7 @@ $lfkgold: #b6a265;
         li{
           margin-bottom: 10px;
           font-size: 16px;
-          color: white;
+          color: $black;
           font-family: "Inter", sans-serif;
           font-weight: 500;
           line-height: 1.5;
@@ -141,9 +164,10 @@ $lfkgold: #b6a265;
           margin-bottom: 0;
         }
       }
+
     }
   }
-        }
+}
         &.active{
           img{
             transform: scale(1);
@@ -167,6 +191,7 @@ $lfkgold: #b6a265;
                 z-index: 10;
                 transform: scale(1);
                 filter: brightness(88%);
+             
     &.tine{
       opacity: 0;
       transition: opacity 1s ease-in-out, transform 8s ease; // fade + subtle zoom
@@ -224,6 +249,9 @@ $lfkgold: #b6a265;
                   height: auto;
                   object-fit: cover;
                   margin-bottom: 25px;
+                     &.sno-partner{
+                  transform: translateX(-14px);
+                }
                 }
                 iframe{
                   border-radius: 6px;
@@ -748,124 +776,149 @@ $lfkgold: #b6a265;
           }
         }
         &.yellow{
-          background: $lfkgold;
-            .content{
-    .text{
-      h1{
-        color: white;
+      .content{
+        .text{
+
+          h1{
+            color: $txt;
+          }
+
+          .numbered-list{
+            padding-left: 28px;
+
+            li{
+              margin-bottom: 18px;
+              font-size: 20px;
+              color: $black;
+
+              a{
+                opacity: 0.9;
+              }
+            }
+          }
+
+          // Better paragraph spacing without using <br>
+          p{
+            color: $black;
+            margin: 0 0 18px 0;
+            line-height: 1.65;
+          }
+
+          a{
+            color: $txt;
+          }
+
+          // Title sections inside the article
+          .section-title{
+            margin-top: 38px;
+            margin-bottom: 12px;
+            font-family: 'Stampa', "Roboto", sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: $txt;
+            text-transform: uppercase;
+          }
+
+          .subheading{
+            color: $txt;
+          }
+
+          // Quoted paragraph
+          .quote{
+            padding-left: 18px;
+            border-left: 4px solid rgba(27, 44, 101, 0.25);
+            font-style: italic;
+            background: rgba(27, 44, 101, 0.05);
+            border-radius: 6px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            color: $black;
+          }
+
+          // Table wrapper for mobile scroll
+          .table-wrap{
+            margin-top: 18px;
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 6px;
+          }
+
+          .leaders-table{
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(27, 44, 101, 0.04);
+
+            thead{
+              background: rgba(27, 44, 101, 0.08);
+            }
+
+            th,
+            td{
+              text-align: left;
+              padding: 14px 14px;
+              border-bottom: 1px solid rgba(27, 44, 101, 0.18);
+              color: $black;
+              font-size: 14px;
+              font-weight: 500;
+              font-family: "Inter", sans-serif;
+              vertical-align: top;
+              white-space: nowrap;
+            }
+
+            th{
+              font-weight: 700;
+              color: $txt;
+            }
+
+            td:first-child{
+              font-weight: 700;
+              white-space: normal;
+            }
+
+            tbody tr:last-child td{
+              border-bottom: none;
+            }
+          }
+
+          // Honor members list
+          .honor-list{
+            margin: 0;
+            padding-left: 20px;
+
+            li{
+              margin-bottom: 10px;
+              font-size: 16px;
+              color: $black;
+              font-family: "Inter", sans-serif;
+              font-weight: 500;
+              line-height: 1.5;
+            }
+
+            li:last-child{
+              margin-bottom: 0;
+            }
+          }
+
+        }
+      }
       }
 
-           .numbered-list {
-                    padding-left: 28px;  
-                    li{
-                      margin-bottom: 18px;
-                      font-size: 20px;
-                      color: white;
-                      a{
-                        opacity: 0.9;
-                      }
+      &.blue{
+        background: $txt;
+        .content{
+          .text{
+            h1,p, .subheading, a{
+              color: white;
+            }
+             .subheading{
+                        color: white;
+                        font-weight: 600;
+                        font-family: 'Stampa', "Roboto", sans-serif;
+
                     }
-                  }
-      // Better paragraph spacing without using <br>
-      p{
-        color: white;
-        margin: 0 0 18px 0;
-        line-height: 1.65;
-      }
-      a{
-        color: white;
-      }
-
-      // Title sections inside the article
-      .section-title{
-        margin-top: 38px;
-        margin-bottom: 12px;
-        font-family: 'Stampa', "Roboto", sans-serif;
-        font-size: 34px;
-        font-weight: 700;
-        color: white;
-        text-transform: uppercase;
-      }
-
-      .subheading{
-        color: white;
-      }
-
-      // Quoted paragraph (draktkomité)
-      .quote{
-        padding-left: 18px;
-        border-left: 4px solid rgba(218, 218, 218, 0.35);
-        font-style: italic;
-        background: rgba(246,246,246,0.35);
-        border-radius: 6px;
-        padding-top: 12px;
-        padding-bottom: 12px;
-      }
-
-      // Table wrapper for mobile scroll
-      .table-wrap{
-        margin-top: 18px;
-        width: 100%;
-        overflow-x: auto;
-        border-radius: 6px;
-      }
-
-      .leaders-table{
-        width: 100%;
-        border-collapse: collapse;
-        background: rgba(207, 207, 207, 0.178);
-
-        thead{
-          background: rgba(75, 75, 75, 0.1);
-        }
-
-        th, td{
-          text-align: left;
-          padding: 14px 14px;
-          border-bottom: 1px solid rgba(27, 44, 101, 0.18);
-          color: white;
-          font-size: 16px;
-          font-weight: 500;
-          font-family: "Inter", sans-serif;
-          vertical-align: top;
-          white-space: nowrap;
-        }
-
-        th{
-          font-weight: 700;
-        }
-
-        td:first-child{
-          font-weight: 700;
-          white-space: normal; // allow names to wrap if needed
-        }
-
-        tbody tr:last-child td{
-          border-bottom: none;
+          }
         }
       }
-
-      // Honor members list
-      .honor-list{
-        margin: 0;
-        padding-left: 20px;
-
-        li{
-          margin-bottom: 10px;
-          font-size: 20px;
-          color: white;
-          font-family: "Inter", sans-serif;
-          font-weight: 500;
-          line-height: 1.5;
-        }
-
-        li:last-child{
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-        }
         &.active{
           img{
             transform: scale(1);
@@ -890,6 +943,8 @@ $lfkgold: #b6a265;
                 z-index: 10;
                 transform: scale(1);
                 filter: brightness(88%);
+            object-position: center 60px;
+
       width: 50vw;
     left: 50vw;
     &.tine{
@@ -954,6 +1009,10 @@ $lfkgold: #b6a265;
                   height: auto;
                   object-fit: cover;
                   margin-bottom: 25px;
+                  &.sno-partner{
+                    width: 270px;
+                    transform: translateX(-20px);
+                  }
                 }
                 iframe{
                   border-radius: 6px;

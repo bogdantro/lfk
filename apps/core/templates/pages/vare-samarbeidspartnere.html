@@ -2,93 +2,246 @@
 {% load static %}
 
 {% block content %}
-<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
-<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
-<script src="{% static '/js/home.js' %}"></script>
-<script src="{% static '/js/page.js' %}"></script>
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}">
 
+<section class="cover blue">
 
+<div class="image">
+<img src="{% static 'images/covers/sponsor.jpeg' %}" class="cover-img" style="object-position:center -60px;">
+</div>
 
-<section class="cover" >
-    <div class="image">
-        <img  src="{% static 'images/covers/sponsor.jpeg' %}" alt="" class="cover-img">
-    </div>
-  <div class="content">
-    <div class="text">
-      <h1>Våre partnere</h1>
-        <img src="{% static 'images/other/sno.jpg' %}" alt="">
+<div class="content">
+<div class="text">
 
+<h1>Våre partnere</h1>
 
-        <p>
-            <span class="subheading">Samarbeidspartnere</span><br><br>
+<img src="{% static 'images/partners/Sno_Partnernettverk.png' %}" class="sno-partner">
 
-I Lillehammer FK organiserer vi våre samarbeidspartnere i følgende kategorier:<br><br>
+<br><br>
 
+<p>I Lillehammer FK organiserer vi våre samarbeidspartnere i følgende kategorier:</p>
+
+<p>
 Generalpartner<br>
 Øvre<br>
 Nedre<br>
 Søndre<br>
-Tor &amp; Anitas venner<br><br>
+Tor &amp; Anitas venner
+</p>
+
+<br>
+<br>
+
+<h3 class="subheading">Generalpartner</h3>
+
+<div class="partner-grid">
+
+<div class="partner-card">
+<img src="{% static 'images/partners/SpareBank 1_white.png' %}">
+<h3>Sparebank 1 Gudbrandsdal</h3>
+<a href="https://www.sparebank1.no" class="partner-btn" target="_blank">Besøk nettside</a>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/anleggost_white.png' %}">
+<h3>Anlegg Øst Entreprenør</h3>
+<a href="https://anleggost.no" class="partner-btn" target="_blank">Besøk nettside</a>
+</div>
+
+</div>
 
 
+<br><br>
+<br><br>
 
-<span class="subheading">SNØ Partnernettverk</span><br><br>
+<h3 class="subheading">Øvre</h3>
 
-<strong>Generalpartner:</strong><br>
-Sparebank 1 Gudbrandsdal<br>
-Anlegg Øst Entreprenør<br><br>
+<div class="partner-grid">
 
-<strong>Øvre:</strong><br>
-GD<br>
-Pizzabakeren<br>
-Dialecta<br>
-Eidsiva<br>
-Puma<br>
-Kontorleverandøren<br>
-Thallaug<br>
-Rustadstuen Sport<br>
-Sport 1 Strandtorget<br>
-KANTALL<br>
-Norconsult<br>
-Fjøssystemer<br>
-Gudbrandsdal Energi<br><br>
+<div class="partner-card">
+<img src="{% static 'images/partners/GD_white.png' %}">
+<h3>GD</h3>
+<a href="https://www.gd.no" class="partner-btn">Besøk nettside</a>
+</div>
 
-<strong>Nedre:</strong><br>
-GLØR Partner<br>
-Gausdal Landhandleri<br>
-CC Strandtorget<br>
-ØM Fjeld (ØMF)<br>
-Paa bordet<br>
-Kiwi<br>
-IKOMM<br>
-Østbye &amp; Sletmoen<br>
-Lillehammer sentrum Drift<br>
-Structor<br><br>
+<div class="partner-card">
+<img src="{% static 'images/partners/Pizzabakeren_white.png' %}">
+<h3>Pizzabakeren</h3>
+<a href="https://pizzabakeren.no" class="partner-btn">Besøk nettside</a>
+</div>
 
-<strong>Søndre:</strong><br>
-Felgen Trafikkskole<br>
-Aktivklinikken<br>
-Eidsiva Bredbånd<br>
-Thor Bergseng &amp; Co A/S<br>
-Tur.digital<br>
-Olivera Tannhelseteam<br>
-Stasjonen<br>
-CC Mat<br>
-Ragnvald Moe AS<br>
-USBL<br>
-Advokatfirmaet Alver<br>
-Lillehammer Ventilasjon AS<br>
-Hafslund Eco Vannkraft<br>
-Profilgutta<br>
-Aider<br>
-Lillehammer Live<br><br>
+<div class="partner-card">
+<img src="{% static 'images/partners/Dialecta_white.png' %}">
+<h3>Dialecta</h3>
+<a href="https://dialecta.no" class="partner-btn">Besøk nettside</a>
+</div>
 
-<strong>Tor &amp; Anitas venner:</strong><br>
-Dokken &amp; Moen Murmesterforretning as<br>
+<div class="partner-card">
+<img src="{% static 'images/partners/Eidsiva_white.png' %}">
+<h3>Eidsiva</h3>
+<a href="https://eidsiva.no" class="partner-btn">Besøk nettside</a>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Puma</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Kontorleverandøren</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Thallaug</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/rustadstuen_white.png' %}">
+<h3>Rustadstuen Sport</h3>
+<a href="https://rustadstuen.no" class="partner-btn">Besøk nettside</a>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Sport 1 Strandtorget</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/Kantall_white.png' %}">
+<h3>KANTALL</h3>
+<a href="https://kantall.no" class="partner-btn">Besøk nettside</a>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/Norconsult_white.png' %}">
+<h3>Norconsult</h3>
+<a href="https://norconsult.no" class="partner-btn">Besøk nettside</a>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Fjøssystemer</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Gudbrandsdal Energi</h3>
+</div>
+
+</div>
+
+
+<br><br>
+<br><br>
+
+<h3 class="subheading">Nedre</h3>
+
+<div class="partner-grid">
+
+<div class="partner-card">
+<img src="{% static 'images/partners/Glor_white.png' %}">
+<h3>GLØR Partner</h3>
+<a href="https://glor.no" class="partner-btn">Besøk nettside</a>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Gausdal Landhandleri</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>CC Strandtorget</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>ØM Fjeld</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Paa Bordet</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Kiwi</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>IKOMM</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Østbye &amp; Sletmoen</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Lillehammer sentrum Drift</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Structor</h3>
+</div>
+
+</div>
+
+
+<br><br>
+<br><br>
+
+<h3 class="subheading">Søndre</h3>
+
+<div class="partner-grid">
+
+<div class="partner-card">
+<img src="{% static 'images/partners/felgen_white.png' %}">
+<h3>Felgen Trafikkskole</h3>
+<a href="https://felgen-trafikkskole.no" class="partner-btn">Besøk nettside</a>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Aktivklinikken</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Eidsiva Bredbånd</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/Stasjonen_white.png' %}">
+<h3>Stasjonen</h3>
+</div>
+
+<div class="partner-card">
+<img src="{% static 'images/partners/coming-soon.jfif' %}">
+<h3>Tur.digital</h3>
+</div>
+
+</div>
+
+
+<br><br>
+<br><br>
+
+<h3 class="subheading">Tor &amp; Anitas venner</h3>
+
+<p>
+Dokken &amp; Moen Murmesterforretning<br>
 Brillehjørnet Synsam<br>
 EGON Restaurant<br>
 Coca Cola<br>
-Aksjemøllen by Classic Norway Hotels<br>
+Aksjemøllen<br>
 Betong Øst<br>
 Jorekstad fritidsbad<br>
 Innlandet Landskapsutforming<br>
@@ -98,58 +251,103 @@ Lillehammer Liftutleie<br>
 GK<br>
 JVB TUR A/S<br>
 Scandic Victoria Lillehammer<br>
-Kirkens SOS<br>
-Kulturhjerte<br>
-Enterprise<br>
-Prosit AS<br>
-06565 Drosjene<br>
-ECPay – ECIT<br>
-Jonny´s Renhold<br>
-Isobygg Innlandet<br>
-Mjøsbil AS<br>
-Holms Bilpleie<br>
-Sabrura Strandtorget<br>
-Hennig-Olsen is<br>
-Lillehammer Data<br>
-House of control<br>
-Naprapat-en<br><br>
+Kirkens SOS
+</p>
+
+<br><br>
+<br><br>
+<h3 class="subheading">Thallaug Cup Lillehammer</h3>
+<p>
+  Lillehammer FK arrangerer hver vinter, i januar, Thallaug Cup Lillehammer i fotball. Dette er
+en av de største futsalturneringene i Norden, og vi samarbeider med NFF om gjennomføring.
+Fullstendig oversikt over partnere, finnes på turneringens hjemmeside.
+<br>
+<br>
+Link til turneringen: <a href="https://thallaugcuplillehammer.cupmanager.net/" rel="noopener" target="_blank">https://thallaugcuplillehammer.cupmanager.net/</a>
+</p>
 
 
-<span class="subheading">Thallaug Cup Lillehammer</span><br><br>
+<br><br>
+<br><br>
+<h3 class="subheading">Kiwi Cup</h3>
+<p>
+  Sammen med Faaberg Idrettslag (FIL) arrangerer vi årlig Kiwi Cup. Dette er en
+bedriftsturnering i fotball som har en tydelig sosial profil. I Kiwi Cup står folkehelse og
+idrettsglede i sentrum, og det viktigste er å delta. Det er også helt greit å være best uten ball!
+Fullstendig oversikt over partnere finnes på turneringens hjemmeside.
+<br>
+<br>
+Link til turneringen: <a href="https://nmforansatte.cupmanager.net/" rel="noopener" target="_blank">https://nmforansatte.cupmanager.net/</a>
+</p>
 
-Lillehammer FK arrangerer hver vinter, i januar, Thallaug Cup Lillehammer i fotball. Dette er en av de største innendørsturneringene i Norge, og vi har med oss følgende samarbeidspartnere på laget:<br><br>
-
-<strong>Tittelpartner:</strong><br>
-Thallaug<br><br>
-
-<strong>Wiese:</strong><br>
-Sparebank 1 Gudbrandsdal<br>
-Puma<br><br>
-
-<strong>Undset:</strong><br>
-Kiwi<br>
-CC Strandtorget<br>
-Kontorleverandøren<br>
-Eidsiva<br>
-Profilgutta<br><br>
-
-<strong>Sandvig:</strong><br>
-Birkebeineren Hotel &amp; Apartments<br>
-Aksjemøllen<br>
-Stasjonen<br>
-Fist Hotel Breiseth<br>
-Home Hotel Hammer<br>
-Trofé<br>
-Pizzabakeren<br>
-Starbucks Strandtorget<br>
-
-        </p>
-
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
 
+<style>
 
+.partner-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:28px;
+margin-top:30px;
+}
+
+.partner-card{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+border:1px solid rgba(255,255,255,0.25);
+border-radius:8px;
+
+padding:28px;
+gap:14px;
+
+background:rgba(255,255,255,0.03);
+transition:.2s;
+}
+
+.partner-card:hover{
+transform:translateY(-4px);
+border-color:white;
+}
+
+.partner-card img{
+width:150px;
+height:70px;
+object-fit:contain;
+}
+
+.partner-card h3{
+font-size:18px;
+color:white;
+font-family:'Stampa',"Roboto",sans-serif;
+}
+
+.partner-btn{
+margin-top:8px;
+
+padding:8px 16px;
+border-radius:4px;
+
+background:white;
+color:#1b2c65 !important;
+text-decoration: none;
+font-weight:600;
+font-size:14px;
+
+text-decoration:none !important;
+transition:.2s;
+}
+
+.partner-btn:hover{
+background:#b6a265;
+color:white;
+}
+
+</style>
 {% endblock %}
- 

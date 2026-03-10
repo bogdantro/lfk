@@ -1,0 +1,234 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/page.js' %}"></script>
+
+<section class="cover">
+<!-- <div class="image">
+<img src="{% static 'images/other/medlemsfordeler.jpeg' %}" alt="" class="cover-img">
+</div> -->
+
+<div class="content">
+<div class="text">
+<h1>Kontakt oss</h1>
+</div>
+
+<div class="member-benefits" id="memberBenefits">
+<div class="benefits-content">
+
+<div class="header">
+<p class="desc">
+Her finner du kontaktinformasjon til administrasjonen og styret i Lillehammer FK.
+</p>
+</div>
+
+<div class="benefits-grid">
+
+<!-- ADMINISTRASJON -->
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Jostein Wahl</h3>
+<p>Daglig leder</p>
+<div class="links">
+<a href="tel:+4797675776" class="icon"><i class="fa-solid fa-phone"></i></a>
+<a href="mailto:dagligleder@lillehammerfk.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Mathias Roås</h3>
+<p>Utviklingssjef</p>
+<div class="links">
+<a href="tel:+4790108899" class="icon"><i class="fa-solid fa-phone"></i></a>
+<a href="mailto:utviklingssjef@lillehammerfk.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Marius Elind</h3>
+<p>Administrasjonskoordinator</p>
+<div class="links">
+<a href="tel:+4794142842" class="icon"><i class="fa-solid fa-phone"></i></a>
+<a href="mailto:admin@lillehammerfk.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Knut Arne Vassdokken</h3>
+<p>Banefordeler</p>
+<div class="links">
+<a href="mailto:banefordeler@lillehammerfk.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Roger Svenskerud</h3>
+<p>Utstyrsansvarlig</p>
+<div class="links">
+<a href="mailto:utstyrsansvarlig@lillehammerfk.no" class="icon"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Arnold Anderson</h3>
+<p>Dommeransvarlig</p>
+<div class="links">
+<a href="mailto:arnoand@gmail.com" class="icon"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+
+
+<!-- STYRET -->
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Haakon Engen</h3>
+<p>Styreleder</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Erik Huuse</h3>
+<p>Nestleder – Økonomi</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Turid Magnus</h3>
+<p>Styremedlem – Juridisk / Anlegg</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Fredrik Alver</h3>
+<p>Styremedlem – Juridisk</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Veslemøy Wedum</h3>
+<p>Styremedlem – Kommunikasjon</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Silja Hjelmstadstuen</h3>
+<p>Styremedlem – Marked</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Trond Erik Eriksen</h3>
+<p>Styremedlem – Sport</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Karen Sann Fougner</h3>
+<p>Varamedlem</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Ingvill Helset</h3>
+<p>Varamedlem</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Stian Grønås</h3>
+<p>Varamedlem</p>
+</div>
+
+
+<div class="benefit-card">
+<div class="line"></div>
+<div class="logo">
+<img src="{% static 'images/other/default-person.jpeg' %}" alt="">
+</div>
+<h3>Ole Martin Hojem</h3>
+<p>Varamedlem</p>
+</div>
+
+
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+{% endblock %}

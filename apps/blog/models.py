@@ -26,3 +26,15 @@ class Blog(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+
+
+class BlogImage(models.Model):
+    blog = models.ForeignKey(Blog, related_name="images", on_delete=models.CASCADE)
+    image = models.ImageField(upload_to="static/images/blog/")
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order"]
+
+    def __str__(self):
+        return f"{self.blog.title} image"

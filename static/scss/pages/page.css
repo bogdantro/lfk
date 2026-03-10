@@ -19,11 +19,19 @@
 .cover.blog .content {
   padding-inline: 20px;
 }
-.cover.yellow {
-  background: #b6a265;
+.cover.blue {
+  background: #1b2c65;
+}
+.cover.blue .content .text h1, .cover.blue .content .text p, .cover.blue .content .text .subheading, .cover.blue .content .text a {
+  color: white;
+}
+.cover.blue .content .text .subheading {
+  color: white;
+  font-weight: 600;
+  font-family: "Stampa", "Roboto", sans-serif;
 }
 .cover.yellow .content .text h1 {
-  color: white;
+  color: #1b2c65;
 }
 .cover.yellow .content .text .numbered-list {
   padding-left: 28px;
@@ -31,18 +39,18 @@
 .cover.yellow .content .text .numbered-list li {
   margin-bottom: 18px;
   font-size: 20px;
-  color: white;
+  color: #1F1F1F;
 }
 .cover.yellow .content .text .numbered-list li a {
   opacity: 0.9;
 }
 .cover.yellow .content .text p {
-  color: white;
+  color: #1F1F1F;
   margin: 0 0 18px 0;
   line-height: 1.65;
 }
 .cover.yellow .content .text a {
-  color: white;
+  color: #1b2c65;
 }
 .cover.yellow .content .text .section-title {
   margin-top: 38px;
@@ -50,20 +58,21 @@
   font-family: "Stampa", "Roboto", sans-serif;
   font-size: 22px;
   font-weight: 700;
-  color: white;
+  color: #1b2c65;
   text-transform: uppercase;
 }
 .cover.yellow .content .text .subheading {
-  color: white;
+  color: #1b2c65;
 }
 .cover.yellow .content .text .quote {
   padding-left: 18px;
-  border-left: 4px solid rgba(218, 218, 218, 0.35);
+  border-left: 4px solid rgba(27, 44, 101, 0.25);
   font-style: italic;
-  background: rgba(246, 246, 246, 0.35);
+  background: rgba(27, 44, 101, 0.05);
   border-radius: 6px;
   padding-top: 12px;
   padding-bottom: 12px;
+  color: #1F1F1F;
 }
 .cover.yellow .content .text .table-wrap {
   margin-top: 18px;
@@ -74,16 +83,17 @@
 .cover.yellow .content .text .leaders-table {
   width: 100%;
   border-collapse: collapse;
-  background: rgba(207, 207, 207, 0.178);
+  background: rgba(27, 44, 101, 0.04);
 }
 .cover.yellow .content .text .leaders-table thead {
-  background: rgba(75, 75, 75, 0.1);
+  background: rgba(27, 44, 101, 0.08);
 }
-.cover.yellow .content .text .leaders-table th, .cover.yellow .content .text .leaders-table td {
+.cover.yellow .content .text .leaders-table th,
+.cover.yellow .content .text .leaders-table td {
   text-align: left;
   padding: 14px 14px;
   border-bottom: 1px solid rgba(27, 44, 101, 0.18);
-  color: white;
+  color: #1F1F1F;
   font-size: 14px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
@@ -92,6 +102,7 @@
 }
 .cover.yellow .content .text .leaders-table th {
   font-weight: 700;
+  color: #1b2c65;
 }
 .cover.yellow .content .text .leaders-table td:first-child {
   font-weight: 700;
@@ -107,7 +118,7 @@
 .cover.yellow .content .text .honor-list li {
   margin-bottom: 10px;
   font-size: 16px;
-  color: white;
+  color: #1F1F1F;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   line-height: 1.5;
@@ -191,6 +202,9 @@
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 25px;
+}
+.cover .content .text img.sno-partner {
+  transform: translateX(-14px);
 }
 .cover .content .text iframe {
   border-radius: 6px;
@@ -660,11 +674,8 @@
   .cover.blog .content {
     padding-inline: 50px;
   }
-  .cover.yellow {
-    background: #b6a265;
-  }
   .cover.yellow .content .text h1 {
-    color: white;
+    color: #1b2c65;
   }
   .cover.yellow .content .text .numbered-list {
     padding-left: 28px;
@@ -672,39 +683,40 @@
   .cover.yellow .content .text .numbered-list li {
     margin-bottom: 18px;
     font-size: 20px;
-    color: white;
+    color: #1F1F1F;
   }
   .cover.yellow .content .text .numbered-list li a {
     opacity: 0.9;
   }
   .cover.yellow .content .text p {
-    color: white;
+    color: #1F1F1F;
     margin: 0 0 18px 0;
     line-height: 1.65;
   }
   .cover.yellow .content .text a {
-    color: white;
+    color: #1b2c65;
   }
   .cover.yellow .content .text .section-title {
     margin-top: 38px;
     margin-bottom: 12px;
     font-family: "Stampa", "Roboto", sans-serif;
-    font-size: 34px;
+    font-size: 22px;
     font-weight: 700;
-    color: white;
+    color: #1b2c65;
     text-transform: uppercase;
   }
   .cover.yellow .content .text .subheading {
-    color: white;
+    color: #1b2c65;
   }
   .cover.yellow .content .text .quote {
     padding-left: 18px;
-    border-left: 4px solid rgba(218, 218, 218, 0.35);
+    border-left: 4px solid rgba(27, 44, 101, 0.25);
     font-style: italic;
-    background: rgba(246, 246, 246, 0.35);
+    background: rgba(27, 44, 101, 0.05);
     border-radius: 6px;
     padding-top: 12px;
     padding-bottom: 12px;
+    color: #1F1F1F;
   }
   .cover.yellow .content .text .table-wrap {
     margin-top: 18px;
@@ -715,17 +727,18 @@
   .cover.yellow .content .text .leaders-table {
     width: 100%;
     border-collapse: collapse;
-    background: rgba(207, 207, 207, 0.178);
+    background: rgba(27, 44, 101, 0.04);
   }
   .cover.yellow .content .text .leaders-table thead {
-    background: rgba(75, 75, 75, 0.1);
+    background: rgba(27, 44, 101, 0.08);
   }
-  .cover.yellow .content .text .leaders-table th, .cover.yellow .content .text .leaders-table td {
+  .cover.yellow .content .text .leaders-table th,
+  .cover.yellow .content .text .leaders-table td {
     text-align: left;
     padding: 14px 14px;
     border-bottom: 1px solid rgba(27, 44, 101, 0.18);
-    color: white;
-    font-size: 16px;
+    color: #1F1F1F;
+    font-size: 14px;
     font-weight: 500;
     font-family: "Inter", sans-serif;
     vertical-align: top;
@@ -733,6 +746,7 @@
   }
   .cover.yellow .content .text .leaders-table th {
     font-weight: 700;
+    color: #1b2c65;
   }
   .cover.yellow .content .text .leaders-table td:first-child {
     font-weight: 700;
@@ -747,14 +761,25 @@
   }
   .cover.yellow .content .text .honor-list li {
     margin-bottom: 10px;
-    font-size: 20px;
-    color: white;
+    font-size: 16px;
+    color: #1F1F1F;
     font-family: "Inter", sans-serif;
     font-weight: 500;
     line-height: 1.5;
   }
   .cover.yellow .content .text .honor-list li:last-child {
     margin-bottom: 0;
+  }
+  .cover.blue {
+    background: #1b2c65;
+  }
+  .cover.blue .content .text h1, .cover.blue .content .text p, .cover.blue .content .text .subheading, .cover.blue .content .text a {
+    color: white;
+  }
+  .cover.blue .content .text .subheading {
+    color: white;
+    font-weight: 600;
+    font-family: "Stampa", "Roboto", sans-serif;
   }
   .cover.active img {
     transform: scale(1);
@@ -780,6 +805,8 @@
     z-index: 10;
     transform: scale(1);
     filter: brightness(88%);
+    -o-object-position: center 60px;
+       object-position: center 60px;
     width: 50vw;
     left: 50vw;
   }
@@ -840,6 +867,10 @@
     -o-object-fit: cover;
        object-fit: cover;
     margin-bottom: 25px;
+  }
+  .cover .content .text img.sno-partner {
+    width: 270px;
+    transform: translateX(-20px);
   }
   .cover .content .text iframe {
     border-radius: 6px;

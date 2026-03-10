@@ -64,15 +64,7 @@ $lfkgold: #B6A265;
             }
         }
     }
-    &.yellow-nav{
-        background: $lfkgold;
-        border-top: 1px solid rgba(255, 255, 255, 0.25);
-        .hamburger{
-            span{
-                background: white;
-            }
-        }
-    }
+
   
     .logo{
         transition: .8s;
@@ -292,23 +284,7 @@ $lfkgold: #B6A265;
         transition: .4s;
         // background: rgba(247,247,247,0.85);
 
-        &.yellow-nav{
-            .content{
-                background: $lfkgold;
-                .menu{
-                    .nav-item{
-                        a{
-                            color: white;
-                        }
-                        .dropdown{
-                            a{
-                                color: $black;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+      
       
         &.sticky{
             background: rgba(247,247,247,0.97);
