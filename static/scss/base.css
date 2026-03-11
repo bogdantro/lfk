@@ -530,28 +530,28 @@
     padding-bottom: 50px;
     position: relative;
     margin-bottom: auto;
-    border-bottom: 1px solid rgba(211, 211, 211, 0.466);
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     padding-inline: 50px;
+    border: none;
   }
   .home-cover .content .text img {
-    width: 130px;
+    width: 160px;
     height: auto;
     -o-object-fit: contain;
        object-fit: contain;
     margin-top: auto;
     position: absolute;
-    bottom: 10px;
-    left: 50px;
+    bottom: 0px;
+    left: 40px;
   }
   .home-cover .content .text img.right-img {
     left: unset;
-    bottom: -10px;
-    right: 50px;
+    right: 80px;
+    width: 125px;
   }
   .home-cover .content .text {
     /* visually hidden h1 (keeps semantics/SEO) */

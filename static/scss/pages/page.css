@@ -2,6 +2,27 @@
   box-sizing: border-box;
 }
 
+/* mobile default */
+.cover-btns {
+  display: none !important;
+}
+
+.cover-btns-mobile {
+  display: flex;
+}
+
+.cover-btns-mobile {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 16px;
+  z-index: 40;
+}
+
 .cover {
   min-height: 100vh;
   height: 100%;
@@ -16,6 +37,12 @@
 .cover.blog {
   min-height: unset;
 }
+.cover.blog .image .cover-img, .cover.blog .image img {
+  min-height: 520px;
+  max-height: 520px;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
 .cover.blog .content {
   padding-inline: 20px;
 }
@@ -29,6 +56,7 @@
   color: white;
   font-weight: 600;
   font-family: "Stampa", "Roboto", sans-serif;
+  font-size: 20px;
 }
 .cover.yellow .content .text h1 {
   color: #1b2c65;
@@ -657,6 +685,26 @@
 }
 
 @media only screen and (min-device-width: 1140px) {
+  .cover-btns {
+    display: flex !important;
+  }
+  .cover-btns-mobile {
+    display: none;
+  }
+  .cover-btns {
+    position: fixed;
+    top: 50%;
+    left: 52vw;
+    width: 45vw;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 60;
+  }
+  .cover-btns .cover-arrow {
+    pointer-events: auto;
+  }
   .cover {
     min-height: 100vh;
     height: 100%;
@@ -670,6 +718,10 @@
   }
   .cover.blog {
     min-height: unset;
+  }
+  .cover.blog .image .cover-img {
+    min-height: unset;
+    max-height: unset;
   }
   .cover.blog .content {
     padding-inline: 50px;
@@ -780,6 +832,7 @@
     color: white;
     font-weight: 600;
     font-family: "Stampa", "Roboto", sans-serif;
+    font-size: 28px;
   }
   .cover.active img {
     transform: scale(1);
@@ -793,6 +846,22 @@
     max-width: 50%;
     box-sizing: border-box;
   }
+  .cover .image .cover-btns {
+    position: relative;
+    background: red !important;
+    height: 200px;
+    min-width: 49vw;
+    max-width: 49vw;
+    margin-left: auto;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .cover .image .cover-btns .cover-arrow {
+    position: relative !important;
+    z-index: 1000;
+  }
   .cover .image .cover-img {
     position: fixed;
     height: 100vh;
@@ -805,8 +874,6 @@
     z-index: 10;
     transform: scale(1);
     filter: brightness(88%);
-    -o-object-position: center 60px;
-       object-position: center 60px;
     width: 50vw;
     left: 50vw;
   }
@@ -822,7 +889,7 @@
   }
   .cover .image .cover-img.relative {
     position: absolute;
-    left: 0;
+    left: unset;
     top: auto;
     bottom: 0;
     width: 100%;

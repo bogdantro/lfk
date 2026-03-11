@@ -7,8 +7,27 @@ $lfkgold: #b6a265;
 *, *::before, *::after {
   box-sizing: border-box;
 }
+/* mobile default */
+.cover-btns{
+display:none !important;
+}
 
+.cover-btns-mobile{
+display:flex;
+}
+.cover-btns-mobile{
+position:absolute;
+top:50%;
+left:0;
+width:100%;
 
+display:flex;
+justify-content:space-between;
+
+transform:translateY(-50%);
+padding:0 16px;
+z-index:40;
+}
     .cover{
       min-height: 100vh;
         height: 100%;
@@ -21,6 +40,14 @@ $lfkgold: #b6a265;
         padding-top: 105px;
         &.blog{
           min-height: unset;
+          .image{
+            .cover-img, img{
+              min-height: 520px;
+              max-height: 520px;
+              backface-visibility:hidden;
+transform:translateZ(0);
+              }
+          }
           .content{
             padding-inline: 20px;
           }
@@ -36,7 +63,7 @@ $lfkgold: #b6a265;
                         color: white;
                         font-weight: 600;
                         font-family: 'Stampa', "Roboto", sans-serif;
-
+                      font-size: 20px;
                     }
           }
         }
@@ -755,10 +782,30 @@ $lfkgold: #b6a265;
 
 
 @media only screen and (min-device-width: 1140px){
+.cover-btns{
+display:flex !important;
+}
 
+.cover-btns-mobile{
+display:none;
+}
+.cover-btns{
+position:fixed;
+top:50%;
+left:52vw;
+width:45vw;
 
+display:flex;
+justify-content:space-between;
 
+transform:translateY(-50%);
+pointer-events:none;
+z-index:60;
+}
 
+.cover-btns .cover-arrow{
+pointer-events:auto;
+}
     .cover{
       min-height: 100vh;
         height: 100%;
@@ -771,6 +818,12 @@ $lfkgold: #b6a265;
         padding: 0;
         &.blog{
           min-height: unset;
+          .image{
+            .cover-img{
+              min-height: unset;
+              max-height: unset;
+              }
+          }
           .content{
             padding-inline: 50px;
           }
@@ -914,7 +967,7 @@ $lfkgold: #b6a265;
                         color: white;
                         font-weight: 600;
                         font-family: 'Stampa', "Roboto", sans-serif;
-
+                    font-size: 28px;
                     }
           }
         }
@@ -932,6 +985,24 @@ $lfkgold: #b6a265;
                         flex: 0 0 50%;
     max-width: 50%;
     box-sizing: border-box;
+    
+  .cover-btns{
+    position: relative;
+    background: red !important;
+    height: 200px;
+    min-width: 49vw;
+    max-width: 49vw;
+    margin-left: auto;
+    z-index: 1000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .cover-arrow{
+      position: relative !important;
+      z-index: 1000;
+    }
+  }
+
             .cover-img{
                 position: fixed;
                 height: 100vh;
@@ -943,7 +1014,6 @@ $lfkgold: #b6a265;
                 z-index: 10;
                 transform: scale(1);
                 filter: brightness(88%);
-            object-position: center 60px;
 
       width: 50vw;
     left: 50vw;
@@ -961,7 +1031,7 @@ $lfkgold: #b6a265;
 
                 &.relative{
                      position: absolute;
-                      left: 0;          // absolute is inside .image, so reset left
+                      left: unset;          // absolute is inside .image, so reset left
                       top: auto;
                       bottom: 0;
                       width: 100%;

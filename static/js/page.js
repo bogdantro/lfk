@@ -1,30 +1,32 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  const img = document.querySelector(".cover-img");
-  const imageWrap = document.querySelector(".cover .image");
-  const footer = document.querySelector(".footer");
 
-  if (!img || !footer || !imageWrap) return;
+const images = document.querySelectorAll(".cover-img");
+const footer = document.querySelector(".footer");
 
-  function checkPosition() {
-    const footerTop = footer.getBoundingClientRect().top + window.scrollY;
-    const imgHeight = window.innerHeight; // since we force image to 100vh
+if(!images.length || !footer) return;
 
-    // When the viewport top has scrolled so far that the fixed image would hit footer:
-    const stopPoint = footerTop - imgHeight;
+function checkPosition(){
 
-    if (window.scrollY >= stopPoint) {
-      img.classList.add("relative");
-    } else {
-      img.classList.remove("relative");
-    }
-  }
+const footerTop = footer.getBoundingClientRect().top + window.scrollY;
+const imgHeight = window.innerHeight;
 
-  window.addEventListener("scroll", checkPosition, { passive: true });
-  window.addEventListener("resize", checkPosition);
-  checkPosition();
+const stopPoint = footerTop - imgHeight;
+
+images.forEach(img => {
+
+if(window.scrollY >= stopPoint){
+img.classList.add("relative");
+}else{
+img.classList.remove("relative");
+}
+
 });
 
+}
 
+window.addEventListener("scroll", checkPosition, { passive:true });
+window.addEventListener("resize", checkPosition);
 
+checkPosition();
 
+});

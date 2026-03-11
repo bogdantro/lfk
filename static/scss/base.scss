@@ -574,25 +574,25 @@ $lfkgold: #b6a265;
       padding-bottom: 50px;
        position: relative;
        margin-bottom: auto;
-        border-bottom: 1px solid rgba(211, 211, 211, 0.466);
-                width: 100%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: relative;
         padding-inline: 50px;
+        border: none;
          img {
-          width: 130px;
+          width: 160px;
           height: auto;
           object-fit: contain;
           margin-top: auto;
           position: absolute;
-          bottom: 10px;
-          left: 50px;
+          bottom: 0px;
+          left: 40px;
           &.right-img{
             left: unset;
-            bottom: -10px;
-            right: 50px;
+            right: 80px;
+            width: 125px;
           }
         }
    
