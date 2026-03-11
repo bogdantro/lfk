@@ -122,18 +122,20 @@ $lfkgold: #B6A265;
         }
     }
     .sidebar{
-        background: $lfkgold;
-        position: absolute;
-        top: 63px;
-        right: -100px;
-        width: 100%;
-        height: calc(100vh - 65px);
-        z-index: 120;
-        opacity: 0;
-        pointer-events: none;
-        display: block;
-        transition: .2s;
-        padding-bottom: 70px;
+      background: $lfkgold;
+    position: absolute;
+    top: 63px;
+    right: -100px;
+    width: 100%;
+    height: calc(100vh - 65px);
+
+    overflow-y: auto;   // ⭐ important
+    -webkit-overflow-scrolling: touch;
+      overscroll-behavior: contain;
+    z-index: 120;
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s;
             .mob-dd-trigger{
       width: 100%;
       text-align: left;

@@ -25,21 +25,59 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+
   const triggers = document.querySelectorAll("#sidebar .mob-dd-trigger");
 
   triggers.forEach(btn => {
+
     btn.addEventListener("click", function (e) {
+
       e.preventDefault();
 
-      const targetId = btn.getAttribute("data-target");
+      const targetId = btn.dataset.target;
       const panel = document.getElementById(targetId);
       if (!panel) return;
 
-      // toggle this panel
-      panel.classList.toggle("open");
-      btn.classList.toggle("open");
+      const isSub = btn.classList.contains("sub");
+      const isOpen = panel.classList.contains("open");
+
+      // MAIN DROPDOWNS (Sport / Marked / etc)
+      if (!isSub) {
+
+        document.querySelectorAll("#sidebar > .mob-dd").forEach(dd => {
+          dd.classList.remove("open");
+        });
+
+        document.querySelectorAll("#sidebar > .mob-dd-trigger").forEach(tr => {
+          tr.classList.remove("open");
+        });
+
+      }
+
+      // SUB DROPDOWNS (Lag)
+      if (isSub) {
+
+        const parent = btn.closest(".mob-dd");
+
+        parent.querySelectorAll(".mob-dd.sub").forEach(dd => {
+          dd.classList.remove("open");
+        });
+
+        parent.querySelectorAll(".mob-dd-trigger.sub").forEach(tr => {
+          tr.classList.remove("open");
+        });
+
+      }
+
+      if (!isOpen) {
+        panel.classList.add("open");
+        btn.classList.add("open");
+      }
+
     });
+
   });
+
 });
 
 /////////// MOBILE JAVASCRIPT

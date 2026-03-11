@@ -113,12 +113,13 @@
   right: -100px;
   width: 100%;
   height: calc(100vh - 65px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
   z-index: 120;
   opacity: 0;
   pointer-events: none;
-  display: block;
   transition: 0.2s;
-  padding-bottom: 70px;
 }
 #mobileNav .sidebar .mob-dd-trigger {
   width: 100%;
