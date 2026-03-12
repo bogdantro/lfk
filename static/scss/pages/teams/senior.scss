@@ -147,6 +147,7 @@ $txt: #1b2c65;
     }
     .cover {
     height: 100vh;
+    min-height: unset;
     width: 100%;
     position: relative;
     background: transparent;
