@@ -1,0 +1,186 @@
+$black: #1F1F1F;
+$white: rgb(246,246,246);
+$primBtn: #1b2c65;
+$txt: #1b2c65;
+$lfkgold: #b6a265;
+
+*, *::before, *::after {
+box-sizing: border-box;
+}
+
+.kontakt-page {
+
+    padding-top:145px;
+    min-height:100vh;
+
+
+.content{
+margin:auto;
+padding-inline: 20px;
+}
+
+.text{
+margin-bottom:60px;
+
+  h1 {
+                    font-size: 28px;
+                    color: $txt;
+                    font-family: 'Stampa', "Roboto", sans-serif;
+                    margin-bottom: 15px;
+                      
+                }
+
+.intro{
+font-family:"Inter",sans-serif;
+font-size:16px;
+color:$black;
+max-width:600px;
+}
+}
+
+.contact-section{
+margin-bottom:70px;
+
+h2{
+font-family:'Stampa',"Roboto",sans-serif;
+font-size:22px;
+color:$txt;
+margin-bottom:30px;
+text-transform:uppercase;
+}
+}
+
+.contact-list{
+display:flex;
+flex-direction:column;
+gap:22px;
+}
+
+.contact-person{
+display:flex;
+align-items:flex-start;
+border-bottom:1px solid rgba(0,0,0,0.08);
+padding-bottom:18px;
+
+img{
+width:60px;
+height:60px;
+border-radius:50%;
+object-fit:cover;
+margin-right:20px;
+}
+
+.info{
+flex:1;
+
+h3{
+font-family:'Stampa',"Roboto",sans-serif;
+font-size:16px;
+color:$txt;
+margin:0;
+}
+
+p{
+font-family:"Inter",sans-serif;
+font-size:14px;
+color:$black;
+margin:2px 0 0 0;
+}
+}
+
+.flex-actions{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.actions{
+display:flex;
+gap:12px;
+
+a{
+width:26px;
+height:26px;
+background:white;
+color:$lfkgold;
+border: 1px solid #b6a26596;
+border-radius:6px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+font-size: 11px;
+text-decoration:none;
+transition:.2s;
+
+&:hover{
+transform:translateY(-2px);
+}
+}
+}
+}
+
+}
+
+/* Desktop spacing */
+
+@media (min-width:1140px){
+
+    .flex{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 100px;
+        width: 100%;
+        .contact-section{
+            min-width: calc(50% - 100px);
+            max-width: calc(50% - 100px);
+        }
+    }
+
+.kontakt-page{
+
+.content{
+padding-inline: 50px;
+
+
+h2{
+    font-size: 26px;
+}
+.text{
+    .intro{
+        font-size: 18px;
+    }
+}
+
+.contact-person{
+
+    
+    .flex-actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+    .info{
+        h3{
+            font-size: 20px;
+        }
+    }
+    .actions{
+        a{
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+        }
+    }
+}
+}
+
+.text h1{
+font-size:55px;
+
+}
+
+}
+
+}

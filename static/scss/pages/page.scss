@@ -985,7 +985,9 @@ pointer-events:auto;
                         flex: 0 0 50%;
     max-width: 50%;
     box-sizing: border-box;
-    
+    overflow: hidden;
+    background: none;
+    border: none;
   .cover-btns{
     position: relative;
     background: red !important;
@@ -1022,6 +1024,12 @@ pointer-events:auto;
       transition: opacity 1s ease-in-out, transform 8s ease; // fade + subtle zoom
       will-change: opacity, transform;
       position: fixed;
+    }
+    &.position{
+      object-position: center 10px;
+    }
+    &.position-big{
+      object-position: center 85px;
     }
 
       &.is-active {
@@ -1080,8 +1088,8 @@ pointer-events:auto;
                   object-fit: cover;
                   margin-bottom: 25px;
                   &.sno-partner{
-                    width: 270px;
-                    transform: translateX(-20px);
+                    width: 330px;
+                    transform: translateX(-40px);
                   }
                 }
                 iframe{

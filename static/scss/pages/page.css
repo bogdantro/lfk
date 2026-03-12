@@ -845,6 +845,9 @@
     flex: 0 0 50%;
     max-width: 50%;
     box-sizing: border-box;
+    overflow: hidden;
+    background: none;
+    border: none;
   }
   .cover .image .cover-btns {
     position: relative;
@@ -882,6 +885,14 @@
     transition: opacity 1s ease-in-out, transform 8s ease;
     will-change: opacity, transform;
     position: fixed;
+  }
+  .cover .image .cover-img.position {
+    -o-object-position: center 10px;
+       object-position: center 10px;
+  }
+  .cover .image .cover-img.position-big {
+    -o-object-position: center 85px;
+       object-position: center 85px;
   }
   .cover .image .cover-img.is-active {
     opacity: 1;
@@ -936,8 +947,8 @@
     margin-bottom: 25px;
   }
   .cover .content .text img.sno-partner {
-    width: 270px;
-    transform: translateX(-20px);
+    width: 330px;
+    transform: translateX(-40px);
   }
   .cover .content .text iframe {
     border-radius: 6px;
