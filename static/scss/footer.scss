@@ -84,7 +84,9 @@ $lfkgold: #B6A265;
     .rights{
         text-align: left;
         margin-top: 25px;
-
+        .logos{
+            display: none;
+        }
         p{
         text-decoration: none;
         color: white;
@@ -112,6 +114,9 @@ $lfkgold: #B6A265;
 
     .rights{
       text-align: left;
+       .logos{
+            display: none;
+        }
     }
   }
 }
@@ -129,6 +134,26 @@ $lfkgold: #B6A265;
     .rights{
         text-align: right;
         margin-top: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+         .logos{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 25px;
+            transform: translateY(-10px);
+            img{
+                width: 110px;
+                height: auto;
+                object-fit: contain;
+                transform: translateY(-10px);
+                &.right-img{
+                    transform: translateY(0);
+                }
+            }
+        }
         p{
             text-decoration: none;
             color: white;
