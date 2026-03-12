@@ -163,8 +163,9 @@ if(images.length < 2){
 
 imgB.style.display = "none";
 
-if(prevBtn) prevBtn.style.display = "none";
-if(nextBtn) nextBtn.style.display = "none";
+// hide all arrow buttons (desktop + mobile)
+prevBtns.forEach(btn => btn.style.display = "none");
+nextBtns.forEach(btn => btn.style.display = "none");
 
 return;
 
