@@ -47,7 +47,7 @@
   padding-inline: 20px;
 }
 .cover.blue {
-  background: #1b2c65;
+  background: #141a3a;
 }
 .cover.blue .content .text h1, .cover.blue .content .text p, .cover.blue .content .text .subheading, .cover.blue .content .text a {
   color: white;
@@ -823,7 +823,7 @@
     margin-bottom: 0;
   }
   .cover.blue {
-    background: #1b2c65;
+    background: #141a3a;
   }
   .cover.blue .content .text h1, .cover.blue .content .text p, .cover.blue .content .text .subheading, .cover.blue .content .text a {
     color: white;
