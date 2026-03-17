@@ -1,6 +1,130 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Medlemsfordeler | Rabatter og tilbud for medlemmer i Lillehammer FK</title>
+
+<meta name="description" content="Se medlemsfordeler i Lillehammer FK. Få rabatter og tilbud hos samarbeidspartnere som sport, tannlege, hotell og mer.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="medlemsfordeler fotball, rabatter Lillehammer FK, fordeler medlemmer, sponsor tilbud fotball, rabatt sport Lillehammer">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Medlemsfordeler | Lillehammer FK">
+<meta property="og:description" content="Rabatter og fordeler for medlemmer i Lillehammer Fotballklubb.">
+<meta property="og:image" content="{% static 'images/other/medlemsfordeler1.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Medlemsfordeler | Lillehammer FK">
+<meta name="twitter:description" content="Eksklusive rabatter for medlemmer">
+<meta name="twitter:image" content="{% static 'images/other/medlemsfordeler1.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/medlemsfordeler1.jpeg' %}">
+
+<!-- Structured Data: ItemList (VERY powerful here) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Medlemsfordeler Lillehammer FK",
+  "itemListElement": [
+    { "@type": "Organization", "name": "Felgen Trafikkskole" },
+    { "@type": "Organization", "name": "Rustadstuen Sport" },
+    { "@type": "Organization", "name": "Sport 1 Strandtorget" },
+    { "@type": "Organization", "name": "Egon Lillehammer" },
+    { "@type": "Organization", "name": "Olivera Tannhelseteam" },
+    { "@type": "Organization", "name": "Aksjemøllen" },
+    { "@type": "Organization", "name": "Gudbrandsdal Energi" },
+    { "@type": "Organization", "name": "GK Norge" },
+    { "@type": "Organization", "name": "Sixt Norge" }
+  ]
+}
+</script>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: FAQ (conversion boost) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er medlemsfordeler i Lillehammer FK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Medlemmer får rabatter og tilbud hos klubbens samarbeidspartnere innen sport, helse, reise og mer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan får jeg medlemsfordeler?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du må være registrert medlem i Lillehammer FK for å benytte deg av fordelene."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvilke typer rabatter finnes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rabatter på blant annet sportsutstyr, tannbehandling, hotell, bilutleie og kurs."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Medlemsfordeler",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'scss/pages/medlemsfordeler.css' %}" type="text/css">

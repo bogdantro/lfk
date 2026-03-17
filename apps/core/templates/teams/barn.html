@@ -1,6 +1,85 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Barnefotball Lillehammer | G/J6–G/J12 | Lillehammer FK</title>
+
+<meta name="description" content="Barnefotball i Lillehammer for gutter og jenter 6–12 år. Finn lag, kontakt lagledere og bli en del av Lillehammer Fotballklubb.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="barnefotball Lillehammer, fotball barn Lillehammer, fotball 6 år Lillehammer, fotball lag barn, Lillehammer FK barn">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Barnefotball Lillehammer | Lillehammer FK">
+<meta property="og:description" content="Fotball for gutter og jenter 6–12 år i Lillehammer">
+<meta property="og:image" content="{% static 'images/covers/barn.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Barnefotball Lillehammer">
+<meta name="twitter:description" content="Bli med på fotball for barn i Lillehammer">
+<meta name="twitter:image" content="{% static 'images/covers/barn.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- FAQ (VERY strong for parents searching) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvordan begynner barn med fotball i Lillehammer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan kontakte lagleder direkte eller melde deg inn i Lillehammer FK via klubbens nettside."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvilke aldersgrupper finnes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lillehammer FK tilbyr fotball for barn fra 6 til 12 år."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er det lag for både gutter og jenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, klubben har egne lag for både gutter og jenter i alle aldersgrupper."
+      }
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/base.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

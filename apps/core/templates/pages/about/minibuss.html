@@ -1,6 +1,128 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Leie minibuss Lillehammer | Lillehammer FK minibuss utleie</title>
+
+<meta name="description" content="Lei minibuss i Lillehammer fra Lillehammer FK. 16-seters minibuss tilgjengelig for lag og andre. Se priser, tilgjengelighet og bestill her.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="leie minibuss Lillehammer, minibuss utleie Lillehammer, leie buss 16 seter, transport fotballag, minibuss pris Lillehammer">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Leie minibuss Lillehammer | Lillehammer FK">
+<meta property="og:description" content="Lei minibuss fra Lillehammer FK – perfekt for lag og grupper.">
+<meta property="og:image" content="{% static 'images/other/minibuss.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Leie minibuss Lillehammer">
+<meta name="twitter:description" content="Minibuss utleie i Lillehammer">
+<meta name="twitter:image" content="{% static 'images/other/minibuss.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/minibuss.jpeg' %}">
+
+<!-- Structured Data: Service (VERY strong for local SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Minibuss utleie Lillehammer FK",
+  "description": "Utleie av 16-seters minibuss i Lillehammer.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb",
+    "url": "{{ request.build_absolute_uri }}"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Lillehammer"
+  }
+}
+</script>
+
+<!-- Structured Data: Vehicle -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Vehicle",
+  "name": "Minibuss Lillehammer FK",
+  "vehicleSeatingCapacity": "16"
+}
+</script>
+
+<!-- Structured Data: FAQ (boosts CTR heavily) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvor mange personer er det plass til i minibussen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minibussen har plass til 16 passasjerer i tillegg til sjåfør."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan kan jeg leie minibussen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan sende inn forespørsel via bestillingsskjemaet nederst på siden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor står minibussen parkert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minibussen er parkert på NTG sin parkering på øvre plan."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Minibuss utleie",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

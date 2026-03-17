@@ -1,6 +1,123 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Bli medlem i Lillehammer FK | Pris, fordeler og innmelding</title>
+
+<meta name="description" content="Bli medlem i Lillehammer FK. Se priser, medlemsfordeler og meld deg inn enkelt online. Fotball for barn, ungdom og voksne i Lillehammer.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="bli medlem fotball, Lillehammer FK medlemskap, fotball barn Lillehammer, medlemskontingent fotball, fotball klubb pris Norge">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Bli medlem i Lillehammer FK">
+<meta property="og:description" content="Meld deg inn i Lillehammer Fotballklubb og bli en del av fellesskapet.">
+<meta property="og:image" content="{% static 'images/covers/bottom.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bli medlem i Lillehammer FK">
+<meta name="twitter:description" content="Fotball for alle – bli medlem i dag">
+<meta name="twitter:image" content="{% static 'images/covers/bottom.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/covers/bottom.jpeg' %}">
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: Offer (VERY strong for conversion SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "name": "Medlemskap Lillehammer FK",
+  "description": "Medlemskap i Lillehammer Fotballklubb for barn, ungdom og voksne.",
+  "priceCurrency": "NOK",
+  "availability": "https://schema.org/InStock",
+  "url": "https://app.hoopit.io/join/lillehammer-fotballklubb-195271"
+}
+</script>
+
+<!-- Structured Data: FAQ (high CTR + ranking boost) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvordan blir jeg medlem i Lillehammer FK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan melde deg inn via Hoopit ved å registrere navn, kontaktinformasjon og fødselsdato."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva koster det å være medlem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Prisen varierer etter alder og aktivitetsnivå, med egne satser for barn, ungdom og senior."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg bli støttemedlem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, du kan melde deg inn som støttemedlem via samme innmeldingsløsning."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bli medlem",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
@@ -72,45 +189,48 @@
               <th>Totalt</th>
             </tr>
           </thead>
-          <tbody>
-            <tr><td>G06</td><td>Knøtt</td><td>0</td><td>0</td><td>0</td></tr>
-            <tr><td>J06</td><td>Knøtt</td><td>0</td><td>0</td><td>0</td></tr>
+         <tbody>
+  <tr><td>G06</td><td>Knøtt</td><td>0</td><td>0</td><td>0</td></tr>
+  <tr><td>J06</td><td>Knøtt</td><td>0</td><td>0</td><td>0</td></tr>
 
-            <tr><td>G07</td><td>Knøtt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>J07</td><td>Knøtt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>G08</td><td>Knøtt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>J08</td><td>Knøtt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+  <tr><td>G07</td><td>Knøtt</td><td>1 350</td><td>650</td><td>2 000</td></tr>
+  <tr><td>J07</td><td>Knøtt</td><td>1 350</td><td>650</td><td>2 000</td></tr>
+  <tr><td>G08</td><td>Knøtt</td><td>1 350</td><td>700</td><td>2 050</td></tr>
+  <tr><td>J08</td><td>Knøtt</td><td>1 350</td><td>700</td><td>2 050</td></tr>
 
-            <tr><td>G09</td><td>Mini</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>J09</td><td>Mini</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>G10</td><td>Mini</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>J10</td><td>Mini</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+  <tr><td>G09</td><td>Mini</td><td>1 350</td><td>750</td><td>2 100</td></tr>
+  <tr><td>J09</td><td>Mini</td><td>1 350</td><td>750</td><td>2 100</td></tr>
+  <tr><td>G10</td><td>Mini</td><td>1 350</td><td>1 000</td><td>2 350</td></tr>
+  <tr><td>J10</td><td>Mini</td><td>1 350</td><td>1 000</td><td>2 350</td></tr>
 
-            <tr><td>G11</td><td>Lilleputt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>J11</td><td>Lilleputt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>G12</td><td>Lilleputt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>J12</td><td>Lilleputt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+  <tr><td>G11</td><td>Lilleputt</td><td>1 350</td><td>2 000</td><td>3 350</td></tr>
+  <tr><td>J11</td><td>Lilleputt</td><td>1 350</td><td>2 000</td><td>3 350</td></tr>
+  <tr><td>G12</td><td>Lilleputt</td><td>1 350</td><td>2 550</td><td>3 900</td></tr>
+  <tr><td>J12</td><td>Lilleputt</td><td>1 350</td><td>2 550</td><td>3 900</td></tr>
 
-            <tr><td>G13</td><td>Smågutt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>J13</td><td>Småjente</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>G14</td><td>Smågutt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>J14</td><td>Jente</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+  <tr><td>G13</td><td>Smågutt</td><td>1 350</td><td>4 450</td><td>5 800</td></tr>
+  <tr><td>J13</td><td>Småjente</td><td>1 350</td><td>3 650</td><td>5 000</td></tr>
+  <tr><td>G14</td><td>Smågutt</td><td>1 350</td><td>4 750</td><td>6 100</td></tr>
+  <tr><td>J14</td><td>Jente</td><td>1 350</td><td>4 550</td><td>5 900</td></tr>
 
-            <tr><td>G15</td><td>Gutt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>G16</td><td>Gutt</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+  <tr><td>G15</td><td>Gutt</td><td>1 350</td><td>5 400</td><td>6 750</td></tr>
+  <tr><td>J15</td><td>Jente</td><td>1 350</td><td>4 750</td><td>6 100</td></tr>
+  <tr><td>G16</td><td>Gutt</td><td>1 350</td><td>5 400</td><td>6 750</td></tr>
+  <tr><td>J16</td><td>Jente</td><td>1 350</td><td>4 850</td><td>6 200</td></tr>
 
-            <tr><td>J17</td><td>Junior</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>G19</td><td>Junior</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+  <tr><td>J17</td><td>Junior</td><td>1 350</td><td>4 850</td><td>6 200</td></tr>
+  <tr><td>G19</td><td>Junior</td><td>1 350</td><td>5 850</td><td>7 200</td></tr>
+  <tr><td>J19</td><td>Junior</td><td>1 350</td><td>4 850</td><td>6 200</td></tr>
 
-            <tr><td>SR A Herrer</td><td>Senior</td><td>350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>SR A Damer</td><td>Senior</td><td>350</td><td>TBA</td><td>TBA</td></tr>
+  <tr><td>SR A Herrer</td><td>Senior</td><td>350</td><td>0</td><td>350</td></tr>
+  <tr><td>SR A Damer</td><td>Senior</td><td>350</td><td>650</td><td>1 000</td></tr>
 
-            <tr><td>SR B Herrer</td><td>Senior</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
-            <tr><td>SR B Damer</td><td>Senior</td><td>1 350</td><td>TBA</td><td>TBA</td></tr>
+  <tr><td>SR B Herrer</td><td>Senior</td><td>1 350</td><td>150</td><td>1 500</td></tr>
+  <tr><td>SR B Damer</td><td>Senior</td><td>1 350</td><td>150</td><td>1 500</td></tr>
 
-            <tr><td>Wednesday United</td><td>Senior</td><td>350</td><td>0</td><td>350</td></tr>
-            <tr><td>Støtte</td><td></td><td>350</td><td>0</td><td>350</td></tr>
-          </tbody>
+  <tr><td>Wednesday United</td><td>Senior</td><td>350</td><td>0</td><td>350</td></tr>
+  <tr><td>Støtte</td><td></td><td>350</td><td>0</td><td>350</td></tr>
+</tbody>
         </table>
       </div>
 

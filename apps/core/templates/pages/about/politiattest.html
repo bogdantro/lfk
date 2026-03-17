@@ -1,6 +1,122 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Politiattest fotball | Lillehammer FK – Krav og hvordan søke</title>
+
+<meta name="description" content="Informasjon om politiattest i Lillehammer FK. Se hvem som må levere, hvordan du søker og hvorfor det er viktig for trygg idrett.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="politiattest fotball, politiattest idrett, hvordan søke politiattest Norge, trener politiattest krav, Lillehammer FK politiattest">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Politiattest | Lillehammer FK">
+<meta property="og:description" content="Krav til politiattest i Lillehammer Fotballklubb og hvordan du søker.">
+<meta property="og:image" content="{% static 'images/other/politi.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Politiattest | Lillehammer FK">
+<meta name="twitter:description" content="Hvordan søke politiattest for idrett">
+<meta name="twitter:image" content="{% static 'images/other/politi.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/politi.jpeg' %}">
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Politiattest i Lillehammer Fotballklubb",
+  "description": "Informasjon om krav til politiattest og hvordan søke for trenere og frivillige.",
+  "image": "{% static 'images/other/politi.jpeg' %}",
+  "author": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{% static 'images/logo/logo-8.png' %}"
+    }
+  }
+}
+</script>
+
+<!-- Structured Data: FAQ (VERY strong here) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvem må levere politiattest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alle over 15 år som har et ansvars- eller tillitsforhold til barn eller personer med utviklingshemming må levere politiattest."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan søker jeg politiattest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du søker via politiet.no ved å fylle ut søknad og legge ved nødvendig dokumentasjon fra klubben."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvorfor kreves politiattest i idretten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For å sikre et trygt miljø og forhindre at personer som kan utgjøre en risiko jobber med barn og unge."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Politiattest",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

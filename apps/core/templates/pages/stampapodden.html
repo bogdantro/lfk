@@ -1,22 +1,124 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% extends 'core/base.html' %}
 {% load static %}
+
+{% block head %}
+
+<title>Stampapodden | Podcast om lokalfotball fra Lillehammer FK</title>
+
+<meta name="description" content="Hør Stampapodden – Lillehammer FK sin podcast om lokalfotball, gjester og historier fra regionen. Finn oss på Spotify.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="fotball podcast Norge, lokalfotball podcast, Lillehammer FK podcast, Stampapodden, norsk fotball podcast">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Stampapodden | Lillehammer FK">
+<meta property="og:description" content="Podcast om lokalfotball fra Lillehammer FK.">
+<meta property="og:image" content="{% static 'images/other/stampapodden.jpg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stampapodden | Lillehammer FK">
+<meta name="twitter:description" content="Podcast om lokalfotball og fotballglede">
+<meta name="twitter:image" content="{% static 'images/other/stampapodden.jpg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/stampapodden.jpg' %}">
+
+<!-- Structured Data: PodcastSeries (VERY strong here) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastSeries",
+  "name": "Stampapodden",
+  "description": "Podcast om lokalfotball i Lillehammer og regionen.",
+  "url": "{{ request.build_absolute_uri }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  }
+}
+</script>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er Stampapodden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stampapodden er en podcast fra Lillehammer FK om lokalfotball og fotballkultur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor kan jeg høre Stampapodden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan høre Stampapodden på Spotify."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg foreslå gjester?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, du kan sende forslag til gjester via e-post til stampapodden@gmail.com."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stampapodden",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">

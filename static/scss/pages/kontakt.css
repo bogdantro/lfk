@@ -106,8 +106,8 @@
     width: 100%;
   }
   .flex .contact-section {
-    min-width: calc(50% - 100px);
-    max-width: calc(50% - 100px);
+    min-width: calc(33% - 100px);
+    max-width: calc(33% - 100px);
   }
   .kontakt-page .content {
     padding-inline: 50px;

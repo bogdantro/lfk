@@ -1,6 +1,94 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Senior Kvinner | Lillehammer FK A-lag</title>
+
+<meta name="description" content="Lillehammer FK sitt kvinnelag. Se spillere, informasjon om A-laget og følg kvinnefotball i Lillehammer.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Lillehammer FK kvinner, kvinnefotball Lillehammer, senior kvinner fotball, A-lag kvinner Lillehammer, fotball kvinner Lillehammer">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Senior Kvinner | Lillehammer FK">
+<meta property="og:description" content="Se spillere og informasjon om Lillehammer FK sitt kvinnelag">
+<meta property="og:image" content="{% static 'images/other/senior-kvinner.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lillehammer FK Kvinnelag">
+<meta name="twitter:description" content="Senior kvinnefotball i Lillehammer">
+<meta name="twitter:image" content="{% static 'images/other/senior-kvinner.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data: Sports Team -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": "Lillehammer FK Kvinner",
+  "sport": "Football",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}",
+  "member": [
+    {% for player in players %}
+    {
+      "@type": "Person",
+      "name": "{{ player.first_name }} {{ player.last_name }}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvilket nivå spiller Lillehammer FK sitt kvinnelag på?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kvinnelaget spiller i 4. divisjon og er en viktig del av klubbens tilbud."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor kan jeg se spillerne?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du finner oversikt over spillere på denne siden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan bli med på laget?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kontakt klubben eller meld deg inn via medlemssiden."
+      }
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/base.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

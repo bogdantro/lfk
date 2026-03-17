@@ -1,6 +1,106 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+
+{% block head %}
+
+<title>Kontakt Lillehammer FK | telefon, e-post og administrasjon</title>
+
+<meta name="description" content="Kontakt Lillehammer FK. Finn telefonnummer, e-post og kontaktinformasjon til administrasjon og styret i Lillehammer Fotballklubb.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="kontakt Lillehammer FK, Lillehammer fotball kontakt, telefon Lillehammer FK, epost fotballklubb, kontakt styret fotball">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Kontakt Lillehammer FK">
+<meta property="og:description" content="Kontaktinformasjon til Lillehammer Fotballklubb – administrasjon og styre.">
+<meta property="og:image" content="{% static 'images/logo/logo-8.png' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kontakt Lillehammer FK">
+<meta name="twitter:description" content="Kontaktinformasjon til Lillehammer Fotballklubb">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data: Organization (VERY IMPORTANT for trust/SEO) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+47 976 75 776",
+      "contactType": "customer service",
+      "areaServed": "NO"
+    },
+    {
+      "@type": "ContactPoint",
+      "email": "dagligleder@lillehammerfk.no",
+      "contactType": "customer service",
+      "areaServed": "NO"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lillehammer",
+    "addressCountry": "NO"
+  }
+}
+</script>
+
+<!-- Structured Data: Person (key staff – strong E-E-A-T signal) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jostein Wahl",
+  "jobTitle": "Daglig leder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  }
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kontakt",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'scss/global/global.css' %}" type="text/css">
@@ -71,6 +171,19 @@ Her finner du kontaktinformasjon til administrasjonen og styret i Lillehammer FK
 </div>
 
 
+
+</div>
+    </div>
+
+
+
+    <div class="contact-section">
+    
+    <h2>Støttefunksjoner</h2>
+    
+    <div class="contact-list">
+
+
 <div class="contact-person">
 <img src="{% static 'images/other/default-person.jpeg' %}">
 <div class="flex-actions">
@@ -120,97 +233,153 @@ Her finner du kontaktinformasjon til administrasjonen og styret i Lillehammer FK
     <h2>Styret</h2>
     
     <div class="contact-list">
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Haakon Engen</h3>
+<p>Styreleder</p>
+</div>
+<div class="actions">
+<a href="mailto:haakon@lillehammerfk.no"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Erik Huuse</h3>
+<p>Nestleder – Økonomi</p>
+</div>
+<div class="actions">
+<a href="mailto:erik@thor-bergseng-as.no"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Turid Magnus</h3>
+<p>Styremedlem – Juridisk / Anlegg</p>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Fredrik Alver</h3>
+<p>Styremedlem – Juridisk</p>
+</div>
+<div class="actions">
+<a href="mailto:fredrikalver@hotmail.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Veslemøy Wedum</h3>
+<p>Styremedlem – Kommunikasjon</p>
+</div>
+<div class="actions">
+<a href="mailto:veslemoy@fossekall.no"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Silja Hjelmstadstuen</h3>
+<p>Styremedlem – Marked</p>
+</div>
+<div class="actions">
+<a href="mailto:silja.hjelmstadstuen@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Trond Erik Eriksen</h3>
+<p>Styremedlem – Sport</p>
+</div>
+<div class="actions">
+<a href="mailto:tronere1@hotmail.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Karen Sann Fougner</h3>
+<p>Varamedlem</p>
+</div>
+<div class="actions">
+<a href="mailto:ksfougner@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Ingvill Helset</h3>
+<p>Varamedlem</p>
+</div>
+<div class="actions">
+<a href="mailto:ingvillh@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Stian Grønås</h3>
+<p>Varamedlem</p>
+</div>
+<div class="actions">
+<a href="mailto:Stian.gronas@icloud.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+<div class="contact-person">
+<img src="{% static 'images/other/default-person.jpeg' %}">
+<div class="flex-actions">
+<div class="info">
+<h3>Ole Martin Hojem</h3>
+<p>Varamedlem</p>
+</div>
+<div class="actions">
+<a href="mailto:omhojem@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+
     
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Haakon Engen</h3>
-    <p>Styreleder</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Erik Huuse</h3>
-    <p>Nestleder – Økonomi</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Turid Magnus</h3>
-    <p>Styremedlem – Juridisk / Anlegg</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Fredrik Alver</h3>
-    <p>Styremedlem – Juridisk</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Veslemøy Wedum</h3>
-    <p>Styremedlem – Kommunikasjon</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Silja Hjelmstadstuen</h3>
-    <p>Styremedlem – Marked</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Trond Erik Eriksen</h3>
-    <p>Styremedlem – Sport</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Karen Sann Fougner</h3>
-    <p>Varamedlem</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Ingvill Helset</h3>
-    <p>Varamedlem</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Stian Grønås</h3>
-    <p>Varamedlem</p>
-    </div>
-    </div>
-    
-    <div class="contact-person">
-    <img src="{% static 'images/other/default-person.jpeg' %}">
-    <div class="info">
-    <h3>Ole Martin Hojem</h3>
-    <p>Varamedlem</p>
-    </div>
-    </div>
-    
-    </div>
-    </div>
 </div>
 
 

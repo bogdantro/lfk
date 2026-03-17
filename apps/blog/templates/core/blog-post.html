@@ -3,27 +3,64 @@
 
 
 {% block head %}
-<title>{{ post_info.title }} - Webiser</title>
-<meta name="author" content="Webiser">
-<meta name="description" content="Les om {{ post_info.title }} skrevet av {{ post_info.author }}">
 
+<title>{{ post_info.title }} | Lillehammer FK</title>
 
-<!-- Canonical URL -->
-<link rel="canonical" href="https://webiser.no{{ request.path }}">
+<meta name="description" content="{{ post_info.title|striptags|truncatewords:20 }} - Nyheter og oppdateringer fra Lillehammer Fotballklubb.">
 
-<!-- Open Graph (Facebook) -->
+<meta name="robots" content="index, follow">
+<meta name="author" content="{{ post_info.author }}">
+<meta name="keywords" content="Lillehammer FK nyheter, fotball Lillehammer, {{ post_info.title|striptags }}">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://webiser.no{{ request.get_full_path }}">
-<meta property="og:title" content="{{ post_info.title }} - Webiser">
-<meta property="og:description" content="Les om {{ post_info.title }} skrevet av {{ post_info.author }}">
+<meta property="og:title" content="{{ post_info.title }}">
+<meta property="og:description" content="{{ post_info.title|striptags }}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
 <meta property="og:image" content="{{ post_info.image.url }}">
+<meta property="og:site_name" content="Lillehammer Fotballklubb">
+<meta property="og:locale" content="nb_NO">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_video">
-<meta name="twitter:title" content="{{ post_info.title }} - Webiser">
-<meta name="twitter:description" content="Les om {{ post_info.title }} skrevet av {{ post_info.author }}">
+<!-- Article specific -->
+<meta property="article:published_time" content="{{ post_info.published_at|date:'c' }}">
+<meta property="article:author" content="{{ post_info.author }}">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ post_info.title }}">
+<meta name="twitter:description" content="{{ post_info.title|striptags }}">
 <meta name="twitter:image" content="{{ post_info.image.url }}">
 
+<!-- Structured Data (VERY IMPORTANT) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ post_info.title|striptags|escapejs }}",
+  "description": "{{ post_info.title|striptags|escapejs }}",
+  "image": "{{ post_info.image.url }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ post_info.author|escapejs }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{% static 'images/logo/logo-8.png' %}"
+    }
+  },
+  "datePublished": "{{ post_info.published_at|date:'c' }}",
+  "dateModified": "{{ post_info.published_at|date:'c' }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ request.build_absolute_uri }}"
+  }
+}
+</script>
 
 {% endblock %}
 

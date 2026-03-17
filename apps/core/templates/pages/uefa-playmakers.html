@@ -1,6 +1,98 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>UEFA Playmakers Lillehammer | Fotball for jenter 6–8 år</title>
+
+<meta name="description" content="UEFA Playmakers i Lillehammer er et fotballtilbud for jenter 6–8 år i samarbeid med UEFA, Disney og NFF. Lek, trygghet og fotballglede.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="UEFA Playmakers Norge, fotball jenter Lillehammer, barnefotball jenter, NFF Playmakers, fotball 6 år jenter">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="UEFA Playmakers Lillehammer">
+<meta property="og:description" content="Fotballtilbud for jenter 6–8 år i Lillehammer">
+<meta property="og:image" content="{% static 'images/other/uefaplaymakers.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UEFA Playmakers Lillehammer">
+<meta name="twitter:description" content="Fotballglede for jenter 6–8 år">
+<meta name="twitter:image" content="{% static 'images/other/uefaplaymakers.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "UEFA Playmakers Lillehammer",
+  "description": "Fotballaktivitet for jenter 6–8 år i Lillehammer.",
+  "url": "{{ request.build_absolute_uri }}",
+  "location": {
+    "@type": "Place",
+    "name": "Lillehammer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lillehammer",
+      "addressCountry": "NO"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  }
+}
+</script>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er UEFA Playmakers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UEFA Playmakers er et fotballtilbud for jenter 6–8 år utviklet av UEFA, Disney og NFF."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvem kan delta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tilbudet er for jenter i alderen 6–8 år som ønsker å prøve fotball i et trygt og lekbasert miljø."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor foregår UEFA Playmakers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aktiviteten arrangeres av Lillehammer Fotballklubb i Lillehammer."
+      }
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

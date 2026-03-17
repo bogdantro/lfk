@@ -1,6 +1,127 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>FotballXtra Lillehammer | Ekstra fotballtrening for barn og ungdom</title>
+
+<meta name="description" content="FotballXtra i Lillehammer FK – ekstra fotballtrening for barn og ungdom. Fokus på utvikling, mestring og fotballglede. Meld deg på i dag.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="fotballtrening barn Lillehammer, ekstra fotballtrening, FotballXtra Norge, fotball tilbud barn, teknikktrening fotball, ungdom fotball trening">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="FotballXtra | Lillehammer FK">
+<meta property="og:description" content="Ekstra fotballtrening for barn og ungdom i Lillehammer.">
+<meta property="og:image" content="{% static 'images/other/fotballxtra.jpg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FotballXtra | Lillehammer FK">
+<meta name="twitter:description" content="Utvikling, mestring og fotballglede">
+<meta name="twitter:image" content="{% static 'images/other/fotballxtra.jpg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/fotballxtra.jpg' %}">
+
+<!-- Structured Data: Course (VERY powerful for this type of page) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "FotballXtra Lillehammer FK",
+  "description": "Ekstra fotballtrening for barn og ungdom med fokus på utvikling, mestring og fotballglede.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb",
+    "url": "{{ request.build_absolute_uri }}"
+  }
+}
+</script>
+
+<!-- Structured Data: Offer -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Offer",
+  "name": "FotballXtra medlemskap",
+  "priceCurrency": "NOK",
+  "price": "750",
+  "url": "https://app.hoopit.io/join/lillehammer-fotballklubb-195271/open/fotballxtra-826777",
+  "availability": "https://schema.org/InStock"
+}
+</script>
+
+<!-- Structured Data: FAQ (huge for CTR) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er FotballXtra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FotballXtra er et ekstra treningstilbud for barn og ungdom som ønsker mer fotball og utvikling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvem kan delta på FotballXtra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tilbudet er åpent for alle barn i riktig alder, uavhengig av ferdighetsnivå."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva koster FotballXtra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pris starter fra 750 kroner per måned, avhengig av valgt tilbud."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "FotballXtra",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

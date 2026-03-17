@@ -1,6 +1,100 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Kiwi Cup Lillehammer | Bedriftsturnering i fotball</title>
+
+<meta name="description" content="Kiwi Cup i Lillehammer – en sosial bedriftsturnering i fotball med fokus på idrettsglede og folkehelse. Arrangeres av Lillehammer FK og Faaberg IL.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Kiwi Cup Lillehammer, fotballturnering bedrift, bedriftsfotball Norge, cup Lillehammer fotball, sosial fotballturnering">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Kiwi Cup | Lillehammer FK">
+<meta property="og:description" content="Delta i Kiwi Cup – sosial fotballturnering i Lillehammer.">
+<meta property="og:image" content="{% static 'images/other/kiwicup.jpg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="event">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kiwi Cup | Lillehammer">
+<meta name="twitter:description" content="Sosial bedriftscup i fotball">
+<meta name="twitter:image" content="{% static 'images/other/kiwicup.jpg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/kiwicup.jpg' %}">
+
+<!-- Structured Data: Event (VERY important here) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Kiwi Cup Lillehammer",
+  "description": "Sosial bedriftsturnering i fotball med fokus på idrettsglede og fellesskap.",
+  "image": "{% static 'images/other/kiwicup.jpg' %}",
+  "organizer": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "Lillehammer",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lillehammer",
+      "addressCountry": "NO"
+    }
+  }
+}
+</script>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kiwi Cup",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

@@ -1,6 +1,89 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Wednesday United | Tilrettelagt fotball Lillehammer</title>
+
+<meta name="description" content="Wednesday United er Lillehammer FK sitt lag for tilrettelagt fotball. Et inkluderende tilbud med fokus på mestring, trivsel og fotballglede.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="tilrettelagt fotball Lillehammer, parafotball Lillehammer, Stjerneserien NFF, inkluderende fotball, Wednesday United">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Wednesday United | Lillehammer FK">
+<meta property="og:description" content="Tilrettelagt fotball med fokus på inkludering og mestring">
+<meta property="og:image" content="{% static 'images/other/wednesday-united.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wednesday United Lillehammer">
+<meta name="twitter:description" content="Inkluderende fotballtilbud for alle">
+<meta name="twitter:image" content="{% static 'images/other/wednesday-united.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Wednesday United",
+  "parentOrganization": {
+    "@type": "SportsOrganization",
+    "name": "Lillehammer Fotballklubb"
+  },
+  "sport": "Football",
+  "url": "{{ request.build_absolute_uri }}"
+}
+</script>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er Wednesday United?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wednesday United er Lillehammer FK sitt lag for tilrettelagt fotball som spiller i Stjerneserien."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvem kan delta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tilbudet er for alle som ønsker å delta i tilrettelagt fotball uansett nivå."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Når trener laget?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Laget trener hver onsdag på Sportsplassen."
+      }
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/base.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

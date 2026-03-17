@@ -1,22 +1,105 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% extends 'core/base.html' %}
 {% load static %}
+
+{% block head %}
+
+<title>La Stampa Magasinet | Lillehammer FK fotballmagasin</title>
+
+<meta name="description" content="Les La Stampa – Lillehammer FK sitt fotballmagasin. Se tidligere utgaver fra 2020 til i dag med nyheter, historier og klubbinnhold.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="fotballmagasin Lillehammer FK, La Stampa magasin, LFK magasin, fotball nyheter Lillehammer, klubbmagasin fotball">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="La Stampa Magasinet | Lillehammer FK">
+<meta property="og:description" content="Les Lillehammer FK sitt fotballmagasin – La Stampa.">
+<meta property="og:image" content="{% static 'images/other/magasinet.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La Stampa Magasinet | Lillehammer FK">
+<meta name="twitter:description" content="Digitalt fotballmagasin fra Lillehammer FK">
+<meta name="twitter:image" content="{% static 'images/other/magasinet.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/magasinet.jpeg' %}">
+
+<!-- Structured Data: CreativeWorkSeries (VERY strong here) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWorkSeries",
+  "name": "La Stampa Magasinet",
+  "creator": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  }
+}
+</script>
+
+<!-- Structured Data: ItemList (magazine issues) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "La Stampa Magasinet utgaver",
+  "itemListElement": [
+    { "@type": "CreativeWork", "name": "Magasinet 2020" },
+    { "@type": "CreativeWork", "name": "Magasinet 2021" },
+    { "@type": "CreativeWork", "name": "Magasinet 2022" },
+    { "@type": "CreativeWork", "name": "Magasinet 2023" },
+    { "@type": "CreativeWork", "name": "Magasinet 2024" },
+    { "@type": "CreativeWork", "name": "Magasinet 2025" }
+  ]
+}
+</script>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Magasinet",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">

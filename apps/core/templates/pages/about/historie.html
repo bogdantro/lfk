@@ -1,6 +1,106 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Om Lillehammer FK | Historie, verdier og klubbinfo</title>
+
+<meta name="description" content="Les om Lillehammer FK sin historie siden 1911, klubbens verdier, visjon og filosofi. En inkluderende fotballklubb i Lillehammer for alle.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Lillehammer FK historie, om klubben Lillehammer FK, fotballklubb Lillehammer, norsk fotball historie, LFK verdier, fotball for alle">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Om Lillehammer FK">
+<meta property="og:description" content="Historien, verdiene og filosofien bak Lillehammer Fotballklubb siden 1911.">
+<meta property="og:image" content="{% static 'images/covers/about.avif' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Om Lillehammer FK">
+<meta name="twitter:description" content="Historie og verdier i Lillehammer Fotballklubb">
+<meta name="twitter:image" content="{% static 'images/covers/about.avif' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/covers/about.avif' %}">
+
+<!-- Structured Data: Sports Organization (VERY important for authority) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "alternateName": "Lillehammer FK",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}",
+  "foundingDate": "1911",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lillehammer",
+    "addressCountry": "NO"
+  }
+}
+</script>
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Om Lillehammer Fotballklubb",
+  "description": "Historien, verdiene og utviklingen til Lillehammer FK siden 1911.",
+  "image": "{% static 'images/covers/about.avif' %}",
+  "author": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{% static 'images/logo/logo-8.png' %}"
+    }
+  }
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Om klubben",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

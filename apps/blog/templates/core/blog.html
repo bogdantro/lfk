@@ -3,14 +3,55 @@
 
 
 {% block head %}
-<title>Webiser - Nyttige artikler om nettsideutvikling og design</title>
-<meta name="description" content="Utforsk vårt blogginnhold for informative artikler om høykvalitets nettsideløsninger. Webiser er dedikert til å levere løsninger som overholder gjeldende standarder og gir deg den beste opplevelsen.">
-<meta name="author" content="Webiser">
 
+<title>Lillehammer FK Nyheter | Siste nytt fra klubben</title>
+
+<meta name="description" content="Les siste nytt fra Lillehammer Fotballklubb. Nyheter, kamper, arrangementer og oppdateringer fra klubben.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Lillehammer FK nyheter, fotball nyheter Lillehammer, klubbnyheter fotball, kamper Lillehammer FK, arrangement Lillehammer">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Lillehammer FK Nyheter">
+<meta property="og:description" content="Siste nytt, kamper og oppdateringer fra Lillehammer Fotballklubb">
+<meta property="og:image" content="{% static 'images/logo/logo-8.png' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://webiser.no{{ request.get_full_path }}">
-<meta property="og:title" content="Webiser Blogg - Nyttige artikler om nettsideutvikling og design">
-<meta property="og:description" content="Utforsk vårt blogginnhold for informative artikler om høykvalitets nettsideløsninger. Webiser er dedikert til å levere løsninger som overholder gjeldende standarder og gir deg den beste opplevelsen.">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lillehammer FK Nyheter">
+<meta name="twitter:description" content="Følg med på hva som skjer i Lillehammer FK">
+<meta name="twitter:image" content="{% static 'images/logo/logo-8.png' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data (Blog) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Lillehammer FK Nyheter",
+  "url": "{{ request.build_absolute_uri }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{% static 'images/logo/logo-8.png' %}"
+    }
+  }
+}
+</script>
+
 {% endblock %}
 
 

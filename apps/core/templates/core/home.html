@@ -1,24 +1,89 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Lillehammer FK 1911 | Fotballklubb i Lillehammer – Nyheter, lag og medlemskap</title>
+
+<meta name="description" content="Lillehammer FK 1911 – Offisiell nettside for Lillehammer Fotballklubb. Les siste nyheter, bli medlem, utforsk lagene og kjøp supporterutstyr.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Lillehammer FK, Lillehammer fotball, fotballklubb Lillehammer, norsk fotball, LFK, medlemskap fotball, supporterutstyr Lillehammer">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Lillehammer FK 1911">
+<meta property="og:description" content="Offisiell nettside for Lillehammer Fotballklubb – nyheter, lag og medlemskap.">
+<meta property="og:image" content="{% static 'images/covers/hero4.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lillehammer FK 1911">
+<meta name="twitter:description" content="Offisiell nettside for Lillehammer Fotballklubb">
+<meta name="twitter:image" content="{% static 'images/covers/hero4.jpeg' %}">
+
+<!-- Geo (local SEO boost) -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload important assets -->
+<link rel="preload" as="image" href="{% static 'images/covers/hero4.jpeg' %}">
+<link rel="preload" as="video" href="{% static 'images/covers/cover.mov' %}">
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "alternateName": "Lillehammer FK",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}",
+  "sameAs": []
+}
+</script>
+
+<!-- Structured Data: Website -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Lillehammer FK",
+  "url": "{{ request.build_absolute_uri }}"
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/base.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
-<script src="{% static '/js/home.js' %}"></script>
+<script src="{% static '/js/home.js' %}" defer></script>
 
+<!-- Hidden SEO H1 fallback -->
+<h1 class="sr-only">Lillehammer Fotballklubb – Offisiell nettside</h1>
 
 
 <section class="cover" id="coverMainMob">
-  <img id="heroImage" src= "{% static 'images/covers/hero4.jpeg' %}" alt="" class="cover-img">
-  <video id="heroImage" src= "{% static 'images/covers/cover.mov' %}" alt="" class="cover-img" loop muted autoplay playsinline></video>
+  <img id="heroImage" src="{% static 'images/covers/hero4.jpeg' %}" alt="Lillehammer Fotballklubb lag og stadion" class="cover-img" loading="eager" width="1920" height="1080">
+  
+  <video id="heroImage" src="{% static 'images/covers/cover.mov' %}" class="cover-img" loop muted autoplay playsinline aria-label="Video fra Lillehammer Fotballklubb"></video>
+
   <div class="overlay"></div>
   <div class="content">
     <div class="text">
       <div class="cover-partner">
-        <img src="{% static 'images/other/cover-sponsor1.png' %}" alt="" class="sparebank">
-        <img src="{% static 'images/other/cover-sponsor2.png' %}" alt="">
+        <img src="{% static 'images/other/cover-sponsor1.png' %}" alt="Sparebank sponsor Lillehammer FK" class="sparebank" loading="lazy">
+        <img src="{% static 'images/other/cover-sponsor2.png' %}" alt="Sponsor Lillehammer FK" loading="lazy">
       </div>
-      <h1 class="home-h1">lillehammer fk&nbsp;1911</h1>
+      <h1 class="home-h1">Lillehammer FK 1911</h1>
     </div>
   </div>
 </section>
@@ -26,15 +91,9 @@
 
 
 <section class="home-cover" id="coverMainDes">
-  <div class="content">
-  <!-- <div class="text">
-     <img src="{% static 'images/other/cover-sponsor1_gold.png' %}" alt="">
-      <img src="{% static 'images/other/cover-sponsor2_gold.png' %}" alt="" class="right-img">
-    <h1 class="sr-only">Lillehammer FK 1911</h1>
-  </div> -->
-</div>
+  <div class="content"></div>
   
-  <video class="cover-video" autoplay muted loop playsinline>
+  <video class="cover-video" autoplay muted loop playsinline aria-label="Bakgrunnsvideo Lillehammer FK">
     <source src="{% static 'images/covers/cover.mov' %}" type="video/mp4">
   </video>
 
@@ -66,24 +125,24 @@
   </svg>
 
 <div class="overlay"></div>
-  <div class="overlay-right"></div>
+<div class="overlay-right"></div>
 </section>
-
 
 
 
 {% if latest_blog %}
 <section class="blog reveal"
-onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
+onclick="window.location.href='{{ latest_blog.get_absolute_url }}'"
+itemscope itemtype="https://schema.org/BlogPosting">
 
   <div class="content">
 
     <div class="right">
       <div class="text">
 
-          <h2>{{ latest_blog.title }}</h2>
+          <h2 itemprop="headline">{{ latest_blog.title }}</h2>
 
-          <p class="clamp-3">
+          <p class="clamp-3" itemprop="description">
             {{ latest_blog.text|striptags|safe }}
           </p>
 
@@ -96,11 +155,10 @@ onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
 
     <div class="left">
       {% if latest_blog.image %}
-        <img src="{{ latest_blog.image.url }}" style="max-height: 800px;">
+        <img src="{{ latest_blog.image.url }}" alt="{{ latest_blog.title }}" loading="lazy" style="max-height: 770px;">
       {% else %}
-        <img src="{% static 'images/covers/blog.avif' %}" style="max-height: 800px;">
+        <img src="{% static 'images/covers/blog.avif' %}" alt="Nyheter Lillehammer FK" loading="lazy">
       {% endif %}
-
       <div class="imgoverlay"></div>
     </div>
 
@@ -109,28 +167,29 @@ onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
 </section>
 {% endif %}
 
+
 {% if second_latest_blog %}
 <section class="blog reveal" id="laStampaShop"
-onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
+onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'"
+itemscope itemtype="https://schema.org/BlogPosting">
 
   <div class="content">
 
     <div class="left">
       {% if second_latest_blog.image %}
-        <img src="{{ second_latest_blog.image.url }}" style="max-height: 800px;">
+        <img src="{{ second_latest_blog.image.url }}" alt="{{ second_latest_blog.title }}" loading="lazy" style="max-height: 770px;">
       {% else %}
-        <img src="{% static 'images/covers/blog.avif' %}" style="max-height: 800px;">
+        <img src="{% static 'images/covers/blog.avif' %}" alt="Nyheter Lillehammer FK" loading="lazy">
       {% endif %}
-
       <div class="imgoverlay"></div>
     </div>
 
     <div class="right">
       <div class="text">
 
-          <h2>{{ second_latest_blog.title }}</h2>
+          <h2 itemprop="headline">{{ second_latest_blog.title }}</h2>
 
-          <p class="clamp-3">
+          <p class="clamp-3" itemprop="description">
             {{ second_latest_blog.text|striptags|safe }}
           </p>
 
@@ -148,19 +207,17 @@ onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
 
 
 
-
-
 <section class="bottom">
   <div class="content">
     <div class="left" onclick="window.location.href='/partnere/'">
-      <img src="{% static 'images/other/Partners.jpg' %}" alt="">
+      <img src="{% static 'images/other/Partners.jpg' %}" alt="Partnere Lillehammer Fotballklubb" loading="lazy">
       <div class="text">
         <h2>Våre partnere</h2>
         <p>Se liste</p>
       </div>
     </div>
     <div class="right" onclick="window.location.href='/om-klubben/medlemskap/'">
-      <img src="{% static 'images/covers/bottom.jpeg' %}" alt="">
+      <img src="{% static 'images/covers/bottom.jpeg' %}" alt="Bli medlem Lillehammer FK" loading="lazy">
       <div class="text">
         <h2>Bli medlem</h2>
         <p>Se hvordan du kan bli en del av historien</p>
@@ -173,45 +230,23 @@ onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
 
 <section class="blog reveal" id="stampaShopHome" style="margin: 0;">
   <div class="content">
-        <div class="right">
-   
+    <div class="right">
       <div class="text">
-        <!-- <p class="headinp" >For våre supportere</p> -->
-        <h2>La stampa shop</h2>
-        <p>I La Stampa Shop finner du offisielle supporterartikler og klubbkolleksjon fra Lillehammer Fotballklubb. Her kan du kle deg i LFK-fargene – enten du står på tribunen, er på trening eller vil vise klubbtilhørighet i hverdagen.
-          <br>
-          <br>
-          Utvalget består av kvalitetsprodukter med klubbens logo og uttrykk, og passer for spillere, supportere, foreldre og venner av klubben. Når du handler i La Stampa Shop, støtter du samtidig Lillehammer Fotballklubb og bidrar til videre utvikling av tilbudet for barn, unge og seniorer.
+        <h2>La Stampa Shop </h2>
+        <p>
+         I La Stampa Shop finner du offisielle supporterartikler og klubbkolleksjon fra Lillehammer Fotballklubb. Her kan du kle deg i LFK-fargene – enten du står på tribunen, er på trening eller vil vise klubbtilhørighet i hverdagen.
+
+Utvalget består av kvalitetsprodukter med klubbens logo og uttrykk, og passer for spillere, supportere, foreldre og venner av klubben. Når du handler i La Stampa Shop, støtter du samtidig Lillehammer Fotballklubb og bidrar til videre utvikling av tilbudet for barn, unge og seniorer.
         </p>
-        <!-- <button>Besøk nettbutikken <i class="fa-solid fa-arrow-right"></i></button> -->
-         <button>Kommer snart</button>
+        <button>Kommer snart</button>
       </div>
     </div>
     <div class="left">
-        <img src="{% static 'images/covers/shop.jpeg' %}" alt="" class="laStampaShop">
+        <img src="{% static 'images/covers/shop.jpeg' %}" alt="Supporterutstyr Lillehammer FK" class="laStampaShop" loading="lazy">
         <div class="imgoverlay"></div>
     </div>
-
   </div>
 </section>
-
-
-<!-- <section class="images">
-  <div class="content">
-    <div class="image" onclick="window.location.href='/lag/senior/herrer/'">
-      <a >senior herrer</a>
-      <img src="{% static 'images/other/senior-herrer.jpeg' %}" alt="">
-    </div>
-    <div class="image"  onclick="window.location.href='/lag/senior/kvinner/'">
-      <a >senior kvinner</a>
-        <img src="{% static 'images/other/senior-kvinner.jpeg' %}" alt="">
-    </div>
-  </div>
-</section>
-
- -->
-
-
 
 
 <script>
@@ -220,7 +255,26 @@ onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
 </script>
 
 {% endblock %}
- 
+
+
+
+<section class="blog reveal">
+  <div class="content">
+    <div class="right">
+      <div class="text">
+        <p class="headinp">Vi er Lillehammer Fotball Klubb</p>
+        <h2>#sterkeresammen</h2>
+        <p>
+          Lillehammer Fotballklubb (LFK) har sitt utspring i klubbene Fremad og Mesna...
+        </p>
+      </div>
+    </div>
+    <div class="left">
+        <img src="{% static 'images/covers/about.avif' %}" alt="Historien til Lillehammer Fotballklubb" loading="lazy">
+        <div class="imgoverlay"></div>
+    </div>
+  </div>
+</section>
 
 <section class="blog reveal" >
   <div class="content">

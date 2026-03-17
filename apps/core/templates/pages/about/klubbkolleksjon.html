@@ -1,6 +1,97 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Klubbkolleksjon | Lillehammer FK – Treningsklær og utstyr</title>
+
+<meta name="description" content="Se Lillehammer FK sin klubbkolleksjon med treningsklær, kampklær og utstyr. Offisiell kolleksjon brukt av spillere og medlemmer.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Lillehammer FK klær, klubbkolleksjon fotball, fotballklær Norge, treningsklær fotball, supporterutstyr Lillehammer, Puma fotball klær">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Klubbkolleksjon | Lillehammer FK">
+<meta property="og:description" content="Utforsk Lillehammer FK sin offisielle klubbkolleksjon med trenings- og kampklær.">
+<meta property="og:image" content="{% static 'images/other/klubbkolleksjon (1).jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Klubbkolleksjon | Lillehammer FK">
+<meta name="twitter:description" content="Offisiell klubbkolleksjon for Lillehammer FK">
+<meta name="twitter:image" content="{% static 'images/other/klubbkolleksjon (1).jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/klubbkolleksjon (1).jpeg' %}">
+
+<!-- Structured Data: ItemList (VERY strong for product-type content) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Lillehammer FK Klubbkolleksjon",
+  "itemListElement": [
+    { "@type": "Product", "name": "Half-zip", "category": "Trening" },
+    { "@type": "Product", "name": "Bukse", "category": "Trening" },
+    { "@type": "Product", "name": "Jersey", "category": "Trening" },
+    { "@type": "Product", "name": "Shorts", "category": "Trening" },
+    { "@type": "Product", "name": "Sokker", "category": "Trening" },
+    { "@type": "Product", "name": "Regnjakke", "category": "Trening" },
+    { "@type": "Product", "name": "Bench jacket", "category": "Trening" },
+    { "@type": "Product", "name": "Hoodie", "category": "Fritid" },
+    { "@type": "Product", "name": "Shorts kamp", "category": "Kamp" },
+    { "@type": "Product", "name": "Sokker kamp", "category": "Kamp" }
+  ]
+}
+</script>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Klubbkolleksjon",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

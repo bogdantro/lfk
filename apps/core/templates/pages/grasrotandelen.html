@@ -1,22 +1,125 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 {% extends 'core/base.html' %}
 {% load static %}
+
+{% block head %}
+
+<title>Grasrotandel | Støtt Lillehammer FK via Norsk Tipping</title>
+
+<meta name="description" content="Støtt Lillehammer FK med Grasrotandelen fra Norsk Tipping. Velg oss som din grasrotmottaker og bidra til lokal fotball.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="grasrotandel Lillehammer FK, støtte fotballklubb Norge, Norsk Tipping grasrot, grasrotmottaker Lillehammer, støtte lokal idrett">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Grasrotandel | Lillehammer FK">
+<meta property="og:description" content="Støtt Lillehammer Fotballklubb gjennom Grasrotandelen.">
+<meta property="og:image" content="{% static 'images/other/grasrot.png' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Grasrotandel | Lillehammer FK">
+<meta name="twitter:description" content="Støtt lokal fotball med Grasrotandelen">
+<meta name="twitter:image" content="{% static 'images/other/grasrot.png' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/grasrot.png' %}">
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: DonateAction (VERY strong for this page type) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "DonateAction",
+  "recipient": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  },
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://www.grasrotandelen.no"
+  }
+}
+</script>
+
+<!-- Structured Data: FAQ (boosts CTR) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er Grasrotandelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grasrotandelen er en ordning fra Norsk Tipping hvor en del av spillinnsatsen går til en valgfri organisasjon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan støtter jeg Lillehammer FK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan registrere Lillehammer Fotballklubb som din grasrotmottaker via nettside, SMS eller hos kommisjonær."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Koster det noe å støtte gjennom Grasrotandelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei, det koster ingenting ekstra – en andel av det du spiller for går til klubben."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Grasrotandel",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
 
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">

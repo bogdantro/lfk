@@ -1,6 +1,113 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Landslagsskolen Lillehammer | Spillerutvikling NFF Indre Østland</title>
+
+<meta name="description" content="Landslagsskolen i Lillehammer FK. Informasjon om spillerutvikling, sonelag og kretslag i NFF Indre Østland.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Landslagsskolen Norge, spillerutvikling fotball, NFF Indre Østland sonelag, kretslag fotball, talentutvikling fotball Norge">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Landslagsskolen | Lillehammer FK">
+<meta property="og:description" content="Spillerutvikling gjennom Landslagsskolen i NFF Indre Østland.">
+<meta property="og:image" content="{% static 'images/other/Landslagsskolen.png' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Landslagsskolen | Lillehammer FK">
+<meta name="twitter:description" content="Utvikling av fremtidens fotballspillere">
+<meta name="twitter:image" content="{% static 'images/other/Landslagsskolen.png' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/Landslagsskolen.png' %}">
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Landslagsskolen Lillehammer FK",
+  "description": "Informasjon om spillerutvikling, sonelag og kretslag i NFF Indre Østland.",
+  "image": "{% static 'images/other/Landslagsskolen.png' %}",
+  "author": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{% static 'images/logo/logo-8.png' %}"
+    }
+  }
+}
+</script>
+
+<!-- Structured Data: EducationalProgram (VERY strong here) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalProgram",
+  "name": "Landslagsskolen",
+  "provider": {
+    "@type": "Organization",
+    "name": "NFF Indre Østland"
+  },
+  "educationalLevel": "Youth football development"
+}
+</script>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Landslagsskolen",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

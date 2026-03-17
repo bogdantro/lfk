@@ -1,6 +1,77 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>FotballXtra og Fotball VGS | Lillehammer Fotballklubb</title>
+
+<meta name="description" content="Utforsk FotballXtra og Fotball VGS hos Lillehammer FK. Ekstra fotballtilbud for barn og ungdom med fokus på utvikling, trivsel og mestring.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="FotballXtra Lillehammer, Fotball VGS Lillehammer, fotballtilbud barn Lillehammer, fotball utvikling ungdom, toppidrett fotball videregående">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="FotballXtra og Fotball VGS | Lillehammer FK">
+<meta property="og:description" content="Ekstra fotballtilbud for barn og ungdom i Lillehammer">
+<meta property="og:image" content="{% static 'images/other/xtra2.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FotballXtra og Fotball VGS">
+<meta name="twitter:description" content="Utviklingstilbud i Lillehammer FK">
+<meta name="twitter:image" content="{% static 'images/other/xtra2.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er FotballXtra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FotballXtra er et ekstra treningstilbud for barn og ungdom i Lillehammer FK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er Fotball VGS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fotball VGS er et tilrettelagt fotballtilbud i samarbeid med videregående skole."
+      }
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/teams/senior.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

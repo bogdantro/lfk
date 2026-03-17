@@ -1,6 +1,133 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Varsling | Lillehammer FK – Si ifra trygt og anonymt</title>
+
+<meta name="description" content="Varsling i Lillehammer FK. Les hvordan du kan si ifra om kritikkverdige forhold og hvilke rutiner som gjelder for trygg håndtering.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="varsling idrett, varsle fotballklubb, si ifra klubb, trygg idrett varsling, Lillehammer FK varsling">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Varsling | Lillehammer FK">
+<meta property="og:description" content="Hvordan varsle i Lillehammer Fotballklubb og hvilke rutiner som gjelder.">
+<meta property="og:image" content="{% static 'images/other/varsling.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Varsling | Lillehammer FK">
+<meta name="twitter:description" content="Trygg varsling i Lillehammer Fotballklubb">
+<meta name="twitter:image" content="{% static 'images/other/varsling.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/other/varsling.jpeg' %}">
+
+<!-- Structured Data: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Varsling i Lillehammer Fotballklubb",
+  "description": "Informasjon om hvordan varsle og klubbens rutiner for varsling.",
+  "image": "{% static 'images/other/varsling.jpeg' %}",
+  "author": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{% static 'images/logo/logo-8.png' %}"
+    }
+  }
+}
+</script>
+
+<!-- Structured Data: FAQ (strong for trust & CTR) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvordan varsler jeg i Lillehammer FK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan sende varsel til varsling@lillehammerfk.no i henhold til klubbens rutiner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva kan jeg varsle om?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan varsle om kritikkverdige forhold som bryter med klubbens regler eller verdier."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er varsling trygt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, varsling håndteres i henhold til klubbens rutiner for å sikre trygg og korrekt behandling."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Structured Data: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Varsling",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

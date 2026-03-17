@@ -1,6 +1,94 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Senior Herrer | Lillehammer FK A-lag</title>
+
+<meta name="description" content="Lillehammer FK sitt herrelag. Se spillere, informasjon om A-laget og følg seniorfotball i Lillehammer.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Lillehammer FK herrer, A-lag Lillehammer FK, seniorfotball Lillehammer, Norsk Tipping-ligaen Lillehammer, fotball herrer Lillehammer">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Senior Herrer | Lillehammer FK">
+<meta property="og:description" content="Se spillere og informasjon om Lillehammer FK sitt A-lag">
+<meta property="og:image" content="{% static 'images/other/senior-herrer.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lillehammer FK A-lag">
+<meta name="twitter:description" content="Seniorfotball i Lillehammer">
+<meta name="twitter:image" content="{% static 'images/other/senior-herrer.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data: Sports Team -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": "Lillehammer FK A-lag",
+  "sport": "Football",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}",
+  "member": [
+    {% for player in players %}
+    {
+      "@type": "Person",
+      "name": "{{ player.first_name }} {{ player.last_name }}"
+    }{% if not forloop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvilket nivå spiller Lillehammer FK sitt herrelag på?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Herrelaget spiller i Norsk Tipping-ligaen og representerer klubben på øverste nivå."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvor kan jeg se spillerne til Lillehammer FK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du finner oversikt over spillere på denne siden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan bli med i Lillehammer FK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan melde deg inn via klubbens medlemsside."
+      }
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/base.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
@@ -73,15 +161,15 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
 
 <section class="bottom">
   <div class="content">
-    <div class="left">
-      <img src="{% static 'images/covers/kamper-herrer.jpeg' %}" alt="">
+    <div class="left" onclick="window.location.href='https://www.fotball.no/fotballdata/lag/hjem/?fiksId=667&underside=kamper'">
+      <img src="{% static 'images/other/Mathias.jpg' %}" alt="">
       <div class="text">
         <h2>Kamper</h2>
         <p>Se kommende kamper</p>
       </div>
     </div>
     <div class="right" onclick="window.location.href='/om-klubben/medlemskap/'">
-      <img src="{% static 'images/covers/herrer.jpeg' %}" alt="">
+      <img src="{% static 'images/other/preben.jpg' %}" alt="">
       <div class="text">
         <h2>Bli medlem</h2>
         <p>Se hvordan du kan bli en del av historien</p>

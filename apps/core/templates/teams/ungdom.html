@@ -1,6 +1,85 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Ungdomsfotball Lillehammer | G13–G19 og J13–J17 | Lillehammer FK</title>
+
+<meta name="description" content="Ungdomsfotball i Lillehammer for gutter og jenter 13–19 år. Finn lag, kontaktpersoner og bli med i Lillehammer Fotballklubb.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="ungdomsfotball Lillehammer, fotball ungdom Lillehammer, G13 G14 G15 fotball, J13 J17 fotball, Lillehammer FK ungdom">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Ungdomsfotball Lillehammer | Lillehammer FK">
+<meta property="og:description" content="Fotball for ungdom 13–19 år i Lillehammer">
+<meta property="og:image" content="{% static 'images/other/ungdom-cover.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ungdomsfotball Lillehammer">
+<meta name="twitter:description" content="Bli med på ungdomsfotball i Lillehammer">
+<meta name="twitter:image" content="{% static 'images/other/ungdom-cover.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsOrganization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "logo": "{% static 'images/logo/logo-8.png' %}"
+}
+</script>
+
+<!-- FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvem kan spille ungdomsfotball i Lillehammer FK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ungdomstilbudet gjelder for spillere i alderen 13 til 19 år."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan blir jeg med på et lag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du kan kontakte lagets kontaktperson eller melde deg inn via klubbens nettside."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Finnes det lag for både gutter og jenter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, Lillehammer FK har lag for både gutter og jenter i ungdomsfotballen."
+      }
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/base.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">

@@ -6,33 +6,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#b6a265">
-    <meta name="theme-color" content="#b6a265" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#12152c" media="(prefers-color-scheme: dark)">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Lillehammer FK</title>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsOrganization",
+      "name": "Lillehammer Fotballklubb",
+      "url": "{{ request.build_absolute_uri|slice:':-1' }}",
+      "logo": "{% static 'images/other/cover-sponsor1.png' %}"
+    }
+    </script>
+
+    <!-- Django SEO extension point -->
+    {% block head %}{% endblock %}
+
     <base href="/">
-    <!-- links -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-    <script src="https://kit.fontawesome.com/5153798d69.js" crossorigin="anonymous"></script>
-    
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="static/images/favicon/site.webmanifest">    
-    <link rel="shortcut icon" href="static/images/favicon/favicon.ico">
+    <!-- Favicons (fixed paths for SEO) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
+    <link rel="manifest" href="{% static 'images/favicon/site.webmanifest' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}">
 
+    <!-- JS (deferred for performance) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="{% static '/js/home.js' %}" defer></script>
+    <script src="https://kit.fontawesome.com/5153798d69.js" crossorigin="anonymous" defer></script>
 
 </head>
 
-<body ontouchstart="" >
+<body ontouchstart="">
     <header>
         {% include 'core/nav.html' %}
     </header>
@@ -44,7 +57,7 @@
         {% include 'core/footer.html' %}
     </footer>
 
-    <!-- Back to top button -->
+<!-- Back to top button -->
 <button
   id="backToTop"
   class="back-to-top"
@@ -60,22 +73,21 @@
     const btn = document.getElementById("backToTop");
     if (!btn) return;
 
-    const showAfter = 350; // px scrolled before showing
+    const showAfter = 350;
 
     function toggle() {
       if (window.scrollY > showAfter) btn.classList.add("is-visible");
       else btn.classList.remove("is-visible");
     }
 
-    // show/hide on scroll
     window.addEventListener("scroll", toggle, { passive: true });
     toggle();
 
-    // click -> smooth scroll to top
     btn.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   })();
 </script>
+
 </body>
 </html>

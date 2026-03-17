@@ -1,6 +1,60 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+
+{% block head %}
+
+{% now "Y" as year %}
+
+<title>Tine Fotballskole Lillehammer {{ year }} | Fotballskole for barn 6–12 år</title>
+
+<meta name="description" content="Tine Fotballskole {{ year }} i Lillehammer for barn 6–12 år. Meld deg på sommerens fotballskole med lek, utvikling og fotballglede.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="fotballskole Lillehammer, Tine Fotballskole {{ year }}, fotball barn Lillehammer, sommeraktivitet barn Lillehammer">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Tine Fotballskole Lillehammer {{ year }}">
+<meta property="og:description" content="Fotballskole for barn 6–12 år i Lillehammer">
+<meta property="og:image" content="{% static 'images/other/tine2.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="event">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tine Fotballskole {{ year }}">
+<meta name="twitter:description" content="Sommerens fotballskole for barn">
+<meta name="twitter:image" content="{% static 'images/other/tine2.jpeg' %}">
+
+<!-- Structured Data (dynamic year) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "Tine Fotballskole Lillehammer {{ year }}",
+  "startDate": "{{ year }}-06-22T09:00",
+  "endDate": "{{ year }}-08-14T15:00",
+  "location": {
+    "@type": "Place",
+    "name": "Stampesletta",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lillehammer",
+      "addressCountry": "NO"
+    }
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": "Lillehammer Fotballklubb"
+  }
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
