@@ -1,6 +1,64 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% block head %}
+
+<title>Samarbeidspartnere | Lillehammer FK Sponsorer</title>
+
+<meta name="description" content="Se alle samarbeidspartnere og sponsorer til Lillehammer Fotballklubb. Bli partner og støtt lokal fotball i Lillehammer.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+<meta name="keywords" content="Lillehammer FK sponsorer, samarbeidspartnere Lillehammer, sponsor fotball Lillehammer, støtte idrett Lillehammer">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Samarbeidspartnere | Lillehammer FK">
+<meta property="og:description" content="Oversikt over våre sponsorer og samarbeidspartnere">
+<meta property="og:image" content="{% static 'images/covers/sponsor.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lillehammer FK Sponsorer">
+<meta name="twitter:description" content="Se våre samarbeidspartnere">
+<meta name="twitter:image" content="{% static 'images/covers/sponsor.jpeg' %}">
+
+<!-- Geo -->
+<meta name="geo.region" content="NO-IN">
+<meta name="geo.placename" content="Lillehammer">
+<meta name="geo.position" content="61.1153;10.4662">
+<meta name="ICBM" content="61.1153, 10.4662">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Lillehammer Fotballklubb",
+  "url": "{{ request.build_absolute_uri }}",
+  "sponsor": [
+    {
+      "@type": "Organization",
+      "name": "SpareBank 1"
+    },
+    {
+      "@type": "Organization",
+      "name": "Anlegg Øst"
+    },
+    {
+      "@type": "Organization",
+      "name": "Webiser"
+    },
+  ]
+}
+</script>
+
+{% endblock %}
+
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}">
@@ -85,9 +143,17 @@ Tor &amp; Anitas venner
     </div>
   </div>
 
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
+  <div class="partner-item">
+    <img  class="small"  src="{% static 'images/partners/Aider_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img class="small" src="{% static 'images/partners/Alver_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img class="small"  src="{% static 'images/partners/CCmat_white.png' %}">
+  </div>
 
   <div class="partner-item">
     <img class="small" src="{% static 'images/partners/rustadstuen_white.png' %}">
@@ -96,7 +162,9 @@ Tor &amp; Anitas venner
     </div>
   </div>
 
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
+  <div class="partner-item">
+    <img src="{% static 'images/partners/GausdalLandhandleri_white.png' %}">
+  </div>
 
   <div class="partner-item">
     <img src="{% static 'images/partners/Kantall_white.png' %}">
@@ -112,8 +180,13 @@ Tor &amp; Anitas venner
     </div>
   </div>
 
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
+  <div class="partner-item">
+    <img src="{% static 'images/partners/Olivera_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img class="small"  src="{% static 'images/partners/OMFjeld_white.png' %}">
+  </div>
 
 </div>
 
@@ -125,21 +198,59 @@ Tor &amp; Anitas venner
 <div class="partner-list">
 
   <div class="partner-item">
-    <img src="{% static 'images/partners/Glor_white.png' %}">
+    <img  class="small"  src="{% static 'images/partners/Glor_white.png' %}">
     <div class="actions">
       <a href="https://glor.no"><i class="fa-solid fa-globe"></i></a>
     </div>
   </div>
 
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
+  <div class="partner-item">
+    <img src="{% static 'images/partners/HafslundEco_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/Fjossystemer_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/GudbrandsdalEnergi_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img class="small"  src="{% static 'images/partners/Kiwi_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/Kontorleverandoren_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img class="small"  src="{% static 'images/partners/LillehammerLive_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/LillehammerSentrumDrift_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/LillehammerVentilasjon_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/OstbyeSletmoen_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/PaaBordet_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/Profilgutta_white.png' %}">
+  </div>
+
+  <div class="partner-item">
+    <img class="small"  src="{% static 'images/partners/Puma_white.png' %}">
+  </div>
 
 </div>
 
@@ -157,14 +268,14 @@ Tor &amp; Anitas venner
     </div>
   </div>
 
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
+
+  <div class="partner-item">
+    <img src="{% static 'images/partners/RagnvaldMoe_white.png' %}">
+  </div>
 
   <div class="partner-item">
     <img src="{% static 'images/partners/Stasjonen_white.png' %}">
   </div>
-
-  <div class="partner-item"><img src="{% static 'images/partners/coming-soon.jfif' %}"></div>
 
 </div>
 
@@ -190,6 +301,34 @@ JVB TUR A/S<br>
 Scandic Victoria Lillehammer<br>
 Kirkens SOS
 </p>
+
+<br>
+<br>
+<br>
+<h3 class="subheading">Thallaug Cup Lillehammer</h3>
+<p>
+  Lillehammer FK arrangerer hver vinter, i januar, Thallaug Cup Lillehammer i fotball. Dette er
+en av de største futsalturneringene i Norden, og vi samarbeider med NFF om gjennomføring.
+Fullstendig oversikt over partnere, finnes på turneringens hjemmeside.
+<br>
+<br>
+Link til turneringen: <a href="/thallaug-cup/">Thallaug Cup</a>
+</p>
+
+<br>
+<br>
+<br>
+<h3 class="subheading">Kiwi Cup</h3>
+<p>
+Sammen med Faaberg Idrettslag (FIL) arrangerer vi årlig Kiwi Cup. Dette er en
+bedriftsturnering i fotball som har en tydelig sosial profil. I Kiwi Cup står folkehelse og
+idrettsglede i sentrum, og det viktigste er å delta. Det er også helt greit å være best uten ball!
+Fullstendig oversikt over partnere finnes på turneringens hjemmeside.
+<br>
+<br>
+Link til turneringen: <a href="/kiwi-cup/">Kiwi Cup</a>
+</p>
+
 
 </div>
 </div>
@@ -220,9 +359,9 @@ object-fit:contain;
 }
 
 .partner-item img.small{
-  width: 80px !important;
-height:80px !important;
-object-fit: contain !important;
+  width: 95px !important;
+  height:95px !important;
+  object-fit: contain !important;
 }
 
 .actions{
