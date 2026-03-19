@@ -828,6 +828,17 @@
     max-width: 50%;
     gap: 0;
   }
+  .bottom.team .content .left .player-sponsor, .bottom.team .content .right .player-sponsor {
+    margin-top: 10px;
+  }
+  .bottom.team .content .left .player-sponsor .sponsor-logo, .bottom.team .content .right .player-sponsor .sponsor-logo {
+    max-height: 40px !important;
+    width: -moz-max-content;
+    width: max-content;
+    -o-object-fit: contain;
+       object-fit: contain;
+    filter: brightness(0) saturate(100%);
+  }
   .bottom .content {
     display: flex;
     flex-direction: row;

@@ -906,6 +906,18 @@ $lfkgold: #b6a265;
               min-width: 50%;
               max-width: 50%;
               gap: 0;
+              .player-sponsor {
+                margin-top: 10px;
+
+                .sponsor-logo {
+                  max-height: 40px !important;
+                  width: max-content;
+                  object-fit: contain;
+
+                  // MAGIC HERE 👇
+                  filter: brightness(0) saturate(100%);
+                }
+              }
             }
           }
         }
