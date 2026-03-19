@@ -1,7 +1,7 @@
 $black: #1F1F1F;
 $white: rgb(246,246,246);
-$primBtn: #1b2c65;
-$txt: #1b2c65;
+$primBtn: #141a3a;
+$txt: #141a3a;
 $lfkgold: #b6a265;
 
 #coverMainMob{
@@ -265,7 +265,7 @@ $lfkgold: #b6a265;
                   opacity: 1;
                   pointer-events: none;
                   transition: .5s;
-                  background: $primBtn;
+                  background: #141a3a;
                   z-index: 11;
                   position: absolute;
                   left: 0;
@@ -348,10 +348,19 @@ $lfkgold: #b6a265;
                        font-family: 'Stampa', "Roboto", sans-serif;
 
                     }
+
+                        .headingp{
+                      font-size: 30px;
+                      color: $txt;
+                      font-family:'LingkawiSouth',"Roboto",sans-serif;
+                      margin-bottom: 5px;
+
+                    }
                     p{
                         color: $txt;
                         font-size: 16px;
                         font-weight: 500;
+                        line-height: 1.3;
                         cursor: pointer;
                         font-family: "Inter", sans-serif;
 
@@ -742,7 +751,7 @@ $lfkgold: #b6a265;
                   opacity: 1;
                   pointer-events: none;
                   transition: .5s;
-                  background: $primBtn;
+                  background: #141a3a;
                   z-index: 11;
                   position: absolute;
                   left: 0;
@@ -817,7 +826,7 @@ $lfkgold: #b6a265;
 
                     h2{
                         color: $txt;
-                        font-size: 55px;
+                        font-size: 46px;
                         font-weight: 600;
                         text-transform: uppercase;
                         line-height: 75px;
@@ -825,8 +834,16 @@ $lfkgold: #b6a265;
                        font-family: 'Stampa', "Roboto", sans-serif;
 
                     }
+                    .headingp{
+                      font-size: 46px;
+                      color: $txt;
+                      font-family:'LingkawiSouth',"Roboto",sans-serif;
+                      margin-bottom: 5px;
+
+                    }
                     p{
-                        color: $txt;
+                        color: $black;
+                        line-height: 1.2;
                         font-size: 22px;
                         font-weight: 500;
                         cursor: pointer;
