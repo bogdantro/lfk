@@ -759,11 +759,12 @@
   .blog .content .right .text h2 {
     color: #141a3a;
     font-size: 46px;
-    font-weight: 600;
+    font-weight: 500;
     text-transform: uppercase;
-    line-height: 75px;
+    line-height: 58px;
     cursor: pointer;
     font-family: "Stampa", "Roboto", sans-serif;
+    margin-bottom: 25px;
   }
   .blog .content .right .text .headingp {
     font-size: 46px;
