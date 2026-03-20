@@ -30,7 +30,7 @@ $lfkgold: #B6A265;
         width: 100%;
 
         strong{
-        color: $white;
+        color: $lfkgold;
         font-family: 'Stampa', "Roboto", sans-serif;
         font-size: 18px;
         margin-bottom: 10px;
@@ -39,7 +39,7 @@ $lfkgold: #B6A265;
         }
 
         a{
-        color: $white;
+        color: #cbdde7;
         font-size: 16px;
         font-weight: 500;
         margin: 0;
@@ -47,7 +47,6 @@ $lfkgold: #B6A265;
         width: 100%;
         display: block;
         font-family: 'Stampa', "Roboto", sans-serif;
-        opacity: 0.85;
 
         &.sub-item{
             margin-left: 14px;
@@ -89,7 +88,7 @@ $lfkgold: #B6A265;
         }
         p{
         text-decoration: none;
-        color: white;
+        color: #cbdde7;
         font-size: 14px;
         opacity: 0.85;
         margin: 6px 0;
