@@ -130,10 +130,10 @@
     background: rgba(247, 247, 247, 0.97);
   }
   #desNav.sticky .content .menu a {
-    color: #1b2c65;
+    color: #141a3a;
   }
   #desNav.sticky .content .menu a:hover {
-    border-color: #1b2c65;
+    border-color: #141a3a;
   }
   #desNav .content {
     width: 100%;
@@ -495,7 +495,7 @@
     opacity: 1;
     pointer-events: none;
     transition: 0.5s;
-    background: #1b2c65;
+    background: #141a3a;
     z-index: 11;
     position: absolute;
     left: 0;
@@ -530,7 +530,7 @@
     text-align: left;
     padding: 14px 14px;
     border-bottom: 1px solid rgba(27, 44, 101, 0.18);
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 18px;
     font-weight: 500;
     font-family: "Stampa", "Roboto", sans-serif;
@@ -546,7 +546,7 @@
     white-space: nowrap;
   }
   .coverv2 .content .right .text .contact-table a {
-    color: #1b2c65;
+    color: #141a3a;
     text-decoration: none;
     border-bottom: 1px solid rgba(27, 44, 101, 0.25);
     transition: 0.2s;
@@ -595,7 +595,7 @@
   .coverv2 .content .right .text button {
     margin-top: 45px;
     background: none;
-    color: #1b2c65;
+    color: #141a3a;
     border-radius: 4px;
     outline: none;
     border: none;
@@ -605,7 +605,7 @@
     cursor: pointer;
   }
   .coverv2 .content .right .text button i {
-    color: #1b2c65;
+    color: #141a3a;
     transform: translateX(15px) translateY(1px);
   }
   .coverv2 .content .about-body {
@@ -701,7 +701,7 @@
     opacity: 1;
     pointer-events: none;
     transition: 0.5s;
-    background: #1b2c65;
+    background: #141a3a;
     z-index: 11;
     position: absolute;
     left: 0;
@@ -736,7 +736,7 @@
     text-align: left;
     padding: 14px 14px;
     border-bottom: 1px solid rgba(27, 44, 101, 0.18);
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 18px;
     font-weight: 500;
     font-family: "Stampa", "Roboto", sans-serif;
@@ -752,7 +752,7 @@
     white-space: nowrap;
   }
   .blog .content .right .text .contact-table a {
-    color: #1b2c65;
+    color: #141a3a;
     text-decoration: none;
     border-bottom: 1px solid rgba(27, 44, 101, 0.25);
     transition: 0.2s;
@@ -767,7 +767,7 @@
     white-space: nowrap;
   }
   .blog .content .right .text h2 {
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 55px;
     font-weight: 600;
     text-transform: uppercase;
@@ -776,7 +776,7 @@
     font-family: "Stampa", "Roboto", sans-serif;
   }
   .blog .content .right .text p {
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 22px;
     font-weight: 500;
     cursor: pointer;
@@ -801,7 +801,7 @@
   .blog .content .right .text button {
     margin-top: 45px;
     background: none;
-    color: #1b2c65;
+    color: #141a3a;
     border-radius: 4px;
     outline: none;
     border: none;
@@ -811,7 +811,7 @@
     cursor: pointer;
   }
   .blog .content .right .text button i {
-    color: #1b2c65;
+    color: #141a3a;
     transform: translateX(15px) translateY(1px);
   }
   .bottom {
@@ -854,13 +854,13 @@
   .bottom .content .left .text h2, .bottom .content .right .text h2 {
     font-size: 32px;
     text-transform: uppercase;
-    color: #1b2c65;
+    color: #141a3a;
     font-family: "Stampa", "Roboto", sans-serif;
   }
   .bottom .content .left .text p, .bottom .content .right .text p {
     font-size: 24px;
     text-transform: uppercase;
-    color: #1b2c65;
+    color: #141a3a;
     font-family: "Stampa", "Roboto", sans-serif;
   }
   .images {
@@ -884,7 +884,7 @@
   .images .content .image:hover a {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.8);
-    color: #1b2c65;
+    color: #141a3a;
   }
   .images .content .image a {
     position: absolute;

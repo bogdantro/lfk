@@ -30,7 +30,7 @@
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 55px;
     text-transform: uppercase;
-    color: #1b2c65;
+    color: #141a3a;
     margin: 0;
   }
   #blogCreate .topbar .actions {
@@ -42,7 +42,7 @@
     padding: 12px 18px;
     border-radius: 4px;
     border: 1px solid rgba(27, 44, 101, 0.25);
-    color: #1b2c65;
+    color: #141a3a;
     text-decoration: none;
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 16px;
@@ -57,7 +57,7 @@
     padding: 12px 18px;
     border-radius: 4px;
     border: none;
-    background: #1b2c65;
+    background: #141a3a;
     color: white;
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 16px;
@@ -97,7 +97,7 @@
     font-family: "Inter", sans-serif;
     font-size: 18px;
     font-weight: 700;
-    color: #1b2c65;
+    color: #141a3a;
     margin-bottom: 10px;
   }
   #blogCreate .field input[type=text] {
@@ -158,7 +158,7 @@
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 20px;
     font-weight: 800;
-    color: #1b2c65;
+    color: #141a3a;
     margin-bottom: 6px;
     text-transform: uppercase;
   }
@@ -180,7 +180,7 @@
     padding: 12px 16px;
     border-radius: 6px;
     border: none;
-    background: #1b2c65;
+    background: #141a3a;
     color: white;
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 15px;
@@ -216,7 +216,7 @@
   }
   #blogCreate .preview-card .tag {
     font-family: "LingkawiSouth", "Roboto", sans-serif;
-    color: #1b2c65;
+    color: #141a3a;
     font-weight: 800;
     font-size: 18px;
     margin-bottom: 10px;
@@ -226,7 +226,7 @@
     font-size: 28px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #1b2c65;
+    color: #141a3a;
     margin-bottom: 14px;
   }
   #blogCreate .preview-card .preview-img {
@@ -265,7 +265,7 @@
   }
   #blogCreate .preview-card .help p {
     font-family: "Stampa", "Roboto", sans-serif;
-    color: #1b2c65;
+    color: #141a3a;
     font-weight: 700;
     margin-bottom: 8px;
   }
@@ -274,7 +274,7 @@
   }
   #blogCreate .preview-card .help ul li {
     font-family: "Stampa", "Roboto", sans-serif;
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 16px;
     margin-bottom: 8px;
     opacity: 0.9;
@@ -283,7 +283,7 @@
     display: block;
     margin-top: 10px;
     font-family: "Stampa", "Roboto", sans-serif;
-    color: #1b2c65;
+    color: #141a3a;
     text-decoration: none;
     border-bottom: 1px solid rgba(27, 44, 101, 0.25);
     width: -moz-fit-content;
