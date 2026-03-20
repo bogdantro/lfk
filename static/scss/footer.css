@@ -6,7 +6,7 @@
     height: -moz-max-content;
     height: max-content;
     padding: 50px 20px 35px;
-    background: #12152c;
+    background: #141a3a;
     z-index: 1000;
     position: relative;
     margin: 0;
@@ -110,7 +110,7 @@
     height: max-content;
     padding: 70px 50px;
     padding-bottom: 50px;
-    background: #12152c;
+    background: #141a3a;
     z-index: 1000;
     position: relative;
   }

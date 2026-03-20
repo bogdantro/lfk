@@ -1,7 +1,7 @@
 $black: #1F1F1F;
 $white: rgb(247,247,247);
-$primBtn: #191D3A;
-$txt: #183b56;
+$primBtn: #141a3a;
+$txt: #141a3a;
 $lfkgold: #B6A265;
 
 #desNav, #desNavTop{
@@ -347,7 +347,7 @@ $lfkgold: #B6A265;
       align-items: center;
       gap: 8px;
       padding: 10px 12px;
-      color: $black;
+      color: $primBtn;
       font-size: 17px;
       text-decoration: none;
       font-family: 'Stampa', "Roboto", sans-serif;
@@ -414,7 +414,7 @@ $lfkgold: #B6A265;
         display: block;
         padding: 10px 16px;
         font-size: 15px;
-        color: $black;
+        color: $primBtn;
         text-decoration: none;
         text-transform: uppercase;
         white-space: nowrap;

@@ -55,7 +55,7 @@
   background: white !important;
 }
 #mobileNav.menu .hamburger span {
-  background: #183b56 !important;
+  background: #141a3a !important;
 }
 #mobileNav .logo {
   transition: 0.8s;
@@ -85,7 +85,7 @@
 #mobileNav .hamburger span {
   height: 3px;
   width: 26px;
-  background: #183b56;
+  background: #141a3a;
   border-radius: 12px;
   display: block;
   transition: 0.2s;
@@ -294,7 +294,7 @@
     align-items: center;
     gap: 8px;
     padding: 10px 12px;
-    color: #1F1F1F;
+    color: #141a3a;
     font-size: 17px;
     text-decoration: none;
     font-family: "Stampa", "Roboto", sans-serif;
@@ -353,7 +353,7 @@
     display: block;
     padding: 10px 16px;
     font-size: 15px;
-    color: #1F1F1F;
+    color: #141a3a;
     text-decoration: none;
     text-transform: uppercase;
     white-space: nowrap;

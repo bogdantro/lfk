@@ -964,7 +964,7 @@ pointer-events:auto;
               color: white;
             }
              .subheading{
-                        color: white;
+                        color: $lfkgold;
                         font-weight: 600;
                         font-family: 'Stampa', "Roboto", sans-serif;
                     font-size: 28px;
@@ -1088,8 +1088,11 @@ pointer-events:auto;
                   object-fit: cover;
                   margin-bottom: 25px;
                   &.sno-partner{
-                    width: 330px;
-                    transform: translateX(-40px);
+                    width: 440px;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-bottom: 70px;
                   }
                 }
                 iframe{

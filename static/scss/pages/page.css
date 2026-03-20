@@ -829,7 +829,7 @@
     color: white;
   }
   .cover.blue .content .text .subheading {
-    color: white;
+    color: #b6a265;
     font-weight: 600;
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 28px;
@@ -947,8 +947,11 @@
     margin-bottom: 25px;
   }
   .cover .content .text img.sno-partner {
-    width: 330px;
-    transform: translateX(-40px);
+    width: 440px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 70px;
   }
   .cover .content .text iframe {
     border-radius: 6px;
