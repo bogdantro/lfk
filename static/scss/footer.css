@@ -141,7 +141,7 @@
   }
   .footer .rights p {
     text-decoration: none;
-    color: white;
+    color: #cbdde7;
     font-size: 14px;
     opacity: 0.8;
   }
@@ -183,14 +183,15 @@
     transform: scale(1.05);
   }
   .footer .bottom .links strong {
-    color: rgb(247, 247, 247);
+    color: #cbdde7;
+    color: #B6A265;
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 19px;
     margin-bottom: 15px;
     font-weight: 500;
   }
   .footer .bottom .links a {
-    color: rgb(247, 247, 247);
+    color: #cbdde7;
     font-size: 16px;
     font-weight: 500;
     margin: 2px;
@@ -198,7 +199,6 @@
     width: 100%;
     display: block;
     font-family: "Stampa", "Roboto", sans-serif;
-    opacity: 0.8;
   }
   .footer .bottom .links a.sub-item {
     margin-left: 10px;
