@@ -59,7 +59,7 @@
   font-size: 20px;
 }
 .cover.yellow .content .text h1 {
-  color: #1b2c65;
+  color: #141a3a;
 }
 .cover.yellow .content .text .numbered-list {
   padding-left: 28px;
@@ -78,7 +78,7 @@
   line-height: 1.65;
 }
 .cover.yellow .content .text a {
-  color: #1b2c65;
+  color: #141a3a;
 }
 .cover.yellow .content .text .section-title {
   margin-top: 38px;
@@ -86,11 +86,11 @@
   font-family: "Stampa", "Roboto", sans-serif;
   font-size: 22px;
   font-weight: 700;
-  color: #1b2c65;
+  color: #141a3a;
   text-transform: uppercase;
 }
 .cover.yellow .content .text .subheading {
-  color: #1b2c65;
+  color: #141a3a;
 }
 .cover.yellow .content .text .quote {
   padding-left: 18px;
@@ -130,7 +130,7 @@
 }
 .cover.yellow .content .text .leaders-table th {
   font-weight: 700;
-  color: #1b2c65;
+  color: #141a3a;
 }
 .cover.yellow .content .text .leaders-table td:first-child {
   font-weight: 700;
@@ -215,12 +215,12 @@
   font-size: 16px;
   font-weight: 800;
   font-family: "LingkawiSouth", "Roboto", sans-serif;
-  color: #1b2c65;
+  color: #141a3a;
   margin-bottom: 12px;
 }
 .cover .content .text h1 {
   font-size: 28px;
-  color: #1b2c65;
+  color: #141a3a;
   font-family: "Stampa", "Roboto", sans-serif;
   margin-bottom: 15px;
 }
@@ -259,12 +259,12 @@
   border-radius: 6px;
 }
 .cover .content .text p .subheading {
-  color: #1b2c65;
+  color: #141a3a;
   font-weight: 600;
   font-family: "Stampa", "Roboto", sans-serif;
 }
 .cover .content .text a {
-  color: #1b2c65;
+  color: #141a3a;
   text-decoration: underline;
 }
 .cover .content #memberBenefits {
@@ -288,7 +288,7 @@
   line-height: 75px;
   font-weight: 600;
   text-transform: uppercase;
-  color: #1b2c65;
+  color: #141a3a;
   margin-bottom: 10px;
 }
 .cover .content #memberBenefits .header .desc {
@@ -346,14 +346,14 @@
   font-family: "Stampa", "Roboto", sans-serif;
   font-size: 26px;
   font-weight: 700;
-  color: #1b2c65;
+  color: #141a3a;
   text-transform: uppercase;
   margin-bottom: 14px;
 }
 .cover .content #memberBenefits .benefit-card p {
   text-align: center;
   font-size: 16px;
-  color: #1b2c65;
+  color: #141a3a;
   margin-bottom: 18px;
 }
 .cover .content #memberBenefits .benefit-card .links {
@@ -367,7 +367,7 @@
   width: 32px;
   height: 32px;
   border-radius: 6px;
-  background: #1b2c65;
+  background: #141a3a;
   color: white;
   display: flex;
   justify-content: center;
@@ -422,7 +422,7 @@
   opacity: 1;
   pointer-events: none;
   transition: 0.5s;
-  background: #1b2c65;
+  background: #141a3a;
   z-index: 11;
   position: absolute;
   left: 0;
@@ -457,7 +457,7 @@
   text-align: left;
   padding: 14px 14px;
   border-bottom: 1px solid rgba(27, 44, 101, 0.18);
-  color: #1b2c65;
+  color: #141a3a;
   font-size: 16px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
@@ -473,7 +473,7 @@
   white-space: nowrap;
 }
 .blog .content .right .text .contact-table-wrap .contact-table a {
-  color: #1b2c65;
+  color: #141a3a;
   text-decoration: none;
   border-bottom: 1px solid rgba(27, 44, 101, 0.25);
   transition: 0.2s;
@@ -488,7 +488,7 @@
   white-space: nowrap;
 }
 .blog .content .right .text h2 {
-  color: #1b2c65;
+  color: #141a3a;
   font-size: 55px;
   font-weight: 600;
   text-transform: uppercase;
@@ -497,7 +497,7 @@
   font-family: "Stampa", "Roboto", sans-serif;
 }
 .blog .content .right .text p {
-  color: #1b2c65;
+  color: #141a3a;
   font-size: 22px;
   font-weight: 500;
   cursor: pointer;
@@ -516,7 +516,7 @@
 .blog .content .right .text button {
   margin-top: 45px;
   background: none;
-  color: #1b2c65;
+  color: #141a3a;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -526,7 +526,7 @@
   cursor: pointer;
 }
 .blog .content .right .text button i {
-  color: #1b2c65;
+  color: #141a3a;
   transform: translateX(15px) translateY(1px);
 }
 
@@ -570,13 +570,13 @@
 .bottom .content .left .text h2, .bottom .content .right .text h2 {
   font-size: 32px;
   text-transform: uppercase;
-  color: #1b2c65;
+  color: #141a3a;
   font-family: "Stampa", "Roboto", sans-serif;
 }
 .bottom .content .left .text p, .bottom .content .right .text p {
   font-size: 24px;
   text-transform: uppercase;
-  color: #1b2c65;
+  color: #141a3a;
   font-family: "Stampa", "Roboto", sans-serif;
 }
 
@@ -601,7 +601,7 @@
 .images .content .image:hover a {
   text-decoration: none;
   background: rgba(255, 255, 255, 0.8);
-  color: #1b2c65;
+  color: #141a3a;
 }
 .images .content .image a {
   position: absolute;
@@ -655,13 +655,13 @@
   margin-top: 15px;
 }
 .blog-posts .post .blog-text h2 {
-  color: #1b2c65;
+  color: #141a3a;
   font-size: 22px;
   font-family: "Stampa", "Roboto", sans-serif;
 }
 .blog-posts .post .blog-text p {
   font-size: 15px;
-  color: #1b2c65;
+  color: #141a3a;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -670,7 +670,7 @@
 .blog-posts .post .blog-text button {
   margin-top: 15px;
   background: none;
-  color: #1b2c65;
+  color: #141a3a;
   border-radius: 4px;
   outline: none;
   border: none;
@@ -680,7 +680,7 @@
   cursor: pointer;
 }
 .blog-posts .post .blog-text button i {
-  color: #1b2c65;
+  color: #141a3a;
   transform: translateX(15px) translateY(1px);
 }
 
@@ -727,7 +727,7 @@
     padding-inline: 50px;
   }
   .cover.yellow .content .text h1 {
-    color: #1b2c65;
+    color: #141a3a;
   }
   .cover.yellow .content .text .numbered-list {
     padding-left: 28px;
@@ -746,7 +746,7 @@
     line-height: 1.65;
   }
   .cover.yellow .content .text a {
-    color: #1b2c65;
+    color: #141a3a;
   }
   .cover.yellow .content .text .section-title {
     margin-top: 38px;
@@ -754,11 +754,11 @@
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 22px;
     font-weight: 700;
-    color: #1b2c65;
+    color: #141a3a;
     text-transform: uppercase;
   }
   .cover.yellow .content .text .subheading {
-    color: #1b2c65;
+    color: #141a3a;
   }
   .cover.yellow .content .text .quote {
     padding-left: 18px;
@@ -798,7 +798,7 @@
   }
   .cover.yellow .content .text .leaders-table th {
     font-weight: 700;
-    color: #1b2c65;
+    color: #141a3a;
   }
   .cover.yellow .content .text .leaders-table td:first-child {
     font-weight: 700;
@@ -930,12 +930,12 @@
     font-size: 22px;
     font-weight: 800;
     font-family: "LingkawiSouth", "Roboto", sans-serif;
-    color: #1b2c65;
+    color: #141a3a;
     margin-bottom: 12px;
   }
   .cover .content .text h1 {
     font-size: 55px;
-    color: #1b2c65;
+    color: #141a3a;
     font-family: "Stampa", "Roboto", sans-serif;
     margin-bottom: 15px;
   }
@@ -978,12 +978,12 @@
     border-radius: 6px;
   }
   .cover .content .text p .subheading {
-    color: #1b2c65;
+    color: #141a3a;
     font-weight: 600;
     font-family: "Stampa", "Roboto", sans-serif;
   }
   .cover .content .text a {
-    color: #1b2c65;
+    color: #141a3a;
     text-decoration: underline;
   }
   .cover .content #memberBenefits {
@@ -1007,7 +1007,7 @@
     line-height: 75px;
     font-weight: 600;
     text-transform: uppercase;
-    color: #1b2c65;
+    color: #141a3a;
     margin-bottom: 10px;
   }
   .cover .content #memberBenefits .header .desc {
@@ -1065,14 +1065,14 @@
     font-family: "Stampa", "Roboto", sans-serif;
     font-size: 26px;
     font-weight: 700;
-    color: #1b2c65;
+    color: #141a3a;
     text-transform: uppercase;
     margin-bottom: 14px;
   }
   .cover .content #memberBenefits .benefit-card p {
     text-align: center;
     font-size: 16px;
-    color: #1b2c65;
+    color: #141a3a;
     margin-bottom: 18px;
   }
   .cover .content #memberBenefits .benefit-card .links {
@@ -1086,7 +1086,7 @@
     width: 32px;
     height: 32px;
     border-radius: 6px;
-    background: #1b2c65;
+    background: #141a3a;
     color: white;
     display: flex;
     justify-content: center;
@@ -1140,7 +1140,7 @@
     opacity: 1;
     pointer-events: none;
     transition: 0.5s;
-    background: #1b2c65;
+    background: #141a3a;
     z-index: 11;
     position: absolute;
     left: 0;
@@ -1175,7 +1175,7 @@
     text-align: left;
     padding: 14px 14px;
     border-bottom: 1px solid rgba(27, 44, 101, 0.18);
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 16px;
     font-weight: 500;
     font-family: "Inter", sans-serif;
@@ -1191,7 +1191,7 @@
     white-space: nowrap;
   }
   .blog .content .right .text .contact-table-wrap .contact-table a {
-    color: #1b2c65;
+    color: #141a3a;
     text-decoration: none;
     border-bottom: 1px solid rgba(27, 44, 101, 0.25);
     transition: 0.2s;
@@ -1206,7 +1206,7 @@
     white-space: nowrap;
   }
   .blog .content .right .text h2 {
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 55px;
     font-weight: 600;
     text-transform: uppercase;
@@ -1215,7 +1215,7 @@
     font-family: "Stampa", "Roboto", sans-serif;
   }
   .blog .content .right .text p {
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 22px;
     font-weight: 500;
     cursor: pointer;
@@ -1234,7 +1234,7 @@
   .blog .content .right .text button {
     margin-top: 45px;
     background: none;
-    color: #1b2c65;
+    color: #141a3a;
     border-radius: 4px;
     outline: none;
     border: none;
@@ -1244,7 +1244,7 @@
     cursor: pointer;
   }
   .blog .content .right .text button i {
-    color: #1b2c65;
+    color: #141a3a;
     transform: translateX(15px) translateY(1px);
   }
   .bottom {
@@ -1287,13 +1287,13 @@
   .bottom .content .left .text h2, .bottom .content .right .text h2 {
     font-size: 32px;
     text-transform: uppercase;
-    color: #1b2c65;
+    color: #141a3a;
     font-family: "Stampa", "Roboto", sans-serif;
   }
   .bottom .content .left .text p, .bottom .content .right .text p {
     font-size: 24px;
     text-transform: uppercase;
-    color: #1b2c65;
+    color: #141a3a;
     font-family: "Stampa", "Roboto", sans-serif;
   }
   .images {
@@ -1317,7 +1317,7 @@
   .images .content .image:hover a {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.8);
-    color: #1b2c65;
+    color: #141a3a;
   }
   .images .content .image a {
     position: absolute;
@@ -1370,13 +1370,13 @@
     margin-top: 15px;
   }
   .blog-posts .post .blog-text h2 {
-    color: #1b2c65;
+    color: #141a3a;
     font-size: 32px;
     font-family: "Stampa", "Roboto", sans-serif;
   }
   .blog-posts .post .blog-text p {
     font-size: 16px;
-    color: #1b2c65;
+    color: #141a3a;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -1385,7 +1385,7 @@
   .blog-posts .post .blog-text button {
     margin-top: 15px;
     background: none;
-    color: #1b2c65;
+    color: #141a3a;
     border-radius: 4px;
     outline: none;
     border: none;
@@ -1395,7 +1395,7 @@
     cursor: pointer;
   }
   .blog-posts .post .blog-text button i {
-    color: #1b2c65;
+    color: #141a3a;
     transform: translateX(15px) translateY(1px);
   }
 }/*# sourceMappingURL=page.css.map */
