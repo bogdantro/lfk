@@ -890,6 +890,10 @@
     -o-object-position: center 10px;
        object-position: center 10px;
   }
+  .cover .image .cover-img.position-small {
+    -o-object-position: center -65px;
+       object-position: center -65px;
+  }
   .cover .image .cover-img.position-big {
     -o-object-position: center 85px;
        object-position: center 85px;

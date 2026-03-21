@@ -1028,6 +1028,9 @@ pointer-events:auto;
     &.position{
       object-position: center 10px;
     }
+    &.position-small{
+      object-position: center -65px;
+    }
     &.position-big{
       object-position: center 85px;
     }

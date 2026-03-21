@@ -91,7 +91,8 @@
               <p>Skrevet {{ blog.created_at|date:"d F Y" }}</p>
             {% endif %}
 
-            <p>{{ blog.text|striptags|safe }}</p>
+            <p>{{ blog.text|striptags|cut:"&nbsp;"|safe }}</p>
+            
 
             <button>
               Les mer <i class="fa-solid fa-arrow-right"></i>
