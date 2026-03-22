@@ -49,11 +49,75 @@
 .cover.blue {
   background: #141a3a;
 }
+.cover.blue .content .padding {
+  padding-inline: 20px;
+}
+.cover.blue .content .accordion-item {
+  border-block: 1px solid rgba(203, 221, 231, 0.6156862745);
+}
+.cover.blue .content .accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 18px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #cbdde7;
+  text-transform: uppercase;
+  padding-inline: 20px;
+}
+.cover.blue .content .accordion-header .plus {
+  font-size: 20px;
+  transition: 0.3s;
+}
+.cover.blue .content .accordion-item.active .plus {
+  transform: rotate(45deg);
+}
+.cover.blue .content .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.cover.blue .content .accordion-content.p {
+  padding-inline: 20px;
+}
+.cover.blue .content .accordion-content .partner-list {
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: row;
+  padding-block: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 70px;
+}
+.cover.blue .content .accordion-content .partner-list .partner-item {
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 1;
+}
+.cover.blue .content .accordion-content .partner-list .partner-item img {
+  width: 100px;
+  height: auto;
+}
+.cover.blue .content .accordion-content .partner-list .partner-item img.small {
+  width: 60px;
+}
+.cover.blue .content .accordion-content .partner-list .partner-item img.big {
+  width: 170px;
+}
+.cover.blue .content .accordion-content .partner-list .partner-item:hover {
+  opacity: 0.8;
+}
+.cover.blue .content .accordion-item.active .accordion-content {
+  max-height: -moz-max-content;
+  max-height: max-content;
+}
 .cover.blue .content .text h1, .cover.blue .content .text p, .cover.blue .content .text .subheading, .cover.blue .content .text a {
   color: white;
 }
 .cover.blue .content .text .subheading {
-  color: white;
+  color: #b6a265;
   font-weight: 600;
   font-family: "Stampa", "Roboto", sans-serif;
   font-size: 20px;
@@ -232,7 +296,11 @@
   margin-bottom: 25px;
 }
 .cover .content .text img.sno-partner {
-  transform: translateX(-14px);
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 70px;
 }
 .cover .content .text iframe {
   border-radius: 6px;
@@ -825,6 +893,73 @@
   .cover.blue {
     background: #141a3a;
   }
+  .cover.blue .content {
+    padding-inline: 0;
+  }
+  .cover.blue .content .padding {
+    padding-inline: 50px;
+  }
+  .cover.blue .content .accordion-item {
+    border-block: 1px solid rgba(203, 221, 231, 0.6156862745);
+  }
+  .cover.blue .content .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: 18px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #cbdde7;
+    text-transform: uppercase;
+    padding-inline: 50px;
+  }
+  .cover.blue .content .accordion-header .plus {
+    font-size: 20px;
+    transition: 0.3s;
+  }
+  .cover.blue .content .accordion-item.active .plus {
+    transform: rotate(45deg);
+  }
+  .cover.blue .content .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+  .cover.blue .content .accordion-content.p {
+    padding-inline: 50px;
+  }
+  .cover.blue .content .accordion-content .partner-list {
+    padding-inline: 50px;
+    display: flex;
+    flex-direction: row;
+    padding-block: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+  }
+  .cover.blue .content .accordion-content .partner-list .partner-item {
+    cursor: pointer;
+    transition: 0.3s;
+    opacity: 1;
+  }
+  .cover.blue .content .accordion-content .partner-list .partner-item img {
+    width: 140px;
+    height: auto;
+  }
+  .cover.blue .content .accordion-content .partner-list .partner-item img.small {
+    width: 80px;
+  }
+  .cover.blue .content .accordion-content .partner-list .partner-item img.big {
+    width: 200px;
+  }
+  .cover.blue .content .accordion-content .partner-list .partner-item:hover {
+    opacity: 0.8;
+  }
+  .cover.blue .content .accordion-item.active .accordion-content {
+    max-height: -moz-max-content;
+    max-height: max-content;
+  }
   .cover.blue .content .text h1, .cover.blue .content .text p, .cover.blue .content .text .subheading, .cover.blue .content .text a {
     color: white;
   }
@@ -832,7 +967,7 @@
     color: #b6a265;
     font-weight: 600;
     font-family: "Stampa", "Roboto", sans-serif;
-    font-size: 28px;
+    font-size: 24px;
   }
   .cover.active img {
     transform: scale(1);
@@ -955,6 +1090,11 @@
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    margin-bottom: 70px;
+  }
+  .cover .content .text img.kiwi-logo {
+    width: 320px;
+    position: relative;
     margin-bottom: 70px;
   }
   .cover .content .text iframe {

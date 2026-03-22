@@ -55,12 +55,85 @@ transform:translateZ(0);
            &.blue{
         background: #141a3a;
         .content{
+                    .padding{
+            padding-inline: 20px;
+          }
+          .accordion {
+}
+
+.accordion-item {
+  border-block: 1px solid #cbdde79d;
+
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  padding: 18px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #cbdde7;
+  text-transform: uppercase;
+  padding-inline: 20px;
+}
+
+.accordion-header .plus {
+  font-size: 20px;
+  transition: .3s;
+}
+
+.accordion-item.active .plus {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  &.p{
+    padding-inline: 20px;
+  }
+  .partner-list{
+    padding-inline: 20px;
+    display: flex;
+    flex-direction: row;
+    padding-block: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+    .partner-item{
+      cursor: pointer;
+      transition: .3s;
+      opacity: 1;
+      img{
+        width: 100px ;
+        height: auto;
+        &.small{
+          width: 60px;
+        }
+        &.big{
+          width: 170px;
+        }
+      }
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.accordion-item.active .accordion-content {
+  max-height: max-content;
+}
           .text{
             h1,p, .subheading, a{
               color: white;
             }
              .subheading{
-                        color: white;
+                        color: $lfkgold;
                         font-weight: 600;
                         font-family: 'Stampa', "Roboto", sans-serif;
                       font-size: 20px;
@@ -277,7 +350,11 @@ transform:translateZ(0);
                   object-fit: cover;
                   margin-bottom: 25px;
                      &.sno-partner{
-                  transform: translateX(-14px);
+                   width: 100%;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    margin-bottom: 70px;
                 }
                 }
                 iframe{
@@ -959,6 +1036,80 @@ pointer-events:auto;
       &.blue{
         background: #141a3a;
         .content{
+          padding-inline: 0;
+          .padding{
+            padding-inline: 50px;
+          }
+          .accordion {
+}
+
+.accordion-item {
+  border-block: 1px solid #cbdde79d;
+
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  padding: 18px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #cbdde7;
+  text-transform: uppercase;
+  padding-inline: 50px;
+}
+
+.accordion-header .plus {
+  font-size: 20px;
+  transition: .3s;
+}
+
+.accordion-item.active .plus {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  &.p{
+    padding-inline: 50px;
+  }
+  .partner-list{
+    padding-inline: 50px;
+    display: flex;
+    flex-direction: row;
+    padding-block: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+    .partner-item{
+      cursor: pointer;
+      transition: .3s;
+      opacity: 1;
+      img{
+        width: 140px ;
+        height: auto;
+        &.small{
+          width: 80px;
+        }
+        &.big{
+          width: 200px;
+        }
+      }
+      &:hover{
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.accordion-item.active .accordion-content {
+  max-height: max-content;
+}
           .text{
             h1,p, .subheading, a{
               color: white;
@@ -967,7 +1118,7 @@ pointer-events:auto;
                         color: $lfkgold;
                         font-weight: 600;
                         font-family: 'Stampa', "Roboto", sans-serif;
-                    font-size: 28px;
+                    font-size: 24px;
                     }
           }
         }
@@ -1095,6 +1246,11 @@ pointer-events:auto;
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);
+                    margin-bottom: 70px;
+                  }
+                  &.kiwi-logo{
+                    width: 320px;
+                    position: relative;
                     margin-bottom: 70px;
                   }
                 }
