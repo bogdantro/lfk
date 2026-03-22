@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% load text_filters %}
 
 {% block head %}
 
@@ -144,7 +145,7 @@ itemscope itemtype="https://schema.org/BlogPosting">
           <h2 itemprop="headline">{{ latest_blog.title }}</h2>
 
           <p class="clamp-3" itemprop="description">
-            {{ latest_blog.text|striptags|cut:"&nbsp;" }}
+            {{ latest_blog.text|clean_preview|truncatewords:25 }}
           </p>
 
           <button onclick="window.location.href='{{ latest_blog.get_absolute_url }}'">
@@ -192,7 +193,8 @@ itemscope itemtype="https://schema.org/BlogPosting">
           <h2 itemprop="headline">{{ second_latest_blog.title }}</h2>
 
           <p class="clamp-3" itemprop="description">
-            {{ second_latest_blog.text|striptags|cut:"&nbsp;" }}
+             {{ second_latest_blog.text|clean_preview|truncatewords:25 }}
+            
           </p>
 
           <button onclick="window.location.href='{{ second_latest_blog.get_absolute_url }}'">
