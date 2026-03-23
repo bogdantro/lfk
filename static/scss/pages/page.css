@@ -717,7 +717,7 @@
   height: 320px;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 .blog-posts .post .blog-text {
   margin-top: 15px;
@@ -1508,7 +1508,7 @@
     height: 320px;
     -o-object-fit: cover;
        object-fit: cover;
-    border-radius: 8px;
+    border-radius: 4px;
   }
   .blog-posts .post .blog-text {
     margin-top: 15px;
