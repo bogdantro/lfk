@@ -258,6 +258,14 @@ Link til turneringen: <a href="/kiwi-cup/">Kiwi Cup</a>
 </section>
 
 
+
+<style>
+  .accordion-header {
+    scroll-margin-top: 100px;
+  }
+</style>
+
+
 <script>
 const items = document.querySelectorAll('.accordion-item');
 
@@ -276,7 +284,7 @@ items.forEach(item => {
       item.classList.add('active');
 
       // 👇 Scroll to the item
-      item.scrollIntoView({
+      header.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
