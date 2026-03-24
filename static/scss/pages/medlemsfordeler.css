@@ -15,10 +15,10 @@
 }
 .medlemsfordeler-page .text .headinp {
   font-family: "LingkawiSouth", "Roboto", sans-serif;
-  font-size: 16px;
+  font-size: 22px !important;
   font-weight: 800;
   color: #141a3a;
-  margin-bottom: 8px;
+  margin-bottom: 0px !important;
 }
 .medlemsfordeler-page .text h1 {
   font-size: 28px;
@@ -95,6 +95,13 @@
   }
   .medlemsfordeler-page .text h1 {
     font-size: 55px;
+  }
+  .medlemsfordeler-page .text .headinp {
+    font-family: "LingkawiSouth", "Roboto", sans-serif;
+    font-size: 35px !important;
+    font-weight: 800;
+    color: #141a3a;
+    margin-bottom: -11px !important;
   }
   .medlemsfordeler-page .company .flex-actions {
     flex-direction: row;

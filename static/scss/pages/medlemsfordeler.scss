@@ -21,12 +21,13 @@ padding-inline:20px;
 .text{
 margin-bottom:60px;
 
+
 .headinp{
 font-family:'LingkawiSouth',"Roboto",sans-serif;
-font-size:16px;
+font-size:22px !important;
 font-weight:800;
 color:$txt;
-margin-bottom:8px;
+margin-bottom:0px !important;
 }
 
 h1{
@@ -126,6 +127,17 @@ padding-inline:50px;
 
 .text h1{
 font-size:55px;
+}
+
+.text{
+    .headinp{
+    font-family:'LingkawiSouth',"Roboto",sans-serif;
+    font-size:35px !important;
+    font-weight:800;
+    color:$txt;
+    margin-bottom:-11px !important;
+    }
+
 }
 
 .company{
