@@ -14,7 +14,7 @@
   flex-direction: row;
   gap: 15px;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-inline: 20px;
   z-index: 100000000000000;
 }
