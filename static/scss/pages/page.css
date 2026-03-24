@@ -302,6 +302,12 @@
   transform: translateX(-50%);
   margin-bottom: 70px;
 }
+.cover .content .text img.thallaug-logo {
+  width: 250px;
+  transform: translateX(-6px);
+  position: relative;
+  margin-bottom: 20px;
+}
 .cover .content .text iframe {
   border-radius: 6px;
 }
@@ -1096,6 +1102,12 @@
     width: 220px;
     position: relative;
     margin-bottom: 70px;
+  }
+  .cover .content .text img.thallaug-logo {
+    width: 380px;
+    transform: translateX(-6px);
+    position: relative;
+    margin-bottom: 40px;
   }
   .cover .content .text iframe {
     border-radius: 6px;

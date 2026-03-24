@@ -356,6 +356,12 @@ transform:translateZ(0);
                     transform: translateX(-50%);
                     margin-bottom: 70px;
                 }
+                  &.thallaug-logo{
+                    width: 250px;
+                    transform: translateX(-6px);
+                    position: relative;
+                    margin-bottom: 20px;
+                  }
                 }
                 iframe{
                   border-radius: 6px;
@@ -1252,6 +1258,12 @@ pointer-events:auto;
                     width: 220px;
                     position: relative;
                     margin-bottom: 70px;
+                  }
+                  &.thallaug-logo{
+                    width: 380px;
+                    transform: translateX(-6px);
+                    position: relative;
+                    margin-bottom: 40px;
                   }
                 }
                 iframe{
