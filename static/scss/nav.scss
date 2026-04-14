@@ -30,7 +30,7 @@ $lfkgold: #B6A265;
         max-height: max-content;
         padding: 0;
         color: white;
-        font-size: 14px;
+        font-size: 13px;
         font-family: 'Stampa', "Roboto", sans-serif;
     }
 }
@@ -38,7 +38,7 @@ $lfkgold: #B6A265;
 #mobileNav{
     // NAVBAR CSS
     width: 100%;
-    height: 65px;
+    height: 51px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -74,7 +74,7 @@ $lfkgold: #B6A265;
         z-index: 1000;
         transform: translateY(1px);
         img{
-        width: 35px;
+        width: 29px;
         height: auto;
         transition: .3s;
         position: absolute;
@@ -91,8 +91,8 @@ $lfkgold: #B6A265;
         text-align: center;
         border-radius: 50%;
         span{
-            height: 3px;
-            width: 26px;
+            height: 2px;
+            width: 22px;
             background: $txt;
             border-radius: 12px;
             display: block;
@@ -104,7 +104,6 @@ $lfkgold: #B6A265;
         .upper-span{
         }
         .center-span{
-            width: 26px;
             margin-inline: auto;
         }
         .lower-span{
@@ -124,7 +123,7 @@ $lfkgold: #B6A265;
     .sidebar{
       background: $lfkgold;
     position: absolute;
-    top: 63px;
+    top: 51px;
     right: -100px;
     width: 100%;
     height: calc(100vh - 65px);

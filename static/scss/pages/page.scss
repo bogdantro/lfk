@@ -37,7 +37,7 @@ z-index:40;
         overflow: visible;
         display: flex;
         flex-direction: column;
-        padding-top: 105px;
+        padding-top: 92px;
         &.blog{
           min-height: unset;
           .image{
@@ -56,7 +56,7 @@ transform:translateZ(0);
         background: #141a3a;
         .content{
                     .padding{
-            padding-inline: 20px;
+            padding-inline: 0;
           }
           .accordion {
 }

@@ -32,7 +32,7 @@
   overflow: visible;
   display: flex;
   flex-direction: column;
-  padding-top: 105px;
+  padding-top: 92px;
 }
 .cover.blog {
   min-height: unset;
@@ -50,7 +50,7 @@
   background: #141a3a;
 }
 .cover.blue .content .padding {
-  padding-inline: 20px;
+  padding-inline: 0;
 }
 .cover.blue .content .accordion-item {
   border-block: 1px solid rgba(203, 221, 231, 0.6156862745);
