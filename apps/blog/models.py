@@ -19,9 +19,11 @@ class Blog(models.Model):
         return self.slug
     
     def get_absolute_url(self):
-        # Assuming you have a 'blog_post' URL pattern in your urls.py
-        return reverse('blog_post', args=[self.slug, str(self.id)])
-     
+        return reverse('blog_post', kwargs={
+            'slug': self.slug,
+            'id': self.id,
+        })     
+    
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
