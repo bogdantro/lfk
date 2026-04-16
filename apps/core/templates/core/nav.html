@@ -107,6 +107,10 @@
 <!-- Desktop nav -->
  <div id="desNavTop">
     <div class="content">
+      {% if request.user.is_authenticated %}
+      <a href="lfk/kundebruker/secure/login/">Admin side</a>
+      {% else %}
+      {% endif %}
         <a href="/lag/senior/herrer/">Herrer</a>
         <a href="/lag/senior/kvinner/">kvinner</a>
        <!-- <a href="{% static 'pdfs/Brosjyre-Fotball-VGS-2026-2027.pdf' %}" target="_blank" rel="noopener">
