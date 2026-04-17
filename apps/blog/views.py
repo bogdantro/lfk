@@ -15,11 +15,15 @@ def blog_post(request, id, slug):
     post_info = get_object_or_404(Blog, id=id, slug=slug)
     post_text = strip_tags(unescape(post_info.text))
 
-    images = list(post_info.images.all())
+    images = []
 
-    # fallback to main image
-    if not images and post_info.image:
-        images = [{"image": post_info.image}]
+    # always include main image first if it exists
+    if post_info.image:
+        images.append({"image": post_info.image})
+
+    # then include extra images
+    for img in post_info.images.all():
+        images.append({"image": img.image})
 
     return render(
         request,
