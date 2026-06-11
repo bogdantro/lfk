@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Sponsor(models.Model):
     name = models.CharField(max_length=200)
-    logo = models.ImageField(upload_to="sponsors/")
+    logo = models.ImageField(upload_to="static/images/player_sponsors/")
     website = models.URLField(blank=True)
 
     is_active = models.BooleanField(default=True)
