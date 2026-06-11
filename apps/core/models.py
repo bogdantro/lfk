@@ -42,7 +42,7 @@ class Player(models.Model):
     height = models.PositiveIntegerField(blank=True, null=True, help_text="Height in cm")
     weight = models.PositiveIntegerField(blank=True, null=True, help_text="Weight in kg")
 
-    image = models.ImageField(upload_to="players/")
+    image = models.ImageField(upload_to="static/images/players/")
     bio = models.TextField(blank=True)
 
     sponsor = models.ForeignKey(Sponsor, on_delete=models.SET_NULL, null=True, blank=True)
