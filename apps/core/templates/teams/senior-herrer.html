@@ -133,7 +133,7 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
 
     {% for player in players %}
       <div class="left">
-        <img src="{{ player.image.url }}" alt="{{ player.first_name }}">
+        <img src="{{ player.image.url }}" alt="{{ player.first_name }}" loading="lazy">
         <div class="text">
           <h2>{{ player.first_name }} {{ player.last_name }}</h2>
           <p>
@@ -144,7 +144,7 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
 
           {% if player.sponsor %}
             <div class="player-sponsor">
-              <img class="sponsor-logo" src="{{ player.sponsor.logo.url }}" alt="{{ player.sponsor.name }}">
+              <img class="sponsor-logo" src="{{ player.sponsor.logo.url }}" alt="{{ player.sponsor.name }}" loading="lazy">
             </div>
           {% endif %}
         </div>
