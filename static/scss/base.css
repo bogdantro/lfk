@@ -394,18 +394,6 @@
   max-width: 50%;
   gap: 0;
 }
-.bottom.team .content .left .player-sponsor,
-.bottom.team .content .right .player-sponsor {
-  margin-top: 10px;
-}
-.bottom.team .content .left .player-sponsor .sponsor-logo,
-.bottom.team .content .right .player-sponsor .sponsor-logo {
-  max-height: 30px !important;
-  width: auto !important;
-  -o-object-fit: contain;
-     object-fit: contain;
-  filter: brightness(0) saturate(100%);
-}
 .bottom .content {
   display: flex;
   flex-direction: column;
@@ -846,6 +834,10 @@
   .bottom.team .content {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .bottom.team .content .left img {
+    -o-object-position: center 25%;
+       object-position: center 25%;
   }
   .bottom.team .content .left, .bottom.team .content .right {
     min-width: 50%;

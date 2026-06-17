@@ -922,6 +922,11 @@ $lfkgold: #b6a265;
           .content{
             flex-direction: row;
             flex-wrap: wrap;
+            .left{
+              img{
+                object-position: center 25%;
+              }
+            }
             .left, .right{
               min-width: 50%;
               max-width: 50%;
