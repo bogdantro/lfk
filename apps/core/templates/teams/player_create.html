@@ -86,8 +86,8 @@
 
           <div class="uploader" id="playerUploader">
             <div class="uploader-left">
-              <div class="big">Last opp spillerbilde</div>
-              <p class="small">PNG / JPG – trykk for å velge</p>
+              <div class="big">Dra bilde hit</div>
+              <p class="small">…eller trykk for å velge. Du kan også lime inn (CTRL + V).</p>
             </div>
 
             <div class="uploader-right">
@@ -130,30 +130,69 @@
 </section>
 
 <script>
-  // click uploader
   const uploader = document.getElementById("playerUploader");
   const fileInput = document.getElementById("id_image");
   const filename = document.getElementById("playerFilename");
   const previewBox = document.getElementById("playerPreviewBox");
   const previewImg = document.getElementById("playerPreviewImg");
 
+  function isImage(file) {
+    return file && file.type && file.type.startsWith("image/");
+  }
+
+  function showPreview(file) {
+    previewImg.src = URL.createObjectURL(file);
+    previewBox.classList.add("active");
+    filename.textContent = file.name;
+  }
+
+  function setFile(file) {
+    const dt = new DataTransfer();
+    dt.items.add(file);
+    fileInput.files = dt.files;
+    showPreview(file);
+  }
+
+  // click uploader opens file picker
   uploader.addEventListener("click", () => fileInput.click());
   uploader.querySelector(".pick").addEventListener("click", (e) => {
     e.stopPropagation();
     fileInput.click();
   });
 
+  // normal file pick
   fileInput.addEventListener("change", () => {
     const file = fileInput.files[0];
-    filename.textContent = file ? file.name : "Ingen fil valgt";
-
-    if (file) {
-      const url = URL.createObjectURL(file);
-      previewImg.src = url;
-      previewBox.classList.add("active");
-    } else {
+    if (file) showPreview(file);
+    else {
       previewImg.src = "";
       previewBox.classList.remove("active");
+      filename.textContent = "Ingen fil valgt";
+    }
+  });
+
+  // drag + drop
+  uploader.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    uploader.classList.add("drag");
+  });
+  uploader.addEventListener("dragleave", () => uploader.classList.remove("drag"));
+  uploader.addEventListener("drop", (e) => {
+    e.preventDefault();
+    uploader.classList.remove("drag");
+    const file = e.dataTransfer.files?.[0];
+    if (file && isImage(file)) setFile(file);
+  });
+
+  // paste (CTRL+V)
+  document.addEventListener("paste", (e) => {
+    if (!e.clipboardData) return;
+    const items = e.clipboardData.items;
+    for (let i = 0; i < items.length; i++) {
+      if (items[i].type?.startsWith("image/")) {
+        const file = items[i].getAsFile();
+        if (file) { setFile(file); break; }
+      }
     }
   });
 

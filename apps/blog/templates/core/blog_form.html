@@ -92,7 +92,7 @@
 <div class="uploader" id="extraUploader">
 <div class="uploader-left">
 <p class="big">Dra bilder hit</p>
-<p class="small">…eller klikk for å velge flere bilder.</p>
+<p class="small">…eller klikk for å velge flere bilder. Hold musen her og lim inn (CTRL + V).</p>
 </div>
 
 <div class="uploader-right">
@@ -164,183 +164,128 @@ border-radius:6px;
 </style>
 
 <script>
-    // Title preview
+    // ─── Title preview ───
     const titleInput = document.querySelector('#id_title');
     const previewTitle = document.querySelector('#previewTitle');
-
-    if(titleInput){
-        const updateTitle = () => {
-            previewTitle.innerText = titleInput.value ? titleInput.value : "Skriv tittel…";
-        }
+    if (titleInput) {
+        const updateTitle = () => { previewTitle.innerText = titleInput.value || "Skriv tittel…"; };
         titleInput.addEventListener('input', updateTitle);
         updateTitle();
     }
 
-    // Featured image: click + drag/drop + paste
+    // ─── Shared helpers ───
+    function isImage(file) { return file && file.type && file.type.startsWith("image/"); }
+
+    // ─── Featured image ───
     const imgInput = document.querySelector('#id_image');
-    const uploader = document.querySelector('#imageUploader');
-    const pickBtn = document.querySelector('#pickImageBtn');
-    const fileName = document.querySelector('#fileName');
+    const uploader  = document.querySelector('#imageUploader');
+    const pickBtn   = document.querySelector('#pickImageBtn');
+    const fileName  = document.querySelector('#fileName');
+    const img       = document.querySelector('#previewImg');
+    const imgWrap   = document.querySelector('#previewImgWrap');
+    const imgText   = document.querySelector('#previewImgText');
 
-    const img = document.querySelector('#previewImg');
-    const imgWrap = document.querySelector('#previewImgWrap');
-    const imgText = document.querySelector('#previewImgText');
-
-    function showPreview(file){
-        const url = URL.createObjectURL(file);
-        img.src = url;
+    function showFeaturedPreview(file) {
+        img.src = URL.createObjectURL(file);
         imgWrap.classList.add("active");
         img.style.display = "block";
         imgText.style.display = "none";
         fileName.innerText = file.name;
     }
 
-    function setInputFile(file){
-        // Put the file into the real <input type="file">
+    function setFeaturedFile(file) {
         const dt = new DataTransfer();
         dt.items.add(file);
         imgInput.files = dt.files;
-        showPreview(file);
+        showFeaturedPreview(file);
     }
 
-    function isImage(file){
-        return file && file.type && file.type.startsWith("image/");
-    }
-
-    if(uploader && imgInput){
-        // click uploader opens file picker
+    if (uploader && imgInput) {
         uploader.addEventListener('click', () => imgInput.click());
-        if(pickBtn) pickBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            imgInput.click();
+        pickBtn?.addEventListener('click', (e) => { e.preventDefault(); imgInput.click(); });
+
+        imgInput.addEventListener('change', function () {
+            const file = this.files?.[0];
+            if (file && isImage(file)) showFeaturedPreview(file);
         });
 
-        // normal file pick
-        imgInput.addEventListener('change', function(){
-            const file = this.files && this.files[0];
-            if(file && isImage(file)){
-                showPreview(file);
-            }
-        });
-
-        // drag + drop
-        uploader.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploader.classList.add('drag');
-        });
-
-        uploader.addEventListener('dragleave', () => {
-            uploader.classList.remove('drag');
-        });
-
+        uploader.addEventListener('dragover', (e) => { e.preventDefault(); uploader.classList.add('drag'); });
+        uploader.addEventListener('dragleave', () => uploader.classList.remove('drag'));
         uploader.addEventListener('drop', (e) => {
             e.preventDefault();
             uploader.classList.remove('drag');
-
-            const file = e.dataTransfer.files && e.dataTransfer.files[0];
-            if(file && isImage(file)){
-                setInputFile(file);
-            }
+            const file = e.dataTransfer.files?.[0];
+            if (file && isImage(file)) setFeaturedFile(file);
         });
 
-        // paste image (CTRL+V)
-        document.addEventListener('paste', (e) => {
-            if(!e.clipboardData) return;
+        uploader.addEventListener('mouseenter', () => { activeUploader = 'featured'; });
+    }
 
-            const items = e.clipboardData.items;
-            if(!items) return;
+    // ─── Extra images ───
+    const extraInput    = document.querySelector('#extraImagesInput');
+    const extraUploader = document.querySelector('#extraUploader');
+    const extraBtn      = document.querySelector('#pickExtraBtn');
+    const extraFileName = document.querySelector('#extraFileName');
+    const extraPreview  = document.querySelector('#previewExtraImages');
 
-            for(let i = 0; i < items.length; i++){
-                const item = items[i];
-                if(item.type && item.type.startsWith("image/")){
-                    const file = item.getAsFile();
-                    if(file){
-                        setInputFile(file);
-                    }
-                }
-            }
+    function showExtraPreview(files) {
+        extraPreview.innerHTML = "";
+        [...files].forEach(file => {
+            if (!isImage(file)) return;
+            const el = document.createElement("img");
+            el.src = URL.createObjectURL(file);
+            extraPreview.appendChild(el);
         });
     }
-</script>
 
-<script>
-    const extraInput = document.querySelector('#extraImagesInput');
-const extraUploader = document.querySelector('#extraUploader');
-const extraBtn = document.querySelector('#pickExtraBtn');
-const extraFileName = document.querySelector('#extraFileName');
-const extraPreview = document.querySelector('#previewExtraImages');
+    function addExtraFiles(newFiles) {
+        const dt = new DataTransfer();
+        if (extraInput.files) { for (const f of extraInput.files) dt.items.add(f); }
+        for (const f of newFiles) { if (f && isImage(f)) dt.items.add(f); }
+        extraInput.files = dt.files;
+        showExtraPreview(dt.files);
+        extraFileName.innerText = dt.files.length + " bilder valgt";
+    }
 
-function showExtraPreview(files){
+    if (extraUploader) {
+        extraUploader.addEventListener("click", () => extraInput.click());
+        extraBtn?.addEventListener("click", (e) => { e.preventDefault(); extraInput.click(); });
 
-extraPreview.innerHTML = "";
+        extraInput.addEventListener("change", function () {
+            if (this.files.length) {
+                extraFileName.innerText = this.files.length + " bilder valgt";
+                showExtraPreview(this.files);
+            }
+        });
 
-[...files].forEach(file => {
+        extraUploader.addEventListener("dragover", (e) => { e.preventDefault(); extraUploader.classList.add("drag"); });
+        extraUploader.addEventListener("dragleave", () => extraUploader.classList.remove("drag"));
+        extraUploader.addEventListener("drop", (e) => {
+            e.preventDefault();
+            extraUploader.classList.remove("drag");
+            const files = [...e.dataTransfer.files].filter(isImage);
+            if (files.length) addExtraFiles(files);
+        });
 
-if(!file.type.startsWith("image/")) return;
+        extraUploader.addEventListener('mouseenter', () => { activeUploader = 'extra'; });
+    }
 
-const url = URL.createObjectURL(file);
+    // ─── Paste handler (routes to whichever uploader the mouse is over) ───
+    let activeUploader = 'featured';
 
-const img = document.createElement("img");
-img.src = url;
+    document.addEventListener('paste', (e) => {
+        if (!e.clipboardData) return;
+        const imageItems = [...e.clipboardData.items].filter(it => it.type?.startsWith("image/"));
+        if (!imageItems.length) return;
 
-extraPreview.appendChild(img);
-
-});
-
-}
-
-if(extraUploader){
-
-extraUploader.addEventListener("click",()=>extraInput.click());
-
-extraBtn.addEventListener("click",(e)=>{
-e.preventDefault();
-extraInput.click();
-});
-
-extraInput.addEventListener("change",function(){
-
-const files = this.files;
-
-if(files.length){
-extraFileName.innerText = files.length + " bilder valgt";
-showExtraPreview(files);
-}
-
-});
-
-extraUploader.addEventListener("dragover",(e)=>{
-e.preventDefault();
-extraUploader.classList.add("drag");
-});
-
-extraUploader.addEventListener("dragleave",()=>{
-extraUploader.classList.remove("drag");
-});
-
-extraUploader.addEventListener("drop",(e)=>{
-e.preventDefault();
-extraUploader.classList.remove("drag");
-
-const files = e.dataTransfer.files;
-
-const dt = new DataTransfer();
-
-for(let f of files){
-if(f.type.startsWith("image/")){
-dt.items.add(f);
-}
-}
-
-extraInput.files = dt.files;
-
-showExtraPreview(dt.files);
-
-extraFileName.innerText = dt.files.length + " bilder valgt";
-
-});
-
-}
+        if (activeUploader === 'extra') {
+            const files = imageItems.map(it => it.getAsFile()).filter(Boolean);
+            if (files.length) addExtraFiles(files);
+        } else {
+            const file = imageItems[0].getAsFile();
+            if (file) setFeaturedFile(file);
+        }
+    });
 </script>
 
 {% endblock %}
