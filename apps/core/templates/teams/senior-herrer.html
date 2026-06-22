@@ -95,36 +95,29 @@
 <script src="{% static '/js/home.js' %}"></script>
 
 <style>
-  .img-lazy-wrapper {
+  /* No wrapper — skeleton is absolutely placed over the img via JS measurement */
+  .team .left {
     position: relative;
-    overflow: hidden;
-    /* Participate in flex layout the same way the original img did */
-    flex: 1 1 auto;
-    min-width: 0;
-    align-self: stretch;
   }
   .player-img-lazy {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%;
+    /* aspect-ratio gives the img proper portrait proportions before the file loads,
+       so flex layout is identical to when the real image is present */
+    aspect-ratio: 3 / 4;
     opacity: 0;
     transition: opacity 0.7s ease;
     will-change: opacity;
-    display: block;
   }
   .player-img-lazy.img-visible {
     opacity: 1;
   }
   .img-skeleton {
     position: absolute;
-    inset: 0;
+    pointer-events: none;
+    z-index: 2;
     background: linear-gradient(90deg, #c2c2c2 0%, #d8d8d8 40%, #ebebeb 50%, #d8d8d8 60%, #c2c2c2 100%);
     background-size: 300% 100%;
     animation: skeletonShimmer 1.8s ease-in-out infinite;
-    z-index: 2;
     transition: opacity 0.4s ease;
-    pointer-events: none;
   }
   .img-skeleton.fade-out {
     opacity: 0;
@@ -176,8 +169,8 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
       <div class="left">
         <img
           class="player-img-lazy"
-          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-          data-src="{{ player.image.url }}"
+          src="{{ player.image.url }}"
+          loading="lazy"
           alt="{{ player.first_name }}">
         <div class="text">
           <h2>{{ player.first_name }} {{ player.last_name }}</h2>
@@ -234,63 +227,45 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
 
 <script>
 (function () {
-  var lazyImgs = document.querySelectorAll('.team .left img.player-img-lazy');
-  if (!lazyImgs.length) return;
+  var imgs = document.querySelectorAll('.team .left img.player-img-lazy');
+  if (!imgs.length) return;
 
-  // Wrap each image and insert skeleton shimmer over the image only
-  lazyImgs.forEach(function (img) {
-    var wrapper = document.createElement('div');
-    wrapper.className = 'img-lazy-wrapper';
-    img.parentNode.insertBefore(wrapper, img);
-    wrapper.appendChild(img);
-
-    var skeleton = document.createElement('div');
-    skeleton.className = 'img-skeleton';
-    wrapper.appendChild(skeleton);
-    img._skeleton = skeleton;
-  });
-
-  function revealImage(img) {
-    var src = img.dataset.src;
-    if (!src) return;
-    img.onload = function () {
-      img.classList.add('img-visible');
-      if (img._skeleton) {
-        img._skeleton.classList.add('fade-out');
-        setTimeout(function () {
-          if (img._skeleton && img._skeleton.parentNode) {
-            img._skeleton.parentNode.removeChild(img._skeleton);
-          }
-        }, 420);
-      }
-    };
-    img.onerror = function () {
-      // Still fade in on error so layout doesn't break
-      img.classList.add('img-visible');
-      if (img._skeleton && img._skeleton.parentNode) {
-        img._skeleton.parentNode.removeChild(img._skeleton);
-      }
-    };
-    img.src = src;
+  function placeSkeleton(img) {
+    var parent = img.parentElement;
+    var pRect = parent.getBoundingClientRect();
+    var iRect = img.getBoundingClientRect();
+    var s = document.createElement('div');
+    s.className = 'img-skeleton';
+    s.style.top    = (iRect.top  - pRect.top)  + 'px';
+    s.style.left   = (iRect.left - pRect.left) + 'px';
+    s.style.width  = iRect.width  + 'px';
+    s.style.height = iRect.height + 'px';
+    parent.appendChild(s);
+    return s;
   }
 
-  if ('IntersectionObserver' in window) {
-    var observer = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          revealImage(entry.target);
-          obs.unobserve(entry.target);
-        }
-      });
-    }, {
-      rootMargin: '400px 0px', // start loading 400px before entering viewport
-      threshold: 0
+  function reveal(img, skeleton) {
+    img.classList.add('img-visible');
+    if (!skeleton) return;
+    skeleton.classList.add('fade-out');
+    setTimeout(function () {
+      if (skeleton.parentNode) skeleton.parentNode.removeChild(skeleton);
+    }, 420);
+  }
+
+  // Wait one frame so CSS aspect-ratio has been applied and img has layout size
+  requestAnimationFrame(function () {
+    imgs.forEach(function (img) {
+      // If already cached and loaded, just fade in
+      if (img.complete && img.naturalWidth > 0) {
+        img.classList.add('img-visible');
+        return;
+      }
+      var skeleton = placeSkeleton(img);
+      img.onload  = function () { reveal(img, skeleton); };
+      img.onerror = function () { reveal(img, skeleton); };
     });
-    lazyImgs.forEach(function (img) { observer.observe(img); });
-  } else {
-    // Fallback: load all immediately
-    lazyImgs.forEach(revealImage);
-  }
+  });
 })();
 </script>
 
