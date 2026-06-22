@@ -94,6 +94,40 @@
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
 <script src="{% static '/js/home.js' %}"></script>
 
+<style>
+  .team .left {
+    position: relative;
+    overflow: hidden;
+  }
+  .team .left .player-img-lazy {
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    will-change: opacity;
+    display: block;
+    width: 100%;
+  }
+  .team .left .player-img-lazy.img-visible {
+    opacity: 1;
+  }
+  .img-skeleton {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #0f0f0f 0%, #1e1e1e 40%, #2a2a2a 50%, #1e1e1e 60%, #0f0f0f 100%);
+    background-size: 300% 100%;
+    animation: skeletonShimmer 1.8s ease-in-out infinite;
+    z-index: 2;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .img-skeleton.fade-out {
+    opacity: 0;
+  }
+  @keyframes skeletonShimmer {
+    0%   { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+  }
+</style>
+
 
 
 <!-- <div id="startOverlay"></div> -->
@@ -133,7 +167,11 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
 
     {% for player in players %}
       <div class="left">
-        <img src="{{ player.image.url }}" alt="{{ player.first_name }}" loading="lazy">
+        <img
+          class="player-img-lazy"
+          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-src="{{ player.image.url }}"
+          alt="{{ player.first_name }}">
         <div class="text">
           <h2>{{ player.first_name }} {{ player.last_name }}</h2>
           <p>
@@ -162,14 +200,14 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
 <section class="bottom">
   <div class="content">
     <div class="left" onclick="window.location.href='https://www.fotball.no/fotballdata/lag/hjem/?fiksId=667&underside=kamper'">
-      <img src="{% static 'images/other/Mathias.jpg' %}" alt="">
+      <img src="{% static 'images/other/Mathias.jpg' %}" alt="" loading="lazy">
       <div class="text">
         <h2>Kamper</h2>
         <p>Se kommende kamper</p>
       </div>
     </div>
     <div class="right" onclick="window.location.href='/om-klubben/medlemskap/'">
-      <img src="{% static 'images/other/preben.jpg' %}" alt="">
+      <img src="{% static 'images/other/preben.jpg' %}" alt="" loading="lazy">
       <div class="text">
         <h2>Bli medlem</h2>
         <p>Se hvordan du kan bli en del av historien</p>
@@ -185,6 +223,63 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
 <script>
   var copy = document.querySelector(".logos-slide").cloneNode(true);
   document.querySelector(".logos").appendChild(copy);
+</script>
+
+<script>
+(function () {
+  var lazyImgs = document.querySelectorAll('.team .left img.player-img-lazy');
+  if (!lazyImgs.length) return;
+
+  // Insert skeleton shimmer behind each lazy image
+  lazyImgs.forEach(function (img) {
+    var skeleton = document.createElement('div');
+    skeleton.className = 'img-skeleton';
+    img.parentElement.appendChild(skeleton);
+    img._skeleton = skeleton;
+  });
+
+  function revealImage(img) {
+    var src = img.dataset.src;
+    if (!src) return;
+    img.onload = function () {
+      img.classList.add('img-visible');
+      if (img._skeleton) {
+        img._skeleton.classList.add('fade-out');
+        setTimeout(function () {
+          if (img._skeleton && img._skeleton.parentNode) {
+            img._skeleton.parentNode.removeChild(img._skeleton);
+          }
+        }, 420);
+      }
+    };
+    img.onerror = function () {
+      // Still fade in on error so layout doesn't break
+      img.classList.add('img-visible');
+      if (img._skeleton && img._skeleton.parentNode) {
+        img._skeleton.parentNode.removeChild(img._skeleton);
+      }
+    };
+    img.src = src;
+  }
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          revealImage(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      rootMargin: '400px 0px', // start loading 400px before entering viewport
+      threshold: 0
+    });
+    lazyImgs.forEach(function (img) { observer.observe(img); });
+  } else {
+    // Fallback: load all immediately
+    lazyImgs.forEach(revealImage);
+  }
+})();
 </script>
 
 {% endblock %}
