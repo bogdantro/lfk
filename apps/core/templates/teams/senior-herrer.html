@@ -95,24 +95,25 @@
 <script src="{% static '/js/home.js' %}"></script>
 
 <style>
-  .team .left {
+  .img-lazy-wrapper {
     position: relative;
     overflow: hidden;
+    display: block;
   }
-  .team .left .player-img-lazy {
+  .player-img-lazy {
     opacity: 0;
     transition: opacity 0.7s ease;
     will-change: opacity;
     display: block;
     width: 100%;
   }
-  .team .left .player-img-lazy.img-visible {
+  .player-img-lazy.img-visible {
     opacity: 1;
   }
   .img-skeleton {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #0f0f0f 0%, #1e1e1e 40%, #2a2a2a 50%, #1e1e1e 60%, #0f0f0f 100%);
+    background: linear-gradient(90deg, #b0b0b0 0%, #d0d0d0 40%, #e8e8e8 50%, #d0d0d0 60%, #b0b0b0 100%);
     background-size: 300% 100%;
     animation: skeletonShimmer 1.8s ease-in-out infinite;
     z-index: 2;
@@ -230,11 +231,16 @@ Herrelaget består av en god miks av lokale spillere og erfaring, og jobber mål
   var lazyImgs = document.querySelectorAll('.team .left img.player-img-lazy');
   if (!lazyImgs.length) return;
 
-  // Insert skeleton shimmer behind each lazy image
+  // Wrap each image and insert skeleton shimmer over the image only
   lazyImgs.forEach(function (img) {
+    var wrapper = document.createElement('div');
+    wrapper.className = 'img-lazy-wrapper';
+    img.parentNode.insertBefore(wrapper, img);
+    wrapper.appendChild(img);
+
     var skeleton = document.createElement('div');
     skeleton.className = 'img-skeleton';
-    img.parentElement.appendChild(skeleton);
+    wrapper.appendChild(skeleton);
     img._skeleton = skeleton;
   });
 
