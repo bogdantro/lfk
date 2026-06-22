@@ -98,14 +98,20 @@
   .img-lazy-wrapper {
     position: relative;
     overflow: hidden;
-    display: block;
+    /* Participate in flex layout the same way the original img did */
+    flex: 1 1 auto;
+    min-width: 0;
+    align-self: stretch;
   }
   .player-img-lazy {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
     opacity: 0;
     transition: opacity 0.7s ease;
     will-change: opacity;
     display: block;
-    width: 100%;
   }
   .player-img-lazy.img-visible {
     opacity: 1;
@@ -113,7 +119,7 @@
   .img-skeleton {
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #b0b0b0 0%, #d0d0d0 40%, #e8e8e8 50%, #d0d0d0 60%, #b0b0b0 100%);
+    background: linear-gradient(90deg, #c2c2c2 0%, #d8d8d8 40%, #ebebeb 50%, #d8d8d8 60%, #c2c2c2 100%);
     background-size: 300% 100%;
     animation: skeletonShimmer 1.8s ease-in-out infinite;
     z-index: 2;
