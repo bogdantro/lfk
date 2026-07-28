@@ -1,0 +1,136 @@
+.membership-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: #141a3a;
+  border-top: 2px solid #b6a265;
+  transform: translateY(110%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+.membership-popup .membership-popup-inner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.membership-popup .eyebrow {
+  display: none;
+}
+.membership-popup h3 {
+  font-family: "Stampa", "Roboto", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: rgb(246, 246, 246);
+  text-transform: uppercase;
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.membership-popup p.desc {
+  display: none;
+}
+.membership-popup .membership-popup-btn {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #b6a265;
+  color: #141a3a;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 11px 18px;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+.membership-popup .membership-popup-btn:hover {
+  filter: brightness(93%);
+  transform: translateY(-1px);
+}
+.membership-popup .membership-popup-btn i {
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+.membership-popup .membership-popup-btn:hover i {
+  transform: translateX(3px);
+}
+.membership-popup.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .membership-popup {
+    transition: none;
+  }
+}
+/* Desktop: compact card, bottom-left, text only (no image) */
+@media only screen and (min-device-width: 1140px) {
+  .membership-popup {
+    left: 28px;
+    right: auto;
+    bottom: 28px;
+    max-width: 380px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 24px 26px 26px;
+    border-top: none;
+    border-left: 3px solid #b6a265;
+    border-radius: 4px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+    transform: translateY(24px);
+  }
+  .membership-popup .membership-popup-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .membership-popup .eyebrow {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #b6a265;
+    margin: 0;
+  }
+  .membership-popup h3 {
+    font-size: 22px;
+    line-height: 1.15;
+  }
+  .membership-popup p.desc {
+    display: block;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(246, 246, 246, 0.75);
+  }
+  .membership-popup .membership-popup-btn {
+    margin-top: 4px;
+    padding: 12px 22px;
+  }
+}
+/* Mobile: render behind the back-to-top FAB so the bar covers it instead of overlapping */
+@media only screen and (max-width: 1139px) {
+  .back-to-top {
+    z-index: 480;
+  }
+}
+
+/*# sourceMappingURL=membership-cta.css.map */

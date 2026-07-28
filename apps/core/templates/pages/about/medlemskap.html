@@ -121,6 +121,7 @@
 {% block content %}
 <link rel="stylesheet" href="{% static '/scss/pages/page.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static '/scss/pages/membership-cta.css' %}" type="text/css">
 <script src="{% static '/js/home.js' %}"></script>
 <script src="{% static '/js/page.js' %}"></script>
 
@@ -250,5 +251,54 @@
     </div>
   </div>
 </section>
+
+<div class="membership-popup" id="membershipPopup">
+  <div class="membership-popup-inner">
+    <p class="eyebrow">Lillehammer FK</p>
+    <h3>Bli medlem i dag</h3>
+    <p class="desc">Meld deg inn på under to minutter og bli en del av fellesskapet.</p>
+    <a
+      href="https://app.hoopit.io/join/lillehammer-fotballklubb-195271"
+      target="_blank"
+      rel="noopener"
+      class="membership-popup-btn"
+    >
+      Bli medlem <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const popup = document.getElementById("membershipPopup");
+    const footer = document.querySelector(".footer");
+    if (!popup) return;
+
+    const showAfter = 500;
+    let footerVisible = false;
+
+    function toggle() {
+      if (footerVisible) {
+        popup.classList.remove("is-visible");
+        return;
+      }
+      popup.classList.toggle("is-visible", window.scrollY > showAfter);
+    }
+
+    window.addEventListener("scroll", toggle, { passive: true });
+    toggle();
+
+    if (footer && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          footerVisible = entries[0].isIntersecting;
+          toggle();
+        },
+        { rootMargin: "0px 0px -10% 0px" }
+      );
+      observer.observe(footer);
+    }
+  })();
+</script>
 
 {% endblock %}

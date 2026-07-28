@@ -86,7 +86,7 @@ button:focus {
   opacity: 0;
   transform: translateY(14px) scale(0.96);
   pointer-events: none;
-  transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease;
+  transition: opacity 0.22s ease, transform 0.22s ease, box-shadow 0.22s ease, bottom 0.25s ease;
 }
 
 .back-to-top i {
@@ -131,4 +131,6 @@ button:focus {
   .back-to-top {
     transition: none;
   }
-}/*# sourceMappingURL=global.css.map */
+}
+
+/*# sourceMappingURL=global.css.map */
