@@ -74,8 +74,8 @@
 
 <section class="cover" id="coverMainMob">
   <img id="heroImage" src="{% static 'images/covers/hero4.jpeg' %}" alt="Lillehammer Fotballklubb lag og stadion" class="cover-img" loading="eager" width="1920" height="1080">
-  
-  <video id="heroImage" src="{% static 'images/covers/cover.mov' %}" class="cover-img" loop muted autoplay playsinline aria-label="Video fra Lillehammer Fotballklubb"></video>
+
+  <video id="heroVideoMob" class="cover-img" loop muted playsinline preload="none" aria-label="Video fra Lillehammer Fotballklubb" data-src="{% static 'images/covers/cover.mov' %}"></video>
 
   <div class="overlay"></div>
   <div class="content">
@@ -94,8 +94,17 @@
 <section class="home-cover" id="coverMainDes">
   <div class="content"></div>
   
-  <video class="cover-video" autoplay muted loop playsinline aria-label="Bakgrunnsvideo Lillehammer FK">
-    <source src="{% static 'images/covers/cover.mov' %}" type="video/mp4">
+  <video
+    id="heroVideoDes"
+    class="cover-video"
+    muted
+    loop
+    playsinline
+    preload="none"
+    poster="{% static 'images/covers/hero4.jpeg' %}"
+    aria-label="Bakgrunnsvideo Lillehammer FK"
+  >
+    <source data-src="{% static 'images/covers/cover.mov' %}" type="video/mp4">
   </video>
 
   <svg class="cover-mask" viewBox="0 0 1000 500"  preserveAspectRatio="none" aria-hidden="true">
@@ -128,6 +137,27 @@
 <div class="overlay"></div>
 <div class="overlay-right"></div>
 </section>
+
+<script>
+  (function () {
+    var isDesktop = window.matchMedia("(min-device-width: 1140px)").matches;
+
+    var mobileVideo = document.getElementById("heroVideoMob");
+    var desktopVideo = document.getElementById("heroVideoDes");
+    var activeVideo = isDesktop ? desktopVideo : mobileVideo;
+    if (!activeVideo) return;
+
+    var sourceEl = activeVideo.querySelector("source");
+    var target = sourceEl || activeVideo;
+    var dataSrc = target.getAttribute("data-src");
+    if (dataSrc) target.setAttribute("src", dataSrc);
+
+    activeVideo.preload = "auto";
+    activeVideo.load();
+    var playPromise = activeVideo.play();
+    if (playPromise && playPromise.catch) playPromise.catch(function () {});
+  })();
+</script>
 
 
 
