@@ -170,7 +170,10 @@ itemscope itemtype="https://schema.org/BlogPosting">
 
     <div class="right">
       <div class="text">
-          <p class="headingp">Siste nytt</p>
+          <div class="blog-eyebrow">
+            <p class="headingp">Siste nytt</p>
+            <a href="{% url 'blog' %}" class="blog-eyebrow-link" onclick="event.stopPropagation()">Alle nyheter <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
 
           <h2 itemprop="headline">{{ latest_blog.title }}</h2>
 
@@ -218,7 +221,10 @@ itemscope itemtype="https://schema.org/BlogPosting">
 
     <div class="right">
       <div class="text">
-                  <p class="headingp">Siste nytt</p>
+                  <div class="blog-eyebrow">
+                    <p class="headingp">Siste nytt</p>
+                    <a href="{% url 'blog' %}" class="blog-eyebrow-link" onclick="event.stopPropagation()">Alle nyheter <i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
 
           <h2 itemprop="headline">{{ second_latest_blog.title }}</h2>
 

@@ -366,6 +366,45 @@ $lfkgold: #b6a265;
                       margin-bottom: 5px;
 
                     }
+                    .blog-eyebrow{
+                      display: flex;
+                      align-items: center;
+                      justify-content: space-between;
+                      flex-wrap: wrap;
+                      gap: 12px;
+                    }
+                    .blog-eyebrow-link{
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 6px;
+                      background: none;
+                      color: $lfkgold;
+                      font-family: "Inter", sans-serif;
+                      font-size: 8px;
+                      font-weight: 700;
+                      letter-spacing: .03em;
+                      text-transform: uppercase;
+                      text-decoration: none;
+                      white-space: nowrap;
+                      padding: 0;
+                      border-radius: 0;
+                      cursor: pointer;
+                      transition: .2s;
+
+                      i{
+                        color: $lfkgold;
+                        font-size: 7px;
+                        transition: transform .2s;
+                      }
+
+                      &:hover{
+                        filter: brightness(93%);
+                        transform: translateY(-1px);
+                      }
+                      &:hover i{
+                        transform: translateX(3px);
+                      }
+                    }
                     p{
                         color: $txt;
                         font-size: 16px;
@@ -861,6 +900,9 @@ $lfkgold: #b6a265;
                       font-family:'LingkawiSouth',"Roboto",sans-serif;
                       margin-bottom: 5px;
 
+                    }
+                    .blog-eyebrow-link{
+                      font-size: 9px;
                     }
                     p{
                         color: $black;

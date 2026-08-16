@@ -336,6 +336,43 @@
   font-family: "LingkawiSouth", "Roboto", sans-serif;
   margin-bottom: 5px;
 }
+.blog .content .right .text .blog-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.blog .content .right .text .blog-eyebrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  color: #b6a265;
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.blog .content .right .text .blog-eyebrow-link i {
+  color: #b6a265;
+  font-size: 7px;
+  transition: transform 0.2s;
+}
+.blog .content .right .text .blog-eyebrow-link:hover {
+  filter: brightness(93%);
+  transform: translateY(-1px);
+}
+.blog .content .right .text .blog-eyebrow-link:hover i {
+  transform: translateX(3px);
+}
 .blog .content .right .text p {
   color: #141a3a;
   font-size: 16px;
@@ -783,6 +820,9 @@
     color: #141a3a;
     font-family: "LingkawiSouth", "Roboto", sans-serif;
     margin-bottom: 5px;
+  }
+  .blog .content .right .text .blog-eyebrow-link {
+    font-size: 9px;
   }
   .blog .content .right .text p {
     color: #1F1F1F;
