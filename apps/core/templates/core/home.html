@@ -37,7 +37,7 @@
 <!-- Preload important assets -->
 <link rel="preload" as="image" href="{% static 'images/covers/newHeroMobile.jpeg' %}" media="(max-device-width: 1139px)">
 <link rel="preload" as="image" href="{% static 'images/covers/hero4.jpeg' %}" media="(min-device-width: 1140px)">
-<link rel="preload" as="video" href="{% static 'images/covers/cover.mov' %}">
+<link rel="preload" as="video" href="{% static 'images/covers/cover.mov' %}" media="(min-device-width: 1140px)">
 
 <!-- Structured Data: Organization -->
 <script type="application/ld+json">
@@ -75,8 +75,6 @@
 
 <section class="cover" id="coverMainMob">
   <img id="heroImage" src="{% static 'images/covers/newHeroMobile.jpeg' %}" alt="Lillehammer Fotballklubb lag og stadion" class="cover-img" loading="eager" width="1920" height="1280">
-
-  <video id="heroVideoMob" class="cover-img" loop muted playsinline preload="none" aria-label="Video fra Lillehammer Fotballklubb" data-src="{% static 'images/covers/cover.mov' %}"></video>
 
   <div class="overlay"></div>
   <div class="content">
@@ -141,11 +139,11 @@
 
 <script>
   (function () {
+    // Video only on desktop; mobile shows the static hero image
     var isDesktop = window.matchMedia("(min-device-width: 1140px)").matches;
+    if (!isDesktop) return;
 
-    var mobileVideo = document.getElementById("heroVideoMob");
-    var desktopVideo = document.getElementById("heroVideoDes");
-    var activeVideo = isDesktop ? desktopVideo : mobileVideo;
+    var activeVideo = document.getElementById("heroVideoDes");
     if (!activeVideo) return;
 
     var sourceEl = activeVideo.querySelector("source");
