@@ -1,6 +1,7 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% load text_filters %}
+{% load image_tags %}
 
 {% block head %}
 
@@ -76,9 +77,9 @@
 
          <div class="blog-image">
             {% if blog.image %}
-              <img src="{{ blog.image.url }}" loading="lazy">
+              <img src="{{ blog.image|thumb }}" alt="{{ blog.title|striptags }}" loading="lazy" decoding="async">
             {% else %}
-              <img src="{% static 'images/placeholder.jpg' %}">
+              <img loading="lazy" decoding="async" src="{% static 'images/placeholder.jpg' %}">
             {% endif %}
          </div>
 

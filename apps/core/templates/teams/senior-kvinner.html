@@ -124,7 +124,7 @@ Senior kvinner er et tilbud for spillere som ønsker å kombinere ambisjoner med
       </div>
     </div>
     <div class="left">
-        <img src="{% static 'images/other/kvinner-main.jpg' %}" alt="">
+        <img loading="lazy" decoding="async" src="{% static 'images/other/kvinner-main.jpg' %}" alt="">
         <div class="imgoverlay"></div>
     </div>
 
@@ -137,7 +137,7 @@ Senior kvinner er et tilbud for spillere som ønsker å kombinere ambisjoner med
 
     {% for player in players %}
       <div class="left">
-        <img src="{{ player.image.url }}" alt="{{ player.first_name }}">
+        <img loading="lazy" decoding="async" src="{{ player.image.url }}" alt="{{ player.first_name }}">
         <div class="text">
           <h2>{{ player.first_name }} {{ player.last_name }}</h2>
           <p>
@@ -148,7 +148,7 @@ Senior kvinner er et tilbud for spillere som ønsker å kombinere ambisjoner med
 
           {% if player.sponsor %}
             <div class="player-sponsor">
-              <img class="sponsor-logo" src="{{ player.sponsor.logo.url }}" alt="{{ player.sponsor.name }}">
+              <img loading="lazy" decoding="async" class="sponsor-logo" src="{{ player.sponsor.logo.url }}" alt="{{ player.sponsor.name }}">
             </div>
           {% endif %}
         </div>
@@ -162,14 +162,14 @@ Senior kvinner er et tilbud for spillere som ønsker å kombinere ambisjoner med
 <section class="bottom">
   <div class="content">
     <div class="left" onclick="window.location.href='https://www.fotball.no/fotballdata/lag/hjem/?fiksId=43698'">
-      <img src="{% static 'images/covers/kamper-kvinner.jpeg' %}" alt="">
+      <img loading="lazy" decoding="async" src="{% static 'images/covers/kamper-kvinner.jpeg' %}" alt="">
       <div class="text">
         <h2>Kamper</h2>
         <p>Se kommende kamper</p>
       </div>
     </div>
     <div class="right" onclick="window.location.href='/om-klubben/medlemskap/'">
-      <img src="{% static 'images/covers/medlem-kvinner.jpeg' %}" alt="">
+      <img loading="lazy" decoding="async" src="{% static 'images/covers/medlem-kvinner.jpeg' %}" alt="">
       <div class="text">
         <h2>Bli medlem</h2>
         <p>Se hvordan du kan bli en del av historien</p>
