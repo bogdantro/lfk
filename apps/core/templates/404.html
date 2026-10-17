@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+
+<title>Siden finnes ikke | Lillehammer FK 1911</title>
+
+<meta name="description" content="Siden du leter etter finnes ikke hos Lillehammer Fotballklubb.">
+<meta name="robots" content="noindex, follow">
+
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static '/scss/pages/errors.css' %}" type="text/css">
+
+<section class="error-page">
+  <div class="pitch" aria-hidden="true">
+    <span class="box left"></span>
+    <span class="circle"></span>
+    <span class="box right"></span>
+  </div>
+
+  <div class="error-inner">
+    <div class="error-code" aria-hidden="true">404</div>
+    <span class="eyebrow">Offside!</span>
+    <h1>Denne siden finnes ikke</h1>
+    <p>
+      Siden du leter etter er flyttet, har fått nytt navn eller har aldri eksistert.
+      Sjekk adressen, eller bruk lenkene under for å komme tilbake i spill.
+    </p>
+
+    <div class="error-actions">
+      <a href="{% url 'home' %}" class="error-btn primary">Til forsiden <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="{% url 'kontakt' %}" class="error-btn secondary">Kontakt oss</a>
+    </div>
+
+    <nav class="error-links" aria-label="Populære sider">
+      <strong>Populære sider</strong>
+      <ul>
+        <li><a href="{% url 'blog' %}">Nyheter</a></li>
+        <li><a href="{% url 'senior' %}">Lag</a></li>
+        <li><a href="{% url 'medlemskap' %}">Bli medlem</a></li>
+        <li><a href="{% url 'vare_samarbeidspartnere' %}">Partnere</a></li>
+        <li><a href="{% url 'tine_fotballskole' %}">Tine Fotballskole</a></li>
+      </ul>
+    </nav>
+
+    <img src="{% static 'images/logo/ProudToBeLily.png' %}" alt="Proud to be Lily" class="error-signature" loading="lazy">
+  </div>
+</section>
+
+{% endblock %}

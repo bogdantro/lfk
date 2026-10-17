@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Teknisk feil | Lillehammer FK 1911</title>
+
+    <!-- Standalone on purpose: Django renders 500.html without context, and
+         the error may come from the nav, footer or database. -->
+    <link rel="stylesheet" href="{% static '/scss/global/global.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/scss/pages/errors.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon/favicon-16x16.png' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}">
+</head>
+
+<body>
+
+<main class="error-page standalone">
+  <div class="pitch" aria-hidden="true">
+    <span class="box left"></span>
+    <span class="circle"></span>
+    <span class="box right"></span>
+  </div>
+
+  <div class="error-inner">
+    <a href="/"><img src="{% static 'images/logo/logo-8.png' %}" alt="Lillehammer FK" class="error-logo"></a>
+    <div class="error-code" aria-hidden="true">500</div>
+    <span class="eyebrow">Spillet er stoppet</span>
+    <h1>Noe gikk galt hos oss</h1>
+    <p>
+      Dommeren har blåst av på grunn av en teknisk feil. Det er ikke din feil,
+      og vi jobber med å få kampen i gang igjen. Prøv på nytt om litt.
+    </p>
+
+    <div class="error-actions">
+      <a href="javascript:location.reload()" class="error-btn primary">Prøv igjen <i class="fa-solid fa-rotate-right"></i></a>
+      <a href="/" class="error-btn secondary">Til forsiden</a>
+    </div>
+
+    <div class="error-links">
+      <strong>Haster det?</strong>
+      <ul>
+        <li><a href="/om-klubben/kontakt/">Kontakt klubben</a></li>
+        <li><a href="https://www.fotball.no/fotballdata/klubb/hjem/?fiksId=1683" target="_blank" rel="noopener">Terminliste alle lag</a></li>
+      </ul>
+    </div>
+
+    <img src="{% static 'images/logo/ProudToBeLily.png' %}" alt="Proud to be Lily" class="error-signature">
+  </div>
+</main>
+
+</body>
+</html>
