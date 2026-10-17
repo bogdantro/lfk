@@ -35,7 +35,8 @@
 <meta name="ICBM" content="61.1153, 10.4662">
 
 <!-- Preload important assets -->
-<link rel="preload" as="image" href="{% static 'images/covers/hero4.jpeg' %}">
+<link rel="preload" as="image" href="{% static 'images/covers/newHeroMobile.jpeg' %}" media="(max-device-width: 1139px)">
+<link rel="preload" as="image" href="{% static 'images/covers/hero4.jpeg' %}" media="(min-device-width: 1140px)">
 <link rel="preload" as="video" href="{% static 'images/covers/cover.mov' %}">
 
 <!-- Structured Data: Organization -->
@@ -73,7 +74,7 @@
 
 
 <section class="cover" id="coverMainMob">
-  <img id="heroImage" src="{% static 'images/covers/hero4.jpeg' %}" alt="Lillehammer Fotballklubb lag og stadion" class="cover-img" loading="eager" width="1920" height="1080">
+  <img id="heroImage" src="{% static 'images/covers/newHeroMobile.jpeg' %}" alt="Lillehammer Fotballklubb lag og stadion" class="cover-img" loading="eager" width="1920" height="1280">
 
   <video id="heroVideoMob" class="cover-img" loop muted playsinline preload="none" aria-label="Video fra Lillehammer Fotballklubb" data-src="{% static 'images/covers/cover.mov' %}"></video>
 
