@@ -16,92 +16,134 @@
       <div class="logo" onclick="window.location.href='/'">
           <img src="{% static 'images/logo/logo-8.png' %}" alt="" class="logo-image">
       </div>
-        <div class="hamburger" id="hamburger" onclick="menu()">
+        <div class="hamburger" id="hamburger" onclick="menu()" role="button" tabindex="0" aria-label="Åpne meny" aria-controls="sidebar" aria-expanded="false">
             <span class="upper-span"></span>
             <span class="center-span"></span>
             <span class="lower-span"></span>
         </div>
- <div class="sidebar" id="sidebar">
+</div>
 
-  <!-- simple links -->
-  <a href="/nyheter/">Nyheter</a>
+<!-- Mobile menu (full-screen sheet) -->
+<div class="mobile-menu" id="sidebar" role="dialog" aria-modal="true" aria-label="Meny" aria-hidden="true">
+  <div class="mm-pitch" aria-hidden="true"><span></span></div>
 
-  <!-- SPORT (dropdown) -->
-  <button type="button" class="mob-dd-trigger" data-target="mobSport">
-    Sport <i class="fa-regular fa-angle-down"></i>
-  </button>
-
-  <div class="mob-dd" id="mobSport">
-    <!-- Lag (sub dropdown) -->
-    <button type="button" class="mob-dd-trigger sub" data-target="mobSportLag">
-      Lag <i class="fa-regular fa-angle-down"></i>
+  <div class="mm-head">
+    <a href="/" class="mm-brand">
+      <img src="{% static 'images/logo/logo-8.png' %}" alt="">
+      <span class="mm-brand-text">
+        <strong>Lillehammer FK</strong>
+        <small>Etablert 1911</small>
+      </span>
+    </a>
+    <button type="button" class="mm-close" id="mmClose" onclick="menu()" aria-label="Lukk meny">
+      <i class="fa-solid fa-xmark"></i>
     </button>
+  </div>
 
-    <div class="mob-dd sub" id="mobSportLag">
-      <a href="/lag/senior/">Senior</a>
-      <a href="/lag/ungdom/">Ungdom</a>
-      <a href="/lag/barn/">Barn</a>
-      <a href="/lag/wednesday-united/">Wednesday United</a>
+  <div class="mm-scroll">
+
+    <div class="mm-quick">
+      <a href="/nyheter/" class="mm-tile mm-anim"><i class="fa-solid fa-newspaper"></i><span>Nyheter</span></a>
+      <a href="https://stampa.no/" target="_blank" rel="noopener" class="mm-tile mm-anim"><i class="fa-solid fa-calendar-days"></i><span>Terminliste</span></a>
+      <a href="/lag/senior/herrer/" class="mm-tile mm-anim"><i class="fa-solid fa-futbol"></i><span>Senior herrer</span></a>
+      <a href="/lag/senior/kvinner/" class="mm-tile mm-anim"><i class="fa-solid fa-futbol"></i><span>Senior kvinner</span></a>
     </div>
 
-    <a href="https://stampa.no/" target="_blank" rel="noopener">Terminliste alle lag</a>
+    <nav class="mm-sections" aria-label="Hovedmeny">
 
-    <a href="https://docs.google.com/spreadsheets/d/1it_kH0eqoNj_iWtIeUkTcDqjz8DXaOMXLRdcRhp6lSQ/edit?gid=64907490#gid=64907490" target="_blank" rel="noopener">Sportsplan</a>
-    <a href="https://docs.google.com/spreadsheets/d/14bv8U2WLV1JvhFFnL3SdKF4rJtcw6gGUNppMXrGMcOI/edit?gid=387839643#gid=387839643" target="_blank" rel="noopener">Utviklingstrapp</a>
-    <a href="/fotball-extra-vgs/">FotballXtra / VGS</a>
-    <a href="/landslagsskolen/">Landslagsskolen</a>
-    <a href="/fair-play/">Fair Play</a>
-    <a href="/uefa-playmakers/">UEFA Playmakers</a>
+      <div class="mm-section mm-anim">
+        <button type="button" class="mm-trigger" aria-expanded="false" aria-controls="mobSport">
+          <span>Sport</span><i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="mm-panel" id="mobSport">
+          <div class="mm-panel-inner">
+            <p class="mm-label">Lag</p>
+            <div class="mm-chips">
+              <a href="/lag/senior/">Senior</a>
+              <a href="/lag/ungdom/">Ungdom</a>
+              <a href="/lag/barn/">Barn</a>
+              <a href="/lag/wednesday-united/">Wednesday United</a>
+            </div>
+            <a href="https://stampa.no/" target="_blank" rel="noopener">Terminliste alle lag</a>
+            <a href="https://docs.google.com/spreadsheets/d/1it_kH0eqoNj_iWtIeUkTcDqjz8DXaOMXLRdcRhp6lSQ/edit?gid=64907490#gid=64907490" target="_blank" rel="noopener">Sportsplan</a>
+            <a href="https://docs.google.com/spreadsheets/d/14bv8U2WLV1JvhFFnL3SdKF4rJtcw6gGUNppMXrGMcOI/edit?gid=387839643#gid=387839643" target="_blank" rel="noopener">Utviklingstrapp</a>
+            <a href="/fotball-extra-vgs/">FotballXtra / VGS</a>
+            <a href="/landslagsskolen/">Landslagsskolen</a>
+            <a href="/fair-play/">Fair Play</a>
+            <a href="/uefa-playmakers/">UEFA Playmakers</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mm-section mm-anim">
+        <button type="button" class="mm-trigger" aria-expanded="false" aria-controls="mobMarked">
+          <span>Marked</span><i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="mm-panel" id="mobMarked">
+          <div class="mm-panel-inner">
+            <a href="/partnere/">Våre partnere</a>
+            <a href="https://readymag.website/u1483769256/4951792/" target="_blank" rel="noopener">Partnerbrosjyre</a>
+            <a href="/medlemsfordeler/">Medlemsfordeler</a>
+            <a href="/grasrotandelen/">Grasrotandelen</a>
+            <a href="/la-stampa-magasin/">La Stampa Magasinet</a>
+            <a href="/#stampaShopHome">La Stampa Shop</a>
+            <a href="/stampapodden/">Stampapodden</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mm-section mm-anim">
+        <button type="button" class="mm-trigger" aria-expanded="false" aria-controls="mobArr">
+          <span>Arrangement</span><i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="mm-panel" id="mobArr">
+          <div class="mm-panel-inner">
+            <a href="/tine-fotballskole/">Tine Fotballskole</a>
+            <a href="/thallaug-cup/">Thallaug Cup Lillehammer</a>
+            <a href="/kiwi-cup/">Kiwi Cup</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mm-section mm-anim">
+        <button type="button" class="mm-trigger" aria-expanded="false" aria-controls="mobOm">
+          <span>Om klubben</span><i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="mm-panel" id="mobOm">
+          <div class="mm-panel-inner">
+            <a href="/om-klubben/historie/">Historie</a>
+            <a href="/om-klubben/medlemskap/">Bli medlem</a>
+            <a href="/om-klubben/kontakt/">Kontakt</a>
+            <a href="/om-klubben/klubbhandbok/">Klubbhåndbok</a>
+            <a href="/om-klubben/klubbkolleksjon/">Klubbkolleksjon</a>
+            <a href="/om-klubben/forsikring/">Forsikring</a>
+            <a href="/om-klubben/dommere/">Dommere</a>
+            <a href="/om-klubben/politiattest/">Politiattest</a>
+            <a href="/baerekraft/">Bærekraft</a>
+            <a href="/om-klubben/varsling/">Varsling</a>
+            <a href="/om-klubben/minibuss/">Minibuss</a>
+            <a href="/om-klubben/fotballfondet/">Fotballfondet</a>
+            <a href="https://frivillighetsbanken.no/" target="_blank" rel="noopener">Frivillighetsbanken</a>
+          </div>
+        </div>
+      </div>
+
+    </nav>
+
+    <div class="mm-partners mm-anim">
+      <p class="mm-label">Hovedsamarbeidspartnere</p>
+      <div class="mm-partner-logos">
+        <img src="{% static 'images/other/cover-sponsor1_gold.png' %}" alt="SpareBank 1" loading="lazy">
+        <img src="{% static 'images/other/cover-sponsor2_gold.png' %}" alt="Hovedsamarbeidspartner" loading="lazy">
+      </div>
+      <img src="{% static 'images/logo/ProudToBeLily.png' %}" alt="Proud to be Lily" class="mm-signature" loading="lazy">
+    </div>
+
   </div>
 
-  <!-- MARKED (dropdown) -->
-  <button type="button" class="mob-dd-trigger" data-target="mobMarked">
-    Marked <i class="fa-regular fa-angle-down"></i>
-  </button>
-
-  <div class="mob-dd" id="mobMarked">
-    <a href="/partnere/">Våre partnere</a>
-    <a href="https://readymag.website/u1483769256/4951792/" target="_blank" rel="noopener">Partnerbrosjyre</a>
-    <a href="/medlemsfordeler/">Medlemsfordeler</a>
-    <a href="/grasrotandelen/">Grasrotandelen</a>
-    <a href="/la-stampa-magasin/">La Stampa Magasinet</a>
-    <a href="/#stampaShopHome">La Stampa Shop</a>
-    <a href="/stampapodden/">Stampapodden</a>
+  <div class="mm-foot">
+    <a href="/om-klubben/medlemskap/" class="mm-btn primary">Bli medlem <i class="fa-solid fa-arrow-right"></i></a>
   </div>
-
-  <!-- ARRANGEMENT (dropdown) -->
-  <button type="button" class="mob-dd-trigger" data-target="mobArr">
-    Arrangement <i class="fa-regular fa-angle-down"></i>
-  </button>
-
-  <div class="mob-dd" id="mobArr">
-    <a href="/tine-fotballskole/">Tine Fotballskole</a>
-    <a href="/thallaug-cup/">Thallaug Cup Lillehammer</a>
-    <a href="/kiwi-cup/">Kiwi Cup</a>
-  </div>
-
-  <!-- OM KLUBBEN (dropdown) -->
-  <button type="button" class="mob-dd-trigger" data-target="mobOm">
-    Om klubben <i class="fa-regular fa-angle-down"></i>
-  </button>
-
-  <div class="mob-dd" id="mobOm">
-    <a href="/om-klubben/historie/">Historie</a>
-    <a href="/om-klubben/medlemskap/">Bli medlem</a>
-    <a href="/om-klubben/kontakt/">Kontakt</a>
-    <a href="/om-klubben/klubbhandbok/">Klubbhåndbok</a>
-    <a href="/om-klubben/klubbkolleksjon/">Klubbkolleksjon</a>
-    <a href="/om-klubben/forsikring/">Forsikring</a>
-    <a href="/om-klubben/dommere/">Dommere</a>
-    <a href="/om-klubben/politiattest/">Politiattest</a>
-    <a href="/baerekraft/">Bærekraft</a>
-    <a href="/om-klubben/varsling/">Varsling</a>
-    <a href="/om-klubben/minibuss/">Minibuss</a>
-    <a href="/om-klubben/fotballfondet/">Fotballfondet</a>
-    <a href="https://frivillighetsbanken.no/" target="_blank" rel="noopener">Frivillighetsbanken</a>
-  </div>
-
-</div>
 </div>
 
 
@@ -128,44 +170,41 @@
       <img src="{% static 'images/logo/logo-8.png' %}" alt="" class="logo-image">
     </div>
 
-    <nav class="menu">
-        <div class="nav-item">
-        <a>Sport <i class="fa-regular fa-angle-down"></i></a>
-
-        <div class="dropdown">
-            <div class="dropdowns-item has-sub">
-            <a >
-                lag
-                <i class="fa-regular fa-angle-right"></i>
-            </a>
-
-            <div class="sub-dropdown">
-                <a href="/lag/senior/">Senior</a>
-                <a href="/lag/ungdom/">Ungdom</a>
-                <a href="/lag/barn/">barn</a>
-                <a href="/lag/wednesday-united/">wednesday united</a>
-            </div>
-            </div>
-            <a href="https://stampa.no/" target="_blank" rel="noopener">terminliste alle lag</a>
-            
-            
-            <a href="https://docs.google.com/spreadsheets/d/1it_kH0eqoNj_iWtIeUkTcDqjz8DXaOMXLRdcRhp6lSQ/edit?gid=64907490#gid=64907490">Sportsplan</a>
-            <a href="https://docs.google.com/spreadsheets/d/14bv8U2WLV1JvhFFnL3SdKF4rJtcw6gGUNppMXrGMcOI/edit?gid=387839643#gid=387839643">Utviklingstrapp</a>
-               <a href="/fotball-extra-vgs/" >
-                FotballXtra/VGS
-              </a>
-            <a href="/landslagsskolen/">Landslagsskolen</a>
-            <a href="/fair-play/">Fair Play</a>
-            <a href="/uefa-playmakers/">uefa playmakers</a>
-        </div>
-        </div>
-
+    <nav class="menu" aria-label="Hovedmeny">
 
       <div class="nav-item">
-        <a >Marked <i class="fa-regular fa-angle-down"></i></a>
+        <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">Sport <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown dd-wide">
+          <div class="dd-cols">
+            <div class="dd-col">
+              <p class="dd-label">Lag</p>
+              <a href="/lag/senior/">Senior</a>
+              <a href="/lag/ungdom/">Ungdom</a>
+              <a href="/lag/barn/">Barn</a>
+              <a href="/lag/wednesday-united/">Wednesday United</a>
+            </div>
+            <div class="dd-col">
+              <p class="dd-label">Sport</p>
+              <a href="https://docs.google.com/spreadsheets/d/1it_kH0eqoNj_iWtIeUkTcDqjz8DXaOMXLRdcRhp6lSQ/edit?gid=64907490#gid=64907490" target="_blank" rel="noopener">Sportsplan</a>
+              <a href="https://docs.google.com/spreadsheets/d/14bv8U2WLV1JvhFFnL3SdKF4rJtcw6gGUNppMXrGMcOI/edit?gid=387839643#gid=387839643" target="_blank" rel="noopener">Utviklingstrapp</a>
+              <a href="/fotball-extra-vgs/">FotballXtra / VGS</a>
+              <a href="/landslagsskolen/">Landslagsskolen</a>
+              <a href="/fair-play/">Fair Play</a>
+              <a href="/uefa-playmakers/">UEFA Playmakers</a>
+            </div>
+          </div>
+          <a href="https://stampa.no/" target="_blank" rel="noopener" class="dd-feature">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span><strong>Terminliste alle lag</strong><small>Kamper og resultater for alle LFK-lag</small></span>
+          </a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">Marked <i class="fa-solid fa-chevron-down"></i></button>
         <div class="dropdown">
           <a href="/partnere/">Våre partnere</a>
-          <a href="https://readymag.website/u1483769256/4951792/">Partnerbrosjyre</a>
+          <a href="https://readymag.website/u1483769256/4951792/" target="_blank" rel="noopener">Partnerbrosjyre</a>
           <a href="/medlemsfordeler/">Medlemsfordeler</a>
           <a href="/grasrotandelen/">Grasrotandelen</a>
           <a href="/la-stampa-magasin/">La Stampa Magasinet</a>
@@ -175,34 +214,44 @@
       </div>
 
       <div class="nav-item">
-        <a>Arrangement <i class="fa-regular fa-angle-down"></i></a>
+        <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">Arrangement <i class="fa-solid fa-chevron-down"></i></button>
         <div class="dropdown">
           <a href="/tine-fotballskole/">Tine Fotballskole</a>
           <a href="/thallaug-cup/">Thallaug Cup Lillehammer</a>
           <a href="/kiwi-cup/">Kiwi Cup</a>
-         
         </div>
       </div>
 
-     <div class="nav-item">
-      <a style="padding-right: 0;">Om klubben <i class="fa-regular fa-angle-down"></i></a>
-      <div class="dropdown" style="transform: translateX(-30px);">
-        <a href="/om-klubben/historie/">Historie</a>
-        <a href="/om-klubben/medlemskap/">Bli medlem</a>
-        <a href="/om-klubben/kontakt/">Kontakt</a>
-        <a href="/om-klubben/klubbhandbok/">Klubbhåndbok</a>
-        <a href="/om-klubben/klubbkolleksjon/">Klubbkolleksjon</a>
-        <!-- <a href="/om-klubben/varsling/">Varsling</a> -->
-        <a href="/om-klubben/forsikring/">Forsikring</a>
-        <a href="/om-klubben/dommere/">Dommere</a>
-        <a href="/om-klubben/politiattest/">Politiattest</a>
-        <a href="/baerekraft/">Bærekraft</a>
-        <a href="/om-klubben/varsling/">Varsling</a>
-        <a href="/om-klubben/minibuss/">Minibuss</a>
-        <a href="/om-klubben/fotballfondet/">Fotballfondet</a>
-        <a href="https://frivillighetsbanken.no/" target="_blank" rel="noopener">Frivillighetsbanken</a>
+      <div class="nav-item">
+        <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">Om klubben <i class="fa-solid fa-chevron-down"></i></button>
+        <div class="dropdown dd-wide dd-right">
+          <div class="dd-cols">
+            <div class="dd-col">
+              <p class="dd-label">Klubben</p>
+              <a href="/om-klubben/historie/">Historie</a>
+              <a href="/om-klubben/kontakt/">Kontakt</a>
+              <a href="/om-klubben/klubbhandbok/">Klubbhåndbok</a>
+              <a href="/om-klubben/klubbkolleksjon/">Klubbkolleksjon</a>
+              <a href="/baerekraft/">Bærekraft</a>
+              <a href="/om-klubben/fotballfondet/">Fotballfondet</a>
+            </div>
+            <div class="dd-col">
+              <p class="dd-label">Praktisk</p>
+              <a href="/om-klubben/forsikring/">Forsikring</a>
+              <a href="/om-klubben/dommere/">Dommere</a>
+              <a href="/om-klubben/politiattest/">Politiattest</a>
+              <a href="/om-klubben/varsling/">Varsling</a>
+              <a href="/om-klubben/minibuss/">Minibuss</a>
+              <a href="https://frivillighetsbanken.no/" target="_blank" rel="noopener">Frivillighetsbanken</a>
+            </div>
+          </div>
+          <a href="/om-klubben/medlemskap/" class="dd-feature">
+            <i class="fa-solid fa-user-plus"></i>
+            <span><strong>Bli medlem</strong><small>Bli en del av Lillehammer FK</small></span>
+          </a>
+        </div>
       </div>
-    </div>
+
     </nav>
   </div>
 </div>

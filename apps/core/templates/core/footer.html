@@ -1,101 +1,113 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static '/scss/footer.css' %}" type="text/css">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sniglet&display=swap" rel="stylesheet">
-
-<!-- footer -->
 
 <div class="footer">
-    <!-- <div class="top">
-        <h2>Lillehammer fotball klubb <br>	&#169; {% now "Y" %}</h2> 
-    </div> -->
-<div class="bottom">
 
-  <!-- SPORT -->
-  <div class="links">
-    <strong>Sport</strong>
-
-    <a href="{% url 'senior' %}">Lag</a>
-    <a href="{% url 'senior' %}" class="sub-item">– Senior</a>
-    <a href="{% url 'ungdom' %}" class="sub-item">– Ungdom</a>
-    <a href="{% url 'barn' %}" class="sub-item">– Barn</a>
-    <a href="{% url 'wednesday_united' %}" class="sub-item">– Wednesday United</a>
-    <a href="https://stampa.no/" target="_blank" rel="noopener">Terminliste alle lag</a>
-
-    <a href="{% url 'uefa_playmakers' %}">UEFA Playmakers</a>
-    <a href="https://docs.google.com/spreadsheets/d/1it_kH0eqoNj_iWtIeUkTcDqjz8DXaOMXLRdcRhp6lSQ/edit?gid=64907490#gid=64907490" target="_blank">Sportsplan</a>
-    <a href="https://docs.google.com/spreadsheets/d/14bv8U2WLV1JvhFFnL3SdKF4rJtcw6gGUNppMXrGMcOI/edit?gid=387839643#gid=387839643" target="_blank">Utviklingstrapp</a>
-    <a href="{% url 'landslagsskolen' %}">Landslagsskolen</a>
-    <a href="{% url 'fair_play' %}">Fair Play</a>
+  <!-- Club -->
+  <div class="ft-top">
+    <a href="/" class="ft-club">
+      <img loading="lazy" decoding="async" src="{% static 'images/logo/logo-8.png' %}" alt="">
+      <span>
+        <strong>Lillehammer FK</strong>
+        <small>Lillehammer Fotballklubb · Siden 1911</small>
+      </span>
+    </a>
   </div>
 
-  <!-- MARKED -->
-  <div class="links">
-    <strong>Marked</strong>
+  <!-- Contact + link groups -->
+  <div class="ft-main">
 
-    <a href="{% url 'vare_samarbeidspartnere' %}">Våre samarbeidspartnere</a>
-    <a href="{% url 'baerekraft' %}">Bærekraft</a>
-    <a href="{% url 'medlemsfordeler' %}">Medlemsfordeler</a>
-    <a href="{% url 'grasrotandelen' %}">Grasrotandelen</a>
-    <a href="{% url 'la_stampa_magasin' %}">La Stampa Magasinet</a>
-    <a href="#">La Stampa Shop</a>
-    <a href="{% url 'stampapodden' %}">Stampapodden</a>
-    <a href="https://readymag.website/u1483769256/4951792/" target="_blank">Partnerbrosjyre</a>
+    <div class="ft-contact">
+      <p class="ft-heading">Kontakt</p>
+      <address>
+        Lillehammer Fotballklubb<br>
+        Postboks 11<br>
+        2601 Lillehammer
+      </address>
+      <p class="ft-org">Org.nr. 981 623 916</p>
+      <ul class="ft-contact-links">
+        <li><a href="{% url 'kontakt' %}">Send oss en henvendelse</a></li>
+        <li><a href="{% url 'blog' %}">Nyheter</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <p class="ft-heading">Sport</p>
+      <ul>
+        <li><a href="{% url 'senior' %}">Senior</a></li>
+        <li><a href="{% url 'ungdom' %}">Ungdom</a></li>
+        <li><a href="{% url 'barn' %}">Barn</a></li>
+        <li><a href="{% url 'wednesday_united' %}">Wednesday United</a></li>
+        <li><a href="https://stampa.no/" target="_blank" rel="noopener">Terminliste alle lag</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/1it_kH0eqoNj_iWtIeUkTcDqjz8DXaOMXLRdcRhp6lSQ/edit?gid=64907490#gid=64907490" target="_blank" rel="noopener">Sportsplan</a></li>
+        <li><a href="https://docs.google.com/spreadsheets/d/14bv8U2WLV1JvhFFnL3SdKF4rJtcw6gGUNppMXrGMcOI/edit?gid=387839643#gid=387839643" target="_blank" rel="noopener">Utviklingstrapp</a></li>
+        <li><a href="{% url 'xtravgs' %}">FotballXtra / VGS</a></li>
+        <li><a href="{% url 'landslagsskolen' %}">Landslagsskolen</a></li>
+        <li><a href="{% url 'fair_play' %}">Fair Play</a></li>
+        <li><a href="{% url 'uefa_playmakers' %}">UEFA Playmakers</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <p class="ft-heading">Marked</p>
+      <ul>
+        <li><a href="{% url 'vare_samarbeidspartnere' %}">Våre samarbeidspartnere</a></li>
+        <li><a href="https://readymag.website/u1483769256/4951792/" target="_blank" rel="noopener">Partnerbrosjyre</a></li>
+        <li><a href="{% url 'medlemsfordeler' %}">Medlemsfordeler</a></li>
+        <li><a href="{% url 'grasrotandelen' %}">Grasrotandelen</a></li>
+        <li><a href="{% url 'baerekraft' %}">Bærekraft</a></li>
+        <li><a href="{% url 'la_stampa_magasin' %}">La Stampa Magasinet</a></li>
+        <li><a href="/#stampaShopHome">La Stampa Shop</a></li>
+        <li><a href="{% url 'stampapodden' %}">Stampapodden</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <p class="ft-heading">Arrangement</p>
+      <ul>
+        <li><a href="{% url 'tine_fotballskole' %}">Tine Fotballskole</a></li>
+        <li><a href="{% url 'thallaug_cup' %}">Thallaug Cup Lillehammer</a></li>
+        <li><a href="{% url 'kiwi_cup' %}">Kiwi Cup</a></li>
+      </ul>
+    </div>
+
+    <div class="ft-col">
+      <p class="ft-heading">Om klubben</p>
+      <ul>
+        <li><a href="{% url 'historie' %}">Historie</a></li>
+        <li><a href="{% url 'medlemskap' %}">Medlemskap</a></li>
+        <li><a href="{% url 'klubbhandbok' %}">Klubbhåndbok</a></li>
+        <li><a href="{% url 'klubbkolleksjon' %}">Klubbkolleksjon</a></li>
+        <li><a href="{% url 'forsikring' %}">Forsikring</a></li>
+        <li><a href="{% url 'dommere' %}">Dommere</a></li>
+        <li><a href="{% url 'politiattest' %}">Politiattest</a></li>
+        <li><a href="/om-klubben/varsling/">Varsling</a></li>
+        <li><a href="{% url 'minibuss' %}">Minibuss</a></li>
+        <li><a href="{% url 'fotballfondet' %}">Fotballfondet</a></li>
+        <li><a href="https://frivillighetsbanken.no/" target="_blank" rel="noopener">Frivillighetsbanken</a></li>
+      </ul>
+    </div>
+
   </div>
 
-  <!-- ARRANGEMENT -->
-  <div class="links">
-    <strong>Arrangement</strong>
-
-    <a href="{% url 'tine_fotballskole' %}">Tine Fotballskole</a>
-    <a href="{% url 'thallaug_cup' %}">Thallaug Cup Lillehammer</a>
-    <a href="{% url 'kiwi_cup' %}">Kiwi Cup</a>
+  <!-- Main partners -->
+  <div class="ft-partners">
+    <p class="ft-heading">Hovedsamarbeidspartnere</p>
+    <div class="ft-partner-logos">
+      <img loading="lazy" decoding="async" src="{% static 'images/other/cover-sponsor1_gold.png' %}" alt="SpareBank 1 Gudbrandsdal">
+      <img loading="lazy" decoding="async" src="{% static 'images/other/cover-sponsor2_gold.png' %}" alt="Anlegg Øst">
+    </div>
+    <a href="{% url 'vare_samarbeidspartnere' %}" class="ft-more">Alle samarbeidspartnere</a>
   </div>
 
-  <!-- OM KLUBBEN -->
-  <div class="links">
-    <strong>Om klubben</strong>
-
-    <a href="{% url 'historie' %}">Historie</a>
-    <a href="{% url 'klubbhandbok' %}">Klubbhåndbok</a>
-    <a href="{% url 'klubbkolleksjon' %}">Klubbkolleksjon</a>
-    <a href="{% url 'medlemskap' %}">Medlemskap</a>
-    <a href="{% url 'kontakt' %}">Kontakt</a>
-    <!-- <a href="{% url 'varsling' %}">Varsling</a> -->
-    <a href="{% url 'forsikring' %}">Forsikring</a>
-    <a href="{% url 'dommere' %}">Dommere</a>
-    <a href="{% url 'politiattest' %}">Politiattest</a>
-      <a href="/om-klubben/varsling/">Varsling</a>
-    <a href="{% url 'minibuss' %}">Minibuss</a>
-    <a href="{% url 'fotballfondet' %}">Fotballfondet</a>
-    <a href="https://frivillighetsbanken.no/" target="_blank" rel="noopener">Frivillighetsbanken</a>
+  <!-- Legal -->
+  <div class="ft-bottom">
+    <p>© {% now "Y" %} Lillehammer Fotballklubb. Alle rettigheter reservert.</p>
+    <ul>
+      <li>Personvernerklæring</li>
+      <li>Laget med <span class="ft-heart" role="img" aria-label="kjærlighet">&hearts;</span> av <a href="https://webiser.no/" target="_blank" rel="noopener">Webiser</a></li>
+    </ul>
   </div>
-
-</div>
-
-<div class="rights">
-  
-  <div class="logos">
-        <img loading="lazy" decoding="async" src="{% static 'images/other/cover-sponsor1_gold.png' %}" alt="">
-      <img loading="lazy" decoding="async" src="{% static 'images/other/cover-sponsor2_gold.png' %}" alt="" class="right-img">
-  </div>
-  
-  <div>
-    <p>Lillehammer Fotballklubb</p>
-    <p>Postboks 11, 2601 Lillehammer</p>
-    <p>Org.nr: 981623916</p>
-    <p>Personvernerklæring</p>
-    <p>Alle rettigheter © {% now "Y" %} Lillehammer Fotballklubb (LFK). Nettside laget av <a href="https://webiser.no/" style="color: lightgray; text-decoration: none;">Webiser AS</a></p>
-  </div>
-
-</div>
 
 </div>

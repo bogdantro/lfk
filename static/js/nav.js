@@ -26,80 +26,144 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-  const triggers = document.querySelectorAll("#sidebar .mob-dd-trigger");
+  const sheet = document.getElementById("sidebar");
+  if (!sheet) return;
 
-  triggers.forEach(btn => {
+  const sections = sheet.querySelectorAll(".mm-section");
 
-    btn.addEventListener("click", function (e) {
+  function setOpen(section, open) {
+    const btn = section.querySelector(".mm-trigger");
+    section.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  }
 
-      e.preventDefault();
-
-      const targetId = btn.dataset.target;
-      const panel = document.getElementById(targetId);
-      if (!panel) return;
-
-      const isSub = btn.classList.contains("sub");
-      const isOpen = panel.classList.contains("open");
-
-      // MAIN DROPDOWNS (Sport / Marked / etc)
-      if (!isSub) {
-
-        document.querySelectorAll("#sidebar > .mob-dd").forEach(dd => {
-          dd.classList.remove("open");
-        });
-
-        document.querySelectorAll("#sidebar > .mob-dd-trigger").forEach(tr => {
-          tr.classList.remove("open");
-        });
-
-      }
-
-      // SUB DROPDOWNS (Lag)
-      if (isSub) {
-
-        const parent = btn.closest(".mob-dd");
-
-        parent.querySelectorAll(".mob-dd.sub").forEach(dd => {
-          dd.classList.remove("open");
-        });
-
-        parent.querySelectorAll(".mob-dd-trigger.sub").forEach(tr => {
-          tr.classList.remove("open");
-        });
-
-      }
-
-      if (!isOpen) {
-        panel.classList.add("open");
-        btn.classList.add("open");
-      }
-
+  // Accordion: one section open at a time
+  sections.forEach(function (section) {
+    section.querySelector(".mm-trigger").addEventListener("click", function () {
+      const willOpen = !section.classList.contains("open");
+      sections.forEach(function (s) { setOpen(s, false); });
+      if (willOpen) setOpen(section, true);
     });
-
   });
+
+  // Highlight the current page and open its section
+  const here = window.location.pathname.replace(/\/+$/, "") || "/";
+  sheet.querySelectorAll("a[href^='/']").forEach(function (link) {
+    const path = link.getAttribute("href").split("#")[0].replace(/\/+$/, "") || "/";
+    if (path === here && path !== "/") {
+      link.classList.add("is-current");
+      link.setAttribute("aria-current", "page");
+      const section = link.closest(".mm-section");
+      if (section) setOpen(section, true);
+    }
+  });
+
+  // Close when following an in-page link (e.g. /#stampaShopHome)
+  sheet.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (sheet.classList.contains("active")) menu();
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && sheet.classList.contains("active")) menu();
+  });
+
+  const hamburger = document.getElementById("hamburger");
+  if (hamburger) {
+    hamburger.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); menu(); }
+    });
+  }
 
 });
 
 /////////// MOBILE JAVASCRIPT
 // MENU
 function menu(){
-  const sidebar = document.getElementById('sidebar');
+  const sheet = document.getElementById('sidebar');
   const navbar = document.getElementById('mobileNav');
   const hamburger = document.getElementById('hamburger');
-  const dropdown = document.getElementById('sidebarServDrop');
-  const body = document.getElementsByTagName('body')[0];
+  const root = document.documentElement;
+  if (!sheet) return;
 
-  if (window.getComputedStyle(sidebar,null).getPropertyValue("opacity") == '0'){
-    navbar.classList.add('menu');
-    hamburger.classList.add('click');
-    sidebar.classList.add('active');
-    body.style.overflowY = 'hidden';
-    if (dropdown) dropdown.classList.remove('active');
-  } else{
-    navbar.classList.remove('menu');
-    hamburger.classList.remove('click');
-    sidebar.classList.remove('active');
-    body.style.overflowY = 'auto';
+  const open = !sheet.classList.contains('active');
+
+  sheet.classList.toggle('active', open);
+  sheet.setAttribute('aria-hidden', open ? 'false' : 'true');
+  if (navbar) navbar.classList.toggle('menu', open);
+  if (hamburger) {
+    hamburger.classList.toggle('click', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  // Lock page scroll behind the menu
+  root.classList.toggle('mm-locked', open);
+  document.body.classList.toggle('mm-locked', open);
+
+  if (open) {
+    const close = document.getElementById('mmClose');
+    if (close) setTimeout(function () { close.focus({ preventScroll: true }); }, 50);
+  } else if (hamburger) {
+    hamburger.focus({ preventScroll: true });
   }
 };
 
+/////////// DESKTOP DROPDOWNS
+document.addEventListener("DOMContentLoaded", function () {
+
+  const items = document.querySelectorAll("#desNav .nav-item");
+  if (!items.length) return;
+
+  const here = window.location.pathname.replace(/\/+$/, "") || "/";
+
+  items.forEach(function (item) {
+    const trigger = item.querySelector(".nav-trigger");
+    if (!trigger) return;
+
+    function setExpanded(open) {
+      trigger.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    item.addEventListener("mouseenter", function () { item.classList.remove("is-dismissed"); setExpanded(true); });
+    item.addEventListener("mouseleave", function () { item.classList.remove("is-dismissed"); setExpanded(false); });
+    item.addEventListener("focusin", function () { item.classList.remove("is-dismissed"); setExpanded(true); });
+    item.addEventListener("focusout", function (e) {
+      if (!item.contains(e.relatedTarget)) setExpanded(false);
+    });
+
+    // Click toggles for touch screens / keyboard users
+    trigger.addEventListener("click", function () {
+      const open = item.classList.toggle("is-open");
+      if (!open) item.classList.add("is-dismissed");
+      setExpanded(open);
+    });
+
+    item.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        item.classList.remove("is-open");
+        item.classList.add("is-dismissed");
+        setExpanded(false);
+        trigger.focus();
+      }
+    });
+
+    // Mark the section of the current page
+    item.querySelectorAll(".dropdown a[href^='/']").forEach(function (link) {
+      const path = link.getAttribute("href").split("#")[0].replace(/\/+$/, "") || "/";
+      if (path === here && path !== "/") {
+        link.classList.add("is-current");
+        link.setAttribute("aria-current", "page");
+        item.classList.add("is-current");
+      }
+    });
+  });
+
+  // Close click-opened panels when clicking elsewhere
+  document.addEventListener("click", function (e) {
+    items.forEach(function (item) {
+      if (!item.contains(e.target)) item.classList.remove("is-open");
+    });
+  });
+
+});

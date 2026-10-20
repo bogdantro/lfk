@@ -1,0 +1,265 @@
+// ============================================================
+// DESKTOP NAV DROPDOWNS, included from nav.scss
+// ============================================================
+$lfkgold: #b6a265;
+$navy: #141a3a;
+$line: #e6e8ef;
+$soft: #f4f5f8;
+$ease: cubic-bezier(.2, .7, .2, 1);
+
+@media only screen and (min-device-width: 1140px){
+
+  #desNav .menu{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 100%;
+
+    .nav-item{
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    // Top-level trigger
+    .nav-trigger{
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      height: 100%;
+      padding: 0 14px;
+      background: none;
+      border: 0;
+      color: $navy;
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 17px;
+      cursor: pointer;
+
+      // Neutralise the global button hover/focus scaling
+      &:hover, &:focus{
+        filter: none;
+        transform: none;
+        outline: none;
+      }
+      &:focus-visible{
+        outline: 2px solid $lfkgold;
+        outline-offset: -6px;
+        border-radius: 6px;
+      }
+
+      i{
+        font-size: 10px;
+        transition: transform .25s $ease;
+      }
+
+      // Gold underline that grows when open
+      &::after{
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 10px;
+        height: 2px;
+        background: $lfkgold;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform .25s $ease;
+      }
+    }
+
+    .nav-item.is-current > .nav-trigger::after{
+      transform: scaleX(1);
+    }
+
+    // Panel
+    .dropdown{
+      position: absolute;
+      top: calc(100% - 4px);
+      left: 0;
+      min-width: 250px;
+      padding: 10px;
+      background: white;
+      border: 1px solid $line;
+      border-top: 3px solid $lfkgold;
+      border-radius: 4px 4px 10px 10px;
+      box-shadow: 0 18px 40px rgba($navy, .12), 0 2px 6px rgba($navy, .05);
+      z-index: 999;
+
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(6px);
+      pointer-events: none;
+      // Small delay on close so the panel doesn't vanish when the mouse slips
+      transition: opacity .18s ease .08s, transform .18s ease .08s, visibility 0s linear .26s;
+
+      &.dd-wide{
+        min-width: 470px;
+      }
+      &.dd-right{
+        left: auto;
+        right: 0;
+      }
+
+      // Links
+      a{
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 9px 12px;
+        border-radius: 6px;
+        color: $navy;
+        font-family: "Inter", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background .15s, color .15s;
+
+        // Arrow that slides in on hover
+        &::before{
+          content: "\2192";
+          position: absolute;
+          right: 12px;
+          opacity: 0;
+          transform: translateX(-4px);
+          color: $lfkgold;
+          transition: opacity .15s, transform .15s;
+        }
+
+        &:hover, &:focus-visible{
+          background: $soft;
+          color: $navy;
+          text-decoration: none;
+          outline: none;
+          padding-right: 34px;
+
+          &::before{
+            opacity: 1;
+            transform: none;
+          }
+        }
+
+        &.is-current{
+          color: #8c7a42;
+          font-weight: 600;
+
+          &::after{
+            content: "";
+            width: 6px;
+            height: 6px;
+            margin-left: 8px;
+            border-radius: 50%;
+            background: $lfkgold;
+          }
+        }
+      }
+
+      // Links that leave the site
+      a[target="_blank"]:not(.dd-feature)::after{
+        content: "\2197";
+        margin-left: 6px;
+        font-size: 12px;
+        color: rgba($navy, .45);
+      }
+    }
+
+    .dd-cols{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+
+    .dd-col + .dd-col{
+      border-left: 1px solid $line;
+      padding-left: 6px;
+    }
+
+    .dd-label{
+      margin: 6px 12px 6px;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: $lfkgold;
+    }
+
+    // Highlighted row at the bottom of a panel
+    .dropdown a.dd-feature{
+      margin-top: 8px;
+      padding: 12px;
+      gap: 14px;
+      white-space: normal;
+      background: $soft;
+      border: 1px solid $line;
+
+      > i{
+        flex: 0 0 auto;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: $navy;
+        color: $lfkgold;
+        font-size: 15px;
+      }
+
+      strong{
+        display: block;
+        font-weight: 700;
+        font-size: 15px;
+        color: $navy;
+      }
+
+      small{
+        display: block;
+        margin-top: 2px;
+        font-size: 13px;
+        font-weight: 400;
+        color: rgba($navy, .6);
+      }
+
+      &:hover{
+        background: white;
+        border-color: $lfkgold;
+      }
+    }
+
+    // Open state (hover or keyboard focus)
+    .nav-item:hover,
+    .nav-item:focus-within,
+    .nav-item.is-open{
+      > .nav-trigger{
+        i{ transform: rotate(180deg); }
+        &::after{ transform: scaleX(1); }
+      }
+
+      > .dropdown{
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        pointer-events: auto;
+        transition: opacity .18s ease, transform .22s $ease, visibility 0s;
+      }
+    }
+
+    // Escape closes the panel even while the mouse is over it
+    .nav-item.is-dismissed > .dropdown{
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  #desNav .menu .dropdown,
+  #desNav .menu .nav-trigger i,
+  #desNav .menu .nav-trigger::after{
+    transition: none !important;
+  }
+}

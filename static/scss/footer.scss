@@ -1,226 +1,306 @@
-$black: #1F1F1F;
-$white: rgb(247,247,247);
-$primBtn: #141a3a;
-$txt: #141a3a;
-$lfkgold: #B6A265;
+$lfkgold: #b6a265;
+$navy: #141a3a;
+$lightblue: #cbdde7;
+$line: rgba(203, 221, 231, .12);
+$muted: rgba(203, 221, 231, .62);
+$text: rgba(203, 221, 231, .88);
 
+// Same side padding as the navbar, so the footer lines up with it
+$gutter-mobile: 20px;
+$gutter-desktop: 50px;
 
+// ============================================================
+// FOOTER — mobile first
+// ============================================================
+.footer{
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  margin: 0;
+  padding: 0 $gutter-mobile;
+  background: $navy;
+  color: $text;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
 
-/* ✅ MOBILE / TABLET (default) */
-@media only screen and (min-width: 0px) and (max-width: 1139px){
+  a{
+    color: $text;
+    text-decoration: none;
+    transition: color .15s;
 
-    .footer{
-    width: 100%;
-    height: max-content;
-    padding: 50px 20px 35px;
-    background: #141a3a;
-    z-index: 1000;
-    position: relative;
+    &:hover{
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  a:focus-visible{
+    outline: 2px solid $lfkgold;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ul{
+    list-style: none;
     margin: 0;
-    border-top: 1px solid lightgray;
+    padding: 0;
+  }
 
-    .bottom{
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
-        margin-top: 25px;
-        max-width: 100%;
+  p{ margin: 0; }
+
+  // Small uppercase section headings
+  .ft-heading{
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  // ---------- Top: club ----------
+  // Desktop only; mobile starts straight at the contact block
+  .ft-top{
+    display: none;
+    padding: 44px 0 36px;
+    border-bottom: 1px solid $line;
+  }
+
+  .ft-club{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: white;
+
+    &:hover{ color: white; }
+
+    img{
+      width: 44px;
+      height: auto;
     }
 
-    .links{
-        width: 100%;
-
-        strong{
-        color: $lfkgold;
-        font-family: 'Stampa', "Roboto", sans-serif;
-        font-size: 18px;
-        margin-bottom: 10px;
-        font-weight: 500;
-        display: block;
-        }
-
-        a{
-        color: #cbdde7;
-        font-size: 16px;
-        font-weight: 500;
-        margin: 0;
-        margin-block: 8px;
-        width: 100%;
-        display: block;
-        font-family: 'Stampa', "Roboto", sans-serif;
-
-        &.sub-item{
-            margin-left: 14px;
-            opacity: 0.75;
-        }
-        }
+    strong{
+      display: block;
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-weight: 400;
+      font-size: 22px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      line-height: 1.1;
     }
 
-    /* If you ever add .social-icons in footer HTML, keep it clean on mobile */
-    .social-icons{
-        position: static;
-        transform: none;
-        width: 100%;
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-        margin-top: 10px;
+    small{
+      display: block;
+      margin-top: 4px;
+      font-size: 13px;
+      color: $muted;
+    }
+  }
 
-        i{
-        flex: 0 0 calc(50% - 10px);
-        width: auto;
-        max-width: none;
-        font-size: 22px;
-        padding: 18px;
-        margin: 0;
-        background: rgba(255, 255, 255, 0.16);
-        border-radius: 6px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        }
+  // ---------- Main: contact + links ----------
+  .ft-main{
+    padding: 44px 0 36px;
+  }
+
+  .ft-contact{
+    padding-bottom: 28px;
+
+    address{
+      margin: 16px 0 10px;
+      font-style: normal;
+      line-height: 1.7;
     }
 
-    .rights{
-        text-align: left;
-        margin-top: 25px;
-        .logos{
-            display: none;
-        }
-        p{
-        text-decoration: none;
-        color: #cbdde7;
-        font-size: 14px;
-        opacity: 0.85;
-        margin: 6px 0;
-        line-height: 1.35;
-        word-break: break-word;
-        }
+    .ft-org{
+      font-size: 14px;
+      color: $muted;
     }
+  }
+
+  .ft-contact-links{
+    margin-top: 18px;
+
+    li + li{ margin-top: 8px; }
+
+    a{
+      color: $lfkgold;
+      font-weight: 600;
+      font-size: 14px;
+
+      &::after{
+        content: "\2192";
+        margin-left: 8px;
+        display: inline-block;
+        transition: transform .15s;
+      }
+
+      &:hover{
+        color: #cdbf91;
+        &::after{ transform: translateX(3px); }
+      }
+    }
+  }
+
+  // Link groups, two columns on mobile
+  .ft-main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 20px;
+  }
+
+  .ft-contact{
+    grid-column: 1 / -1;
+  }
+
+  .ft-col{
+    .ft-heading{ margin-bottom: 12px; }
+
+    li a{
+      display: inline-block;
+      padding: 5px 0;
+      line-height: 1.4;
+
+      // Links that leave the site
+      &[target="_blank"]::after{
+        content: "\2197";
+        margin-left: 5px;
+        font-size: 11px;
+        color: $muted;
+      }
+    }
+  }
+
+  // ---------- Partners ----------
+  .ft-partners{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 32px 0;    border-top: 1px solid $line;
+  }
+
+  .ft-partner-logos{
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    img{
+      height: 34px;
+      width: auto;
+    }
+  }
+
+  .ft-more{
+    font-size: 14px;
+    font-weight: 600;
+
+    &::after{
+      content: "\2192";
+      margin-left: 8px;
+    }
+  }
+
+  // ---------- Legal ----------
+  .ft-bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px 0 30px;
+    border-top: 1px solid $line;
+    font-size: 13px;
+    color: $muted;
+
+    ul{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 22px;
     }
 
+    a{
+      color: $text;
+      &:hover{ color: white; }
+    }
+
+    .ft-heart{
+      display: inline-block;
+      margin: 0 2px;
+      color: $lfkgold;
+      transition: transform .2s;
+    }
+
+    li:hover .ft-heart{ transform: scale(1.2); }
+  }
 }
 
-/* ✅ optional: 2-column links on medium screens (still below 1140px) */
+// ---------- Tablet (still the mobile navbar, so same 20px gutter) ----------
 @media only screen and (min-width: 600px) and (max-width: 1139px){
   .footer{
-    padding: 60px 35px 40px;
+    .ft-partners{
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
 
-    .bottom{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
+      .ft-more{ margin-left: auto; }
     }
 
-    .rights{
-      text-align: left;
-       .logos{
-            display: none;
-        }
+    .ft-bottom{
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }
 
-@media only screen and (min-device-width: 1140px) {
- .footer{
-    // background: linear-gradient(to bottom right, #191D3A, #191D3A, #B6A265);
-    width: 100%;
-    height: max-content;
-    padding: 70px 50px;
-    padding-bottom: 50px;
-    background: #141a3a;
-    z-index: 1000;
-    position: relative;
-    .rights{
-        text-align: right;
-        margin-top: 25px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        width: 100%;
-         .logos{
-            display: flex;
-            flex-direction: row;
-            align-items: flex-end;
-            gap: 25px;
-            transform: translateY(-10px);
-            img{
-                width: 110px;
-                height: auto;
-                object-fit: contain;
-                transform: translateY(-10px);
-                &.right-img{
-                    transform: translateY(0);
-                }
-            }
-        }
-        p{
-            text-decoration: none;
-            color: #cbdde7;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-    }
-    .bottom{
-        display: flex;
-        justify-content: space-between;
-        gap: 50px;
-        max-width: max-content;
-        margin-top: 45px;
-        position: relative;
-        .social-icons{
-            width: 250px;
-            position: absolute;
-            right: -120%;
-            top: 50%;
-            transform: translateY(-45%);
-            display: flex;
-            flex-wrap: wrap;
-            i{
-                flex: 0 0 50%; 
-                color: white;
-                width: 50%;
-                font-size: 28px;
-                max-width: 100px;
-                background: rgba(255, 255, 255, 0.16);
-                border-radius: 6px;
-                margin: 10px;
-                padding: 25px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                cursor: pointer;
-                transition: .3s;
-                &:hover{
-                    transform: scale(1.05);
-                }
-            }
-        }
-        .links{
-            strong{
-                color: #cbdde7;
-                color: $lfkgold;
-                font-family: 'Stampa', "Roboto", sans-serif;
-                font-size: 19px;
-                margin-bottom: 15px;
-                font-weight: 500;
+// ---------- Desktop ----------
+@media only screen and (min-device-width: 1140px){
+  .footer{
+    padding: 0 $gutter-desktop;
 
-            }
-            a{
-                color: #cbdde7;
-                font-size: 16px;
-                font-weight: 500;
-                margin: 2px;
-                margin-block: 6px;
-                width: 100%;
-                display: block;
-                font-family: 'Stampa', "Roboto", sans-serif;
-                &.sub-item{
-                    margin-left: 10px;
-                }
-            }
-        }
+    .ft-top{
+      display: flex;
+      padding: 56px 0 44px;
     }
- }
+
+    .ft-club{
+      img{ width: 52px; }
+      strong{ font-size: 26px; }
+    }
+
+    .ft-main{
+      display: grid;
+      grid-template-columns: 1.3fr repeat(4, 1fr);
+      gap: 40px;
+      padding: 52px 0 48px;
+    }
+
+    .ft-contact{
+      grid-column: auto;
+      padding: 0;
+    }
+
+    .ft-col .ft-heading{ margin-bottom: 18px; }
+
+    .ft-partners{
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      padding: 28px 0;
+      border-top: 1px solid $line;
+
+      .ft-more{ margin-left: auto; }
+    }
+
+    .ft-bottom{
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0 32px;
+
+      // Keep the credit clear of the fixed back-to-top button
+      ul{ margin-right: 50px; }
+    }
+  }
 }
 
+@media (prefers-reduced-motion: reduce){
+  .footer *{ transition: none !important; }
+}
