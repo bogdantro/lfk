@@ -155,9 +155,6 @@ def klubbkolleksjon(request):
 def medlemskap(request):
     return render(request, 'pages/about/medlemskap.html')
 
-def styret(request):
-    return render(request, 'pages/about/styret.html')
-
 def kontakt(request):
     return render(request, 'pages/about/kontakt.html')
 
@@ -181,9 +178,6 @@ def minibuss(request):
 
 def fotballfondet(request):
     return render(request, 'pages/about/fotballfondet.html')
-
-def frivillighetsbanken(request):
-    return render(request, 'pages/about/frivillighetsbanken.html')
 
 
 # def contact(request):

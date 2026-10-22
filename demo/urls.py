@@ -11,6 +11,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views
 from django.contrib.sitemaps.views import sitemap
+from django.views.generic import RedirectView
 
 from apps.userprofile.urls import *
 from apps.core.sitemaps import StaticViewSitemap, BlogSitemap
@@ -67,7 +68,6 @@ urlpatterns = [
     path('om-klubben/klubbhandbok/', klubbhandbok, name='klubbhandbok'),
     path('om-klubben/klubbkolleksjon/', klubbkolleksjon, name='klubbkolleksjon'),
     path('om-klubben/medlemskap/', medlemskap, name='medlemskap'),
-    path('om-klubben/styret/', styret, name='styret'),
     path('om-klubben/kontakt/', kontakt, name='kontakt'),
     path('om-klubben/varsling/', varsling, name='varsling'),
     path('om-klubben/forsikring/', forsikring, name='forsikring'),
@@ -75,7 +75,11 @@ urlpatterns = [
     path('om-klubben/politiattest/', politiattest, name='politiattest'),
     path('om-klubben/minibuss/', minibuss, name='minibuss'),
     path('om-klubben/fotballfondet/', fotballfondet, name='fotballfondet'),
-    path('om-klubben/frivillighetsbanken/', frivillighetsbanken, name='frivillighetsbanken'),
+
+    # Pages that were never built but were listed in the sitemap – permanent
+    # redirects so Google and old links land somewhere useful instead of an error page.
+    path('om-klubben/styret/', RedirectView.as_view(pattern_name='kontakt', permanent=True)),
+    path('om-klubben/frivillighetsbanken/', RedirectView.as_view(url='https://frivillighetsbanken.no/', permanent=True)),
 
 
     

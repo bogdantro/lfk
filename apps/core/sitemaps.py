@@ -44,7 +44,6 @@ class StaticViewSitemap(Sitemap):
             "klubbhandbok",
             "klubbkolleksjon",
             "medlemskap",
-            "styret",
             "kontakt",
             "varsling",
             "forsikring",
@@ -52,7 +51,6 @@ class StaticViewSitemap(Sitemap):
             "politiattest",
             "minibuss",
             "fotballfondet",
-            "frivillighetsbanken",
 
             # Blog overview
             "blog",
