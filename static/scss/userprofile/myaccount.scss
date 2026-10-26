@@ -128,3 +128,83 @@ $txt: #141a3a;
   }
 
 }
+
+// ------------------------------------------------------------
+// Latest news with edit buttons, right under "Artikler"
+// ------------------------------------------------------------
+#dashboard .latest-posts{
+  margin-top: 22px;
+  padding: 22px;
+  background: rgba(246,246,246, 0.55);
+  border: 1px solid rgba(27, 44, 101, 0.18);
+  border-radius: 6px;
+  color: $txt;
+  font-family: "Inter", "Roboto", sans-serif;
+
+  .latest-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+
+    h3{
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 28px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    a{
+      color: $txt;
+      font-size: 16px;
+    }
+  }
+
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(27, 44, 101, 0.12);
+
+      &.empty{ display: block; }
+    }
+  }
+
+  .info{
+    min-width: 0;
+
+    .title{
+      font-size: 17px;
+      font-weight: 600;
+      margin: 0 0 4px;
+    }
+
+    .meta{
+      font-size: 14px;
+      opacity: .75;
+      margin: 0;
+    }
+  }
+
+  .edit{
+    flex-shrink: 0;
+    padding: 9px 16px;
+    border-radius: 4px;
+    background: $primBtn;
+    color: white;
+    text-decoration: none;
+    font-family: 'Stampa', "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+  }
+}

@@ -62,6 +62,27 @@
 
     </div>
 
+    <div class="latest-posts">
+        <div class="latest-head">
+            <h3>Siste nyheter</h3>
+            <a href="{% url 'dashboard_blog_list' %}">Alle nyheter og papirkurv</a>
+        </div>
+
+        <ul>
+            {% for post in latest_posts %}
+                <li>
+                    <div class="info">
+                        <p class="title">{{ post.title|striptags }}</p>
+                        <p class="meta">{{ post.published_at|default:post.created_at|date:"d.m.Y" }} · {{ post.author }}</p>
+                    </div>
+                    <a href="{% url 'blog_edit' post.pk %}" class="edit">Rediger</a>
+                </li>
+            {% empty %}
+                <li class="empty">Ingen nyheter ennå.</li>
+            {% endfor %}
+        </ul>
+    </div>
+
     <h2>Spillere</h2>
     <div class="dash-grid">
 

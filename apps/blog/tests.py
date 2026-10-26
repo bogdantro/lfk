@@ -63,6 +63,13 @@ class DashboardBlogTests(TestCase):
         post.refresh_from_db()
         self.assertEqual(post.title, 'Seier i seriestarten')
 
+    def test_bookmarked_dashboard_lists_latest_posts_with_edit_links(self):
+        post = make_post()
+        response = self.client.get(reverse('myaccount'))
+        self.assertContains(response, reverse('blog_edit', args=[post.pk]))
+        # Article pages live under the address the admins already have bookmarked.
+        self.assertTrue(reverse('blog_edit', args=[post.pk]).startswith(reverse('myaccount')))
+
     def test_list_shows_posts_and_search_filters(self):
         make_post(title='Seier borte')
         make_post(title='Ny trener')
