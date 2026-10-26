@@ -190,13 +190,13 @@
   const imgB = document.getElementById("coverImgB");
   if (!imgA || !imgB) return;
 
-  // Use absolute /static paths (works with Django static)
+  // Built with the static tag so the URLs get the versioned file names
 const images = [
-  "/static/images/other/klubbkolleksjon%20(1).jpeg",
-  "/static/images/other/klubbkolleksjon%20(2).jpeg",
-  "/static/images/other/klubbkolleksjon%20(3).jpeg",
-  "/static/images/other/klubbkolleksjon%20(4).jpeg",
-  "/static/images/other/klubbkolleksjon%20(5).jpeg",
+  "{% static 'images/other/klubbkolleksjon (1).jpeg' %}",
+  "{% static 'images/other/klubbkolleksjon (2).jpeg' %}",
+  "{% static 'images/other/klubbkolleksjon (3).jpeg' %}",
+  "{% static 'images/other/klubbkolleksjon (4).jpeg' %}",
+  "{% static 'images/other/klubbkolleksjon (5).jpeg' %}",
 ];
 
   const intervalMs = 5000;   // time per image

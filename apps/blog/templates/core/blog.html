@@ -58,7 +58,6 @@
 
 {% block content %}
 
-<link rel="stylesheet" href="{% static 'scss/store/blog/blog.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'scss/pages/page.css' %}" type="text/css">
 
 
@@ -79,7 +78,7 @@
             {% if blog.image %}
               <img src="{{ blog.image|thumb }}" alt="{{ blog.title|striptags }}" loading="lazy" decoding="async">
             {% else %}
-              <img loading="lazy" decoding="async" src="{% static 'images/placeholder.jpg' %}">
+              <img loading="lazy" decoding="async" src="{% static 'images/covers/blog.avif' %}" alt="Lillehammer FK">
             {% endif %}
          </div>
 
