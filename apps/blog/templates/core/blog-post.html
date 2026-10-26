@@ -19,7 +19,7 @@
 <meta property="og:title" content="{{ post_info.title }}">
 <meta property="og:description" content="{{ post_info.title|striptags }}">
 <meta property="og:url" content="{{ request.build_absolute_uri }}">
-<meta property="og:image" content="{{ post_info.image.url }}">
+<meta property="og:image" content="{{ share_image }}">
 <meta property="og:site_name" content="Lillehammer Fotballklubb">
 <meta property="og:locale" content="nb_NO">
 
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ post_info.title }}">
 <meta name="twitter:description" content="{{ post_info.title|striptags }}">
-<meta name="twitter:image" content="{{ post_info.image.url }}">
+<meta name="twitter:image" content="{{ share_image }}">
 
 <!-- Structured Data (VERY IMPORTANT) -->
 <script type="application/ld+json">
@@ -40,7 +40,7 @@
   "@type": "Article",
   "headline": "{{ post_info.title|striptags|escapejs }}",
   "description": "{{ post_info.title|striptags|escapejs }}",
-  "image": "{{ post_info.image.url }}",
+  "image": "{{ share_image }}",
   "author": {
     "@type": "Person",
     "name": "{{ post_info.author|escapejs }}"
@@ -189,7 +189,7 @@ let images = [
 
 // fallback if no extra images exist
 if(images.length === 0){
-images = ["{{ post_info.image.url }}"];
+images = ["{{ share_image }}"];
 }
 
 imgA.src = images[0];

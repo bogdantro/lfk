@@ -349,3 +349,150 @@ $txt: #141a3a;
     }
   }
 }
+
+// ------------------------------------------------------------
+// Editing an existing post: errors, messages, current images, delete
+// (outside the breakpoints so they work on phone and desktop)
+// ------------------------------------------------------------
+#blogCreate{
+  .flash-messages{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .flash{
+      padding: 14px 16px;
+      border-radius: 4px;
+      font-family: "Inter", "Roboto", sans-serif;
+      font-size: 16px;
+      color: $txt;
+      background: rgba(46,125,50,0.10);
+      border: 1px solid rgba(46,125,50,0.35);
+
+      &.error{
+        background: rgba(198,40,40,0.08);
+        border-color: rgba(198,40,40,0.40);
+      }
+    }
+  }
+
+  .errorlist{
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+
+    li{
+      color: #c62828;
+      font-family: "Inter", "Roboto", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+
+  .field-row{
+    display: flex;
+    gap: 18px;
+
+    .field{ flex: 1; }
+  }
+
+  .optional{
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(27,44,101,0.6);
+  }
+
+  .remove-main{
+    align-self: flex-start;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(198,40,40,0.45);
+    background: transparent;
+    color: #c62828;
+    font-family: 'Stampa', "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &.is-active{
+      background: rgba(198,40,40,0.08);
+    }
+  }
+
+  .existing-images{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+
+    .none{
+      font-family: "Inter", "Roboto", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(27,44,101,0.75);
+      margin: 0;
+    }
+  }
+
+  .existing-img{
+    position: relative;
+    display: block;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(27,44,101,0.18);
+    cursor: pointer;
+    transition: .2s;
+
+    img{
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .remove-toggle{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      background: white;
+      font-family: "Inter", "Roboto", sans-serif;
+      font-size: 14px;
+      color: $txt;
+    }
+
+    &.is-removed{
+      border-color: rgba(198,40,40,0.6);
+
+      img{ opacity: .35; }
+      .remove-toggle{ color: #c62828; }
+    }
+  }
+
+  .preview-card.danger{
+    .trash-btn{
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 4px;
+      border: 1px solid rgba(198,40,40,0.45);
+      background: transparent;
+      color: #c62828;
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+
+      &:hover{ background: rgba(198,40,40,0.08); }
+    }
+  }
+}
+
+@media (max-width: 1139px){
+  #blogCreate{
+    .field-row{
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+}

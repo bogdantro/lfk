@@ -1,0 +1,111 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% comment %}
+Dashboard list of news posts. `is_trash` switches between the normal list and the trash.
+{% endcomment %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'scss/userprofile/myaccount.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'scss/blog/dashboard_blog.css' %}" type="text/css">
+
+<section class="cover" id="accountCover">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="text">
+            <h1>{% if is_trash %}Papirkurv{% else %}Nyheter{% endif %}</h1>
+
+            <div class="btns">
+                <a class="btn" href="{% url 'myaccount' %}">Tilbake til dashboard</a>
+                <a class="btn" href="{% url 'blog_create' %}">Ny nyhet</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="acnt-info" id="dashboardBlog">
+
+    {% if messages %}
+        <div class="flash-messages">
+            {% for message in messages %}
+                <p class="flash {{ message.tags }}" role="{% if message.tags == 'error' %}alert{% else %}status{% endif %}">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="toolbar">
+        <nav class="tabs" aria-label="Nyheter">
+            <a href="{% url 'dashboard_blog_list' %}" class="{% if not is_trash %}is-active{% endif %}">Alle nyheter</a>
+            <a href="{% url 'dashboard_blog_trash' %}" class="{% if is_trash %}is-active{% endif %}">Papirkurv ({{ trash_count }})</a>
+        </nav>
+
+        {% if not is_trash %}
+            <form method="get" class="search" role="search">
+                <label for="blogSearch" class="visually-hidden">Søk i nyheter</label>
+                <input type="search" id="blogSearch" name="q" value="{{ q }}" placeholder="Søk på tittel eller forfatter">
+                <button type="submit">Søk</button>
+            </form>
+        {% endif %}
+    </div>
+
+    {% if is_trash %}
+        <p class="hint">Nyheter i papirkurven vises ikke på nettsiden. Gjenopprett dem, eller slett dem for godt (bildene slettes også).</p>
+    {% endif %}
+
+    <ul class="post-list">
+        {% for post in posts %}
+            <li class="post-row">
+                <div class="thumb">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="Hovedbilde for «{{ post.title }}»" loading="lazy">
+                    {% else %}
+                        <span>Ingen bilde</span>
+                    {% endif %}
+                </div>
+
+                <div class="info">
+                    <h3>{{ post.title|striptags }}</h3>
+                    <p class="meta">
+                        {% if is_trash %}
+                            Flyttet til papirkurven {{ post.deleted_at|date:"d.m.Y H:i" }}
+                        {% else %}
+                            {{ post.published_at|default:post.created_at|date:"d.m.Y" }} · {{ post.author }}
+                            · {{ post.extra_count }} ekstra bilde{{ post.extra_count|pluralize:"r" }}
+                        {% endif %}
+                    </p>
+                </div>
+
+                <div class="row-actions">
+                    {% if is_trash %}
+                        <form method="post" action="{% url 'blog_restore' post.pk %}">
+                            {% csrf_token %}
+                            <button type="submit" class="primary">Gjenopprett</button>
+                        </form>
+                        <form method="post" action="{% url 'blog_delete_permanent' post.pk %}"
+                              onsubmit="return confirm('Slette «{{ post.title|escapejs }}» for godt? Dette kan ikke angres.');">
+                            {% csrf_token %}
+                            <button type="submit" class="danger">Slett for godt</button>
+                        </form>
+                    {% else %}
+                        <a href="{% url 'blog_edit' post.pk %}" class="primary">Rediger</a>
+                        <a href="{{ post.get_absolute_url }}" class="ghost" target="_blank" rel="noopener">Se live</a>
+                    {% endif %}
+                </div>
+            </li>
+        {% empty %}
+            <li class="empty">
+                {% if is_trash %}
+                    Papirkurven er tom.
+                {% elif q %}
+                    Fant ingen nyheter som passer «{{ q }}».
+                {% else %}
+                    Ingen nyheter ennå. <a href="{% url 'blog_create' %}">Skriv den første</a>.
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% endblock %}

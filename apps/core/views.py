@@ -19,11 +19,7 @@ from .models import *
 
 # Home
 def home(request):
-    posts = list(
-        Blog.objects.filter(wordpress_id__isnull=True).order_by('-created_at', '-id')
-    ) + list(
-        Blog.objects.filter(wordpress_id__isnull=False).order_by('id')
-    )
+    posts = Blog.objects.public().newest_first()
 
     return render(request, 'core/home.html', {
         'latest_blog': posts[0] if len(posts) > 0 else None,

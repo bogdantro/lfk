@@ -65,7 +65,7 @@ class BlogSitemap(Sitemap):
     changefreq = "weekly"
 
     def items(self):
-        return Blog.objects.all().order_by("-published_at", "-created_at")
+        return Blog.objects.public().order_by("-published_at", "-created_at")
 
     def lastmod(self, obj):
         return obj.published_at or obj.created_at

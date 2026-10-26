@@ -1,6 +1,11 @@
 {% extends 'core/base.html' %}
 {% load static %}
 
+{% comment %}
+Used for both writing a new post (no `post` in the context) and editing one
+(`post` is the Blog being edited).
+{% endcomment %}
+
 {% block content %}
 
 <link rel="stylesheet" href="{% static 'scss/userprofile/myaccount.css' %}" type="text/css">
@@ -15,7 +20,7 @@
 
     <div class="content">
         <div class="text">
-            <h1>Ny bloggpost</h1>
+            <h1>{% if post %}Rediger nyhet{% else %}Ny bloggpost{% endif %}</h1>
         </div>
     </div>
 </section>
@@ -25,13 +30,21 @@
         <h2>Editor</h2>
 
         <div class="actions">
-            <a href="{% url 'myaccount' %}" class="ghost">Tilbake</a>
+            <a href="{% if post %}{% url 'dashboard_blog_list' %}{% else %}{% url 'myaccount' %}{% endif %}" class="ghost">Tilbake</a>
 
             <button form="blogForm" type="submit" class="primary">
-                Publiser
+                {% if post %}Lagre endringer{% else %}Publiser{% endif %}
             </button>
         </div>
     </div>
+
+    {% if messages %}
+        <div class="flash-messages">
+            {% for message in messages %}
+                <p class="flash {{ message.tags }}" role="{% if message.tags == 'error' %}alert{% else %}status{% endif %}">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
 
     <div class="editor-wrap">
 
@@ -39,10 +52,26 @@
         <div class="editor-left">
             <form method="post" enctype="multipart/form-data" id="blogForm" class="dash-form">
                 {% csrf_token %}
+                {{ form.non_field_errors }}
 
                 <div class="field">
                     <p>Tittel</p>
                     {{ form.title }}
+                    {{ form.title.errors }}
+                </div>
+
+                <div class="field-row">
+                    <div class="field">
+                        <p>Forfatter</p>
+                        {{ form.author }}
+                        {{ form.author.errors }}
+                    </div>
+
+                    <div class="field">
+                        <p>Publiseringsdato <span class="optional">(valgfritt)</span></p>
+                        {{ form.published_at }}
+                        {{ form.published_at.errors }}
+                    </div>
                 </div>
 
                 <div class="field big">
@@ -50,30 +79,37 @@
                     <div class="editor-box">
                         {{ form.text }}
                     </div>
+                    {{ form.text.errors }}
                 </div>
 
               <div class="field">
-    <p>Bilde</p>
+    <p>{% if post %}Hovedbilde{% else %}Bilde{% endif %}</p>
 
     <div class="file">
         <!-- hide the real input -->
         <div style="display:none;">
             {{ form.image }}
+            <input type="hidden" name="remove_image" id="removeImageInput" value="">
         </div>
 
         <!-- nice uploader -->
         <div class="uploader" id="imageUploader">
             <div class="uploader-left">
-                <p class="big">Dra bilde hit</p>
+                <p class="big">{% if post.image %}Bytt bilde{% else %}Dra bilde hit{% endif %}</p>
                 <p class="small">…eller klikk for å velge. Du kan også lime inn (CTRL + V).</p>
             </div>
 
             <div class="uploader-right">
                 <button type="button" class="pick" id="pickImageBtn">Velg bilde</button>
-                <p class="filename" id="fileName">Ingen fil valgt</p>
+                <p class="filename" id="fileName">{% if post.image %}Nåværende bilde beholdes{% else %}Ingen fil valgt{% endif %}</p>
             </div>
         </div>
 
+        {% if post.image %}
+            <button type="button" class="remove-main" id="removeImageBtn">Fjern hovedbilde</button>
+        {% endif %}
+
+        {{ form.image.errors }}
         <small>Tips: Bruk et stort bilde (bredt) for best resultat.</small>
     </div>
 </div>
@@ -85,13 +121,32 @@
 
 <div class="file">
 
+{% if post %}
+    <div class="existing-images">
+        {% for extra in post.images.all %}
+            <label class="existing-img">
+                <img src="{{ extra.image.url }}" alt="Ekstra bilde {{ forloop.counter }} i «{{ post.title }}»" loading="lazy">
+                <span class="remove-toggle">
+                    <input type="checkbox" name="remove_images" value="{{ extra.pk }}">
+                    Fjern
+                </span>
+            </label>
+        {% empty %}
+            <p class="none">Ingen ekstra bilder ennå.</p>
+        {% endfor %}
+    </div>
+    {% if post.images.exists %}
+        <small>Huk av «Fjern» på bilder du vil ta bort. De slettes når du trykker «Lagre endringer».</small>
+    {% endif %}
+{% endif %}
+
 <div style="display:none;">
-<input type="file" id="extraImagesInput" name="extra_images" multiple accept="image/*">
+{{ form.extra_images }}
 </div>
 
 <div class="uploader" id="extraUploader">
 <div class="uploader-left">
-<p class="big">Dra bilder hit</p>
+<p class="big">{% if post %}Legg til flere bilder{% else %}Dra bilder hit{% endif %}</p>
 <p class="small">…eller klikk for å velge flere bilder. Hold musen her og lim inn (CTRL + V).</p>
 </div>
 
@@ -101,15 +156,16 @@
 </div>
 </div>
 
-<small>Disse brukes i slideshowet på bloggposten.</small>
+{{ form.extra_images.errors }}
+<small>Disse brukes i slideshowet på bloggposten.{% if post %} Nye bilder legges etter de som er der fra før.{% endif %}</small>
 
 </div>
 </div>
 
 
                 <div class="mobile-actions">
-                    <button type="submit" class="primary">Publiser</button>
-                    <a href="{% url 'myaccount' %}" class="ghost">Tilbake</a>
+                    <button type="submit" class="primary">{% if post %}Lagre endringer{% else %}Publiser{% endif %}</button>
+                    <a href="{% if post %}{% url 'dashboard_blog_list' %}{% else %}{% url 'myaccount' %}{% endif %}" class="ghost">Tilbake</a>
                 </div>
             </form>
         </div>
@@ -121,9 +177,9 @@
 
                 <h3 id="previewTitle">Skriv tittel…</h3>
 
-                <div class="preview-img" id="previewImgWrap">
+                <div class="preview-img{% if post.image %} active{% endif %}" id="previewImgWrap">
                     <p id="previewImgText">Velg bilde for forhåndsvisning</p>
-                    <img id="previewImg" src="" alt="" />
+                    <img id="previewImg" src="{% if post.image %}{{ post.image.url }}{% endif %}" alt="" />
                 </div>
                 <div class="preview-extra" id="previewExtraImages"></div>
 
@@ -139,9 +195,23 @@
 
             <div class="preview-card small">
                 <p class="tag">Snarveier</p>
+                {% if post %}
+                    <a href="{{ post.get_absolute_url }}" target="_blank" rel="noopener">Se denne nyheten live</a>
+                {% endif %}
                 <a href="{% url 'blog' %}">Se nyheter live</a>
-                <a href="/admin/blog/blog/">Rediger i admin</a>
+                <a href="{% url 'dashboard_blog_list' %}">Alle nyheter</a>
             </div>
+
+            {% if post %}
+                <div class="preview-card small danger">
+                    <p class="tag">Slett</p>
+                    <form method="post" action="{% url 'blog_trash' post.pk %}"
+                          onsubmit="return confirm('Flytte «{{ post.title|escapejs }}» til papirkurven? Den forsvinner fra nettsiden, men kan gjenopprettes.');">
+                        {% csrf_token %}
+                        <button type="submit" class="trash-btn">Flytt til papirkurven</button>
+                    </form>
+                </div>
+            {% endif %}
         </div>
 
     </div>
@@ -184,6 +254,8 @@ border-radius:6px;
     const img       = document.querySelector('#previewImg');
     const imgWrap   = document.querySelector('#previewImgWrap');
     const imgText   = document.querySelector('#previewImgText');
+    const removeImageInput = document.querySelector('#removeImageInput');
+    const removeImageBtn   = document.querySelector('#removeImageBtn');
 
     function showFeaturedPreview(file) {
         img.src = URL.createObjectURL(file);
@@ -191,6 +263,9 @@ border-radius:6px;
         img.style.display = "block";
         imgText.style.display = "none";
         fileName.innerText = file.name;
+        // A newly picked image replaces the old one, so "remove" no longer applies.
+        removeImageInput.value = "";
+        removeImageBtn?.classList.remove("is-active");
     }
 
     function setFeaturedFile(file) {
@@ -200,9 +275,22 @@ border-radius:6px;
         showFeaturedPreview(file);
     }
 
+    // Toggle: the image is only removed when the form is saved, so a mis-click can be undone.
+    removeImageBtn?.addEventListener('click', () => {
+        const removing = removeImageInput.value !== "1";
+        removeImageInput.value = removing ? "1" : "";
+        removeImageBtn.classList.toggle("is-active", removing);
+        removeImageBtn.innerText = removing ? "Angre – behold hovedbildet" : "Fjern hovedbilde";
+        imgWrap.classList.toggle("active", !removing);
+        img.style.display = removing ? "none" : "block";
+        imgText.style.display = removing ? "block" : "none";
+        imgInput.value = "";
+        fileName.innerText = removing ? "Bildet fjernes når du lagrer" : "Nåværende bilde beholdes";
+    });
+
     if (uploader && imgInput) {
         uploader.addEventListener('click', () => imgInput.click());
-        pickBtn?.addEventListener('click', (e) => { e.preventDefault(); imgInput.click(); });
+        pickBtn?.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); imgInput.click(); });
 
         imgInput.addEventListener('change', function () {
             const file = this.files?.[0];
@@ -220,6 +308,13 @@ border-radius:6px;
 
         uploader.addEventListener('mouseenter', () => { activeUploader = 'featured'; });
     }
+
+    // ─── Existing extra images: dim the ones marked for removal ───
+    document.querySelectorAll('.existing-img input[type="checkbox"]').forEach((box) => {
+        box.addEventListener('change', () => {
+            box.closest('.existing-img').classList.toggle('is-removed', box.checked);
+        });
+    });
 
     // ─── Extra images ───
     const extraInput    = document.querySelector('#extraImagesInput');
@@ -249,7 +344,7 @@ border-radius:6px;
 
     if (extraUploader) {
         extraUploader.addEventListener("click", () => extraInput.click());
-        extraBtn?.addEventListener("click", (e) => { e.preventDefault(); extraInput.click(); });
+        extraBtn?.addEventListener("click", (e) => { e.preventDefault(); e.stopPropagation(); extraInput.click(); });
 
         extraInput.addEventListener("change", function () {
             if (this.files.length) {
