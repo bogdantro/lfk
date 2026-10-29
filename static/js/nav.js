@@ -24,6 +24,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+// Over the promotion hero the desktop nav is see-through with white links;
+// the existing "sticky" class brings the white background back on scroll
+document.addEventListener("DOMContentLoaded", function () {
+
+  const desktopNav = document.getElementById("desNav");
+  if (!desktopNav || !document.getElementById("promoHero")) return;
+
+  desktopNav.classList.add("over-hero");
+  // A reload halfway down the page keeps its scroll position, so set it now too
+  desktopNav.classList.toggle("sticky", window.scrollY > 1);
+
+});
+
 document.addEventListener("DOMContentLoaded", function () {
 
   const sheet = document.getElementById("sidebar");

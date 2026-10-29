@@ -1,0 +1,83 @@
+{% load static %}
+{% comment %}
+Homepage hero celebrating the 2026 promotions: the men's A-team to 2. divisjon and the
+women's A-team to 3. divisjon. The photos come from PROMOTION_PHOTOS in apps/core/views.py.
+js/promotion-hero.js alternates Herrer and Kvinner, showing that team's next photo each time,
+and the division line under OPPRYKK! changes with them; the Herrer/Kvinner buttons jump to a team.
+Gold confetti is drawn on the canvas by the same script. Without JS (or with reduced motion)
+the first men's photo stays put and everything is still readable.
+{% endcomment %}
+<link rel="stylesheet" href="{% static 'scss/pages/promotion-hero.css' %}" type="text/css">
+
+<section class="promo-hero" id="promoHero" aria-labelledby="promoHeroTitle">
+  {% for photo in promotion_photos %}
+  <picture class="promo-photo{% if forloop.first %} is-active{% endif %}" data-team="{{ photo.team }}" style="--pos: {{ photo.position }}; --pos-mobile: {{ photo.position_mobile }}">
+    <source srcset="{% static 'images/covers/'|add:photo.file|add:'.webp' %}" type="image/webp">
+    <img src="{% static 'images/covers/'|add:photo.file|add:'.jpg' %}" alt="{{ photo.alt }}" decoding="async"{% if forloop.first %} fetchpriority="high"{% else %} fetchpriority="low"{% endif %}>
+  </picture>
+  {% endfor %}
+  <div class="promo-shade" aria-hidden="true"></div>
+  <canvas class="promo-confetti" id="promoConfetti" aria-hidden="true"></canvas>
+  <img class="promo-signature" src="{% static 'images/logo/ProudToBeLily.svg' %}" alt="" aria-hidden="true" width="1080" height="648">
+
+  <div class="content">
+    <div class="headline promo-reveal" style="--i:0">
+      <h2 class="title" id="promoHeroTitle">Opprykk<span class="bang">!</span></h2>
+      {# One line per team, stacked on top of each other; only the active one is shown #}
+      <p class="division">
+        <span class="division-line is-active" data-team="herrer">Herrer&nbsp;·&nbsp;2.&nbsp;divisjon</span>
+        <span class="division-line" data-team="kvinner" aria-hidden="true">Kvinner&nbsp;·&nbsp;3.&nbsp;divisjon</span>
+      </p>
+    </div>
+
+    <div class="bottom">
+      <div class="text promo-reveal" style="--i:1">
+        <div class="promo-teams" role="group" aria-label="Velg lag">
+          <button type="button" class="promo-team is-active" data-team="herrer" aria-pressed="true">Herrer</button>
+          <button type="button" class="promo-team" data-team="kvinner" aria-pressed="false">Kvinner</button>
+        </div>
+        {# Always visible: hiding it until the script runs left it invisible for anyone with an old cached script #}
+        <button type="button" class="btn-gold" id="promoCheerOpen" aria-haspopup="dialog" aria-controls="promoCheer">
+          Send dine gratulasjoner
+        </button>
+      </div>
+
+      <div class="partners promo-reveal" style="--i:2">
+        <img src="{% static 'images/other/cover-sponsor1_gold.png' %}" alt="SpareBank 1 Gudbrandsdal" width="2048" height="587" loading="lazy">
+        <img src="{% static 'images/other/cover-sponsor2_gold.png' %}" alt="Anlegg Øst Entreprenør" width="2048" height="932" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <p class="promo-credit">Foto: Niklas Lyngfoss</p>
+</section>
+
+{% comment %}
+Celebration popup opened by "Send dine gratulasjoner": fireworks, the .cheer-word lines fly
+in one after another, then the thank-you card stays. Outside the section so it can cover the nav.
+{% endcomment %}
+<div class="promo-cheer" id="promoCheer" role="dialog" aria-modal="true" aria-labelledby="promoCheerTitle" hidden>
+  <canvas class="cheer-fireworks" aria-hidden="true"></canvas>
+
+  <div class="cheer-words" aria-hidden="true">
+    <span class="cheer-word">Gratulerer!</span>
+    <span class="cheer-word">Herrer!</span>
+    <span class="cheer-word">Kvinner!</span>
+    <span class="cheer-word">Opprykk!</span>
+    <span class="cheer-word">Tusen takk!</span>
+  </div>
+
+  <div class="cheer-card">
+    <img class="cheer-signature" src="{% static 'images/logo/ProudToBeLily.svg' %}" alt="Proud to be Lily" width="1080" height="648">
+    <h2 class="cheer-title" id="promoCheerTitle">Takk for at du heier!</h2>
+    <p class="cheer-text">Herrene spiller 2.&nbsp;divisjon og kvinnene 3.&nbsp;divisjon neste sesong. Vi ses på Stampa!</p>
+    <div class="cheer-actions">
+      <button type="button" class="cheer-close" data-cheer-close>Lukk</button>
+    </div>
+    <p class="cheer-hint">Trykk hvor som helst for mer fyrverkeri</p>
+  </div>
+
+  <button type="button" class="cheer-x" data-cheer-close aria-label="Lukk"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+</div>
+
+<script src="{% static 'js/promotion-hero.js' %}" defer></script>

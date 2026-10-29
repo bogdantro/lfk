@@ -18,12 +18,36 @@ from .models import *
 
 
 # Home
+# Which hero the homepage shows – the one line to change to switch back:
+#   'promotion' = the 2026 promotion celebration (core/hero-promotion.html)
+#   'default'   = the everyday hero with the video (core/hero-default.html)
+HOMEPAGE_HERO = 'promotion'
+
+# Photos in the promotion hero (static/images/covers/<file>.webp + .jpg), all by Niklas Lyngfoss.
+# The carousel alternates Herrer and Kvinner and shows the team's next photo each time.
+# position = which part of the photo stays in view (CSS object-position): desktop, then mobile.
+PROMOTION_PHOTOS = [
+    {'team': 'herrer', 'file': 'opprykk-herrer-1', 'position': '50% 45%', 'position_mobile': '62% 50%',
+     'alt': 'A-laget til Lillehammer FK stiller opp før kampen mot Sandefjord 2 på Stampesletta'},
+    {'team': 'herrer', 'file': 'opprykk-herrer-2', 'position': '50% 18%', 'position_mobile': '45% 50%',
+     'alt': 'Spillere med gullhatter feirer opprykket sammen med unge supportere på Stampesletta'},
+    {'team': 'herrer', 'file': 'opprykk-herrer-3', 'position': '50% 55%', 'position_mobile': '52% 50%',
+     'alt': 'Spillerne kaster en leder i været etter opprykket på Stampesletta'},
+    {'team': 'kvinner', 'file': 'opprykk-kvinner-1', 'position': '50% 34%', 'position_mobile': '50% 50%',
+     'alt': 'Kvinnelaget til Lillehammer FK samlet i ring før kampen mot Vang'},
+    {'team': 'kvinner', 'file': 'opprykk-kvinner-2', 'position': '50% 48%', 'position_mobile': '50% 55%',
+     'alt': 'Kvinnelaget til Lillehammer FK samlet til lagbilde etter kampen mot Vang'},
+]
+
+
 def home(request):
     posts = Blog.objects.public().newest_first()
 
     return render(request, 'core/home.html', {
         'latest_blog': posts[0] if len(posts) > 0 else None,
-        'second_latest_blog': posts[1] if len(posts) > 1 else None
+        'second_latest_blog': posts[1] if len(posts) > 1 else None,
+        'hero': HOMEPAGE_HERO,
+        'promotion_photos': PROMOTION_PHOTOS,
     })
 
 def xtravgs(request):

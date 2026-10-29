@@ -1,0 +1,684 @@
+// Homepage hero for the 2026 promotion (templates/core/hero-promotion.html).
+// Gold confetti is drawn on .promo-confetti by js/promotion-hero.js.
+
+$black: #1F1F1F;
+$white: rgb(246,246,246);
+$txt: #141a3a;
+$lfkgold: #b6a265;
+$navyDeep: #0b0f26;     // darker than $txt so the gold and the photo glow against it
+$goldLight: #e6d8a8;
+
+// Time each photo is shown – keep in step with SLIDE_INTERVAL in js/promotion-hero.js
+$slideInterval: 2s;
+
+// Height of the gold top bar + white nav bar that sit over the top of the hero
+$navHeight: 92px;
+
+// Moving gold: the gradient starts and ends on the same shade and is twice the text's width,
+// so sliding it by its own width loops without a visible jump
+@mixin gold-text($duration: 6s){
+  background: linear-gradient(100deg, #9c8850 0%, $lfkgold 16%, #f4e4ad 32%, #fffaf0 40%, #dcc684 50%, $lfkgold 68%, #8f7b44 84%, #9c8850 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: $lfkgold;
+  animation: goldFlow $duration linear infinite;
+}
+
+.promo-hero{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  color: $white;
+  background: $navyDeep;
+
+  // The photos lie on top of each other and cross-fade; short, since each one shows for only 2 s
+  .promo-photo{
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity .8s ease;
+    &.is-active{
+      opacity: 1;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: promoZoom 2.4s cubic-bezier(.2,.7,.2,1) both;
+    }
+  }
+  .promo-shade{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .promo-confetti{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .promo-signature{
+    position: absolute;
+    z-index: 4;
+    height: auto;
+    transform: rotate(-7deg);
+    filter: drop-shadow(0 6px 18px rgba(0,0,0,.35));
+    pointer-events: none;
+  }
+
+  .content{
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-shadow: 0 2px 24px rgba(11,15,38,.45);
+    // Only as wide as OPPRYKK!, so "2. divisjon" can sit under its right edge
+    .headline{
+      align-self: flex-start;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    // White letters with a gold band sweeping left to right, a soft gold trail behind it.
+    // The gradient is three times the text's width: white | trail + band | white, so the
+    // band starts off the left edge (100%) and ends off the right edge (0%) with white in view.
+    .title{
+      margin: 0;
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: .9;
+      white-space: nowrap;
+      background: linear-gradient(100deg,
+        #fff 0%, #fff 34%,
+        #f6efd9 38%, #e6d8a8 42%, #cdb877 46%, $lfkgold 49%, #f4e4ad 51%,
+        #fff 54%, #fff 100%);
+      background-size: 300% 100%;
+      background-repeat: no-repeat;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #fff;
+      animation: goldSweep 5s cubic-bezier(.45,.05,.35,1) 1.2s infinite;
+      // text-shadow would show through the see-through letters, so the shadow is a filter
+      text-shadow: none;
+      filter: drop-shadow(0 4px 22px rgba(11,15,38,.55));
+      // The "!" stays solid gold while the sweep passes over the letters.
+      // Not called .mark: Bootstrap styles that as a yellow highlight box.
+      .bang{
+        -webkit-text-fill-color: $lfkgold;
+        color: $lfkgold;
+      }
+    }
+    .division{
+      margin: 0;
+      color: $lfkgold;
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .28em;
+      line-height: 1;
+      margin-right: -.28em;  // the letter-spacing after the last letter would push it off the edge
+      // Both teams' lines share one cell, so the longer one sets the width and nothing jumps
+      display: grid;
+      justify-items: end;
+    }
+    .division-line{
+      grid-area: 1 / 1;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity .4s ease, transform .4s ease;
+      &.is-active{
+        opacity: 1;
+        transform: none;
+        transition-delay: .2s;  // the new line comes in as the old one has faded
+      }
+    }
+    // Herrer / Kvinner: the gold line under the active team fills up until the next photo
+    .promo-teams{
+      display: flex;
+      gap: 22px;
+    }
+    .promo-team{
+      position: relative;
+      padding: 6px 0 9px;
+      background: none;
+      border: 0;
+      color: rgba(255,255,255,.6);
+      font-family: 'Stampa', "Roboto", sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      cursor: pointer;
+      transition: color .3s;
+      &::before,
+      &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2px;
+        background: rgba(255,255,255,.28);
+      }
+      &::after{
+        background: $lfkgold;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+      &:hover,
+      &.is-active{
+        color: #fff;
+      }
+      &.is-active::after{
+        transform: scaleX(1);
+      }
+      // No focus frame: the white text and gold line already show which team is chosen
+      &:focus,
+      &:focus-visible{
+        transform: none;  // global.scss shrinks focused buttons
+        filter: none;
+        outline: none;
+        border: 0;
+        box-shadow: none;
+      }
+    }
+  }
+  // Small photo credit in the corner
+  .promo-credit{
+    position: absolute;
+    z-index: 5;
+    margin: 0;
+    color: rgba(255,255,255,.6);
+    font-size: 11px;
+    letter-spacing: .06em;
+    pointer-events: none;
+  }
+  // While the photos rotate on their own, the line shows how long until the next one
+  &.is-playing .promo-team.is-active::after{
+    animation: promoProgress $slideInterval linear both;
+  }
+  .content{
+    .bottom{
+      display: flex;
+    }
+    .text{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .btn-gold{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+      background: $lfkgold;
+      color: $txt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      border: none;
+      cursor: pointer;
+      &[hidden]{
+        display: none;
+      }
+      text-decoration: none;
+      text-shadow: none;
+      transition: background .25s, transform .25s;
+      &:focus{
+        transform: none;  // global.scss shrinks focused buttons, which looks broken after a click
+        filter: none;
+      }
+      &:hover{
+        background: $goldLight;
+        color: $txt;
+        text-decoration: none;
+        transform: translateY(-1px);
+      }
+      &:focus-visible{
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
+      i{
+        margin-left: 17px;
+        transform: translateY(1px);
+        transition: transform .25s;
+      }
+      &:hover i{
+        transform: translate(4px, 1px);
+      }
+    }
+    .partners{
+      display: flex;
+      align-items: center;
+      img{
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+
+}
+
+// Each block rises in after the one before it (delay set by --i in the template)
+.promo-reveal{
+  animation: promoRise .9s cubic-bezier(.2,.7,.2,1) both;
+  animation-delay: calc(.2s + var(--i, 0) * .14s);
+}
+
+@keyframes promoRise{
+  from{ opacity: 0; transform: translateY(26px); }
+  to{ opacity: 1; transform: none; }
+}
+@keyframes goldFlow{
+  to{ background-position: 200% center; }
+}
+// Sweep across, then rest on plain white until the next pass
+@keyframes goldSweep{
+  0%{ background-position: 100% 0; }
+  60%, 100%{ background-position: 0% 0; }
+}
+@keyframes promoProgress{
+  from{ transform: scaleX(0); }
+  to{ transform: scaleX(1); }
+}
+@keyframes promoZoom{
+  from{ transform: scale(1.08); }
+  to{ transform: scale(1); }
+}
+
+
+// ------------------------------------------------------------------
+// Mobile and tablet
+// ------------------------------------------------------------------
+@media (max-width: 1139px){
+  .promo-hero{
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    padding: $navHeight 0 0;
+
+    // Each photo's crop is set in PROMOTION_PHOTOS (apps/core/views.py)
+    .promo-photo img{
+      object-position: var(--pos-mobile, 50% 50%);
+    }
+    .promo-credit{
+      right: 20px;
+      bottom: 6px;
+    }
+    .promo-shade{
+      background: linear-gradient(to bottom, rgba(20,26,58,.45) 0%, rgba(20,26,58,0) 22%, rgba(11,15,38,.35) 50%, rgba(11,15,38,.92) 78%, $navyDeep 100%);
+    }
+    .promo-signature{
+      width: 120px;
+      top: calc(#{$navHeight} + 18px);
+      left: 16px;
+    }
+
+    .content{
+      flex: 1;
+      padding: 0 20px 26px;
+      gap: 22px;
+      .title{
+        // Fills the row edge to edge: "OPPRYKK!" is about 5.26x its font size wide in Stampa,
+        // so (screen width - side padding) / 5.3 lands it just inside the right padding
+        font-size: min(calc((100vw - 38px) / 5.3), 150px);
+        margin-left: -3px;  // the O's side bearing makes it look indented otherwise
+      }
+      .bottom{
+        flex-direction: column;
+        gap: 26px;
+      }
+      .text{
+        gap: 20px;
+      }
+      .promo-team{
+        font-size: 12px;
+      }
+      .division{
+        font-size: clamp(10px, 2.7vw, 13px);
+        margin-top: 6px;
+      }
+      .btn-gold{
+        height: 50px;
+        width: 100%;
+        max-width: 420px;
+        font-size: 13px;
+      }
+      .partners{
+        justify-content: space-between;
+        max-width: 420px;
+        img{
+          width: 120px;
+          &:last-child{
+            width: 84px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// ------------------------------------------------------------------
+// Desktop: the photo fills the hero, OPPRYKK! runs along the bottom
+// ------------------------------------------------------------------
+@media only screen and (min-width: 1140px){
+  // Grows instead of clipping when the window is short (e.g. a 1366x768 laptop)
+  .promo-hero{
+    min-height: 100vh;
+
+    // Each photo's crop is set in PROMOTION_PHOTOS (apps/core/views.py); a tall photo on a
+    // wide screen only shows a band of it, so its position starts that band just above the heads
+    .promo-photo img{
+      object-position: var(--pos, 50% 50%);
+    }
+    .promo-credit{
+      right: 75px;
+      bottom: 22px;
+    }
+    .promo-shade{
+      background:
+        linear-gradient(to top, rgba(11,15,38,.9) 0%, rgba(11,15,38,.64) 23%, rgba(11,15,38,.12) 55%, rgba(11,15,38,0) 72%, rgba(20,26,58,.24) 100%),
+        linear-gradient(to right, rgba(11,15,38,.42) 0%, rgba(11,15,38,0) 48%);
+    }
+    .promo-signature{
+      width: 210px;
+      left: 75px;  // lines up with the text below
+      top: calc(#{$navHeight} + 40px);
+    }
+
+    .content{
+      min-height: 100vh;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: calc(#{$navHeight} + 40px) 75px 64px;
+      gap: 34px;
+      .title{
+        font-size: clamp(150px, 15.5vw, 250px);
+        margin-left: -8px;
+      }
+      .bottom{
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 40px;
+      }
+      .text{
+        gap: 26px;
+      }
+      .promo-team{
+        font-size: 13px;
+      }
+      .division{
+        font-size: 16px;
+        margin-top: 4px;
+      }
+      .btn-gold{
+        height: 54px;
+        padding: 0 30px;
+        font-size: 14px;
+      }
+      .partners{
+        gap: 44px;
+        img{
+          width: 170px;
+          opacity: .9;
+          &:last-child{
+            width: 110px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// No moving parts for visitors who have asked their system for less motion
+@media (prefers-reduced-motion: reduce){
+  .promo-reveal,
+  .promo-hero .promo-photo img,
+  .promo-hero .content .title,
+  .promo-hero .promo-team.is-active::after,
+  .promo-cheer,
+  .promo-cheer .cheer-word,
+  .promo-cheer .cheer-title{
+    animation: none;
+  }
+  .promo-cheer .cheer-card{
+    animation: none;
+    opacity: 1;
+  }
+  .promo-hero .promo-photo,
+  .promo-hero .content .division-line{
+    transition: none;
+  }
+}
+
+
+// ------------------------------------------------------------------
+// "Send dine gratulasjoner" popup – fireworks on .cheer-fireworks
+// (js/promotion-hero.js), words fly through, then the thank-you card
+// ------------------------------------------------------------------
+html.promo-cheer-open{
+  overflow: hidden;  // the page behind doesn't scroll while the popup is open
+}
+
+.promo-cheer{
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;  // above the nav, which uses huge z-index values
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 42%, rgba(30,38,86,.94) 0%, rgba(11,15,38,.97) 55%, rgba(5,7,20,.99) 100%);
+  cursor: crosshair;
+  animation: cheerFade .45s ease both;
+  &[hidden]{
+    display: none;
+  }
+
+  .cheer-fireworks{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  .cheer-words{
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+  }
+  .cheer-word{
+    grid-area: 1 / 1;
+    padding: 0 10px;
+    font-family: 'Stampa', "Roboto", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: clamp(54px, 14vw, 210px);
+    line-height: 1;
+    white-space: nowrap;
+    opacity: 0;
+    @include gold-text(3s);
+    &.is-flying{
+      animation: cheerFly 1.75s cubic-bezier(.2,.75,.25,1) forwards, goldFlow 3s linear infinite;
+    }
+  }
+
+  .cheer-card{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 560px;
+    padding: 44px 32px 30px;
+    text-align: center;
+    cursor: auto;
+    border: 1px solid rgba(182,162,101,.4);
+    border-radius: 4px;
+    background: rgba(11,15,38,.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 30px 80px rgba(0,0,0,.45);
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.is-final .cheer-card{
+    visibility: visible;
+    animation: cheerCard .9s cubic-bezier(.2,.75,.25,1) forwards;
+  }
+
+  .cheer-signature{
+    display: block;
+    width: 150px;
+    height: auto;
+    margin: 0 auto 18px;
+    transform: rotate(-6deg);
+  }
+  .cheer-title{
+    margin: 0 0 12px;
+    font-family: 'Stampa', "Roboto", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: clamp(34px, 6.5vw, 58px);
+    line-height: 1.05;
+    @include gold-text(5s);
+  }
+  .cheer-text{
+    margin: 0 0 28px;
+    color: rgba(255,255,255,.85);
+    font-size: 18px;
+    line-height: 1.45;
+  }
+  .cheer-actions{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    a, button{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      padding: 0 26px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .25s, color .25s, transform .25s;
+      &:hover{
+        text-decoration: none;
+        transform: translateY(-1px);
+        filter: none;
+      }
+      &:focus{
+        transform: none;
+        filter: none;
+      }
+      &:focus-visible{
+        outline: 2px solid #fff;
+        outline-offset: 3px;
+      }
+    }
+    .cheer-close{
+      min-width: 180px;
+      background: $lfkgold;
+      color: $txt;
+      border: 1px solid $lfkgold;
+      &:hover{
+        background: $goldLight;
+        border-color: $goldLight;
+        color: $txt;
+      }
+    }
+  }
+  .cheer-hint{
+    margin: 22px 0 0;
+    color: rgba(182,162,101,.75);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+  }
+
+  .cheer-x{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.3);
+    background: rgba(11,15,38,.4);
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background .25s, color .25s;
+    &:hover{
+      background: #fff;
+      color: $txt;
+      filter: none;
+    }
+    &:focus{
+      transform: none;
+    }
+    &:focus-visible{
+      outline: 2px solid #fff;
+      outline-offset: 3px;
+    }
+  }
+}
+
+// Each word flies in from its own direction (--fx, --fy, --rot set by the script),
+// holds for a moment in the middle, then lifts away and dissolves
+@keyframes cheerFly{
+  0%{ opacity: 0; transform: translate(var(--fx, 0), var(--fy, 60px)) scale(.35) rotate(var(--rot, 0deg)); filter: blur(14px); }
+  32%{ opacity: 1; transform: translate(0, 0) scale(1.06) rotate(0deg); filter: blur(0); }
+  42%{ transform: scale(1); }
+  70%{ opacity: 1; transform: scale(1.02); filter: blur(0); }
+  100%{ opacity: 0; transform: translateY(-90px) scale(1.35); filter: blur(10px); }
+}
+@keyframes cheerCard{
+  from{ opacity: 0; transform: translateY(40px) scale(.94); }
+  to{ opacity: 1; transform: none; }
+}
+@keyframes cheerFade{
+  from{ opacity: 0; }
+  to{ opacity: 1; }
+}
+
+@media (max-width: 1139px){
+  .promo-cheer{
+    .cheer-card{
+      padding: 36px 20px 24px;
+    }
+    .cheer-text{
+      font-size: 16px;
+    }
+    .cheer-actions a,
+    .cheer-actions button{
+      flex: 1 1 100%;
+    }
+    .cheer-x{
+      top: 12px;
+      right: 12px;
+    }
+  }
+}

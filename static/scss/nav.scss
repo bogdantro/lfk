@@ -218,7 +218,14 @@ $lfkgold: #B6A265;
             padding-inline: 50px;
             transform: translateX(-50%);
             background: white ;
+            transition: background .4s;
 
+        }
+
+        // Promotion hero on the homepage: see-through until the page is scrolled
+        &.over-hero:not(.sticky){
+            .content{ background: transparent; }
+            .menu .nav-trigger{ color: white; }
         }
 
       

@@ -811,6 +811,13 @@ body.mm-locked {
     padding-inline: 50px;
     transform: translateX(-50%);
     background: white;
+    transition: background 0.4s;
+  }
+  #desNav.over-hero:not(.sticky) .content {
+    background: transparent;
+  }
+  #desNav.over-hero:not(.sticky) .menu .nav-trigger {
+    color: white;
   }
   #desNav .logo {
     color: white;

@@ -1,0 +1,654 @@
+.promo-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  color: rgb(246, 246, 246);
+  background: #0b0f26;
+}
+.promo-hero .promo-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.promo-hero .promo-photo.is-active {
+  opacity: 1;
+}
+.promo-hero .promo-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: promoZoom 2.4s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+.promo-hero .promo-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.promo-hero .promo-confetti {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+.promo-hero .promo-signature {
+  position: absolute;
+  z-index: 4;
+  height: auto;
+  transform: rotate(-7deg);
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+.promo-hero .content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-shadow: 0 2px 24px rgba(11, 15, 38, 0.45);
+}
+.promo-hero .content .headline {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.promo-hero .content .title {
+  margin: 0;
+  font-family: "Stampa", "Roboto", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 0.9;
+  white-space: nowrap;
+  background: linear-gradient(100deg, #fff 0%, #fff 34%, #f6efd9 38%, #e6d8a8 42%, #cdb877 46%, #b6a265 49%, #f4e4ad 51%, #fff 54%, #fff 100%);
+  background-size: 300% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #fff;
+  animation: goldSweep 5s cubic-bezier(0.45, 0.05, 0.35, 1) 1.2s infinite;
+  text-shadow: none;
+  filter: drop-shadow(0 4px 22px rgba(11, 15, 38, 0.55));
+}
+.promo-hero .content .title .bang {
+  -webkit-text-fill-color: #b6a265;
+  color: #b6a265;
+}
+.promo-hero .content .division {
+  margin: 0;
+  color: #b6a265;
+  font-family: "Stampa", "Roboto", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  line-height: 1;
+  margin-right: -0.28em;
+  display: grid;
+  justify-items: end;
+}
+.promo-hero .content .division-line {
+  grid-area: 1/1;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.promo-hero .content .division-line.is-active {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.2s;
+}
+.promo-hero .content .promo-teams {
+  display: flex;
+  gap: 22px;
+}
+.promo-hero .content .promo-team {
+  position: relative;
+  padding: 6px 0 9px;
+  background: none;
+  border: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: "Stampa", "Roboto", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.promo-hero .content .promo-team::before, .promo-hero .content .promo-team::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.28);
+}
+.promo-hero .content .promo-team::after {
+  background: #b6a265;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.promo-hero .content .promo-team:hover, .promo-hero .content .promo-team.is-active {
+  color: #fff;
+}
+.promo-hero .content .promo-team.is-active::after {
+  transform: scaleX(1);
+}
+.promo-hero .content .promo-team:focus, .promo-hero .content .promo-team:focus-visible {
+  transform: none;
+  filter: none;
+  outline: none;
+  border: 0;
+  box-shadow: none;
+}
+.promo-hero .promo-credit {
+  position: absolute;
+  z-index: 5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  pointer-events: none;
+}
+.promo-hero.is-playing .promo-team.is-active::after {
+  animation: promoProgress 2s linear both;
+}
+.promo-hero .content .bottom {
+  display: flex;
+}
+.promo-hero .content .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.promo-hero .content .btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  background: #b6a265;
+  color: #141a3a;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: none;
+  cursor: pointer;
+}
+.promo-hero .content .btn-gold[hidden] {
+  display: none;
+}
+.promo-hero .content .btn-gold {
+  text-decoration: none;
+  text-shadow: none;
+  transition: background 0.25s, transform 0.25s;
+}
+.promo-hero .content .btn-gold:focus {
+  transform: none;
+  filter: none;
+}
+.promo-hero .content .btn-gold:hover {
+  background: #e6d8a8;
+  color: #141a3a;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.promo-hero .content .btn-gold:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+.promo-hero .content .btn-gold i {
+  margin-left: 17px;
+  transform: translateY(1px);
+  transition: transform 0.25s;
+}
+.promo-hero .content .btn-gold:hover i {
+  transform: translate(4px, 1px);
+}
+.promo-hero .content .partners {
+  display: flex;
+  align-items: center;
+}
+.promo-hero .content .partners img {
+  height: auto;
+  object-fit: contain;
+}
+
+.promo-reveal {
+  animation: promoRise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  animation-delay: calc(0.2s + var(--i, 0) * 0.14s);
+}
+
+@keyframes promoRise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes goldFlow {
+  to {
+    background-position: 200% center;
+  }
+}
+@keyframes goldSweep {
+  0% {
+    background-position: 100% 0;
+  }
+  60%, 100% {
+    background-position: 0% 0;
+  }
+}
+@keyframes promoProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes promoZoom {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@media (max-width: 1139px) {
+  .promo-hero {
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    padding: 92px 0 0;
+  }
+  .promo-hero .promo-photo img {
+    object-position: var(--pos-mobile, 50% 50%);
+  }
+  .promo-hero .promo-credit {
+    right: 20px;
+    bottom: 6px;
+  }
+  .promo-hero .promo-shade {
+    background: linear-gradient(to bottom, rgba(20, 26, 58, 0.45) 0%, rgba(20, 26, 58, 0) 22%, rgba(11, 15, 38, 0.35) 50%, rgba(11, 15, 38, 0.92) 78%, #0b0f26 100%);
+  }
+  .promo-hero .promo-signature {
+    width: 120px;
+    top: calc(92px + 18px);
+    left: 16px;
+  }
+  .promo-hero .content {
+    flex: 1;
+    padding: 0 20px 26px;
+    gap: 22px;
+  }
+  .promo-hero .content .title {
+    font-size: min((100vw - 38px) / 5.3, 150px);
+    margin-left: -3px;
+  }
+  .promo-hero .content .bottom {
+    flex-direction: column;
+    gap: 26px;
+  }
+  .promo-hero .content .text {
+    gap: 20px;
+  }
+  .promo-hero .content .promo-team {
+    font-size: 12px;
+  }
+  .promo-hero .content .division {
+    font-size: clamp(10px, 2.7vw, 13px);
+    margin-top: 6px;
+  }
+  .promo-hero .content .btn-gold {
+    height: 50px;
+    width: 100%;
+    max-width: 420px;
+    font-size: 13px;
+  }
+  .promo-hero .content .partners {
+    justify-content: space-between;
+    max-width: 420px;
+  }
+  .promo-hero .content .partners img {
+    width: 120px;
+  }
+  .promo-hero .content .partners img:last-child {
+    width: 84px;
+  }
+}
+@media only screen and (min-width: 1140px) {
+  .promo-hero {
+    min-height: 100vh;
+  }
+  .promo-hero .promo-photo img {
+    object-position: var(--pos, 50% 50%);
+  }
+  .promo-hero .promo-credit {
+    right: 75px;
+    bottom: 22px;
+  }
+  .promo-hero .promo-shade {
+    background: linear-gradient(to top, rgba(11, 15, 38, 0.9) 0%, rgba(11, 15, 38, 0.64) 23%, rgba(11, 15, 38, 0.12) 55%, rgba(11, 15, 38, 0) 72%, rgba(20, 26, 58, 0.24) 100%), linear-gradient(to right, rgba(11, 15, 38, 0.42) 0%, rgba(11, 15, 38, 0) 48%);
+  }
+  .promo-hero .promo-signature {
+    width: 210px;
+    left: 75px;
+    top: calc(92px + 40px);
+  }
+  .promo-hero .content {
+    min-height: 100vh;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: calc(92px + 40px) 75px 64px;
+    gap: 34px;
+  }
+  .promo-hero .content .title {
+    font-size: clamp(150px, 15.5vw, 250px);
+    margin-left: -8px;
+  }
+  .promo-hero .content .bottom {
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .promo-hero .content .text {
+    gap: 26px;
+  }
+  .promo-hero .content .promo-team {
+    font-size: 13px;
+  }
+  .promo-hero .content .division {
+    font-size: 16px;
+    margin-top: 4px;
+  }
+  .promo-hero .content .btn-gold {
+    height: 54px;
+    padding: 0 30px;
+    font-size: 14px;
+  }
+  .promo-hero .content .partners {
+    gap: 44px;
+  }
+  .promo-hero .content .partners img {
+    width: 170px;
+    opacity: 0.9;
+  }
+  .promo-hero .content .partners img:last-child {
+    width: 110px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .promo-reveal,
+  .promo-hero .promo-photo img,
+  .promo-hero .content .title,
+  .promo-hero .promo-team.is-active::after,
+  .promo-cheer,
+  .promo-cheer .cheer-word,
+  .promo-cheer .cheer-title {
+    animation: none;
+  }
+  .promo-cheer .cheer-card {
+    animation: none;
+    opacity: 1;
+  }
+  .promo-hero .promo-photo,
+  .promo-hero .content .division-line {
+    transition: none;
+  }
+}
+html.promo-cheer-open {
+  overflow: hidden;
+}
+
+.promo-cheer {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483647;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 42%, rgba(30, 38, 86, 0.94) 0%, rgba(11, 15, 38, 0.97) 55%, rgba(5, 7, 20, 0.99) 100%);
+  cursor: crosshair;
+  animation: cheerFade 0.45s ease both;
+}
+.promo-cheer[hidden] {
+  display: none;
+}
+.promo-cheer .cheer-fireworks {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.promo-cheer .cheer-words {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.promo-cheer .cheer-word {
+  grid-area: 1/1;
+  padding: 0 10px;
+  font-family: "Stampa", "Roboto", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(54px, 14vw, 210px);
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  background: linear-gradient(100deg, #9c8850 0%, #b6a265 16%, #f4e4ad 32%, #fffaf0 40%, #dcc684 50%, #b6a265 68%, #8f7b44 84%, #9c8850 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #b6a265;
+  animation: goldFlow 3s linear infinite;
+}
+.promo-cheer .cheer-word.is-flying {
+  animation: cheerFly 1.75s cubic-bezier(0.2, 0.75, 0.25, 1) forwards, goldFlow 3s linear infinite;
+}
+.promo-cheer .cheer-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 560px;
+  padding: 44px 32px 30px;
+  text-align: center;
+  cursor: auto;
+  border: 1px solid rgba(182, 162, 101, 0.4);
+  border-radius: 4px;
+  background: rgba(11, 15, 38, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+}
+.promo-cheer.is-final .cheer-card {
+  visibility: visible;
+  animation: cheerCard 0.9s cubic-bezier(0.2, 0.75, 0.25, 1) forwards;
+}
+.promo-cheer .cheer-signature {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 0 auto 18px;
+  transform: rotate(-6deg);
+}
+.promo-cheer .cheer-title {
+  margin: 0 0 12px;
+  font-family: "Stampa", "Roboto", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(34px, 6.5vw, 58px);
+  line-height: 1.05;
+  background: linear-gradient(100deg, #9c8850 0%, #b6a265 16%, #f4e4ad 32%, #fffaf0 40%, #dcc684 50%, #b6a265 68%, #8f7b44 84%, #9c8850 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #b6a265;
+  animation: goldFlow 5s linear infinite;
+}
+.promo-cheer .cheer-text {
+  margin: 0 0 28px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 18px;
+  line-height: 1.45;
+}
+.promo-cheer .cheer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.promo-cheer .cheer-actions a, .promo-cheer .cheer-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  padding: 0 26px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+.promo-cheer .cheer-actions a:hover, .promo-cheer .cheer-actions button:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  filter: none;
+}
+.promo-cheer .cheer-actions a:focus, .promo-cheer .cheer-actions button:focus {
+  transform: none;
+  filter: none;
+}
+.promo-cheer .cheer-actions a:focus-visible, .promo-cheer .cheer-actions button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+.promo-cheer .cheer-actions .cheer-close {
+  min-width: 180px;
+  background: #b6a265;
+  color: #141a3a;
+  border: 1px solid #b6a265;
+}
+.promo-cheer .cheer-actions .cheer-close:hover {
+  background: #e6d8a8;
+  border-color: #e6d8a8;
+  color: #141a3a;
+}
+.promo-cheer .cheer-hint {
+  margin: 22px 0 0;
+  color: rgba(182, 162, 101, 0.75);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.promo-cheer .cheer-x {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(11, 15, 38, 0.4);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+}
+.promo-cheer .cheer-x:hover {
+  background: #fff;
+  color: #141a3a;
+  filter: none;
+}
+.promo-cheer .cheer-x:focus {
+  transform: none;
+}
+.promo-cheer .cheer-x:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+@keyframes cheerFly {
+  0% {
+    opacity: 0;
+    transform: translate(var(--fx, 0), var(--fy, 60px)) scale(0.35) rotate(var(--rot, 0deg));
+    filter: blur(14px);
+  }
+  32% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.06) rotate(0deg);
+    filter: blur(0);
+  }
+  42% {
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-90px) scale(1.35);
+    filter: blur(10px);
+  }
+}
+@keyframes cheerCard {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes cheerFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 1139px) {
+  .promo-cheer .cheer-card {
+    padding: 36px 20px 24px;
+  }
+  .promo-cheer .cheer-text {
+    font-size: 16px;
+  }
+  .promo-cheer .cheer-actions a,
+  .promo-cheer .cheer-actions button {
+    flex: 1 1 100%;
+  }
+  .promo-cheer .cheer-x {
+    top: 12px;
+    right: 12px;
+  }
+}
+
+/*# sourceMappingURL=promotion-hero.css.map */

@@ -286,6 +286,8 @@ $gutter-desktop: 50px;
       padding: 28px 0;
       border-top: 1px solid $line;
 
+      // The logos speak for themselves on a wide screen
+      .ft-heading{ display: none; }
       .ft-more{ margin-left: auto; }
     }
 
