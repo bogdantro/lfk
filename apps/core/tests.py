@@ -62,3 +62,26 @@ class PromotionHeroTests(TestCase):
         response = self.client.get('/')
         self.assertNotContains(response, 'class="ticker"')
         self.assertNotContains(response, 'Les om sesongen')
+
+
+class CookieBannerTests(TestCase):
+    def test_klaviyo_script_is_not_in_the_page_before_consent(self):
+        # Only js/cookie-banner.js may load it, after «Godta alle»
+        response = self.client.get('/')
+        self.assertNotRegex(response.content.decode(), r'<script[^>]*klaviyo\.js')
+        self.assertContains(response, 'data-klaviyo-src="https://static.klaviyo.com/onsite/js/RpTQGj/klaviyo.js')
+
+    def test_banner_and_script_are_on_every_page(self):
+        for url in ('/', '/om-klubben/medlemskap/'):
+            response = self.client.get(url)
+            self.assertContains(response, 'id="cookieBanner"')
+            self.assertContains(response, 'js/cookie-banner.js')
+            self.assertContains(response, 'scss/cookie-banner.css')
+
+    def test_banner_is_hidden_without_javascript(self):
+        response = self.client.get('/')
+        self.assertRegex(response.content.decode(), r'<section id="cookieBanner"[^>]*\shidden>')
+
+    def test_footer_can_reopen_the_banner(self):
+        response = self.client.get('/')
+        self.assertContains(response, 'data-cookie-settings aria-controls="cookieBanner">Informasjonskapsler</button>')

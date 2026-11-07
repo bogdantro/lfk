@@ -1,0 +1,158 @@
+// Cookie consent banner – templates/core/cookie-banner.html, js/cookie-banner.js
+$lfkgold: #b6a265;
+$lfkgoldHover: #c3b381;  // gold, a little lighter
+$navy: #141a3a;
+$lightblue: #cbdde7;
+$text: rgba(203, 221, 231, .88);
+$muted: rgba(203, 221, 231, .62);
+
+// ============================================================
+// Mobile first: a card across the bottom of the screen
+// ============================================================
+.cookie-banner{
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));  // clear of the iPhone home bar
+  // Above the nav and back-to-top button; just below the full-screen
+  // mobile menu and the cheer popup (2147483647), which the visitor opens on purpose
+  z-index: 2147483646;
+  max-height: calc(100vh - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+
+  background: $navy;
+  color: $text;
+  // The outline keeps it distinct when it opens over the navy footer
+  border: 1px solid rgba(203, 221, 231, .22);
+  border-top: 2px solid $lfkgold;
+  border-radius: 4px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .35);
+
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: left;
+
+  animation: cookieBannerIn .35s ease both;
+
+  &[hidden]{ display: none; }
+
+  // Bootstrap gives headings and paragraphs margins and its own font sizes
+  .cookie-banner-title{
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: white;
+  }
+
+  .cookie-banner-text,
+  .cookie-banner-current{
+    margin: 0;
+  }
+
+  .cookie-banner-current{
+    font-size: 13px;
+    color: $muted;
+    &[hidden]{ display: none; }
+  }
+
+  .cookie-banner-actions{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  // Both choices are the same size and equally easy to pick – required for valid consent
+  .cookie-btn{
+    flex: 1 1 140px;
+    min-height: 44px;
+    margin: 0;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color .15s, color .15s, border-color .15s;
+
+    &:focus{ outline: none; }
+    &:focus-visible{
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  }
+
+  .cookie-btn-accept{
+    background: $lfkgold;
+    border-color: $lfkgold;
+    color: $navy;
+    font-weight: 700;  // dark text on gold looks thinner than white on navy; this evens them out
+    &:hover{
+      background: $lfkgoldHover;
+      border-color: $lfkgoldHover;
+    }
+  }
+
+  .cookie-btn-necessary{
+    background: transparent;
+    border-color: rgba(203, 221, 231, .55);
+    color: white;
+    &:hover{
+      background: rgba(255, 255, 255, .08);
+      border-color: white;
+    }
+  }
+}
+
+// Other things fixed to the bottom of the screen step aside while the banner is open
+html.cookie-banner-open{
+  .membership-popup{ visibility: hidden; }
+}
+
+@media (max-width: 699px){
+  html.cookie-banner-open{
+    .back-to-top{ visibility: hidden; }
+  }
+}
+
+// ============================================================
+// Tablet and desktop: a card in the bottom-left corner,
+// clear of the back-to-top button on the right
+// ============================================================
+@media only screen and (min-width: 700px){
+  .cookie-banner{
+    left: 24px;
+    right: auto;
+    bottom: 24px;
+    width: 420px;
+    max-height: calc(100vh - 48px);
+    max-height: calc(100dvh - 48px);
+    padding: 24px;
+  }
+}
+
+@keyframes cookieBannerIn{
+  from{ opacity: 0; transform: translateY(16px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .cookie-banner{ animation: none; }
+  .cookie-banner .cookie-btn{ transition: none; }
+}
+
+@media print{
+  .cookie-banner{ display: none !important; }
+}

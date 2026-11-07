@@ -44,11 +44,14 @@
     <script src="{% static 'js/home.js' %}" defer></script>
     <script src="https://kit.fontawesome.com/5153798d69.js" crossorigin="anonymous" defer></script>
 
+    <!-- Cookie consent: the banner loads Klaviyo only after «Godta alle» -->
+    <link rel="stylesheet" href="{% static 'scss/cookie-banner.css' %}" type="text/css">
+    <script src="{% static 'js/cookie-banner.js' %}" defer></script>
+
     <!-- Klaviyo (newsletter sign-up forms and tracking), added at the club's request.
-         The snippet is Klaviyo's own, unchanged; RpTQGj is the club's Klaviyo account ID.
-         The inline part creates window.klaviyo straight away, so calls made before
-         the async script has loaded are queued instead of lost. -->
-    <script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/RpTQGj/klaviyo.js?company_id=RpTQGj"></script>
+         This is Klaviyo's own stub, unchanged: it only creates window.klaviyo so calls
+         are queued until the real script loads. It sets no cookies. The real script
+         (account RpTQGj) is loaded by js/cookie-banner.js once the visitor consents. -->
     <script type="text/javascript">
         !function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();
     </script>
@@ -56,6 +59,9 @@
 </head>
 
 <body ontouchstart="">
+    {# First in the page, so keyboard and screen reader users reach the choice first #}
+    {% include 'core/cookie-banner.html' %}
+
     <header>
         {% include 'core/nav.html' %}
     </header>

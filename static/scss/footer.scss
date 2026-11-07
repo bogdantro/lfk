@@ -229,6 +229,26 @@ $gutter-desktop: 50px;
     }
 
     li:hover .ft-heart{ transform: scale(1.2); }
+
+    // Opens the cookie banner again (js/cookie-banner.js); looks like the links next to it
+    .ft-cookie-settings{
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: none;
+      font: inherit;
+      color: $text;
+      cursor: pointer;
+      transition: color .15s;
+
+      &:hover{ color: white; }
+      &:focus{ outline: none; }
+      &:focus-visible{
+        outline: 2px solid $lfkgold;
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+    }
   }
 }
 

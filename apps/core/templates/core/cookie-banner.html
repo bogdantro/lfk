@@ -1,0 +1,20 @@
+{% comment %}
+Cookie consent banner, included once in base.html. No parameters.
+Klaviyo (newsletter forms and visitor tracking) is only loaded after «Godta alle»;
+js/cookie-banner.js stores the choice and loads the script from data-klaviyo-src.
+Hidden until the script shows it, so without JavaScript nothing is tracked.
+{% endcomment %}
+<section id="cookieBanner" class="cookie-banner" aria-labelledby="cookieBannerTitle"
+         data-klaviyo-src="https://static.klaviyo.com/onsite/js/RpTQGj/klaviyo.js?company_id=RpTQGj" hidden>
+    <h2 id="cookieBannerTitle" class="cookie-banner-title">Vi bruker informasjonskapsler</h2>
+    <p class="cookie-banner-text">
+        Nødvendige informasjonskapsler sørger for at nettsiden fungerer. Hvis du godtar alle,
+        bruker vi også Klaviyo til påmelding på nyhetsbrev og til å se hvordan nettsiden brukes.
+        Du kan endre valget når som helst under «Informasjonskapsler» nederst på siden.
+    </p>
+    <p class="cookie-banner-current" data-cookie-current hidden></p>
+    <div class="cookie-banner-actions">
+        <button type="button" class="cookie-btn cookie-btn-accept" data-cookie-choice="all">Godta alle</button>
+        <button type="button" class="cookie-btn cookie-btn-necessary" data-cookie-choice="necessary">Kun nødvendige</button>
+    </div>
+</section>

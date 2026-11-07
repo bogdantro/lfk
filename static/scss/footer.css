@@ -187,6 +187,27 @@
 .footer .ft-bottom li:hover .ft-heart {
   transform: scale(1.2);
 }
+.footer .ft-bottom .ft-cookie-settings {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: rgba(203, 221, 231, 0.88);
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.footer .ft-bottom .ft-cookie-settings:hover {
+  color: white;
+}
+.footer .ft-bottom .ft-cookie-settings:focus {
+  outline: none;
+}
+.footer .ft-bottom .ft-cookie-settings:focus-visible {
+  outline: 2px solid #b6a265;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
 @media only screen and (min-width: 600px) and (max-width: 1139px) {
   .footer .ft-partners {
