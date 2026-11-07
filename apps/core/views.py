@@ -199,6 +199,9 @@ def minibuss(request):
 def fotballfondet(request):
     return render(request, 'pages/about/fotballfondet.html')
 
+def personvern(request):
+    return render(request, 'pages/personvern.html')
+
 
 # def contact(request):
 #     if request.method=='POST' and 'contact' in request.POST:

@@ -1,0 +1,190 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block head %}
+
+<title>Personvernerklæring | Lillehammer FK – Slik behandler vi opplysningene dine</title>
+
+<meta name="description" content="Les hvordan Lillehammer Fotballklubb behandler personopplysninger på nettsiden, hvilke informasjonskapsler vi bruker, og hvilke rettigheter du har.">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Lillehammer Fotballklubb">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Personvernerklæring | Lillehammer FK">
+<meta property="og:description" content="Slik behandler Lillehammer Fotballklubb personopplysninger og informasjonskapsler på nettsiden.">
+<meta property="og:image" content="{% static 'images/covers/cover3.jpeg' %}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Personvernerklæring | Lillehammer FK">
+<meta name="twitter:description" content="Slik behandler Lillehammer Fotballklubb personopplysninger på nettsiden.">
+<meta name="twitter:image" content="{% static 'images/covers/cover3.jpeg' %}">
+
+<!-- Preload -->
+<link rel="preload" as="image" href="{% static 'images/covers/cover3.jpeg' %}">
+
+<!-- Structured Data: Breadcrumb -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Personvernerklæring",
+      "item": "{{ request.build_absolute_uri }}"
+    }
+  ]
+}
+</script>
+
+{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'scss/pages/page.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'scss/global/global.css' %}" type="text/css">
+<script src="{% static 'js/home.js' %}"></script>
+<script src="{% static 'js/page.js' %}"></script>
+
+{% comment %}
+  Keep this page true to what the site actually does. When a new outside
+  service, cookie or form is added, add it here too and update the date.
+{% endcomment %}
+<section class="cover yellow">
+  <div class="image">
+    <img
+      src="{% static 'images/covers/cover3.jpeg' %}"
+      alt="Spillere og supportere i Lillehammer FK feirer på tribunen"
+      class="cover-img">
+  </div>
+
+  <div class="content">
+    <div class="text">
+
+      {# Short on purpose: "Personvernerklæring" in the big heading font runs into the photo #}
+      <h1>Personvern</h1>
+
+      <p>
+        Her forklarer vi hvilke personopplysninger Lillehammer Fotballklubb behandler når du besøker
+        lillehammerfk.no, hvorfor vi gjør det, og hvilke rettigheter du har.
+      </p>
+
+      <p><span class="subheading">Sist oppdatert 7. november 2026</span></p>
+
+      <h2 class="section-title">Behandlingsansvarlig</h2>
+      <p>
+        Lillehammer Fotballklubb er ansvarlig for behandlingen av personopplysninger på nettsiden.<br>
+        Org.nr. 981 623 916, Postboks 11, 2601 Lillehammer.<br>
+        Spørsmål om personvern sender du til
+        <a href="mailto:dagligleder@lillehammerfk.no">dagligleder@lillehammerfk.no</a>.
+      </p>
+
+      <h2 class="section-title">Informasjonskapsler</h2>
+      <p>
+        Informasjonskapsler (cookies) er små tekstfiler som lagres i nettleseren din. Vi bruker noen få som er
+        nødvendige for at nettsiden skal fungere. Klaviyo bruker vi bare hvis du velger «Godta alle» i banneret
+        som vises første gang du besøker siden.
+      </p>
+
+      <ul class="honor-list">
+        <li>
+          <strong>lfk_cookie_consent</strong> – husker hva du valgte i banneret, så du ikke blir spurt på hver side.
+          Lagres i ett år. Nødvendig.
+        </li>
+        <li>
+          <strong>csrftoken</strong> – beskytter innloggingsskjemaet mot misbruk. Lagres i ett år. Nødvendig.
+        </li>
+        <li>
+          <strong>sessionid</strong> – holder klubbens administratorer innlogget. Settes bare når noen logger inn,
+          og lagres i ett døgn. Nødvendig.
+        </li>
+        <li>
+          <strong>__kla_id</strong> – fra Klaviyo, kjenner igjen nettleseren din mellom besøk. Lagres i inntil to år.
+          Brukes bare med ditt samtykke.
+        </li>
+      </ul>
+      <br>
+
+      <p>
+        Du kan når som helst
+        <button type="button" class="cookie-settings-link" data-cookie-settings aria-controls="cookieBanner">endre valget ditt</button>,
+        også hvis du vil trekke tilbake samtykket. Valget finner du også under «Informasjonskapsler» nederst på hver side.
+      </p>
+
+      <h2 class="section-title">Klaviyo – nyhetsbrev og besøksstatistikk</h2>
+      <p>
+        Klubben bruker Klaviyo til påmelding på nyhetsbrev og til å se hvordan nettsiden brukes, for eksempel
+        hvilke sider som blir besøkt. Hvis du melder deg på nyhetsbrevet, lagres også e-postadressen din og
+        annet du fyller inn i skjemaet.
+      </p>
+      <p>
+        Grunnlaget er samtykket ditt. Uten samtykke lastes ikke Klaviyo inn, og ingenting sendes dit.
+        Klaviyo, Inc. behandler opplysningene på vegne av klubben, og de kan bli lagret i USA. Overføringen
+        skjer etter regler som er godkjent av EU, slik som EUs standard personvernbestemmelser.
+      </p>
+      <p>
+        Opplysningene lagres til du trekker samtykket eller melder deg av nyhetsbrevet. Alle nyhetsbrev har en
+        lenke for å melde seg av.
+      </p>
+
+      <h2 class="section-title">Tjenester nettsiden henter innhold fra</h2>
+      <p>
+        For å vise siden riktig henter nettleseren din skrifttyper og ikoner fra Google Fonts, Font Awesome,
+        cdnjs, Bootstrap CDN og jQuery. Disse tjenestene ser da IP-adressen din, slik det er når en nettleser
+        henter en fil. Vi bruker dem ikke til å følge med på deg.
+      </p>
+      <p>
+        Siden om minibussen viser en kalender og et bestillingsskjema fra Google. Google kan sette egne
+        informasjonskapsler der, og svarene du sender i skjemaet går til klubben via Google.
+      </p>
+      <p>
+        Serveren som driver nettsiden lagrer tekniske logger, som IP-adresse, tidspunkt og hvilken side som ble
+        åpnet. Loggene brukes til drift og sikkerhet og slettes jevnlig.
+      </p>
+
+      <h2 class="section-title">Lenker til andre tjenester</h2>
+      <p>
+        Innmelding og betaling skjer i Hoopit, og vi lenker også til blant annet Facebook, Spotify og fotball.no.
+        Når du går til disse, gjelder deres egne personvernerklæringer.
+      </p>
+
+      <h2 class="section-title">Dine rettigheter</h2>
+      <p>Du har rett til å</p>
+      <ul class="honor-list">
+        <li>få vite hvilke opplysninger vi har om deg, og få en kopi av dem</li>
+        <li>få rettet opplysninger som er feil</li>
+        <li>få slettet opplysninger</li>
+        <li>begrense eller protestere mot behandlingen</li>
+        <li>få utlevert opplysningene dine i et format som kan flyttes til en annen tjeneste</li>
+        <li>trekke tilbake samtykket ditt når som helst</li>
+      </ul>
+      <br>
+      <p>
+        Send en e-post til <a href="mailto:dagligleder@lillehammerfk.no">dagligleder@lillehammerfk.no</a>, så svarer
+        vi innen 30 dager. Mener du at vi behandler opplysningene dine i strid med regelverket, kan du klage til
+        <a href="https://www.datatilsynet.no/" target="_blank" rel="noopener">Datatilsynet</a>.
+      </p>
+
+      <h2 class="section-title">Endringer</h2>
+      <p>
+        Hvis vi endrer hvordan vi behandler personopplysninger, oppdaterer vi denne siden og datoen øverst.
+      </p>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

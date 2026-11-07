@@ -197,6 +197,10 @@
   cursor: pointer;
   transition: color 0.15s;
 }
+.footer .ft-bottom .ft-cookie-settings, .footer .ft-bottom .ft-cookie-settings:hover, .footer .ft-bottom .ft-cookie-settings:focus {
+  transform: none;
+  filter: none;
+}
 .footer .ft-bottom .ft-cookie-settings:hover {
   color: white;
 }

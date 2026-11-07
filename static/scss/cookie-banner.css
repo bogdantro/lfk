@@ -39,6 +39,19 @@
 .cookie-banner .cookie-banner-current {
   margin: 0;
 }
+.cookie-banner .cookie-banner-text a {
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-banner .cookie-banner-text a:hover {
+  color: #b6a265;
+}
+.cookie-banner .cookie-banner-text a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
 .cookie-banner .cookie-banner-current {
   font-size: 13px;
   color: rgba(203, 221, 231, 0.62);
@@ -66,6 +79,10 @@
   cursor: pointer;
   transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
+.cookie-banner .cookie-btn, .cookie-banner .cookie-btn:hover, .cookie-banner .cookie-btn:focus {
+  transform: none;
+  filter: none;
+}
 .cookie-banner .cookie-btn:focus {
   outline: none;
 }
@@ -91,6 +108,36 @@
 .cookie-banner .cookie-btn-necessary:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: white;
+}
+
+.cookie-settings-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.cookie-settings-link, .cookie-settings-link:hover, .cookie-settings-link:focus {
+  transform: none;
+  filter: none;
+}
+.cookie-settings-link:hover {
+  opacity: 0.75;
+}
+.cookie-settings-link:focus {
+  outline: none;
+}
+.cookie-settings-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 html.cookie-banner-open .membership-popup {

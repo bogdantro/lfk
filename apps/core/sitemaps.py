@@ -52,6 +52,9 @@ class StaticViewSitemap(Sitemap):
             "minibuss",
             "fotballfondet",
 
+            # Legal
+            "personvern",
+
             # Blog overview
             "blog",
         ]

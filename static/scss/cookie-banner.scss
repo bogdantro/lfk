@@ -59,6 +59,18 @@ $muted: rgba(203, 221, 231, .62);
     margin: 0;
   }
 
+  .cookie-banner-text a{
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    &:hover{ color: $lfkgold; }
+    &:focus-visible{
+      outline: 2px solid white;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+  }
+
   .cookie-banner-current{
     font-size: 13px;
     color: $muted;
@@ -87,6 +99,13 @@ $muted: rgba(203, 221, 231, .62);
     cursor: pointer;
     transition: background-color .15s, color .15s, border-color .15s;
 
+    // global.scss grows every button on hover and shrinks it on focus –
+    // a shrunken button looks broken when the banner is reopened with focus on it
+    &, &:hover, &:focus{
+      transform: none;
+      filter: none;
+    }
+
     &:focus{ outline: none; }
     &:focus-visible{
       outline: 2px solid white;
@@ -113,6 +132,37 @@ $muted: rgba(203, 221, 231, .62);
       background: rgba(255, 255, 255, .08);
       border-color: white;
     }
+  }
+}
+
+// Inline button in running text (e.g. on /personvern/) that opens the banner;
+// looks like a link and takes its colour from the paragraph around it
+.cookie-settings-link{
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  // A button can't wrap like a link, so keep the label short and on one line
+  white-space: nowrap;
+
+  &, &:hover, &:focus{
+    transform: none;
+    filter: none;
+  }
+
+  &:hover{ opacity: .75; }
+  &:focus{ outline: none; }
+  &:focus-visible{
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 

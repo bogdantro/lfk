@@ -76,6 +76,9 @@ urlpatterns = [
     path('om-klubben/minibuss/', minibuss, name='minibuss'),
     path('om-klubben/fotballfondet/', fotballfondet, name='fotballfondet'),
 
+    # Legal
+    path('personvern/', personvern, name='personvern'),
+
     # Pages that were never built but were listed in the sitemap – permanent
     # redirects so Google and old links land somewhere useful instead of an error page.
     path('om-klubben/styret/', RedirectView.as_view(pattern_name='kontakt', permanent=True)),

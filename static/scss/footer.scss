@@ -241,6 +241,12 @@ $gutter-desktop: 50px;
       cursor: pointer;
       transition: color .15s;
 
+      // global.scss scales every button on hover/focus; this one should act like a link
+      &, &:hover, &:focus{
+        transform: none;
+        filter: none;
+      }
+
       &:hover{ color: white; }
       &:focus{ outline: none; }
       &:focus-visible{

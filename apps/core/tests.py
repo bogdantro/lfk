@@ -85,3 +85,23 @@ class CookieBannerTests(TestCase):
     def test_footer_can_reopen_the_banner(self):
         response = self.client.get('/')
         self.assertContains(response, 'data-cookie-settings aria-controls="cookieBanner">Informasjonskapsler</button>')
+
+
+class PrivacyPageTests(TestCase):
+    def test_privacy_page_explains_klaviyo_and_the_cookies_we_set(self):
+        response = self.client.get('/personvern/')
+        self.assertEqual(response.status_code, 200)
+        for text in ('Klaviyo', 'lfk_cookie_consent', '__kla_id', 'Datatilsynet', 'dagligleder@lillehammerfk.no'):
+            self.assertContains(response, text)
+
+    def test_privacy_page_can_reopen_the_cookie_choice(self):
+        response = self.client.get('/personvern/')
+        self.assertContains(response, 'class="cookie-settings-link" data-cookie-settings')
+
+    def test_footer_and_banner_link_to_the_privacy_page(self):
+        response = self.client.get('/')
+        self.assertContains(response, '<a href="/personvern/">Personvernerklæring</a>')
+        self.assertContains(response, '<a href="/personvern/">Les personvernerklæringen</a>')
+
+    def test_privacy_page_is_in_the_sitemap(self):
+        self.assertContains(self.client.get('/sitemap.xml'), '/personvern/</loc>')
